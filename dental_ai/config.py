@@ -45,9 +45,18 @@ class Settings(BaseSettings):
     # --- Quản trị ---
     admin_token: str | None = None  # bắt buộc cho /api/admin/*
 
+    # --- DNA thương hiệu (nối vào system prompt) ---
+    brand_dna_enabled: bool = True
+    brand_dna_file: str = "data/brand/DNA_Tam_Duc_Smile.md"  # đường dẫn tương đối tính từ thư mục gốc repo
+
     @property
     def system_prompt_path(self) -> Path:
         return ROOT_DIR / "prompts" / "04_master_dental_agent_system_prompt.md"
+
+    @property
+    def brand_dna_path(self) -> Path:
+        p = Path(self.brand_dna_file)
+        return p if p.is_absolute() else ROOT_DIR / p
 
     @property
     def ingestion_schema_path(self) -> Path:
