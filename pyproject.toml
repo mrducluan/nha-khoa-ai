@@ -1,0 +1,9 @@
+[project]
+name = "nha-khoa-ai"
+version = "1.0.0"
+description = "Hệ thống hỏi đáp & tư vấn nha khoa thực chứng (Golden Hybrid Dental RAG)"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

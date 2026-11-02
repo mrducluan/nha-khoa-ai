@@ -1,0 +1,36 @@
+# Chạy toàn bộ hệ thống:  docker compose up -d --build
+# Mở trình duyệt:        http://localhost:8000
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: dental_rag
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"   # chỉ mở cho máy local
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dental_rag"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgres}@db:5432/dental_rag
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:

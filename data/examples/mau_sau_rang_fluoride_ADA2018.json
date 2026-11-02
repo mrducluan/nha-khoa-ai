@@ -1,0 +1,82 @@
+{
+  "_ghi_chu": "TÀI LIỆU MẪU minh hoạ quy trình nạp tri thức theo schema 02. Bác sĩ phụ trách cần đối chiếu nguyên văn hướng dẫn gốc (DOI) trước khi phê duyệt đưa vào sử dụng.",
+  "source_metadata": {
+    "organization_code": "ADA",
+    "authority_tier": "TIER_1_GOLD_STANDARD",
+    "document_title": "Evidence-based clinical practice guideline on nonrestorative treatments for carious lesions: A report from the American Dental Association",
+    "authors_or_committee": "Slayton RL, Urquhart O, Araujo MWB et al. (ADA Council on Scientific Affairs & ADA Science Institute)",
+    "publication_year": 2018,
+    "journal_or_series": "Journal of the American Dental Association (JADA)",
+    "doi_or_pmid": "10.1016/j.adaj.2018.07.002",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "Conditional"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Phác đồ Điều trị Không xâm lấn Tổn thương Sâu răng (Nonrestorative Caries Management): Varnish Fluoride 5%, SDF 38%, Trám bít hố rãnh & Thâm nhiễm nhựa",
+    "clinical_topic_slug": "nonrestorative-caries-management-fluoride-sdf"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Trẻ em và người lớn có tổn thương sâu răng chưa tạo lỗ (non-cavitated) hoặc đã tạo lỗ (cavitated) trên răng sữa và răng vĩnh viễn, bao gồm sâu chân răng ở người cao tuổi.",
+    "I_intervention": "Các biện pháp không mài răng: Varnish Natri Fluoride 5% (22.600 ppm F), Diamine Bạc Fluoride (SDF) 38%, gel APF 1,23%, kem đánh răng 5.000 ppm F, trám bít hố rãnh (sealant), thâm nhiễm nhựa (resin infiltration).",
+    "C_comparison": "Không điều trị, giả dược hoặc chỉ hướng dẫn vệ sinh răng miệng thông thường.",
+    "O_outcome_metrics": "Tỷ lệ ngưng tiến triển (arrest) hoặc hồi phục (reversal) tổn thương sâu răng. ADA đưa ra các khuyến nghị có điều kiện (conditional) với mức độ chắc chắn của bằng chứng từ thấp đến trung bình tuỳ vị trí tổn thương."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Sâu răng là quá trình mất cân bằng khử khoáng – tái khoáng do acid từ vi khuẩn chuyển hoá đường. Ở giai đoạn chưa tạo lỗ, ion fluoride thúc đẩy tái khoáng hình thành fluorapatite bền acid hơn; SDF bổ sung ion bạc có tác dụng kháng khuẩn giúp làm ngưng tổn thương đã tạo lỗ. Can thiệp sớm không mài răng giúp bảo tồn tối đa mô răng.",
+    "indications": [
+      "Tổn thương chưa tạo lỗ mặt nhai răng vĩnh viễn: trám bít hố rãnh kết hợp varnish NaF 5% mỗi 3–6 tháng",
+      "Tổn thương chưa tạo lỗ mặt bên (kẽ răng): varnish NaF 5% mỗi 3–6 tháng hoặc thâm nhiễm nhựa kèm varnish",
+      "Tổn thương chưa tạo lỗ mặt ngoài/trong: varnish NaF 5% mỗi 3–6 tháng hoặc gel APF 1,23%",
+      "Tổn thương đã tạo lỗ trên răng sữa (thân răng): SDF 38% bôi định kỳ 6 tháng/lần",
+      "Sâu chân răng (root caries) ở người lớn: SDF 38%, kem đánh răng 5.000 ppm F hằng ngày hoặc varnish NaF 5% mỗi 3–6 tháng"
+    ],
+    "contraindications_absolute": [
+      "Dị ứng với bạc hoặc thành phần của SDF",
+      "Viêm loét niêm mạc miệng rộng (viêm loét miệng, viêm lợi loét hoại tử) tại vùng bôi thuốc",
+      "Tổn thương đã có triệu chứng tuỷ (đau tự phát, áp xe, lỗ dò) — cần điều trị tuỷ/phục hồi, không chỉ dùng SDF"
+    ],
+    "contraindications_relative": [
+      "Vùng răng cửa có yêu cầu thẩm mỹ cao: SDF gây đổi màu đen vĩnh viễn ở mô sâu — bắt buộc tư vấn và ký đồng thuận",
+      "Bệnh nhân không thể tái khám định kỳ để đánh giá tổn thương"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá nguy cơ & phân loại tổn thương", "clinical_action": "Khám lâm sàng làm khô răng, phim cắn cánh khi cần; phân loại tổn thương chưa/đã tạo lỗ và đánh giá hoạt động (active/arrested), đánh giá nguy cơ sâu răng (chế độ ăn, fluoride, nước bọt).", "technical_parameters": "Có thể dùng hệ thống ICDAS hoặc phân loại tương đương; ghi nhận vị trí (mặt nhai / kẽ / mặt nhẵn / chân răng)"},
+      {"step": 2, "phase_name": "Bôi Varnish NaF 5%", "clinical_action": "Làm sạch, lau khô bề mặt, bôi lớp mỏng varnish lên tổn thương.", "technical_parameters": "NaF 5% (22.600 ppm F); nhắc lại mỗi 3–6 tháng tuỳ nguy cơ; dặn tránh thức ăn cứng và không chải răng trong vài giờ theo hướng dẫn nhà sản xuất"},
+      {"step": 3, "phase_name": "Bôi SDF 38% (tổn thương đã tạo lỗ)", "clinical_action": "Bảo vệ niêm mạc, cách ly bằng bông gòn, bôi SDF bằng microbrush vào tổn thương, để thấm rồi thổi nhẹ.", "technical_parameters": "SDF 38%; bôi định kỳ 6 tháng/lần (răng sữa); tư vấn trước về đổi màu đen tổn thương"},
+      {"step": 4, "phase_name": "Trám bít hố rãnh / thâm nhiễm nhựa", "clinical_action": "Mặt nhai có tổn thương chưa tạo lỗ: trám bít hố rãnh. Mặt kẽ chưa tạo lỗ: cân nhắc thâm nhiễm nhựa.", "technical_parameters": "Cách ly tốt, quy trình dán dính theo hướng dẫn vật liệu; kiểm tra độ lưu giữ sealant ở mỗi lần tái khám"},
+      {"step": 5, "phase_name": "Tái đánh giá", "clinical_action": "Tái khám để đánh giá tổn thương ngưng tiến triển hay tiến triển, điều chỉnh tần suất can thiệp theo nguy cơ.", "technical_parameters": "Chu kỳ 3–6 tháng với bệnh nhân nguy cơ cao"}
+    ],
+    "complications_and_management": [
+      {"complication": "Đổi màu đen tổn thương sau SDF", "prevention": "Tư vấn kỹ và có đồng thuận trước khi bôi, đặc biệt vùng răng trước", "management_protocol": "Có thể phục hồi thẩm mỹ bằng composite/GIC phủ lên tổn thương đã ngưng tiến triển"},
+      {"complication": "Tổn thương tiếp tục tiến triển thành lỗ sâu hoặc có triệu chứng tuỷ", "prevention": "Kiểm soát chế độ ăn đường, vệ sinh răng miệng, tuân thủ lịch tái khám", "management_protocol": "Chuyển sang điều trị phục hồi (trám) hoặc điều trị tuỷ tuỳ mức độ"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Mài răng phục hồi ngay cho tổn thương chưa tạo lỗ trong khi điều trị không xâm lấn có thể làm ngưng tổn thương và bảo tồn mô răng",
+        "Không tư vấn trước về đổi màu đen của SDF dẫn đến mất lòng tin của bệnh nhân/phụ huynh"
+      ],
+      "clinical_decision_tips": [
+        "Chọn biện pháp theo VỊ TRÍ tổn thương (mặt nhai / kẽ / mặt nhẵn / chân răng) và tình trạng chưa/đã tạo lỗ — mỗi nhóm có khuyến nghị riêng trong hướng dẫn ADA 2018",
+        "Can thiệp không xâm lấn phải đi kèm kiểm soát nguyên nhân (đường, mảng bám) và tái đánh giá định kỳ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Khi vết sâu răng mới chớm (chưa thành lỗ) hoặc lỗ sâu nhỏ ở răng sữa, bác sĩ có thể dùng thuốc chứa fluoride bôi lên răng để làm cứng men và ngăn sâu lan rộng — không cần khoan răng.",
+      "why_needed": "Giúp giữ lại tối đa răng thật, tránh phải khoan trám sớm, đặc biệt phù hợp với trẻ nhỏ và người cao tuổi.",
+      "what_to_expect": "Bôi thuốc chỉ mất vài phút, không đau. Riêng thuốc SDF làm vết sâu chuyển màu đen (đó là dấu hiệu sâu đã ngưng lại). Cần tái khám mỗi 3–6 tháng.",
+      "home_care_instructions": [
+        "Chải răng 2 lần/ngày với kem đánh răng có fluoride",
+        "Hạn chế đồ ngọt, nước ngọt, đặc biệt giữa các bữa ăn",
+        "Tái khám đúng hẹn để bác sĩ kiểm tra vết sâu đã ngưng chưa"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: ADA 2018 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Dị ứng bạc; viêm loét niêm mạc vùng bôi; tổn thương đã có triệu chứng tuỷ] Sâu răng chớm, sâu răng sữa ở trẻ em có thể điều trị không khoan bằng varnish fluoride 5% mỗi 3–6 tháng hoặc thuốc SDF 38% bôi 6 tháng/lần; SDF làm vết sâu đổi màu đen."
+    }
+  ]
+}

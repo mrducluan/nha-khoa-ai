@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nha Khoa AI — Tư vấn nha khoa thực chứng</title>
+<script src="/static/marked.min.js"></script>
+<script src="/static/purify.min.js"></script>
+<style>
+  :root {
+    --bg: #f5f7fa; --panel: #ffffff; --text: #1d2733; --muted: #66727f; --line: #e2e7ee;
+    --brand: #0f766e; --brand-soft: #e6f4f2; --user: #0f766e; --user-text: #fff;
+    --danger: #b42318; --danger-soft: #fef3f2; --warn-soft: #fffaeb; --warn: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1419; --panel: #172029; --text: #e6edf3; --muted: #93a1b0; --line: #2a3642;
+            --brand: #2dd4bf; --brand-soft: #12322f; --user: #115e59; --user-text: #e6fffb;
+            --danger: #fda29b; --danger-soft: #3a1714; --warn-soft: #33270b; --warn: #fcd34d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; background: var(--panel); border-bottom: 1px solid var(--line);
+           padding: 10px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  header h1 { font-size: 17px; margin: 0; color: var(--brand); }
+  header .status { font-size: 12px; color: var(--muted); }
+  .roles { margin-left: auto; display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .roles button { border: 0; background: transparent; color: var(--text); padding: 6px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+  .roles button.active { background: var(--brand); color: #fff; }
+  main { max-width: 900px; margin: 0 auto; padding: 16px 16px 160px; }
+  .welcome { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .welcome h2 { margin-top: 0; font-size: 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .chip { border: 1px solid var(--line); background: var(--brand-soft); color: var(--text); border-radius: 999px;
+          padding: 6px 12px; cursor: pointer; font: inherit; font-size: 13px; text-align: left; }
+  .msg { margin: 16px 0; display: flex; flex-direction: column; }
+  .msg.user { align-items: flex-end; }
+  .bubble { max-width: 100%; border-radius: 12px; padding: 12px 16px; background: var(--panel); border: 1px solid var(--line); overflow-wrap: anywhere; }
+  .msg.user .bubble { background: var(--user); color: var(--user-text); border: 0; max-width: 85%; white-space: pre-wrap; }
+  .bubble table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  .bubble th, .bubble td { border: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+  .bubble h1, .bubble h2, .bubble h3 { font-size: 16px; margin: 14px 0 6px; }
+  .meta { font-size: 12px; color: var(--muted); margin: 4px 2px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { border-radius: 6px; padding: 1px 8px; background: var(--brand-soft); color: var(--brand); font-weight: 600; }
+  .redflag { background: var(--danger-soft); color: var(--danger); border: 1px solid var(--danger); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-weight: 600; }
+  .warning { background: var(--warn-soft); color: var(--warn); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
+  details.sources { margin-top: 8px; font-size: 13px; }
+  details.sources summary { cursor: pointer; color: var(--muted); }
+  .src { border-left: 3px solid var(--brand); padding: 4px 10px; margin: 6px 0; }
+  .src.gold { border-color: #d4a017; }
+  .src small { color: var(--muted); }
+  .feedback button { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 6px; cursor: pointer; padding: 2px 8px; }
+  .feedback button.chosen { background: var(--brand); color: #fff; }
+  .composer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--panel); border-top: 1px solid var(--line); padding: 12px 16px; }
+  .composer form { max-width: 900px; margin: 0 auto; display: flex; gap: 8px; }
+  textarea { flex: 1; resize: none; min-height: 48px; max-height: 180px; border-radius: 10px; border: 1px solid var(--line);
+             background: var(--bg); color: var(--text); padding: 12px; font: inherit; }
+  .send { border: 0; border-radius: 10px; background: var(--brand); color: #fff; padding: 0 18px; font: inherit; font-weight: 600; cursor: pointer; }
+  .send:disabled { opacity: .5; cursor: wait; }
+  .note { max-width: 900px; margin: 6px auto 0; font-size: 11px; color: var(--muted); text-align: center; }
+  .typing::after { content: "▍"; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (max-width: 600px) { .roles { margin-left: 0; width: 100%; } .roles button { flex: 1; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>🦷 Nha Khoa AI</h1>
+  <span class="status" id="status">Đang kết nối…</span>
+  <div class="roles" role="radiogroup" aria-label="Vai trò người hỏi">
+    <button type="button" data-role="auto" class="active">Tự động</button>
+    <button type="button" data-role="patient">Bệnh nhân</button>
+    <button type="button" data-role="doctor">Bác sĩ / SV</button>
+  </div>
+</header>
+
+<main id="chat">
+  <section class="welcome" id="welcome">
+    <h2>Xin chào! Tôi có thể giúp gì cho anh/chị?</h2>
+    <p>Hệ thống trả lời dựa trên cơ sở dữ liệu phác đồ chuẩn quốc tế (ADA, ITI, FDI, CGDent, EFP, Cochrane…).
+       Chọn <b>Bệnh nhân</b> để được giải thích dễ hiểu, hoặc <b>Bác sĩ / SV</b> để nhận phân tích chuyên sâu kèm trích dẫn.</p>
+    <div class="chips">
+      <button class="chip">Tôi bị chảy máu chân răng khi đánh răng, có sao không?</button>
+      <button class="chip">Niềng răng trong suốt có hiệu quả bằng mắc cài không?</button>
+      <button class="chip">Mất hết răng hàm trên, làm răng cố định trên implant thế nào?</button>
+      <button class="chip">Torque cài đặt MUA và giới hạn cantilever trong All-on-4?</button>
+      <button class="chip">Xử trí thủng màng Schneider theo kích thước lỗ thủng?</button>
+    </div>
+  </section>
+</main>
+
+<div class="composer">
+  <form id="form">
+    <textarea id="input" placeholder="Nhập câu hỏi về răng miệng…" rows="1" required></textarea>
+    <button class="send" id="send" type="submit">Gửi</button>
+  </form>
+  <div class="note">Thông tin tham khảo, không thay thế thăm khám trực tiếp. Gặp dấu hiệu cấp cứu (khó thở, sưng lan nhanh, sốt cao) hãy đến cơ sở y tế ngay.</div>
+</div>
+
+<script>
+const chat = document.getElementById("chat");
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const sendBtn = document.getElementById("send");
+let role = "auto";
+const history = [];
+
+const MODE_LABEL = { DOCTOR: "Chế độ Bác sĩ (A)", PATIENT: "Chế độ Bệnh nhân (B)" };
+
+function renderMarkdown(text) {
+  if (window.marked && window.DOMPurify) return DOMPurify.sanitize(marked.parse(text));
+  const div = document.createElement("div"); div.textContent = text;
+  return div.innerHTML.replace(/\n/g, "<br>");
+}
+function el(tag, cls, html) { const e = document.createElement(tag); if (cls) e.className = cls; if (html !== undefined) e.innerHTML = html; return e; }
+function esc(s) { const d = document.createElement("div"); d.textContent = s ?? ""; return d.innerHTML; }
+
+document.querySelectorAll(".roles button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".roles button").forEach(x => x.classList.remove("active"));
+  b.classList.add("active"); role = b.dataset.role;
+});
+document.querySelectorAll(".chip").forEach(c => c.onclick = () => { input.value = c.textContent; form.requestSubmit(); });
+input.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
+input.addEventListener("input", () => { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 180) + "px"; });
+
+fetch("/health").then(r => r.json()).then(h => {
+  const k = h.knowledge || {};
+  document.getElementById("status").textContent =
+    `${k.protocols ?? "?"} phác đồ · ${h.llm.configured ? "AI: " + h.llm.model : "Chế độ dữ liệu (chưa cấu hình AI)"}`;
+}).catch(() => document.getElementById("status").textContent = "Mất kết nối máy chủ");
+
+function renderSources(meta) {
+  const box = el("details", "sources");
+  const n = meta.sources.length + meta.literature.length;
+  box.appendChild(el("summary", null, `📚 Nguồn tham chiếu (${n}) — ${esc(meta.fallback)}`));
+  meta.sources.forEach(s => {
+    box.appendChild(el("div", "src" + (s.slot_role === "PRIMARY_ADA_ITI_STANDARD" ? " gold" : ""),
+      `<b>${esc(s.organization)} ${s.year}</b> · ${esc(s.evidence_level)} — ${esc(s.title)}<br>
+       <small>${esc(s.doi_or_pmid || "")} · độ liên quan ${(s.similarity * 100).toFixed(0)}%</small>`));
+  });
+  meta.literature.forEach(a => {
+    const url = `https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(a.pmid)}/`;
+    box.appendChild(el("div", "src", `<b>PubMed ${a.publication_year ?? ""}</b> — <a href="${url}" target="_blank" rel="noopener">${esc(a.title)}</a><br><small>${esc(a.journal)} · PMID ${esc(a.pmid)}</small>`));
+  });
+  return box;
+}
+
+function feedbackBar(logId) {
+  const bar = el("span", "feedback");
+  [["👍", 1], ["👎", -1]].forEach(([icon, rating]) => {
+    const b = el("button", null, icon); b.type = "button"; b.title = rating > 0 ? "Hữu ích" : "Chưa tốt";
+    b.onclick = async () => {
+      const note = rating < 0 ? prompt("Điều gì chưa đúng hoặc cần cải thiện? (không bắt buộc)") : null;
+      await fetch("/api/feedback", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ log_id: logId, rating, note }) });
+      bar.querySelectorAll("button").forEach(x => x.classList.remove("chosen")); b.classList.add("chosen");
+    };
+    bar.appendChild(b);
+  });
+  return bar;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const question = input.value.trim();
+  if (!question || sendBtn.disabled) return;
+  document.getElementById("welcome")?.remove();
+  input.value = ""; input.style.height = "auto"; sendBtn.disabled = true;
+
+  const userMsg = el("div", "msg user"); userMsg.appendChild(el("div", "bubble")).textContent = question;
+  chat.appendChild(userMsg);
+  const botMsg = el("div", "msg bot");
+  const metaLine = el("div", "meta", "Đang tra cứu cơ sở dữ liệu…");
+  const bubble = el("div", "bubble typing");
+  botMsg.append(metaLine, bubble); chat.appendChild(botMsg);
+  botMsg.scrollIntoView({ behavior: "smooth", block: "end" });
+
+  let answer = "", meta = null, done = null;
+  try {
+    const resp = await fetch("/api/ask/stream", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, role, history: history.slice(-8) }),
+    });
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const reader = resp.body.getReader(); const decoder = new TextDecoder(); let buf = "";
+    while (true) {
+      const { value, done: finished } = await reader.read();
+      if (finished) break;
+      buf += decoder.decode(value, { stream: true });
+      let idx;
+      while ((idx = buf.indexOf("\n\n")) >= 0) {
+        const line = buf.slice(0, idx).trim(); buf = buf.slice(idx + 2);
+        if (!line.startsWith("data:")) continue;
+        const ev = JSON.parse(line.slice(5));
+        if (ev.type === "meta") {
+          meta = ev;
+          metaLine.innerHTML = `<span class="badge">${MODE_LABEL[ev.mode] || ev.mode}</span>`;
+          ev.red_flags.forEach(f => botMsg.insertBefore(el("div", "redflag", "🚨 " + esc(f.message)), bubble));
+          ev.warnings.forEach(w => botMsg.insertBefore(el("div", "warning", "⚠️ " + esc(w)), bubble));
+        } else if (ev.type === "delta") {
+          answer += ev.text; bubble.innerHTML = renderMarkdown(answer);
+        } else if (ev.type === "done") {
+          done = ev;
+        } else if (ev.type === "error") {
+          answer += "\n\n> ⚠️ " + ev.message; bubble.innerHTML = renderMarkdown(answer);
+        }
+      }
+    }
+  } catch (err) {
+    bubble.innerHTML = renderMarkdown("⚠️ Không gửi được câu hỏi: " + err.message);
+  }
+  bubble.classList.remove("typing");
+  if (meta) botMsg.appendChild(renderSources(meta));
+  if (done) metaLine.append(feedbackBar(done.log_id));
+  history.push({ role: "user", content: question }, { role: "assistant", content: answer });
+  sendBtn.disabled = false; input.focus();
+});
+</script>
+</body>
+</html>
