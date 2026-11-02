@@ -119,7 +119,7 @@ const KIEU = {
     : `<div class="${p}-chu"><div class="${p}-ch">${esc(m.chu)}</div>${m.phu ? `<div class="${p}-ph">${esc(m.phu)}</div>` : ""}</div>`}
 </div>`).join("");
     const noi = kieu === "buoc" && n > 1
-      ? `<div id="${p}-noi" style="position:absolute; left:${90 + 36 + 48}px; top:${dau + cao / 2}px; width:6px; height:${(n - 1) * (cao + GAP)}px; background:${MAU.vien}; transform-origin:top;"></div>` : "";
+      ? `<div id="${p}-day" style="position:absolute; left:${90 + 36 + 48}px; top:${dau + cao / 2}px; width:6px; height:${(n - 1) * (cao + GAP)}px; background:${MAU.vien}; transform-origin:top;"></div>` : "";
     const chot = c.chot ? `<div id="${p}-chot" class="${p}-chot" style="top:${dau + n * (cao + GAP) + 6}px"><span>${esc(c.chot.chu)}</span></div>` : "";
     const tChot = c.chot ? r3(moc[c.chot.cau] ? moc[c.chot.cau].bd + 0.2 : d * 0.8) : 0;
     const td = tieuDe(p, c.tieu_de, x.dau);
@@ -140,7 +140,7 @@ const KIEU = {
 .${p}-chot span { display:inline-block; padding:18px 36px; border-radius:26px; background:${MAU.nen}; border:4px solid ${MAU.son}; color:${MAU.son}; font-size:40px; font-weight:900; }`,
       html: `${td.html}${noi}${the}${chot}`,
       js: `${td.js}
-${noi ? `tl.fromTo("#${p}-noi", {scaleY:0}, {scaleY:1, duration:${r3(Math.max(0.5, tMuc[n - 1] - tMuc[0]))}, ease:"none"}, ${tMuc[0]});` : ""}
+${noi ? `tl.fromTo("#${p}-day", {scaleY:0}, {scaleY:1, duration:${r3(Math.max(0.5, tMuc[n - 1] - tMuc[0]))}, ease:"none"}, ${tMuc[0]});` : ""}
 ${c.muc.map((_, i) => `tl.fromTo("#${p}-m${i}", {opacity:0, x:${i % 2 ? 120 : -120}}, {opacity:1, x:0, duration:0.5, ease:"expo.out"}, ${tMuc[i]});
 ${kieu === "check" ? `tl.to("#${p}-v${i}", {strokeDashoffset:0, duration:0.35, ease:"power2.out"}, ${r3(tMuc[i] + 0.55)});` : ""}`).join("\n")}
 ${c.chot ? `tl.fromTo("#${p}-chot", {opacity:0, scale:1.5, rotation:-4}, {opacity:1, scale:1, rotation:-2, duration:0.35, ease:"power4.in"}, ${tChot});` : ""}`,
