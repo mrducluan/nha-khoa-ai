@@ -22,6 +22,7 @@ và đối chiếu song song với FDI, CGDent, EFP, EAO, Cochrane và Springer.
 | Nâng cấp tìm kiếm v2 + bảng vận hành | `db/07_search_v2_and_app_tables.sql` |
 | Chuẩn nạp tài liệu (PICO) | `schemas/02_pdf_ingestion_pico_schema.json` |
 | System prompt chuyên gia | `prompts/04_master_dental_agent_system_prompt.md` |
+| DNA thương hiệu Nha khoa Tâm Đức Smile (nối vào system prompt) | [`data/brand/DNA_Tam_Duc_Smile.md`](data/brand/DNA_Tam_Duc_Smile.md) |
 | Mã nguồn ứng dụng | `dental_ai/` |
 | Bản gốc module fallback (tham khảo) | `legacy/03_auto_fallback_literature_ingestor.py` |
 | Báo cáo đánh giá dữ liệu & lỗi đã sửa | [`docs/DANH_GIA_DU_LIEU.md`](docs/DANH_GIA_DU_LIEU.md) |
@@ -64,6 +65,7 @@ python -m dental_ai serve                              # http://localhost:8000
 | `EMBEDDING_PROVIDER` | `openai` (khuyến nghị, cần `OPENAI_API_KEY`) hoặc `local` (offline). **Đổi xong chạy `reindex`** |
 | `FALLBACK_ENABLED`, `NCBI_API_KEY`, `NCBI_EMAIL` | Tự tra PubMed 2016–2026 khi DB chưa đủ dữ liệu |
 | `ADMIN_TOKEN` | Mật khẩu cho các API quản trị `/api/admin/*` |
+| `BRAND_DNA_ENABLED`, `BRAND_DNA_FILE` | Bật/tắt và chọn file DNA thương hiệu nối vào system prompt (mặc định `data/brand/DNA_Tam_Duc_Smile.md`) |
 
 ## Trang quản trị cho bác sĩ — http://localhost:8000/admin
 

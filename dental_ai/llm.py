@@ -60,9 +60,46 @@ class PubMedQuery(BaseModel):
     is_dental_question: bool
 
 
+# Khung sử dụng DNA thương hiệu: tách bạch với tri thức lâm sàng, chặn tuyên bố quảng cáo chưa xác minh.
+BRAND_RULES = """
+
+-----
+
+## 5. DNA THƯƠNG HIỆU NHA KHOA TÂM ĐỨC SMILE (THÔNG TIN DOANH NGHIỆP — KHÔNG PHẢI BẰNG CHỨNG LÂM SÀNG)
+
+Hệ thống được vận hành cho **Nha khoa Tâm Đức Smile**. Khối `<dna_thuong_hieu>` bên dưới là hồ sơ doanh nghiệp/marketing. Quy tắc dùng:
+
+1. **Tách bạch tuyệt đối với y văn:** Mọi nội dung chuyên môn (chỉ định, phác đồ, số liệu, trích dẫn) vẫn CHỈ lấy từ `<ngu_canh_truy_xuat>` theo Mục 4. Không dùng DNA làm căn cứ lâm sàng, không gắn thẻ trích dẫn y khoa cho thông tin trong DNA.
+2. **Khi nào dùng:** Chỉ khi người dùng hỏi về chính nha khoa (dịch vụ có hay không, hotline, giờ làm việc, chi nhánh, hình thức thanh toán, trả góp, bảo hành, hỗ trợ Việt kiều), hoặc để kết thúc câu trả lời Chế độ B bằng lời mời thăm khám nhẹ nhàng (VD: hotline **1900 8040**). Không chèn quảng cáo vào câu trả lời Chế độ A.
+3. **Giá, ưu đãi, trả góp, quà tặng, thời hạn:** Không nêu như giá hiện hành/trọn gói. Nếu được hỏi, nói rõ chi phí phụ thuộc kết quả thăm khám và chương trình tại thời điểm, mời liên hệ hotline/chi nhánh để được báo giá chính thức.
+4. **Mục đánh dấu [CẦN XÁC NHẬN] và Mục 9–10 của DNA là ràng buộc cứng:** không tự tuyên bố số năm kinh nghiệm, cấp đối tác, danh xưng/chứng chỉ bác sĩ, số chi nhánh như sự thật đã kiểm chứng; tuyệt đối tránh "không đau", "vĩnh viễn", "100%", "số 1", "rẻ nhất", "không biến chứng", bảo đảm kết quả.
+5. **Thông tin [WEB]** chỉ được diễn đạt là "theo thông tin nha khoa công bố". Các mục [ĐỀ XUẤT] (định vị, USP, kịch bản video, kế hoạch Facebook) là tài liệu nội bộ cho đội nội dung — không đọc lại cho bệnh nhân.
+6. Nếu DNA xung đột với quy tắc an toàn y khoa ở Mục 4, Mục 4 được ưu tiên.
+
+<dna_thuong_hieu>
+{dna}
+</dna_thuong_hieu>
+"""
+
+
+def load_brand_dna(settings: Settings | None = None) -> str | None:
+    s = settings or get_settings()
+    if not s.brand_dna_enabled:
+        return None
+    path = s.brand_dna_path
+    if not path.is_file():
+        log.warning("Không tìm thấy file DNA thương hiệu: %s", path)
+        return None
+    return path.read_text(encoding="utf-8").strip()
+
+
 def load_system_prompt(settings: Settings | None = None) -> str:
     s = settings or get_settings()
-    return s.system_prompt_path.read_text(encoding="utf-8") + OPERATING_RULES
+    prompt = s.system_prompt_path.read_text(encoding="utf-8") + OPERATING_RULES
+    dna = load_brand_dna(s)
+    if dna:
+        prompt += BRAND_RULES.format(dna=dna)
+    return prompt
 
 
 class ClaudeClient:
