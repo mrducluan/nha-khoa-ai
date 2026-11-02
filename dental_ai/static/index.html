@@ -43,6 +43,7 @@
   .meta { font-size: 12px; color: var(--muted); margin: 4px 2px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .badge { border-radius: 6px; padding: 1px 8px; background: var(--brand-soft); color: var(--brand); font-weight: 600; }
   .redflag { background: var(--danger-soft); color: var(--danger); border: 1px solid var(--danger); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-weight: 600; }
+  .caution { background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn); border-radius: 10px; padding: 8px 14px; margin-bottom: 8px; font-size: 14px; }
   .warning { background: var(--warn-soft); color: var(--warn); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
   details.sources { margin-top: 8px; font-size: 13px; }
   details.sources summary { cursor: pointer; color: var(--muted); }
@@ -196,6 +197,9 @@ form.addEventListener("submit", async (e) => {
           meta = ev;
           metaLine.innerHTML = `<span class="badge">${MODE_LABEL[ev.mode] || ev.mode}</span>`;
           ev.red_flags.forEach(f => botMsg.insertBefore(el("div", "redflag", "🚨 " + esc(f.message)), bubble));
+          (ev.cautions || []).forEach(c => botMsg.insertBefore(el("div", "caution", `<b>⚠️ Lưu ý — ${esc(c.label)}:</b> ${esc(c.message)}`), bubble));
+          if ((ev.uncovered || []).length) botMsg.insertBefore(el("div", "warning",
+            "ℹ️ Cơ sở dữ liệu chưa có phác đồ chuẩn cho: " + ev.uncovered.map(esc).join(", ")), bubble);
           ev.warnings.forEach(w => botMsg.insertBefore(el("div", "warning", "⚠️ " + esc(w)), bubble));
         } else if (ev.type === "delta") {
           answer += ev.text; bubble.innerHTML = renderMarkdown(answer);
@@ -210,7 +214,7 @@ form.addEventListener("submit", async (e) => {
     bubble.innerHTML = renderMarkdown("⚠️ Không gửi được câu hỏi: " + err.message);
   }
   bubble.classList.remove("typing");
-  if (meta) botMsg.appendChild(renderSources(meta));
+  if (meta && !meta.off_topic) botMsg.appendChild(renderSources(meta));
   if (done) metaLine.append(feedbackBar(done.log_id));
   history.push({ role: "user", content: question }, { role: "assistant", content: answer });
   sendBtn.disabled = false; input.focus();

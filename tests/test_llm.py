@@ -70,3 +70,15 @@ def test_assistant_sends_context_and_mode(database):
     assert len(captured[0]["body"]["messages"]) == 3
     assert captured[0]["body"]["output_config"]["effort"] == "high"
     assert result["answer"].startswith("Trả lời mẫu")
+
+
+def test_assistant_tells_claude_about_cautions_and_gaps(database):
+    captured = []
+    settings = Settings(anthropic_api_key="sk-test", database_url=database, fallback_enabled=False)
+    assistant = Assistant(settings, LocalHashEmbedder(), make_client(captured, "ok"))
+    assistant.ask("Tôi đang mang thai 5 tháng, muốn tẩy trắng răng và cạo vôi được không, giá bao nhiêu?", "patient")
+    msg = captured[0]["body"]["messages"][-1]["content"]
+    assert "ĐỐI TƯỢNG ĐẶC BIỆT" in msg and "Thai kỳ" in msg
+    assert "CHƯA CÓ PHÁC ĐỒ" in msg and "tẩy trắng" in msg
+    assert "KHÔNG CÓ DỮ LIỆU GIÁ" in msg
+    assert "QUY TẮC VẬN HÀNH" in captured[0]["body"]["system"][0]["text"]

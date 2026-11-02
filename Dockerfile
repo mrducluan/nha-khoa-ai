@@ -11,6 +11,7 @@ COPY db ./db
 COPY schemas ./schemas
 COPY prompts ./prompts
 COPY data ./data
+COPY evals ./evals
 
 RUN useradd --create-home appuser
 USER appuser

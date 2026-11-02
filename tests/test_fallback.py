@@ -58,8 +58,22 @@ def test_fallback_decision_uses_similarity_not_rrf():
     assert should_trigger_fallback([], "x", s, e)[0] is True
     assert should_trigger_fallback([_result(0.9)], "câu hỏi", s, e)[0] is False
     assert should_trigger_fallback([_result(0.05)], "răng khôn mọc lệch", s, e)[0] is True
-    # Tương đồng vừa + phủ đủ từ khoá → đủ dữ liệu
-    assert should_trigger_fallback([_result(0.2, "torque mua ncm")], "Torque MUA bao nhiêu Ncm", s, e)[0] is False
+    # Không nhận diện được chủ đề: tương đồng vừa + phủ đủ từ khoá → đủ dữ liệu
+    assert should_trigger_fallback([_result(0.2, "abutment xyz")], "abutment xyz", s, e)[0] is False
+
+
+def test_fallback_decision_by_topic_coverage():
+    s, e = get_settings(), LocalHashEmbedder()
+    veneer = {"best_vector_similarity": 0.9, "protocol_title": "Phác đồ Mặt dán sứ Veneer", "matched_chunks": []}
+    full = {"best_vector_similarity": 0.2, "protocol_title": "Phục hình toàn hàm All-on-4 trên implant", "matched_chunks": []}
+    # Chủ đề chưa có phác đồ → luôn tra cứu bổ sung dù độ tương đồng cao
+    trig, reason = should_trigger_fallback([veneer], "Tẩy trắng răng có hại men không", s, e)
+    assert trig and "tẩy trắng" in reason
+    # Đúng chủ đề → đủ dữ liệu dù độ tương đồng thấp
+    assert should_trigger_fallback([full], "Torque MUA bao nhiêu Ncm", s, e)[0] is False
+    # Có 1 phần → bổ sung phần còn thiếu
+    trig, reason = should_trigger_fallback([veneer], "Dán sứ veneer và tẩy trắng cái nào tốt", s, e)
+    assert trig and "chưa có" in reason
 
 
 def test_check_doi_with_mocked_crossref():

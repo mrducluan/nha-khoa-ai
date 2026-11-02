@@ -125,6 +125,17 @@ Tài liệu tương tác tự động: **http://localhost:8000/docs**
 - **Hàng chờ duyệt** cho mọi tri thức mới; y văn PubMed tự động được đánh dấu "chưa thẩm định".
 - **Nhật ký + phản hồi** để bác sĩ rà soát câu trả lời bị đánh giá 👎.
 
+## Kiểm soát chất lượng (QC)
+
+```bash
+python -m dental_ai eval --failures      # chấm 136 câu hỏi mô phỏng khách hàng thật, liệt kê câu chưa đạt
+```
+
+Bộ máy nhận diện ý định hiểu được chữ không dấu, viết tắt kiểu chat, lỗi gõ và từ vùng miền. Nó nhận ra
+26 chủ đề nha khoa (biết chủ đề nào CSDL **chưa có** để trả lời trung thực), câu ngoài nha khoa,
+câu hỏi nối tiếp, và 9 nhóm đối tượng đặc biệt (thai phụ, thuốc chống đông, bisphosphonate…).
+Kết quả chi tiết xem [`docs/BAO_CAO_QC.md`](docs/BAO_CAO_QC.md).
+
 ## Kiểm thử
 
 ```bash

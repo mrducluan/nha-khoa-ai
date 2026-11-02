@@ -1,0 +1,49 @@
+{"category": "A_patient", "q": "Sáng ngủ dậy miệng có mùi, nhổ nước bọt thấy lẫn máu", "persona": "PATIENT", "topic": ["periodontitis-stage-1-3-stepwise-therapy"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "rang ham duoi cu bi lung lay, nhai yeu", "persona": "PATIENT", "topic": ["periodontitis-stage-1-3-stepwise-therapy"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Đi lấy vôi răng định kỳ mấy tháng một lần thì hợp lý", "persona": "PATIENT", "topic": ["periodontitis-stage-1-3-stepwise-therapy"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Viêm lợi mãn tính có chữa khỏi hẳn được không", "persona": "PATIENT", "topic": ["periodontitis-stage-1-3-stepwise-therapy"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Muốn chỉnh răng mà không đeo mắc cài sắt", "persona": "PATIENT", "topic": ["clear-aligner-biomechanics-predictability-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "khay invisalign bị lỏng có sao ko", "persona": "PATIENT", "topic": ["clear-aligner-biomechanics-predictability-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Làm mặt dán cho răng cửa bị thưa có bền không", "persona": "PATIENT", "topic": ["ceramic-laminate-veneer-adhesive-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "răng xỉn màu dán sứ mỏng có tự nhiên ko", "persona": "PATIENT", "topic": ["ceramic-laminate-veneer-adhesive-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Bố tôi rụng gần hết răng, muốn làm hàm cố định thay hàm tháo lắp", "persona": "PATIENT", "topic": ["full-arch-implant-all-on-4-all-on-6-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "cấy 6 trụ cho nguyên hàm trên giá có đắt không", "persona": "PATIENT", "topic": ["full-arch-implant-all-on-4-all-on-6-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Xoang hàm của tôi thấp quá nên chưa cấy implant được", "persona": "PATIENT", "topic": ["maxillary-sinus-floor-elevation-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Răng cửa sắp nhổ, có nên trồng trụ ngay hôm đó", "persona": "PATIENT", "topic": ["immediate-implant-esthetic-zone-type1"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "bé nhà mình sâu răng sữa đen hết, bác sĩ bảo bôi thuốc chứ không trám", "persona": "PATIENT", "topic": ["nonrestorative-caries-management-fluoride-sdf"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Vết trắng đục quanh mắc cài sau khi tháo niềng", "persona": "PATIENT", "topic": ["nonrestorative-caries-management-fluoride-sdf"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Răng đau giật từng cơn, uống giảm đau không đỡ", "persona": "PATIENT", "topic": ["antibiotic-use-pulpal-periapical-dental-pain-swelling"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Lợi gần răng sâu có lỗ chảy mủ", "persona": "PATIENT", "topic": ["antibiotic-use-pulpal-periapical-dental-pain-swelling"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Răng cuối cùng hàm dưới mọc nằm ngang", "persona": "PATIENT", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "nho rang khon ham duoi co nguy hiem khong", "persona": "PATIENT", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Mức độ chính xác của di chuyển răng với aligner so với mắc cài cố định", "persona": "DOCTOR", "topic": ["clear-aligner-biomechanics-predictability-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Tỷ lệ sống còn implant 5 năm của All-on-4 so với All-on-6 ở hàm dưới", "persona": "DOCTOR", "topic": ["full-arch-implant-all-on-4-all-on-6-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Kỹ thuật Lindhe trong nâng xoang hở với Bio-Oss và màng collagen", "persona": "DOCTOR", "topic": ["maxillary-sinus-floor-elevation-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Kháng sinh toàn thân trong áp xe cuống khu trú khi đã dẫn lưu", "persona": "DOCTOR", "topic": ["antibiotic-use-pulpal-periapical-dental-pain-swelling"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Bằng chứng về nhổ răng 8 dự phòng để tránh chen chúc răng cửa", "persona": "DOCTOR", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Kiểm soát nhiễm bẩn khi gắn veneer bằng resin cement", "persona": "DOCTOR", "topic": ["ceramic-laminate-veneer-adhesive-protocol"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Hàm răng giả tháo lắp bị đau nướu khi ăn", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Răng bị mòn cổ chân răng hình chữ V", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Bị nấm miệng trắng lưỡi", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Đánh răng bằng than hoạt tính có trắng răng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Trẻ mút tay có làm hô răng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Chi phí làm cầu răng sứ 3 đơn vị", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Mọc răng ở trẻ có gây sốt không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Lưỡi bị tê rát khi ăn cay", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "Sưng cứng vùng dưới cằm, thở khò khè", "persona": null, "topic": null, "flags": ["AIRWAY"], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "con toi te nga gay rang cua mat 1 nua", "persona": null, "topic": null, "flags": ["TRAUMA"], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "Sau nhổ răng máu chảy ướt hết gạc liên tục", "persona": null, "topic": null, "flags": ["BLEEDING"], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "Mặt sưng vù, nhiệt độ 39.5, răng hàm đau", "persona": null, "topic": null, "flags": ["SPREADING_INFECTION"], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "Lưỡi tê bì từ hôm nhổ răng khôn đến nay đã 10 ngày", "persona": null, "topic": null, "flags": ["NERVE"], "scope": "dental", "caution": []}
+{"category": "D_emergency", "q": "Có khối u cứng trong miệng ngày càng to", "persona": null, "topic": null, "flags": ["ORAL_CANCER"], "scope": "dental", "caution": []}
+{"category": "E_non_emergency", "q": "Hơi chảy máu khi dùng chỉ nha khoa lần đầu", "persona": null, "topic": null, "flags": [], "scope": "dental", "caution": []}
+{"category": "E_non_emergency", "q": "Tê môi khoảng 3 tiếng sau khi nhổ răng là bình thường?", "persona": null, "topic": null, "flags": [], "scope": "dental", "caution": []}
+{"category": "E_non_emergency", "q": "Ngạt mũi do cảm cúm có ảnh hưởng gì khi nhổ răng không", "persona": null, "topic": null, "flags": [], "scope": "dental", "caution": []}
+{"category": "F_off_topic", "q": "Cách giảm cân nhanh", "persona": null, "topic": null, "flags": [], "scope": "off", "caution": []}
+{"category": "F_off_topic", "q": "Kết quả bóng đá tối qua", "persona": null, "topic": null, "flags": [], "scope": "off", "caution": []}
+{"category": "F_off_topic", "q": "Đau lưng khi ngồi lâu nên tập gì", "persona": null, "topic": null, "flags": [], "scope": "off", "caution": []}
+{"category": "F_off_topic", "q": "Dịch giúp tôi câu này sang tiếng Anh", "persona": null, "topic": null, "flags": [], "scope": "off", "caution": []}
+{"category": "G_special_population", "q": "Đang có bầu tháng thứ 7 bị đau răng", "persona": "PATIENT", "topic": null, "flags": [], "scope": "dental", "caution": ["PREGNANCY"]}
+{"category": "G_special_population", "q": "Ông tôi dùng aspirin hằng ngày, có nhổ răng được không", "persona": "PATIENT", "topic": null, "flags": [], "scope": "dental", "caution": ["ANTICOAGULANT"]}
+{"category": "G_special_population", "q": "Đường huyết cao có trồng implant được không", "persona": "PATIENT", "topic": null, "flags": [], "scope": "dental", "caution": ["DIABETES"]}
+{"category": "G_special_population", "q": "Bé 18 tháng có nên bôi fluoride không", "persona": "PATIENT", "topic": null, "flags": [], "scope": "dental", "caution": ["CHILD"]}

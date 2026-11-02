@@ -119,6 +119,21 @@ def should_trigger_fallback(results: list[dict[str, Any]], question: str = "",
         return False, "Fallback đang tắt"
     if not results:
         return True, "Không tìm thấy phác đồ liên quan trong cơ sở dữ liệu"
+
+    # 1) Ưu tiên quyết định theo CHỦ ĐỀ: câu hỏi thuộc chủ đề nào, CSDL có phác đồ cho chủ đề đó không
+    from .intents import BY_CODE, coverage, detect_intents
+
+    intents = detect_intents(question) if question else []
+    if any(i.clinical for i in intents):
+        covered, uncovered = coverage(intents, results)
+        names = lambda codes: ", ".join(BY_CODE[c].label for c in sorted(codes))  # noqa: E731
+        if not covered:
+            return True, f"Chủ đề chưa có phác đồ trong cơ sở dữ liệu: {names(uncovered)}"
+        if uncovered:
+            return True, f"Có phác đồ cho {names(covered)}; chưa có cho {names(uncovered)} → tra cứu bổ sung"
+        return False, f"Cơ sở dữ liệu có phác đồ cho chủ đề: {names(covered)}"
+
+    # 2) Không nhận diện được chủ đề → dựa vào độ tương đồng + độ phủ từ khoá
     strong = s.fallback_strong_similarity or getattr(embedder, "strong_similarity", 0.50)
     weak = s.fallback_weak_similarity or getattr(embedder, "weak_similarity", 0.35)
     best = max(float(r.get("best_vector_similarity") or 0) for r in results)

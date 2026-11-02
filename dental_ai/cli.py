@@ -106,6 +106,14 @@ def cmd_verify_citations(args) -> None:
     print(f"\nTổng: {len(results)} nguồn, {bad} nguồn cần bác sĩ xem lại.")
 
 
+def cmd_eval(args) -> None:
+    from .evaluation import evaluate, format_report
+
+    with connect() as conn:
+        report = evaluate(conn, get_embedder())
+    print(format_report(report, show_failures=args.failures))
+
+
 def cmd_ingest(args) -> None:
     from .knowledge import load_json, review, submit_for_review
 
@@ -190,6 +198,10 @@ def main(argv: list[str] | None = None) -> None:
     p.set_defaults(func=cmd_ask)
 
     sub.add_parser("audit", help="Kiểm định dữ liệu theo schema 02").set_defaults(func=cmd_audit)
+
+    p = sub.add_parser("eval", help="Chấm điểm chất lượng trên bộ câu hỏi evals/questions.jsonl")
+    p.add_argument("--failures", action="store_true", help="Liệt kê các câu chưa đạt")
+    p.set_defaults(func=cmd_eval)
 
     sub.add_parser("verify-citations", help="Đối chiếu DOI với Crossref").set_defaults(func=cmd_verify_citations)
 

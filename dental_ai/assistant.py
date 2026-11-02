@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Any, Iterator
@@ -13,11 +14,14 @@ from .config import Settings, get_settings
 from .db import connect
 from .embeddings import Embedder, get_embedder
 from .fallback import Article, PubMedClient, cache_articles, should_trigger_fallback
+from .intents import Intent, coverage, detect_intents, protocol_intents, rerank
 from .knowledge import check_embedding_provider
 from .llm import ClaudeClient, LLMResult
 from .persona import DOCTOR, PATIENT, detect_persona
 from .query_expansion import expand_query
 from .safety import DOCTOR_DISCLAIMER, PATIENT_DISCLAIMER, RedFlag, detect_red_flags
+from .textnorm import normalize
+from .scope import OFF_TOPIC_ANSWER, Caution, detect_caution, is_dental_question
 
 log = logging.getLogger(__name__)
 
@@ -38,20 +42,49 @@ class Prepared:
     fallback_reason: str
     articles: list[Article] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
+    intents: list[Intent] = field(default_factory=list)
+    covered: set[str] = field(default_factory=set)
+    uncovered: set[str] = field(default_factory=set)
+    cautions: list[Caution] = field(default_factory=list)
+
+    def labels(self, codes: set[str]) -> list[str]:
+        return [i.label for i in self.intents if i.code in codes]
 
 
 def search(conn, embedder: Embedder, query: str, top_k: int, specialty: str | None = None) -> list[dict[str, Any]]:
-    query = expand_query(query)
-    vec = embedder.embed_one(query)
+    """Tìm kiếm lai (vector + từ khoá) rồi xếp hạng lại theo chủ đề câu hỏi."""
+    intents = detect_intents(query)
+    expanded = expand_query(query)
+    vec = embedder.embed_one(expanded)
     rows = conn.execute(
         "SELECT * FROM search_dental_knowledge_v2(%s::text, %s::vector, %s::dental_specialty_enum, %s::int, %s::numeric)",
-        (query, vec, specialty, top_k, embedder.vector_weight),
+        (expanded, vec, specialty, max(top_k * 3, 10), embedder.vector_weight),
     ).fetchall()
     for r in rows:
         r["protocol_id"] = str(r["protocol_id"])
         r["best_vector_similarity"] = float(r["best_vector_similarity"])
         r["hybrid_rrf_score"] = float(r["hybrid_rrf_score"])
-    return rows
+        r["topic_codes"] = sorted(protocol_intents(r))
+    return rerank(intents, rows)[:top_k]
+
+
+_FOLLOW_UP = re.compile(
+    r"^(con|the con|vay|nhu vay|neu|the|thi|vay thi|sau do|luc do|truong hop)\b|thi sao|the nao|duoc khong|co sao|"
+    r"bao lau|co dau|co nen|co can|loai nao|cach nao|cai do|cai nay|nhu vay|truong hop (do|nay)"
+)
+
+
+def is_follow_up(question: str, previous: str) -> bool:
+    """Câu hỏi nối tiếp câu trước? (VD: "Còn nếu tôi bị tiểu đường thì sao?")
+
+    Chỉ coi là nối tiếp khi câu trước thuộc nha khoa, câu hiện tại ngắn, KHÔNG có chủ đề nha khoa riêng
+    và có dấu hiệu nối tiếp hoặc nói về bệnh nền/đối tượng đặc biệt của người hỏi.
+    """
+    if len(question) > 160 or not is_dental_question(previous):
+        return False
+    if any(i.clinical for i in detect_intents(question)):
+        return False                      # câu mới có chủ đề riêng → tìm theo câu mới
+    return bool(_FOLLOW_UP.search(normalize(question)) or detect_caution(question))
 
 
 def source_summary(r: dict[str, Any]) -> dict[str, Any]:
@@ -116,6 +149,18 @@ def build_user_message(prep: Prepared) -> str:
     lines = [mode_line]
     if prep.red_flags:
         lines.append("CẢNH BÁO ĐỎ (hệ thống phát hiện): " + " | ".join(f.code for f in prep.red_flags))
+    if prep.intents:
+        lines.append("CHỦ ĐỀ CÂU HỎI: " + "; ".join(i.label for i in prep.intents))
+    if prep.uncovered:
+        lines.append("CHƯA CÓ PHÁC ĐỒ TRONG CƠ SỞ DỮ LIỆU CHO: " + "; ".join(prep.labels(prep.uncovered))
+                     + " — nói rõ điều này với người hỏi; chỉ dùng y văn bổ sung (nếu có) hoặc thông tin chung an toàn, "
+                       "không suy diễn từ phác đồ của chủ đề khác.")
+    if any(i.code == "COST" for i in prep.intents):
+        lines.append("HỆ THỐNG KHÔNG CÓ DỮ LIỆU GIÁ: không đưa ra con số chi phí; giải thích các yếu tố ảnh hưởng chi phí "
+                     "và khuyên hỏi trực tiếp cơ sở nha khoa.")
+    if prep.cautions:
+        lines.append("ĐỐI TƯỢNG ĐẶC BIỆT (bắt buộc lồng ghép lưu ý vào câu trả lời): "
+                     + " | ".join(f"{c.label}: {c.message}" for c in prep.cautions))
     lines.append(format_context(prep.mode, prep.results, prep.articles))
     lines.append(f"<cau_hoi>\n{prep.question}\n</cau_hoi>")
     return "\n\n".join(lines)
@@ -123,6 +168,9 @@ def build_user_message(prep: Prepared) -> str:
 
 def render_offline_answer(prep: Prepared) -> str:
     """Câu trả lời trích thẳng từ CSDL khi chưa cấu hình Claude API (chế độ dự phòng)."""
+    if prep.intents and prep.uncovered and not prep.covered:
+        return ("Hiện cơ sở dữ liệu chưa có phác đồ về **" + ", ".join(prep.labels(prep.uncovered)) + "**. "
+                "Vui lòng hỏi trực tiếp bác sĩ nha khoa để được thăm khám và tư vấn chính xác.")
     if not prep.results:
         return ("Hiện cơ sở dữ liệu chưa có phác đồ phù hợp với câu hỏi này. "
                 "Vui lòng hỏi bác sĩ nha khoa để được thăm khám trực tiếp.")
@@ -165,9 +213,17 @@ class Assistant:
         persona = detect_persona(question, role)
         flags = detect_red_flags(question)
         prior_user = [m["content"] for m in (history or []) if m.get("role") == "user"]
-        retrieval_query = f"{prior_user[-1]} {question}" if prior_user and len(question) < 80 else question
+        retrieval_query = f"{prior_user[-1]} {question}" if prior_user and is_follow_up(question, prior_user[-1]) else question
         results = search(conn, self.embedder, retrieval_query, self.settings.retrieval_top_k, specialty)
-        prep = Prepared(question, persona.mode, persona.reason, flags, results, "")
+        intents = detect_intents(retrieval_query)
+        covered, uncovered = coverage(intents, results)
+        if covered:
+            # Chỉ giữ phác đồ cùng chủ đề: tránh đưa phác đồ không liên quan vào câu trả lời
+            results = [r for r in results if set(r["topic_codes"]) & covered] or results
+        elif uncovered:
+            results = []
+        prep = Prepared(question, persona.mode, persona.reason, flags, results, "",
+                        intents=intents, covered=covered, uncovered=uncovered, cautions=detect_caution(question))
         warning = check_embedding_provider(conn, self.embedder)
         if warning:
             prep.warnings.append(warning)
@@ -197,6 +253,12 @@ class Assistant:
                specialty: str | None = None) -> Iterator[dict[str, Any]]:
         """Sinh các sự kiện: meta → delta* → done."""
         started = time.monotonic()
+        prior_user = [m["content"] for m in (history or []) if m.get("role") == "user"]
+        in_scope = is_dental_question(question) or (
+            bool(prior_user) and is_follow_up(question, prior_user[-1]))
+        if not in_scope:
+            yield from self._off_topic(question, role, started)
+            return
         with connect(self.settings.database_url) as conn:
             prep = self.prepare(conn, question, role, history, specialty)
             yield {
@@ -208,6 +270,10 @@ class Assistant:
                 "literature": [a.as_dict() for a in prep.articles],
                 "fallback": prep.fallback_reason,
                 "warnings": prep.warnings,
+                "intents": [{"code": i.code, "label": i.label} for i in prep.intents],
+                "uncovered": prep.labels(prep.uncovered),
+                "cautions": [{"code": c.code, "label": c.label, "message": c.message} for c in prep.cautions],
+                "off_topic": False,
             }
 
             answer, model, result = "", None, None
@@ -251,6 +317,20 @@ class Assistant:
             ).fetchone()["log_id"]
             yield {"type": "done", "log_id": str(log_id), "model": model,
                    "usage": result.usage if result else {}}
+
+    def _off_topic(self, question: str, role: str | None, started: float) -> Iterator[dict[str, Any]]:
+        mode = detect_persona(question, role).mode
+        yield {"type": "meta", "mode": mode, "persona_reason": "", "red_flags": [], "sources": [], "literature": [],
+               "fallback": "Ngoài phạm vi nha khoa", "warnings": [], "intents": [], "uncovered": [], "cautions": [],
+               "off_topic": True}
+        yield {"type": "delta", "text": OFF_TOPIC_ANSWER}
+        with connect(self.settings.database_url) as conn:
+            log_id = conn.execute(
+                """INSERT INTO qa_logs (persona_mode, question, answer, model, latency_ms)
+                   VALUES (%s,%s,%s,%s,%s) RETURNING log_id""",
+                (mode, question, OFF_TOPIC_ANSWER, "scope-filter", int((time.monotonic() - started) * 1000)),
+            ).fetchone()["log_id"]
+        yield {"type": "done", "log_id": str(log_id), "model": "scope-filter", "usage": {}}
 
     def ask(self, question: str, role: str | None = "auto", history: list[dict] | None = None,
             specialty: str | None = None) -> dict[str, Any]:
