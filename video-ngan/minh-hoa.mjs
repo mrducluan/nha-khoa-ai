@@ -593,3 +593,22 @@ ${hienNhan(`${p}-n`, t1 + 0.3)}`,
     };
   },
 };
+
+// ---------------------------------------------------------------- logo
+/** Logo Tâm Đức Smile vẽ lại bằng SVG nội tuyến (cỏ 4 lá tim + chữ), dùng khi chưa có file logo gốc trong logo/.
+ *  Khung 705 × 147 như logo gốc; chữ dùng phông Be Vietnam Pro đã nạp trong trang. */
+export function logoSvg(id, rong) {
+  const XANH = "#1F8F5B", DO = "#E3262F";
+  const TIM = "M0 18 C0 4 -24 -2 -28 14 C-31 28 -14 40 0 52 C14 40 31 28 28 14 C24 -2 0 4 0 18 Z";
+  const la = [[72, 8, 0], [136, 73, 90], [72, 138, 180], [8, 73, -90]].map(([x, y, g]) =>
+    `<g transform="translate(${x} ${y}) rotate(${g})"><path d="${TIM}" transform="scale(1.08)" fill="#FFFFFF" stroke="${XANH}" stroke-width="7" stroke-linejoin="round"/>
+  <path d="${TIM}" transform="translate(0 14) scale(0.42)" fill="${DO}"/></g>`).join("");
+  return `<svg id="${id}" width="${rong}" height="${Math.round((rong * 147) / 705)}" viewBox="0 0 705 147">
+${la}
+<text x="205" y="80" font-family="BVP" font-weight="900" font-size="66" fill="${DO}" textLength="305" lengthAdjust="spacingAndGlyphs">TÂM ĐỨC</text>
+<text x="527" y="80" font-family="BVP" font-weight="800" font-size="68" fill="${XANH}" textLength="172" lengthAdjust="spacingAndGlyphs">Smile</text>
+<path transform="translate(597 16) scale(0.2)" d="${TIM}" fill="${DO}"/>
+<line x1="205" y1="118" x2="262" y2="118" stroke="${XANH}" stroke-width="3"/><line x1="642" y1="118" x2="699" y2="118" stroke="${XANH}" stroke-width="3"/>
+<text x="452" y="130" text-anchor="middle" font-family="BVP" font-weight="700" font-size="34" fill="${XANH}" textLength="350" lengthAdjust="spacingAndGlyphs">Răng Tốt Sức Khoẻ Tốt</text>
+</svg>`;
+}

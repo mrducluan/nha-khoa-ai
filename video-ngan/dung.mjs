@@ -12,10 +12,13 @@ import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { VIDEO, MIEN_TRU, HOTLINE, SLOGAN } from "./kich-ban.mjs";
-import { HINH, MAU, defs } from "./minh-hoa.mjs";
+import { VIDEO, MIEN_TRU, HOTLINE, SLOGAN, CTA_NUT, CTA_PHU } from "./kich-ban.mjs";
+import { HINH, MAU, defs, logoSvg } from "./minh-hoa.mjs";
 
 const GOC = path.dirname(fileURLToPath(import.meta.url));
+// Logo chính thức: đặt file vào logo/ (png/svg/webp). Có logo → CTA và đầu khung dùng logo thật; chưa có → chữ + biểu tượng răng.
+const LOGO = fs.existsSync(path.join(GOC, "logo")) ? fs.readdirSync(path.join(GOC, "logo")).find((f) => /\.(png|svg|webp|jpe?g)$/i.test(f)) : null;
+const RANG_LOGO = "M-70 40 C-70 8 -32 -2 -12 12 C0 4 12 4 22 12 C40 -2 70 8 70 40 L68 118 C66 160 50 200 34 200 C20 200 16 150 0 150 C-16 150 -20 200 -34 200 C-50 200 -66 160 -68 118 Z";
 const W = 1080, H = 1920;
 const VUNG = { tieuDe: 250, hinh: 490, hinhCao: 640, phuDe: 1190 };
 const TOC_DO = 4.4;        // âm tiết / giây khi chưa có giọng
@@ -165,34 +168,46 @@ tl.fromTo("#${p}-d${i} .w", {opacity:0, filter:"blur(8px)"}, {opacity:1, filter:
   },
 
   cta(c, { p, d, moc }) {
-    const tChip = moc.length > 1 ? moc[1].bd : d * 0.5;
+    const tNut = moc.length > 1 ? moc[1].bd : d * 0.5;
+    const logo = LOGO
+      ? `<img id="${p}-lg" src="assets/logo/${LOGO}" alt="Nha khoa Tâm Đức Smile" style="max-width:640px; max-height:230px; object-fit:contain; background:#FFFFFF; padding:22px 34px; border-radius:36px; box-shadow:0 24px 60px rgba(0,0,0,0.35);" />`
+      : `<div style="background:#FFFFFF; padding:30px 38px; border-radius:40px; box-shadow:0 24px 60px rgba(0,0,0,0.35); line-height:0;">${logoSvg(`${p}-lg`, 720)}</div>`;
     return {
       css: `
-#${p}-logo { position:absolute; left:0; right:0; top:250px; display:flex; flex-direction:column; align-items:center; }
+#${p}-logo { position:absolute; left:0; right:0; top:250px; height:330px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 #${p}-nk { font-size:40px; font-weight:700; color:${MAU.mo}; letter-spacing:0.18em; text-transform:uppercase; margin-top:22px; }
 #${p}-ten { font-size:100px; font-weight:900; color:${MAU.chu}; letter-spacing:-0.02em; line-height:1.05; }
 #${p}-ten span { color:${MAU.ngoc}; }
-#${p}-hot { position:absolute; left:140px; right:140px; top:640px; padding:24px 0 28px; border-radius:40px; background:rgba(255,210,122,0.1); border:3px solid rgba(255,210,122,0.6); text-align:center; }
-#${p}-hot small { display:block; font-size:34px; font-weight:800; color:${MAU.vang}; letter-spacing:0.2em; }
-#${p}-hot b { display:block; font-size:128px; font-weight:900; color:${MAU.vang}; line-height:1.05; letter-spacing:0.01em; text-shadow:0 0 60px rgba(255,210,122,0.35); }
-#${p}-chips { position:absolute; left:90px; right:90px; top:895px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
+#${p}-nut { position:absolute; left:130px; right:130px; top:630px; height:170px; border-radius:85px; background:linear-gradient(180deg, #FFE09A, ${MAU.vang}); box-shadow:0 20px 50px rgba(255,210,122,0.35), inset 0 -6px 0 rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center; gap:26px; }
+#${p}-nut b { font-size:70px; font-weight:900; color:${MAU.nen}; letter-spacing:0.01em; }
+#${p}-song { position:absolute; left:130px; right:130px; top:630px; height:170px; border-radius:85px; border:5px solid ${MAU.vang}; opacity:0; }
+#${p}-phu { position:absolute; left:90px; right:90px; top:826px; text-align:center; font-size:40px; font-weight:800; color:${MAU.chu}; }
+#${p}-tay { position:absolute; left:880px; top:676px; width:120px; height:140px; }
+#${p}-chips { position:absolute; left:90px; right:90px; top:905px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
 #${p}-chips .chip { font-size:32px; padding:12px 26px; }
-#${p}-mt { position:absolute; left:110px; right:110px; top:${c.chip.length > 2 ? 1062 : 1000}px; text-align:center; font-size:27px; line-height:1.35; color:${MAU.nhat}; font-weight:600; }`,
+#${p}-hot { position:absolute; left:0; right:0; top:${c.chip.length > 2 ? 1046 : 990}px; text-align:center; font-size:32px; font-weight:800; color:${MAU.mo}; }
+#${p}-hot span { color:${MAU.vang}; }
+#${p}-mt { position:absolute; left:110px; right:110px; top:${c.chip.length > 2 ? 1092 : 1036}px; text-align:center; font-size:26px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
       html: `
-<div id="${p}-logo"><svg width="130" height="130" viewBox="0 0 130 130"><circle cx="65" cy="65" r="60" fill="rgba(79,224,200,0.14)" stroke="${MAU.ngoc}" stroke-width="4"/>
-<path transform="translate(65 34) scale(0.36)" d="M-70 40 C-70 8 -32 -2 -12 12 C0 4 12 4 22 12 C40 -2 70 8 70 40 L68 118 C66 160 50 200 34 200 C20 200 16 150 0 150 C-16 150 -20 200 -34 200 C-50 200 -66 160 -68 118 Z" fill="#FFFFFF"/></svg>
-<div id="${p}-nk">Nha khoa</div><div id="${p}-ten">Tâm Đức <span>Smile</span></div></div>
-<div id="${p}-hot"><small>HOTLINE ĐẶT LỊCH</small><b>${esc(HOTLINE)}</b></div>
+<div id="${p}-logo">${logo}</div>
+<div id="${p}-song"></div>
+<div id="${p}-nut"><svg width="78" height="78" viewBox="0 0 78 78"><path d="M39 6 C20 6 6 19 6 35 C6 44 10 51 17 56 L14 72 L30 63 C33 64 36 64 39 64 C58 64 72 51 72 35 C72 19 58 6 39 6 Z" fill="${MAU.nen}"/><circle cx="25" cy="35" r="5" fill="${MAU.vang}"/><circle cx="39" cy="35" r="5" fill="${MAU.vang}"/><circle cx="53" cy="35" r="5" fill="${MAU.vang}"/></svg><b>${esc(CTA_NUT)}</b></div>
+<div id="${p}-phu">${esc(CTA_PHU)}</div>
+<svg id="${p}-tay" viewBox="0 0 120 140"><path d="M44 8 C52 8 56 14 56 22 L56 62 L60 62 L60 50 C60 43 72 43 72 50 L72 64 L76 64 L76 56 C76 49 88 49 88 56 L88 70 L92 70 L92 64 C92 57 104 57 104 64 L104 100 C104 122 90 134 70 134 L58 134 C44 134 36 126 28 114 L10 86 C6 79 15 72 22 78 L32 90 L32 22 C32 14 36 8 44 8 Z" fill="#FFFFFF" stroke="${MAU.nen}" stroke-width="6" stroke-linejoin="round"/></svg>
 <div id="${p}-chips">${c.chip.map((s, i) => `<span class="chip" id="${p}-c${i}">${esc(s)}</span>`).join("")}</div>
+<div id="${p}-hot">Hotline <span>${esc(HOTLINE)}</span></div>
 <div id="${p}-mt">${esc(MIEN_TRU)}</div>`,
       js: `
-tl.fromTo("#${p}-logo svg", {opacity:0, scale:0.6, rotation:-25}, {opacity:1, scale:1, rotation:0, duration:0.7, ease:"expo.out"}, 0.05);
-tl.fromTo(["#${p}-nk", "#${p}-ten"], {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, stagger:0.12, ease:"expo.out"}, 0.3);
-tl.fromTo("#${p}-hot", {opacity:0, scale:1.2, filter:"blur(14px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:0.45, ease:"expo.out"}, 0.6);
-tl.to("#${p}-hot b", {scale:1.06, duration:0.4, yoyo:true, repeat:3, ease:"sine.inOut"}, ${r3(Math.max(1.2, tChip + 1.2))});
-tl.fromTo("#${p}-chips .chip", {opacity:0, y:24, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.35, stagger:0.12, ease:"back.out(1.7)"}, 0.9);
-tl.fromTo("#${p}-mt", {opacity:0}, {opacity:1, duration:0.4}, 1.4);`,
-      sfx: [{ f: "sparkle", t: 0.3, v: 0.5 }, { f: "impact-bass-1", t: 0.7, v: 0.35 }],
+tl.fromTo("#${p}-logo", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.6, ease:"expo.out"}, 0.05);
+tl.fromTo("#${p}-nut", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2)"}, 0.5);
+tl.fromTo("#${p}-phu", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"expo.out"}, 0.8);
+tl.fromTo("#${p}-chips .chip", {opacity:0, y:24, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.35, stagger:0.12, ease:"back.out(1.7)"}, 1.0);
+tl.fromTo(["#${p}-hot", "#${p}-mt"], {opacity:0}, {opacity:1, duration:0.4}, 1.4);
+tl.fromTo("#${p}-tay", {opacity:0, x:120, y:120}, {opacity:1, x:0, y:0, duration:0.5, ease:"power3.out"}, ${r3(tNut)});
+${[0, 1, 2].map((k) => `tl.to("#${p}-tay", {scale:0.86, duration:0.12, yoyo:true, repeat:1, transformOrigin:"40% 10%"}, ${r3(tNut + 0.6 + k * 1.1)});
+tl.to("#${p}-nut", {scale:0.95, duration:0.12, yoyo:true, repeat:1}, ${r3(tNut + 0.6 + k * 1.1)});
+tl.fromTo("#${p}-song", {opacity:0.9, scale:1}, {opacity:0, scale:1.18, duration:0.7, ease:"power2.out", immediateRender:false}, ${r3(tNut + 0.66 + k * 1.1)});`).join("\n")}`,
+      sfx: [{ f: "sparkle", t: 0.3, v: 0.5 }, { f: "pop", t: 0.55, v: 0.4 }, ...[0, 1, 2].map((k) => ({ f: "click-soft", t: tNut + 0.6 + k * 1.1, v: 0.5 }))],
     };
   },
 };
@@ -343,7 +358,7 @@ ${PHONG}
   <div id="nen-day"></div>
   <svg id="nen-bot" viewBox="0 0 ${W} ${H}">${bot}</svg>
   <svg id="nen-lap" viewBox="0 0 ${W} ${H}">${lap}</svg>
-  <div id="nen-hieu"><svg width="40" height="44" viewBox="-75 -5 150 210"><path d="M-70 40 C-70 8 -32 -2 -12 12 C0 4 12 4 22 12 C40 -2 70 8 70 40 L68 118 C66 160 50 200 34 200 C20 200 16 150 0 150 C-16 150 -20 200 -34 200 C-50 200 -66 160 -68 118 Z" fill="${MAU.ngoc}"/></svg>Tâm Đức Smile <i>${esc(video.nhom)}</i></div>
+  ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:58px; background:#FFFFFF; padding:6px 14px; border-radius:14px;" /><i>${esc(video.nhom)}</i></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 250)}</span><i>${esc(video.nhom)}</i></div>`}
   <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
 </div></div>
 <script>
@@ -369,6 +384,7 @@ function dung(video) {
   for (const d of ["compositions", "assets/fonts", "assets/sfx", "assets/giong", "assets/nhac"]) fs.mkdirSync(path.join(thu, d), { recursive: true });
   for (const f of fs.readdirSync(path.join(GOC, "phong"))) if (f.endsWith(".ttf")) fs.copyFileSync(path.join(GOC, "phong", f), path.join(thu, "assets/fonts", f));
   fs.copyFileSync(path.join(GOC, "node_modules/gsap/dist/gsap.min.js"), path.join(thu, "assets/gsap.min.js"));
+  if (LOGO) { fs.mkdirSync(path.join(thu, "assets/logo"), { recursive: true }); fs.copyFileSync(path.join(GOC, "logo", LOGO), path.join(thu, "assets/logo", LOGO)); }
 
   const hosts = [], sfx = [], giong = [];
   for (const s of lich) {

@@ -14,6 +14,8 @@
 
 export const THUONG_HIEU = "Nha khoa Tâm Đức Smile";
 export const HOTLINE = "1900 8040";
+export const CTA_NUT = "INBOX ĐẶT LỊCH";
+export const CTA_PHU = "Gặp bác sĩ tư vấn riêng cho bạn";
 export const SLOGAN = "Răng tốt – Sức khỏe tốt";
 export const MIEN_TRU = "Thông tin tham khảo. Chỉ định điều trị cần bác sĩ thăm khám trực tiếp.";
 
@@ -98,11 +100,11 @@ export const VIDEO = [
         chip: ["Khám & chụp phim", "Tư vấn phương án", "Đặt lịch trước"],
         noi: [
           "[cheerfully] Bạn mất răng bao lâu rồi? Comment cho mình biết, bác sĩ Tâm Đức Smile sẽ giải đáp nha!",
-          "[excited] Hoặc gọi một chín không không, tám không bốn không để đặt lịch thăm khám.",
+          "[excited] Hoặc inbox Tâm Đức Smile, đặt lịch để bác sĩ chụp phim, xem xương hàm của bạn nha!",
         ],
         phu_de: [
           "Bạn mất răng bao lâu rồi? Comment cho mình biết, bác sĩ *Tâm Đức Smile* sẽ giải đáp nha!",
-          "Hoặc gọi *1900 8040* để đặt lịch thăm khám.",
+          "Hoặc *inbox Tâm Đức Smile*, đặt lịch để bác sĩ chụp phim, xem xương hàm của bạn nha!",
         ],
       },
     ],
@@ -181,11 +183,11 @@ export const VIDEO = [
         chip: ["Giải thích từng hạng mục", "Khám & chụp phim", "Đặt lịch trước"],
         noi: [
           "[cheerfully] Gửi video này cho người nhà đang tính làm Implant nha!",
-          "[excited] Muốn được giải thích rõ từng hạng mục, gọi Tâm Đức Smile, một chín không không, tám không bốn không.",
+          "[excited] Inbox Tâm Đức Smile để đặt lịch, bác sĩ giải thích rõ từng hạng mục trước khi bạn quyết định.",
         ],
         phu_de: [
           "Gửi video này cho *người nhà* đang tính làm Implant nha!",
-          "Muốn được giải thích rõ từng hạng mục, gọi Tâm Đức Smile *1900 8040*.",
+          "*Inbox Tâm Đức Smile* để đặt lịch, bác sĩ giải thích rõ *từng hạng mục* trước khi bạn quyết định.",
         ],
       },
     ],
@@ -269,12 +271,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Khám tổng quát", "Tư vấn phương án", "Đặt lịch cho ba mẹ"],
         noi: [
-          "[cheerfully] Tag anh chị em vào đây, cuối tuần mình đưa mẹ đi khám nha!",
-          "[excited] Gọi Tâm Đức Smile, một chín không không, tám không bốn không, để đặt lịch cho mẹ.",
+          "[cheerfully] Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nha!",
+          "[excited] Inbox Tâm Đức Smile, đặt lịch cho mẹ gặp bác sĩ tư vấn nha!",
         ],
         phu_de: [
-          "*Tag anh chị em* vào đây, cuối tuần mình đưa mẹ đi khám nha!",
-          "Gọi Tâm Đức Smile *1900 8040* để đặt lịch cho mẹ.",
+          "*Gửi video này cho anh chị em*, cuối tuần mình cùng đưa mẹ đi khám nha!",
+          "*Inbox Tâm Đức Smile*, đặt lịch cho mẹ *gặp bác sĩ tư vấn* nha!",
         ],
       },
     ],
@@ -354,11 +356,11 @@ export const VIDEO = [
         chip: ["Khám & tư vấn", "Đúng chỉ định", "Đặt lịch trước"],
         noi: [
           "[mischievously] Răng bạn đang gặp chuyện gì? Comment để bác sĩ giải đáp nha!",
-          "[excited] Hoặc gọi một chín không không, tám không bốn không để đặt lịch thăm khám.",
+          "[excited] Hoặc inbox Tâm Đức Smile, đặt lịch để bác sĩ xem răng và tư vấn đúng cách cho bạn.",
         ],
         phu_de: [
           "Răng bạn đang gặp chuyện gì? *Comment* để bác sĩ giải đáp nha!",
-          "Hoặc gọi *1900 8040* để đặt lịch thăm khám.",
+          "Hoặc *inbox Tâm Đức Smile*, đặt lịch để bác sĩ xem răng và *tư vấn đúng cách* cho bạn.",
         ],
       },
     ],
@@ -431,11 +433,11 @@ export const VIDEO = [
         chip: ["Kiểm tra răng sứ cũ", "Tìm đúng nguyên nhân", "Đặt lịch trước"],
         noi: [
           "[cheerfully] Răng sứ của bạn làm được mấy năm rồi? Comment cho mình biết nha!",
-          "[excited] Muốn kiểm tra răng sứ cũ, gọi Tâm Đức Smile, một chín không không, tám không bốn không.",
+          "[excited] Inbox Tâm Đức Smile, đặt lịch để bác sĩ kiểm tra răng sứ cũ cho bạn nha.",
         ],
         phu_de: [
           "Răng sứ của bạn làm được *mấy năm* rồi? Comment cho mình biết nha!",
-          "Muốn kiểm tra răng sứ cũ, gọi Tâm Đức Smile *1900 8040*.",
+          "*Inbox Tâm Đức Smile*, đặt lịch để bác sĩ *kiểm tra răng sứ cũ* cho bạn nha.",
         ],
       },
     ],
@@ -518,11 +520,11 @@ export const VIDEO = [
         chip: ["A · Trắng sáng", "B · Tự nhiên"],
         noi: [
           "[mischievously] Bạn thích trắng sáng hay tự nhiên? Comment A hoặc B nha!",
-          "[excited] Muốn được tư vấn nụ cười, gọi Tâm Đức Smile, một chín không không, tám không bốn không.",
+          "[excited] Inbox Tâm Đức Smile, đặt lịch để bác sĩ tư vấn nụ cười hợp với riêng bạn!",
         ],
         phu_de: [
           "Bạn thích *trắng sáng* hay *tự nhiên*? Comment *A* hoặc *B* nha!",
-          "Muốn được tư vấn nụ cười, gọi Tâm Đức Smile *1900 8040*.",
+          "*Inbox Tâm Đức Smile*, đặt lịch để bác sĩ tư vấn *nụ cười hợp với riêng bạn*!",
         ],
       },
     ],
