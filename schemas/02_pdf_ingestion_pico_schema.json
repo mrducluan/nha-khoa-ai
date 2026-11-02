@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DentalAcademicPDFIngestionSchema",
+  "description": "Chuẩn hóa bóc tách tài liệu PDF Nha khoa (ADA, ITI, FDI, CGDent, Springer) vào PostgreSQL Golden Hybrid RAG",
+  "type": "object",
+  "required": [
+    "source_metadata",
+    "protocol_core",
+    "pico_evidence_matrix",
+    "clinical_execution_payload",
+    "contextualized_child_chunks"
+  ],
+  "properties": {
+    "source_metadata": {
+      "type": "object",
+      "required": ["organization_code", "authority_tier", "document_title", "publication_year", "evidence_level", "doi_or_pmid"],
+      "properties": {
+        "organization_code": {
+          "type": "string",
+          "enum": ["ADA", "ITI", "FDI", "CGDent", "EFP", "AAP", "EAO", "AAID", "ICOI", "SPRINGER_COI", "SPRINGER_PIR", "COCHRANE", "PUBMED_NCBI", "WILEY", "ELSEVIER"]
+        },
+        "authority_tier": {
+          "type": "string",
+          "enum": ["TIER_1_GOLD_STANDARD", "TIER_2_INTERNATIONAL_GUIDE", "TIER_3_PEER_REVIEWED"]
+        },
+        "document_title": { "type": "string" },
+        "authors_or_committee": { "type": "string" },
+        "publication_year": { "type": "integer", "minimum": 2000, "maximum": 2026 },
+        "journal_or_series": { "type": "string" },
+        "doi_or_pmid": { "type": "string" },
+        "evidence_level": {
+          "type": "string",
+          "enum": ["1A_SYSTEMATIC_REVIEW_META", "1B_HIGH_QUALITY_RCT", "2A_COHORT_STUDY", "2B_CASE_CONTROL", "CONSENSUS_GUIDELINE"]
+        },
+        "grade_of_recommendation": { "type": "string" }
+      }
+    },
+    "protocol_core": {
+      "type": "object",
+      "required": ["primary_specialty", "protocol_title", "clinical_topic_slug"],
+      "properties": {
+        "primary_specialty": {
+          "type": "string",
+          "enum": ["IMPLANTOLOGY", "PERIODONTOLOGY", "ORTHODONTICS", "ESTHETIC_PROSTHODONTICS", "GENERAL_OMFS_ENDODONTICS"]
+        },
+        "protocol_title": { "type": "string" },
+        "clinical_topic_slug": {
+          "type": "string",
+          "description": "Chuỗi định danh chủ đề lâm sàng để gom nhóm đối chiếu giữa ADA/ITI và CGDent/EFP (VD: immediate-implant-esthetic-zone)"
+        }
+      }
+    },
+    "pico_evidence_matrix": {
+      "type": "object",
+      "required": ["P_population_problem", "I_intervention", "C_comparison", "O_outcome_metrics"],
+      "properties": {
+        "P_population_problem": { "type": "string" },
+        "I_intervention": { "type": "string" },
+        "C_comparison": { "type": "string" },
+        "O_outcome_metrics": { "type": "string" }
+      }
+    },
+    "clinical_execution_payload": {
+      "type": "object",
+      "required": [
+        "pathophysiology_mechanism",
+        "indications",
+        "contraindications_absolute",
+        "contraindications_relative",
+        "step_by_step_procedure",
+        "complications_and_management",
+        "educational_pearls_for_residents",
+        "patient_friendly_translation"
+      ],
+      "properties": {
+        "pathophysiology_mechanism": { "type": "string" },
+        "indications": { "type": "array", "items": { "type": "string" } },
+        "contraindications_absolute": { "type": "array", "items": { "type": "string" } },
+        "contraindications_relative": { "type": "array", "items": { "type": "string" } },
+        "step_by_step_procedure": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["step", "phase_name", "clinical_action", "technical_parameters"],
+            "properties": {
+              "step": { "type": "integer" },
+              "phase_name": { "type": "string" },
+              "clinical_action": { "type": "string" },
+              "technical_parameters": { "type": "string" }
+            }
+          }
+        },
+        "complications_and_management": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["complication", "prevention", "management_protocol"],
+            "properties": {
+              "complication": { "type": "string" },
+              "prevention": { "type": "string" },
+              "management_protocol": { "type": "string" }
+            }
+          }
+        },
+        "educational_pearls_for_residents": {
+          "type": "object",
+          "required": ["common_pitfalls", "clinical_decision_tips"],
+          "properties": {
+            "common_pitfalls": { "type": "array", "items": { "type": "string" } },
+            "clinical_decision_tips": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "patient_friendly_translation": {
+          "type": "object",
+          "required": ["what_is_it", "why_needed", "what_to_expect", "home_care_instructions"],
+          "properties": {
+            "what_is_it": { "type": "string" },
+            "why_needed": { "type": "string" },
+            "what_to_expect": { "type": "string" },
+            "home_care_instructions": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "contextualized_child_chunks": {
+      "type": "array",
+      "description": "Mỗi chunk bắt buộc phải có tiền tố [HEADER NGỮ CẢNH AN TOÀN LÂM SÀNG] trước khi tạo Embedding",
+      "items": {
+        "type": "object",
+        "required": ["chunk_section_type", "contextualized_text"],
+        "properties": {
+          "chunk_section_type": {
+            "type": "string",
+            "enum": ["INDICATION_CONTRA", "PROCEDURE_PARAMS", "PICO_OUTCOME", "COMPLICATION", "PATIENT_FAQ"]
+          },
+          "contextualized_text": {
+            "type": "string",
+            "pattern": "^\\[CHUYÊN KHOA: .+ \\| NGUỒN: .+ \\| CHỐNG CHỈ ĐỊNH CỐT LÕI: .+\\] .+"
+          }
+        }
+      }
+    }
+  }
+}
