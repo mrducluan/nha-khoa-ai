@@ -48,6 +48,7 @@ const CHUNG = `${PHONG}
 .tde .w { display: inline-block; }
 .nho { position: absolute; left: 110px; right: 110px; text-align: center; font-weight: 700; font-size: 44px; line-height: 1.3; color: ${MAU.mo}; }
 .hinh { position: absolute; left: 90px; top: ${VUNG.hinh}px; width: 900px; height: ${VUNG.hinhCao}px; overflow: visible; }
+.quang { position: absolute; left: 190px; top: ${VUNG.hinh + 40}px; width: 700px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, rgba(108,196,255,0.28), rgba(79,224,200,0.10) 55%, rgba(79,224,200,0) 100%); opacity: 0; }
 .chip { display: inline-block; padding: 14px 30px; border-radius: 999px; background: rgba(79,224,200,0.12); border: 2px solid rgba(79,224,200,0.6); color: ${MAU.ngoc}; font-weight: 800; font-size: 36px; white-space: nowrap; }
 `;
 
@@ -86,8 +87,13 @@ const KIEU = {
     const td = tieuDe(x.p, c.tieu_de, x.dau);
     return {
       css: "",
-      html: `${td.html}<svg id="${x.p}-svg" class="hinh" viewBox="0 0 900 640">${defs(x.p)}${h.svg}</svg>`,
-      js: `tl.fromTo("#${x.p}-svg", {opacity:${x.dau ? 1 : 0}, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out"}, 0.05);${td.js}\n${h.js}`,
+      // Quầng sáng sau hình + máy quay đẩy chậm (Ken Burns) + ánh kim quét qua trụ Implant.
+      html: `${td.html}<div id="${x.p}-quang" class="quang"></div><svg id="${x.p}-svg" class="hinh" viewBox="0 0 900 640">${defs(x.p)}${h.svg}</svg>`,
+      js: `tl.fromTo("#${x.p}-svg", {opacity:${x.dau ? 1 : 0}, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out"}, 0.05);
+tl.to("#${x.p}-svg", {scale:1.025, duration:${r3(Math.max(1, x.d - 0.8))}, ease:"none"}, 0.55);
+tl.fromTo("#${x.p}-quang", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.8, ease:"expo.out"}, 0.05);
+tl.to("#${x.p}-quang", {scale:1.12, opacity:0.7, duration:1.8, yoyo:true, repeat:${Math.max(1, Math.floor(x.d / 1.8) - 1)}, ease:"sine.inOut"}, 0.9);
+tl.fromTo(".${x.p}-bong-ti", {x:0}, {x:240, duration:1.4, repeat:${Math.max(0, Math.floor(x.d / 2.4) - 1)}, repeatDelay:1, ease:"power1.inOut"}, 0.8);${td.js}\n${h.js}`,
       sfx: h.sfx ?? [],
     };
   },
@@ -174,35 +180,32 @@ tl.fromTo("#${p}-d${i} .w", {opacity:0, filter:"blur(8px)"}, {opacity:1, filter:
       : `<div style="background:#FFFFFF; padding:30px 38px; border-radius:40px; box-shadow:0 24px 60px rgba(0,0,0,0.35); line-height:0;">${logoSvg(`${p}-lg`, 720)}</div>`;
     return {
       css: `
-#${p}-logo { position:absolute; left:0; right:0; top:250px; height:330px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+#${p}-logo { position:absolute; left:0; right:0; top:240px; height:290px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 #${p}-nk { font-size:40px; font-weight:700; color:${MAU.mo}; letter-spacing:0.18em; text-transform:uppercase; margin-top:22px; }
 #${p}-ten { font-size:100px; font-weight:900; color:${MAU.chu}; letter-spacing:-0.02em; line-height:1.05; }
 #${p}-ten span { color:${MAU.ngoc}; }
-#${p}-nut { position:absolute; left:130px; right:130px; top:630px; height:170px; border-radius:85px; background:linear-gradient(180deg, #FFE09A, ${MAU.vang}); box-shadow:0 20px 50px rgba(255,210,122,0.35), inset 0 -6px 0 rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center; gap:26px; }
+#${p}-nut { position:absolute; left:140px; right:140px; top:600px; height:160px; border-radius:80px; background:linear-gradient(180deg, #FFE09A, ${MAU.vang}); box-shadow:0 20px 50px rgba(255,210,122,0.35), inset 0 -6px 0 rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center; gap:26px; }
 #${p}-nut b { font-size:70px; font-weight:900; color:${MAU.nen}; letter-spacing:0.01em; }
-#${p}-song { position:absolute; left:130px; right:130px; top:630px; height:170px; border-radius:85px; border:5px solid ${MAU.vang}; opacity:0; }
-#${p}-phu { position:absolute; left:90px; right:90px; top:826px; text-align:center; font-size:40px; font-weight:800; color:${MAU.chu}; }
-#${p}-tay { position:absolute; left:880px; top:676px; width:120px; height:140px; }
-#${p}-chips { position:absolute; left:90px; right:90px; top:905px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
+#${p}-song { position:absolute; left:140px; right:140px; top:600px; height:160px; border-radius:80px; border:5px solid ${MAU.vang}; opacity:0; }
+#${p}-phu { position:absolute; left:90px; right:90px; top:796px; text-align:center; font-size:40px; font-weight:800; color:${MAU.chu}; }
+#${p}-tay { position:absolute; left:900px; top:650px; width:120px; height:140px; }
+#${p}-chips { position:absolute; left:90px; right:90px; top:890px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px 16px; }
 #${p}-chips .chip { font-size:32px; padding:12px 26px; }
-#${p}-hot { position:absolute; left:0; right:0; top:${c.chip.length > 2 ? 1046 : 990}px; text-align:center; font-size:32px; font-weight:800; color:${MAU.mo}; }
-#${p}-hot span { color:${MAU.vang}; }
-#${p}-mt { position:absolute; left:110px; right:110px; top:${c.chip.length > 2 ? 1092 : 1036}px; text-align:center; font-size:26px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
+#${p}-mt { position:absolute; left:110px; right:110px; top:1010px; text-align:center; font-size:26px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
       html: `
 <div id="${p}-logo">${logo}</div>
 <div id="${p}-song"></div>
 <div id="${p}-nut"><svg width="78" height="78" viewBox="0 0 78 78"><path d="M39 6 C20 6 6 19 6 35 C6 44 10 51 17 56 L14 72 L30 63 C33 64 36 64 39 64 C58 64 72 51 72 35 C72 19 58 6 39 6 Z" fill="${MAU.nen}"/><circle cx="25" cy="35" r="5" fill="${MAU.vang}"/><circle cx="39" cy="35" r="5" fill="${MAU.vang}"/><circle cx="53" cy="35" r="5" fill="${MAU.vang}"/></svg><b>${esc(CTA_NUT)}</b></div>
 <div id="${p}-phu">${esc(CTA_PHU)}</div>
 <svg id="${p}-tay" viewBox="0 0 120 140"><path d="M44 8 C52 8 56 14 56 22 L56 62 L60 62 L60 50 C60 43 72 43 72 50 L72 64 L76 64 L76 56 C76 49 88 49 88 56 L88 70 L92 70 L92 64 C92 57 104 57 104 64 L104 100 C104 122 90 134 70 134 L58 134 C44 134 36 126 28 114 L10 86 C6 79 15 72 22 78 L32 90 L32 22 C32 14 36 8 44 8 Z" fill="#FFFFFF" stroke="${MAU.nen}" stroke-width="6" stroke-linejoin="round"/></svg>
-<div id="${p}-chips">${c.chip.map((s, i) => `<span class="chip" id="${p}-c${i}">${esc(s)}</span>`).join("")}</div>
-<div id="${p}-hot">Hotline <span>${esc(HOTLINE)}</span></div>
+<div id="${p}-chips">${c.chip.slice(0, 2).map((s, i) => `<span class="chip" id="${p}-c${i}">${esc(s)}</span>`).join("")}</div>
 <div id="${p}-mt">${esc(MIEN_TRU)}</div>`,
       js: `
 tl.fromTo("#${p}-logo", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.6, ease:"expo.out"}, 0.05);
 tl.fromTo("#${p}-nut", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2)"}, 0.5);
 tl.fromTo("#${p}-phu", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"expo.out"}, 0.8);
 tl.fromTo("#${p}-chips .chip", {opacity:0, y:24, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.35, stagger:0.12, ease:"back.out(1.7)"}, 1.0);
-tl.fromTo(["#${p}-hot", "#${p}-mt"], {opacity:0}, {opacity:1, duration:0.4}, 1.4);
+tl.fromTo("#${p}-mt", {opacity:0}, {opacity:1, duration:0.4}, 1.4);
 tl.fromTo("#${p}-tay", {opacity:0, x:120, y:120}, {opacity:1, x:0, y:0, duration:0.5, ease:"power3.out"}, ${r3(tNut)});
 ${[0, 1, 2].map((k) => `tl.to("#${p}-tay", {scale:0.86, duration:0.12, yoyo:true, repeat:1, transformOrigin:"40% 10%"}, ${r3(tNut + 0.6 + k * 1.1)});
 tl.to("#${p}-nut", {scale:0.95, duration:0.12, yoyo:true, repeat:1}, ${r3(tNut + 0.6 + k * 1.1)});
@@ -356,9 +359,10 @@ ${PHONG}
 <div id="root" data-composition-id="nen" data-width="${W}" data-height="${H}">
 <div id="nen-khung" class="clip" data-start="0" data-duration="${tong}" data-layout-ignore>
   <div id="nen-day"></div>
+  <div id="nen-toi" style="position:absolute; inset:0; background: radial-gradient(1300px 1500px at 50% 42%, rgba(0,0,0,0) 55%, rgba(0,6,12,0.55) 100%);"></div>
   <svg id="nen-bot" viewBox="0 0 ${W} ${H}">${bot}</svg>
   <svg id="nen-lap" viewBox="0 0 ${W} ${H}">${lap}</svg>
-  ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:58px; background:#FFFFFF; padding:6px 14px; border-radius:14px;" /><i>${esc(video.nhom)}</i></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 250)}</span><i>${esc(video.nhom)}</i></div>`}
+  ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:58px; background:#FFFFFF; padding:6px 14px; border-radius:14px;" /></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 260)}</span></div>`}
   <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
 </div></div>
 <script>

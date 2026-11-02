@@ -97,7 +97,7 @@ export const VIDEO = [
       },
       {
         id: "cta", loai: "cta",
-        chip: ["Khám & chụp phim", "Tư vấn phương án", "Đặt lịch trước"],
+        chip: ["Khám & chụp phim", "Tư vấn phương án"],
         noi: [
           "[cheerfully] Bạn mất răng bao lâu rồi? Comment cho mình biết, bác sĩ Tâm Đức Smile sẽ giải đáp nha!",
           "[excited] Hoặc inbox Tâm Đức Smile, đặt lịch để bác sĩ chụp phim, xem xương hàm của bạn nha!",
@@ -180,7 +180,7 @@ export const VIDEO = [
       },
       {
         id: "cta", loai: "cta",
-        chip: ["Giải thích từng hạng mục", "Khám & chụp phim", "Đặt lịch trước"],
+        chip: ["Giải thích từng hạng mục", "Khám & chụp phim"],
         noi: [
           "[cheerfully] Gửi video này cho người nhà đang tính làm Implant nha!",
           "[excited] Inbox Tâm Đức Smile để đặt lịch, bác sĩ giải thích rõ từng hạng mục trước khi bạn quyết định.",
@@ -269,7 +269,7 @@ export const VIDEO = [
       },
       {
         id: "cta", loai: "cta",
-        chip: ["Khám tổng quát", "Tư vấn phương án", "Đặt lịch cho ba mẹ"],
+        chip: ["Đặt lịch cho ba mẹ", "Tư vấn phương án"],
         noi: [
           "[cheerfully] Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nha!",
           "[excited] Inbox Tâm Đức Smile, đặt lịch cho mẹ gặp bác sĩ tư vấn nha!",
@@ -353,7 +353,7 @@ export const VIDEO = [
       },
       {
         id: "cta", loai: "cta",
-        chip: ["Khám & tư vấn", "Đúng chỉ định", "Đặt lịch trước"],
+        chip: ["Khám & tư vấn", "Đúng chỉ định"],
         noi: [
           "[mischievously] Răng bạn đang gặp chuyện gì? Comment để bác sĩ giải đáp nha!",
           "[excited] Hoặc inbox Tâm Đức Smile, đặt lịch để bác sĩ xem răng và tư vấn đúng cách cho bạn.",
@@ -430,7 +430,7 @@ export const VIDEO = [
       },
       {
         id: "cta", loai: "cta",
-        chip: ["Kiểm tra răng sứ cũ", "Tìm đúng nguyên nhân", "Đặt lịch trước"],
+        chip: ["Kiểm tra răng sứ cũ", "Tìm đúng nguyên nhân"],
         noi: [
           "[cheerfully] Răng sứ của bạn làm được mấy năm rồi? Comment cho mình biết nha!",
           "[excited] Inbox Tâm Đức Smile, đặt lịch để bác sĩ kiểm tra răng sứ cũ cho bạn nha.",

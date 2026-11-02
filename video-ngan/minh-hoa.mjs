@@ -18,11 +18,11 @@ const moc_ = (moc, d) => (i, f = 0, du = d * 0.5) => (moc[i] ? r3(moc[i].bd + (m
 // ---------------------------------------------------------------- vật liệu chung
 export function defs(p) {
   return `<defs>
-<linearGradient id="${p}en" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9E6F0"/></linearGradient>
+<radialGradient id="${p}en" cx="0.36" cy="0.28" r="0.85"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.45" stop-color="#F4F8FB"/><stop offset="0.8" stop-color="#DCE7F0"/><stop offset="1" stop-color="#C3D3E0"/></radialGradient>
 <linearGradient id="${p}nat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4ECDB"/><stop offset="0.55" stop-color="#FFFDF6"/><stop offset="0.86" stop-color="#F7F7F2"/><stop offset="1" stop-color="#C9DDEB"/></linearGradient>
-<linearGradient id="${p}rt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3E5C8"/><stop offset="1" stop-color="#D8C094"/></linearGradient>
-<linearGradient id="${p}gm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8A9B6"/><stop offset="1" stop-color="#DE6F86"/></linearGradient>
-<linearGradient id="${p}bn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEDDB5"/><stop offset="1" stop-color="#C9AF7C"/></linearGradient>
+<linearGradient id="${p}rt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9C08E"/><stop offset="0.4" stop-color="#F6EAD0"/><stop offset="1" stop-color="#C9AD78"/></linearGradient>
+<linearGradient id="${p}gm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDC0CA"/><stop offset="0.35" stop-color="#F49AAA"/><stop offset="1" stop-color="#C95870"/></linearGradient>
+<linearGradient id="${p}bn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E8C6"/><stop offset="0.5" stop-color="#E6CF9E"/><stop offset="1" stop-color="#BE9F68"/></linearGradient>
 <linearGradient id="${p}ti" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#66737F"/><stop offset="0.42" stop-color="#EEF2F5"/><stop offset="0.7" stop-color="#B5C0CA"/><stop offset="1" stop-color="#5E6A76"/></linearGradient>
 <linearGradient id="${p}moi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F08A8F"/><stop offset="1" stop-color="#C9505E"/></linearGradient>
 <linearGradient id="${p}kl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C555E"/><stop offset="0.5" stop-color="#9AA3AC"/><stop offset="1" stop-color="#4C555E"/></linearGradient>
@@ -30,6 +30,8 @@ export function defs(p) {
 <radialGradient id="${p}ngocSang" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4FE0C8" stop-opacity="0.5"/><stop offset="1" stop-color="#4FE0C8" stop-opacity="0"/></radialGradient>
 <pattern id="${p}xp" width="34" height="30" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="4" fill="rgba(140,105,55,0.22)"/><circle cx="25" cy="22" r="5" fill="rgba(140,105,55,0.16)"/></pattern>
 <filter id="${p}bong" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.38"/></filter>
+<filter id="${p}rb" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#02101A" flood-opacity="0.45"/></filter>
+<linearGradient id="${p}bl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.85"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
 <filter id="${p}mo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
 </defs>`;
 }
@@ -42,14 +44,18 @@ const ROOT = "M-50 140 C-54 200 -46 258 -32 288 C-22 306 -8 296 -6 268 L-2 190 C
 function rangHam(p, id, x, y, s, { up = false, chanRang = true, vien = false } = {}) {
   return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s} ${up ? -s : s})">
   ${chanRang ? `<path d="${ROOT}" fill="url(#${p}rt)" stroke="#BFA678" stroke-width="2"/>` : ""}
-  <path d="${CROWN}" fill="url(#${p}en)" stroke="${vien ? "#FFFFFF" : "#BCCDDA"}" stroke-width="${vien ? 4 : 2}"/>
-  <path d="M-50 34 C-48 20 -34 16 -24 24" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="${CROWN}" fill="url(#${p}en)" stroke="${vien ? "#FFFFFF" : "#B5C7D6"}" stroke-width="${vien ? 4 : 2}" filter="url(#${p}rb)"/>
+  <path d="M-34 30 Q0 52 36 30" stroke="#B9CCDB" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M-52 40 C-50 20 -36 14 -24 22" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <ellipse cx="40" cy="60" rx="8" ry="22" fill="#FFFFFF" opacity="0.55"/>
 </g></g>`;
 }
 function maoSu(p, id, x, y, s) {
   return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})">
-  <path d="${CROWN}" fill="url(#${p}en)" stroke="#BCCDDA" stroke-width="2"/>
-  <path d="M-50 34 C-48 20 -34 16 -24 24" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="${CROWN}" fill="url(#${p}en)" stroke="#B5C7D6" stroke-width="2" filter="url(#${p}rb)"/>
+  <path d="M-34 30 Q0 52 36 30" stroke="#B9CCDB" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M-52 40 C-50 20 -36 14 -24 22" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <ellipse cx="40" cy="60" rx="8" ry="22" fill="#FFFFFF" opacity="0.55"/>
 </g></g>`;
 }
 /** Trụ Implant: (x, y) = mép trên của trụ. */
@@ -61,6 +67,8 @@ function truImplant(p, id, x, y, s) {
   return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})">
   <path d="M-45 0 L45 0 L33 215 Q0 250 -33 215 Z" fill="url(#${p}ti)" stroke="#55616C" stroke-width="2"/>${ren}
   <rect x="-42" y="-10" width="84" height="14" rx="5" fill="#CBD4DC" stroke="#55616C" stroke-width="2"/>
+  <clipPath id="${id}-cl"><path d="M-45 0 L45 0 L33 215 Q0 250 -33 215 Z"/></clipPath>
+  <g clip-path="url(#${id}-cl)"><rect class="${p}-bong-ti" x="-120" y="-20" width="40" height="300" fill="url(#${p}bl)" transform="rotate(12)"/></g>
 </g></g>`;
 }
 /** Khớp nối (abutment): (x, y) = đáy khớp nối. */
