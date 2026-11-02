@@ -62,7 +62,9 @@ Vì vậy dữ liệu đầu vào phải chính xác.
   **chưa có phác đồ** gắn với chúng. Hiện các nguồn này chỉ được nhắc tên trong mục đối chiếu.
   Mỗi nguồn nên có một phác đồ riêng (dùng schema 02 và quy trình `ingest` → `review approve`).
 - Chuyên khoa `GENERAL_OMFS_ENDODONTICS` chưa có phác đồ nào. Đây là nhóm bệnh nhân hỏi nhiều nhất (răng khôn, sâu răng, viêm tuỷ).
-  File mẫu `data/examples/mau_sau_rang_fluoride_ADA2018.json` minh hoạ cách bổ sung.
+  Đã có sẵn 3 bản nháp chờ bác sĩ duyệt:
+  - sâu răng không xâm lấn (`data/examples/`, ADA 2018);
+  - đau răng/kháng sinh (ADA 2019) và răng khôn mọc ngầm (Cochrane 2020), trong `data/knowledge_drafts/`.
 
 ## D. Góp ý cho system prompt (file 04)
 

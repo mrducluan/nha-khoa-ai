@@ -1,0 +1,79 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn từ hiểu biết về hướng dẫn gốc — BẮT BUỘC bác sĩ đối chiếu nguyên văn (đặc biệt bảng khuyến nghị theo từng tình huống và phác đồ liều) trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "ADA",
+    "authority_tier": "TIER_1_GOLD_STANDARD",
+    "document_title": "Evidence-based clinical practice guideline on antibiotic use for the urgent management of pulpal- and periapical-related dental pain and intraoral swelling: A report from the American Dental Association",
+    "authors_or_committee": "Lockhart PB, Tampi MP, Abt E et al. (ADA Council on Scientific Affairs & ADA Science Institute)",
+    "publication_year": 2019,
+    "journal_or_series": "Journal of the American Dental Association (JADA)",
+    "doi_or_pmid": "10.1016/j.adaj.2019.08.020",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "Conditional"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Phác đồ Xử trí Cấp cứu Đau răng do Tuỷ – Cuống răng và Sưng trong miệng: Khi nào KHÔNG và KHI NÀO cần Kháng sinh (ADA 2019)",
+    "clinical_topic_slug": "antibiotic-use-pulpal-periapical-dental-pain-swelling"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn có miễn dịch bình thường bị đau răng nguồn gốc tuỷ/cuống răng hoặc sưng khu trú trong miệng: viêm tuỷ không hồi phục có triệu chứng (± viêm quanh cuống có triệu chứng), hoại tử tuỷ kèm viêm quanh cuống có triệu chứng hoặc áp xe cuống cấp khu trú.",
+    "I_intervention": "Kháng sinh toàn thân dùng kèm hoặc thay cho điều trị nha khoa dứt điểm bảo tồn (DCDT: lấy tuỷ buồng, lấy tuỷ toàn phần, rạch dẫn lưu, nhổ răng).",
+    "C_comparison": "Chỉ điều trị nha khoa dứt điểm (DCDT) và/hoặc thuốc giảm đau, không dùng kháng sinh.",
+    "O_outcome_metrics": "Bằng chứng (chất lượng rất thấp) không cho thấy kháng sinh giúp giảm đau hay sưng có ý nghĩa ở bệnh nhân không có dấu hiệu toàn thân, trong khi làm tăng nguy cơ tác dụng phụ, phản ứng dị ứng, nhiễm C. difficile và kháng kháng sinh. Hướng dẫn khuyến nghị (có điều kiện) KHÔNG dùng kháng sinh cho đa số tình huống trên; ưu tiên điều trị nha khoa dứt điểm."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Đau do viêm tuỷ không hồi phục là phản ứng viêm trong buồng tuỷ kín — nguồn gây đau nằm trong mô tuỷ nên kháng sinh toàn thân hầu như không tới được và không giải quyết nguyên nhân. Với hoại tử tuỷ và áp xe cuống khu trú, ổ nhiễm khuẩn không có tuần hoàn máu; loại bỏ nguồn nhiễm (mở tuỷ, dẫn lưu, nhổ răng) là biện pháp quyết định. Kháng sinh chỉ có vai trò khi nhiễm trùng lan rộng hoặc có biểu hiện toàn thân.",
+    "indications": [
+      "Viêm tuỷ không hồi phục có triệu chứng (± viêm quanh cuống có triệu chứng): KHÔNG dùng kháng sinh — điều trị dứt điểm (lấy tuỷ/nhổ răng) và giảm đau",
+      "Hoại tử tuỷ kèm viêm quanh cuống có triệu chứng hoặc áp xe cuống cấp khu trú, có thể điều trị dứt điểm ngay: KHÔNG dùng kháng sinh — mở tuỷ, rạch dẫn lưu hoặc nhổ răng",
+      "Khi chưa thể điều trị dứt điểm ngay: hướng dẫn có các khuyến nghị riêng cho từng tình huống (bao gồm phương án đơn kháng sinh trì hoãn) — đối chiếu bảng khuyến nghị gốc",
+      "CÓ chỉ định kháng sinh kèm điều trị dứt điểm khi có biểu hiện toàn thân: sốt, mệt mỏi, sưng hạch, khít hàm, sưng lan rộng"
+    ],
+    "contraindications_absolute": [
+      "Kê kháng sinh thay thế cho điều trị nha khoa dứt điểm khi có thể thực hiện được",
+      "Dùng nhóm penicillin/amoxicillin cho bệnh nhân có tiền sử phản vệ, phù mạch hoặc mày đay với penicillin"
+    ],
+    "contraindications_relative": [
+      "Bệnh nhân suy giảm miễn dịch hoặc bệnh lý toàn thân nặng: nằm ngoài phạm vi khuyến nghị — cần đánh giá cá thể hoá, có thể phối hợp bác sĩ chuyên khoa"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Chẩn đoán tuỷ – cuống răng", "clinical_action": "Hỏi bệnh, thử tuỷ, gõ, sờ, phim X-quang để phân biệt viêm tuỷ không hồi phục, hoại tử tuỷ, viêm quanh cuống, áp xe khu trú hay lan toả.", "technical_parameters": "Ghi nhận dấu hiệu toàn thân: nhiệt độ, hạch, khít hàm, sưng lan; dấu hiệu nguy hiểm: khó thở, khó nuốt, sưng sàn miệng/cổ"},
+      {"step": 2, "phase_name": "Điều trị nha khoa dứt điểm (DCDT)", "clinical_action": "Lấy tuỷ buồng/lấy tuỷ toàn phần, rạch dẫn lưu áp xe hoặc nhổ răng tuỳ chẩn đoán và khả năng bảo tồn.", "technical_parameters": "Là biện pháp ưu tiên trong mọi tình huống; kèm thuốc giảm đau theo hướng dẫn"},
+      {"step": 3, "phase_name": "Quyết định kháng sinh", "clinical_action": "Chỉ kê kháng sinh khi có biểu hiện toàn thân hoặc nhiễm trùng lan; không kê cho viêm tuỷ không hồi phục.", "technical_parameters": "Lựa chọn đầu tay: amoxicillin 500 mg uống 3 lần/ngày hoặc penicillin V kali 500 mg uống 4 lần/ngày, thời gian 3–7 ngày; đánh giá lại sau khoảng 3 ngày (đối chiếu liều và phương án thay thế khi dị ứng trong hướng dẫn gốc)"},
+      {"step": 4, "phase_name": "Chuyển tuyến khẩn", "clinical_action": "Chuyển cấp cứu/phẫu thuật hàm mặt ngay khi nghi nhiễm trùng lan vào các khoang mạc.", "technical_parameters": "Dấu hiệu: khó thở, khó nuốt, sưng lan nhanh vùng cổ/sàn miệng/quanh mắt, sốt cao, tình trạng toàn thân xấu"},
+      {"step": 5, "phase_name": "Tái đánh giá", "clinical_action": "Hẹn tái khám/liên hệ lại để đánh giá đáp ứng và hoàn tất điều trị.", "technical_parameters": "Nếu đã dùng kháng sinh: đánh giá lại sau khoảng 3 ngày"}
+    ],
+    "complications_and_management": [
+      {"complication": "Tác dụng phụ của kháng sinh (tiêu chảy, dị ứng, nhiễm C. difficile) và kháng kháng sinh", "prevention": "Không kê kháng sinh khi không có chỉ định; khai thác kỹ tiền sử dị ứng", "management_protocol": "Ngừng thuốc, xử trí theo mức độ; hướng dẫn bệnh nhân quay lại khi tiêu chảy kéo dài hoặc có máu"},
+      {"complication": "Nhiễm trùng lan toả vùng hàm mặt – cổ (viêm mô tế bào, Ludwig)", "prevention": "Điều trị nguồn nhiễm sớm; nhận diện sớm dấu hiệu toàn thân", "management_protocol": "Chuyển cấp cứu/phẫu thuật hàm mặt ngay; kháng sinh kết hợp dẫn lưu ngoại khoa; đảm bảo đường thở"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Kê kháng sinh cho đau do viêm tuỷ không hồi phục — không giảm đau và góp phần kháng kháng sinh",
+        "Dùng kháng sinh để 'hoãn' điều trị dứt điểm thay vì loại bỏ nguồn nhiễm"
+      ],
+      "clinical_decision_tips": [
+        "Câu hỏi quyết định: có biểu hiện TOÀN THÂN hoặc lan rộng không? Không có → điều trị dứt điểm, không cần kháng sinh",
+        "Kiểm soát đau bằng thuốc giảm đau phù hợp quan trọng hơn kháng sinh trong đau răng cấp"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Đau răng dữ dội thường do dây thần kinh trong răng (tuỷ) bị viêm hoặc chết, đôi khi kèm ổ mủ ở chân răng.",
+      "why_needed": "Thuốc kháng sinh KHÔNG chữa được đau răng do viêm tuỷ. Cách hiệu quả là bác sĩ xử lý tận gốc: lấy tuỷ, tháo mủ hoặc nhổ răng. Uống kháng sinh không cần thiết còn gây tác dụng phụ và làm vi khuẩn kháng thuốc.",
+      "what_to_expect": "Bác sĩ sẽ khám, chụp phim rồi xử lý răng đau ngay trong buổi hẹn — thường đỡ đau rõ sau đó. Kháng sinh chỉ được kê khi nhiễm trùng lan rộng hoặc có sốt, sưng to.",
+      "home_care_instructions": [
+        "Dùng thuốc giảm đau theo hướng dẫn của bác sĩ/dược sĩ, không tự ý mua kháng sinh uống",
+        "Đi khám nha khoa sớm, không chờ đến khi sưng to",
+        "Đến cấp cứu NGAY nếu sưng lan xuống cổ hoặc lên mắt, sốt cao, khó thở hoặc khó nuốt"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: ADA 2019 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không thay điều trị dứt điểm bằng kháng sinh; không dùng penicillin khi có tiền sử phản vệ] Đau răng, nhức răng, sưng nướu có mủ có cần uống kháng sinh không? Đa số trường hợp đau răng do viêm tuỷ không cần kháng sinh; cần điều trị tận gốc (lấy tuỷ, tháo mủ, nhổ răng). Kháng sinh chỉ dùng khi sốt, sưng lan, nổi hạch."
+    }
+  ]
+}

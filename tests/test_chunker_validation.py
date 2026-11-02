@@ -39,3 +39,11 @@ def test_generated_chunks_follow_schema_header_pattern():
         wrapped = {**doc, "contextualized_child_chunks": [{"chunk_section_type": c.section, "contextualized_text": c.text}]}
         assert validate_document(wrapped) == [], c.text[:120]
         assert len(c.text) < 3000
+
+
+def test_db_column_limits_checked():
+    doc = json.loads(SAMPLE.read_text(encoding="utf-8"))
+    doc["source_metadata"]["grade_of_recommendation"] = "Conditional (very low certainty)"
+    doc["protocol_core"]["clinical_topic_slug"] = "Răng Khôn"
+    errors = validate_document(doc)
+    assert any("tối đa 20" in e for e in errors) and any("chữ thường" in e for e in errors)

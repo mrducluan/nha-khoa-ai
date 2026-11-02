@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quản trị — Nha Khoa AI</title>
+<script src="/static/marked.min.js"></script>
+<script src="/static/purify.min.js"></script>
+<style>
+  :root { --bg:#f5f7fa; --panel:#fff; --text:#1d2733; --muted:#66727f; --line:#e2e7ee; --brand:#0f766e; --brand-soft:#e6f4f2;
+          --danger:#b42318; --danger-soft:#fef3f2; --ok:#067647; --ok-soft:#ecfdf3; --warn:#8a5a00; --warn-soft:#fffaeb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1419; --panel:#172029; --text:#e6edf3; --muted:#93a1b0; --line:#2a3642; --brand:#2dd4bf; --brand-soft:#12322f;
+            --danger:#fda29b; --danger-soft:#3a1714; --ok:#75e0a7; --ok-soft:#0f2e1e; --warn:#fcd34d; --warn-soft:#33270b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { background:var(--panel); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  header h1 { margin:0; font-size:17px; color:var(--brand); }
+  header a { color:var(--muted); font-size:13px; }
+  main { max-width:1100px; margin:0 auto; padding:16px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:16px; }
+  .tile { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+  .tile b { display:block; font-size:22px; }
+  .tile span { color:var(--muted); font-size:12px; }
+  nav.tabs { display:flex; gap:4px; border-bottom:1px solid var(--line); margin-bottom:12px; overflow-x:auto; }
+  nav.tabs button { border:0; background:none; color:var(--muted); padding:8px 12px; font:inherit; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap; }
+  nav.tabs button.active { color:var(--brand); border-color:var(--brand); font-weight:600; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; }
+  tr.clickable { cursor:pointer; } tr.clickable:hover { background:var(--brand-soft); }
+  .table-wrap { overflow-x:auto; }
+  input, textarea, select { width:100%; border:1px solid var(--line); border-radius:8px; padding:8px 10px; background:var(--bg); color:var(--text); font:inherit; }
+  textarea { min-height:90px; }
+  label { display:block; font-size:12px; color:var(--muted); margin:10px 0 4px; }
+  .btn { border:0; border-radius:8px; padding:8px 14px; font:inherit; font-weight:600; cursor:pointer; background:var(--brand); color:#fff; }
+  .btn.secondary { background:var(--line); color:var(--text); }
+  .btn.danger { background:var(--danger); color:#fff; }
+  .btn:disabled { opacity:.5; cursor:wait; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  .pill { display:inline-block; border-radius:999px; padding:1px 8px; font-size:12px; background:var(--brand-soft); color:var(--brand); }
+  .pill.bad { background:var(--danger-soft); color:var(--danger); } .pill.good { background:var(--ok-soft); color:var(--ok); }
+  .msg { border-radius:8px; padding:8px 12px; margin-top:10px; }
+  .msg.err { background:var(--danger-soft); color:var(--danger); } .msg.ok { background:var(--ok-soft); color:var(--ok); }
+  .msg.info { background:var(--warn-soft); color:var(--warn); }
+  .detail h3 { margin:16px 0 6px; font-size:15px; } .detail h2 { margin:0 0 4px; font-size:17px; }
+  .detail ul, .detail ol { margin:4px 0; padding-left:22px; }
+  .muted { color:var(--muted); }
+  .hidden { display:none; }
+  @media (max-width: 600px) { .hide-sm { display:none; } }
+  .answer { background:var(--bg); border-radius:8px; padding:10px 14px; overflow-wrap:anywhere; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🦷 Quản trị Nha Khoa AI</h1>
+  <a href="/">← Trang hỏi đáp</a>
+  <span style="margin-left:auto" class="muted" id="who"></span>
+</header>
+<main>
+  <section class="card" id="login">
+    <h2 style="margin-top:0;font-size:17px">Đăng nhập quản trị</h2>
+    <p class="muted">Nhập ADMIN_TOKEN đã cấu hình trong file .env.</p>
+    <input type="password" id="token" placeholder="ADMIN_TOKEN" autocomplete="current-password">
+    <label for="reviewer">Tên bác sĩ duyệt (ghi vào lịch sử phê duyệt)</label>
+    <input id="reviewer" placeholder="VD: BS. Nguyễn Văn A">
+    <div class="row"><button class="btn" id="loginBtn">Đăng nhập</button></div>
+    <div id="loginMsg"></div>
+  </section>
+
+  <section id="app" class="hidden">
+    <div class="tiles" id="tiles"></div>
+    <nav class="tabs">
+      <button data-tab="reviews" class="active">Hàng chờ duyệt</button>
+      <button data-tab="upload">Thêm tài liệu</button>
+      <button data-tab="logs">Hỏi đáp & phản hồi</button>
+      <button data-tab="audit">Kiểm định dữ liệu</button>
+    </nav>
+
+    <div data-panel="reviews">
+      <div class="card">
+        <div class="row" style="margin-top:0">
+          <select id="reviewStatus" style="max-width:220px">
+            <option value="PENDING">Đang chờ duyệt</option><option value="APPROVED">Đã duyệt</option><option value="REJECTED">Đã từ chối</option>
+          </select>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Phác đồ</th><th>Nguồn</th><th class="hide-sm">Người gửi</th><th class="hide-sm">Ngày</th><th>Trạng thái</th></tr></thead>
+          <tbody id="reviewRows"></tbody></table></div>
+      </div>
+      <div class="card detail hidden" id="reviewDetail"></div>
+    </div>
+
+    <div data-panel="upload" class="hidden">
+      <div class="card">
+        <h3 style="margin-top:0">A. Tải PDF hướng dẫn — Claude tự bóc tách</h3>
+        <p class="muted">Claude đọc toàn văn, chuẩn hoá theo schema 02 (PICO, chỉ định, quy trình, bản dịch cho bệnh nhân) và đưa vào hàng chờ duyệt. Có thể mất vài phút.</p>
+        <label for="pdf">File (.pdf, .txt, .md — tối đa 30 MB)</label>
+        <input type="file" id="pdf" accept=".pdf,.txt,.md">
+        <label for="hints">Gợi ý cho Claude (không bắt buộc)</label>
+        <input id="hints" placeholder="VD: Chỉ lấy phác đồ nâng xoang hở; tổ chức ITI, năm 2023, DOI 10.xxxx">
+        <div class="row"><button class="btn" id="extractBtn">Bóc tách bằng Claude</button></div>
+        <div id="extractMsg"></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">B. Dán JSON đã soạn sẵn (chuẩn schema 02)</h3>
+        <textarea id="jsonInput" placeholder='{"source_metadata": {...}, "protocol_core": {...}, ...}' style="min-height:180px;font-family:ui-monospace,monospace;font-size:12px"></textarea>
+        <div class="row"><button class="btn" id="submitJsonBtn">Gửi vào hàng chờ duyệt</button></div>
+        <div id="jsonMsg"></div>
+      </div>
+    </div>
+
+    <div data-panel="logs" class="hidden">
+      <div class="card">
+        <div class="row" style="margin-top:0"><label style="margin:0;display:flex;gap:6px;align-items:center;color:var(--text)">
+          <input type="checkbox" id="onlyNegative" style="width:auto"> Chỉ hiện câu trả lời bị đánh giá 👎</label></div>
+        <div class="table-wrap"><table><thead><tr><th class="hide-sm">Thời gian</th><th>Chế độ</th><th>Câu hỏi</th><th>Cờ</th><th>Đánh giá</th></tr></thead>
+          <tbody id="logRows"></tbody></table></div>
+      </div>
+      <div class="card detail hidden" id="logDetail"></div>
+    </div>
+
+    <div data-panel="audit" class="hidden">
+      <div class="card">
+        <p class="muted" style="margin-top:0">Kiểm tra từng phác đồ theo schema 02 và số chunk tìm kiếm. Để xác minh DOI với Crossref, chạy lệnh <code>python -m dental_ai verify-citations</code>.</p>
+        <div class="table-wrap"><table><thead><tr><th>Phác đồ</th><th>Nguồn</th><th>Chunk</th><th>Schema</th></tr></thead><tbody id="auditRows"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => { const d = document.createElement("div"); d.textContent = s ?? ""; return d.innerHTML; };
+const md = (t) => (window.marked && window.DOMPurify) ? DOMPurify.sanitize(marked.parse(t || "")) : esc(t);
+const fmtDate = (s) => s ? new Date(s).toLocaleString("vi-VN") : "";
+let TOKEN = "", REVIEWER = "";
+try { TOKEN = sessionStorage.getItem("adminToken") || ""; REVIEWER = localStorage.getItem("reviewer") || ""; } catch (e) {}
+
+async function api(path, opts = {}) {
+  const resp = await fetch(path, { ...opts, headers: { ...(opts.headers || {}), "X-Admin-Token": TOKEN } });
+  const body = await resp.json().catch(() => ({}));
+  if (!resp.ok) throw new Error(body.detail || ("HTTP " + resp.status));
+  return body;
+}
+function note(el, kind, text) { $(el).innerHTML = `<div class="msg ${kind}">${text}</div>`; }
+
+async function login() {
+  TOKEN = $("token").value.trim() || TOKEN; REVIEWER = $("reviewer").value.trim() || REVIEWER;
+  try {
+    await api("/api/admin/stats");
+    try { sessionStorage.setItem("adminToken", TOKEN); localStorage.setItem("reviewer", REVIEWER); } catch (e) {}
+    $("login").classList.add("hidden"); $("app").classList.remove("hidden");
+    $("who").textContent = REVIEWER ? "Người duyệt: " + REVIEWER : "";
+    loadStats(); loadReviews();
+  } catch (e) { note("loginMsg", "err", "Đăng nhập thất bại: " + esc(e.message)); }
+}
+$("loginBtn").onclick = login;
+$("reviewer").value = REVIEWER;
+if (TOKEN) login();
+
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav.tabs button").forEach(x => x.classList.toggle("active", x === b));
+  document.querySelectorAll("[data-panel]").forEach(p => p.classList.toggle("hidden", p.dataset.panel !== b.dataset.tab));
+  ({ reviews: loadReviews, logs: loadLogs, audit: loadAudit })[b.dataset.tab]?.();
+});
+
+async function loadStats() {
+  const s = await api("/api/admin/stats");
+  const items = [["Câu hỏi (30 ngày)", s.questions], ["Bệnh nhân", s.patient_questions], ["Bác sĩ", s.doctor_questions],
+    ["👍 Hữu ích", s.positive], ["👎 Chưa tốt", s.negative], ["Có cảnh báo đỏ", s.red_flag_questions],
+    ["Dùng PubMed", s.used_fallback], ["Chờ duyệt", s.pending_reviews]];
+  $("tiles").innerHTML = items.map(([k, v]) => `<div class="tile"><b>${v ?? 0}</b><span>${k}</span></div>`).join("");
+}
+
+// ---------- Hàng chờ duyệt ----------
+$("reviewStatus").onchange = loadReviews;
+async function loadReviews() {
+  const rows = await api("/api/admin/reviews?status=" + $("reviewStatus").value);
+  $("reviewDetail").classList.add("hidden");
+  $("reviewRows").innerHTML = rows.length ? rows.map(r => `<tr class="clickable" data-id="${r.review_id}">
+      <td>${esc(r.title)}</td><td>${esc(r.organization)}</td><td class="hide-sm">${esc(r.submitted_by)}</td><td class="hide-sm">${fmtDate(r.created_at)}</td>
+      <td><span class="pill ${r.status === "APPROVED" ? "good" : r.status === "REJECTED" ? "bad" : ""}">${r.status}</span></td></tr>`).join("")
+    : `<tr><td colspan="5" class="muted">Không có tài liệu nào.</td></tr>`;
+  document.querySelectorAll("#reviewRows tr.clickable").forEach(tr => tr.onclick = () => showReview(tr.dataset.id));
+}
+const list = (arr) => (arr && arr.length) ? "<ul>" + arr.map(x => `<li>${esc(x)}</li>`).join("") + "</ul>" : '<p class="muted">—</p>';
+async function showReview(id) {
+  const r = await api("/api/admin/reviews/" + id);
+  const d = r.payload, m = d.source_metadata, c = d.protocol_core, p = d.pico_evidence_matrix, x = d.clinical_execution_payload;
+  const pt = x.patient_friendly_translation || {}, pearls = x.educational_pearls_for_residents || {};
+  const doiLink = /^10\./.test(m.doi_or_pmid) ? `<a href="https://doi.org/${encodeURIComponent(m.doi_or_pmid)}" target="_blank" rel="noopener">${esc(m.doi_or_pmid)}</a>` : esc(m.doi_or_pmid);
+  const box = $("reviewDetail");
+  box.innerHTML = `
+    <h2>${esc(c.protocol_title)}</h2>
+    <p class="muted">${esc(c.primary_specialty)} · slug: <code>${esc(c.clinical_topic_slug)}</code></p>
+    <div class="msg info">Đối chiếu từng mục dưới đây với nguyên văn tài liệu gốc trước khi duyệt — đặc biệt số liệu, liều lượng và DOI.</div>
+    <h3>Nguồn</h3>
+    <p><b>${esc(m.organization_code)}</b> (${esc(m.authority_tier)}) — ${esc(m.document_title)}<br>
+       ${esc(m.authors_or_committee)} · ${esc(m.journal_or_series)} · ${m.publication_year} · ${doiLink}<br>
+       Mức bằng chứng: ${esc(m.evidence_level)} · Khuyến nghị: ${esc(m.grade_of_recommendation)}</p>
+    <h3>PICO</h3>
+    <ul><li><b>P:</b> ${esc(p.P_population_problem)}</li><li><b>I:</b> ${esc(p.I_intervention)}</li>
+        <li><b>C:</b> ${esc(p.C_comparison)}</li><li><b>O:</b> ${esc(p.O_outcome_metrics)}</li></ul>
+    <h3>Cơ chế</h3><p>${esc(x.pathophysiology_mechanism)}</p>
+    <h3>Chỉ định</h3>${list(x.indications)}
+    <h3>Chống chỉ định tuyệt đối</h3>${list(x.contraindications_absolute)}
+    <h3>Chống chỉ định tương đối</h3>${list(x.contraindications_relative)}
+    <h3>Quy trình</h3><ol>${(x.step_by_step_procedure || []).map(s => `<li><b>${esc(s.phase_name)}</b> — ${esc(s.clinical_action)}<br><span class="muted">Thông số: ${esc(s.technical_parameters)}</span></li>`).join("")}</ol>
+    <h3>Biến chứng & xử trí</h3><ul>${(x.complications_and_management || []).map(k => `<li><b>${esc(k.complication)}</b><br>Phòng ngừa: ${esc(k.prevention)}<br>Xử trí: ${esc(k.management_protocol)}</li>`).join("")}</ul>
+    <h3>Góc nội trú</h3>${list([...(pearls.common_pitfalls || []), ...(pearls.clinical_decision_tips || [])])}
+    <h3>Bản dành cho bệnh nhân</h3>
+    <p><b>Đây là gì:</b> ${esc(pt.what_is_it)}</p><p><b>Vì sao cần:</b> ${esc(pt.why_needed)}</p>
+    <p><b>Điều gì sẽ diễn ra:</b> ${esc(pt.what_to_expect)}</p>${list(pt.home_care_instructions)}
+    ${r.status === "PENDING" ? `
+      <label for="reviewNote">Ghi chú duyệt</label><input id="reviewNote" placeholder="VD: Đã đối chiếu bản PDF gốc trang 4–9">
+      <div class="row"><button class="btn" id="approveBtn">✅ Duyệt & đưa lên hệ thống</button>
+      <button class="btn danger" id="rejectBtn">Từ chối</button></div><div id="reviewMsg"></div>`
+    : `<p class="muted">Đã xử lý bởi ${esc(r.reviewer)} lúc ${fmtDate(r.reviewed_at)} — ${esc(r.review_note)}</p>`}`;
+  box.classList.remove("hidden"); box.scrollIntoView({ behavior: "smooth" });
+  if (r.status === "PENDING") {
+    const decide = async (approve) => {
+      if (!REVIEWER) { REVIEWER = prompt("Tên bác sĩ duyệt:") || ""; if (!REVIEWER) return; }
+      if (approve && !confirm("Xác nhận đã đối chiếu tài liệu gốc và duyệt đưa lên hệ thống?")) return;
+      $("approveBtn").disabled = $("rejectBtn").disabled = true;
+      try {
+        const res = await api("/api/admin/reviews/" + id, { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ approve, reviewer: REVIEWER, note: $("reviewNote").value || null }) });
+        note("reviewMsg", "ok", approve ? "Đã duyệt. Phác đồ đã có thể tìm kiếm (" + res.protocol_id + ")." : "Đã từ chối.");
+        loadStats(); setTimeout(loadReviews, 1200);
+      } catch (e) { note("reviewMsg", "err", esc(e.message)); $("approveBtn").disabled = $("rejectBtn").disabled = false; }
+    };
+    $("approveBtn").onclick = () => decide(true); $("rejectBtn").onclick = () => decide(false);
+  }
+}
+
+// ---------- Thêm tài liệu ----------
+$("extractBtn").onclick = async () => {
+  const f = $("pdf").files[0]; if (!f) return note("extractMsg", "err", "Chọn file trước.");
+  const fd = new FormData(); fd.append("file", f); fd.append("hints", $("hints").value); fd.append("submitted_by", REVIEWER || "admin-web");
+  $("extractBtn").disabled = true; note("extractMsg", "info", "Claude đang đọc tài liệu… (có thể mất vài phút, đừng đóng trang)");
+  try {
+    const r = await api("/api/admin/extract", { method: "POST", body: fd });
+    if (r.status === "PENDING") { note("extractMsg", "ok", `Đã bóc tách “${esc(r.title)}” sau ${r.attempts} lượt và đưa vào hàng chờ duyệt.`); loadStats(); }
+    else note("extractMsg", "err", "Chưa đạt schema 02:<br>" + r.errors.map(esc).join("<br>"));
+  } catch (e) { note("extractMsg", "err", esc(e.message)); }
+  $("extractBtn").disabled = false;
+};
+$("submitJsonBtn").onclick = async () => {
+  let doc; try { doc = JSON.parse($("jsonInput").value); } catch (e) { return note("jsonMsg", "err", "JSON không hợp lệ: " + esc(e.message)); }
+  try {
+    const r = await api("/api/admin/submit?submitted_by=" + encodeURIComponent(REVIEWER || "admin-web"),
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(doc) });
+    note("jsonMsg", "ok", "Đã gửi vào hàng chờ duyệt: " + r.review_id); $("jsonInput").value = ""; loadStats();
+  } catch (e) { note("jsonMsg", "err", esc(e.message).replace(/\n/g, "<br>")); }
+};
+
+// ---------- Nhật ký hỏi đáp ----------
+$("onlyNegative").onchange = loadLogs;
+async function loadLogs() {
+  const rows = await api("/api/admin/logs?limit=100&only_negative=" + $("onlyNegative").checked);
+  $("logDetail").classList.add("hidden");
+  $("logRows").innerHTML = rows.length ? rows.map(l => `<tr class="clickable" data-id="${l.log_id}">
+      <td class="hide-sm">${fmtDate(l.created_at)}</td><td>${l.persona_mode === "DOCTOR" ? "Bác sĩ" : "Bệnh nhân"}</td><td>${esc(l.question.slice(0, 140))}</td>
+      <td>${(l.red_flags || []).map(f => `<span class="pill bad">${esc(f)}</span>`).join(" ")}${l.used_fallback ? ' <span class="pill">PubMed</span>' : ""}</td>
+      <td>${l.feedback_rating === 1 ? "👍" : l.feedback_rating === -1 ? "👎" : ""}</td></tr>`).join("")
+    : `<tr><td colspan="5" class="muted">Chưa có dữ liệu.</td></tr>`;
+  document.querySelectorAll("#logRows tr.clickable").forEach(tr => tr.onclick = () => showLog(tr.dataset.id));
+}
+async function showLog(id) {
+  const l = await api("/api/admin/logs/" + id);
+  const box = $("logDetail");
+  box.innerHTML = `<h2>${esc(l.question)}</h2>
+    <p class="muted">${fmtDate(l.created_at)} · ${esc(l.model)} · ${l.latency_ms} ms</p>
+    ${l.feedback_note ? `<div class="msg err">Phản hồi: ${esc(l.feedback_note)}</div>` : ""}
+    <h3>Phác đồ đã dùng</h3>${list(l.protocol_titles)}
+    ${(l.fallback_pmids || []).length ? `<p>PubMed: ${l.fallback_pmids.map(p => `<a href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">${esc(p)}</a>`).join(", ")}</p>` : ""}
+    <h3>Câu trả lời</h3><div class="answer">${md(l.answer)}</div>`;
+  box.classList.remove("hidden"); box.scrollIntoView({ behavior: "smooth" });
+}
+
+// ---------- Kiểm định ----------
+async function loadAudit() {
+  const rows = await api("/api/admin/audit");
+  $("auditRows").innerHTML = rows.map(r => `<tr><td>${esc(r.protocol_title)}</td><td>${esc(r.source)}</td><td>${r.chunks}</td>
+    <td>${r.schema_errors.length ? `<span class="pill bad">${r.schema_errors.length} lỗi</span><br><small>${r.schema_errors.map(esc).join("<br>")}</small>` : '<span class="pill good">Đạt</span>'}</td></tr>`).join("");
+}
+</script>
+</body>
+</html>

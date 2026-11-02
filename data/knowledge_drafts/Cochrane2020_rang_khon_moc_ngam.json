@@ -1,0 +1,76 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn từ hiểu biết về tổng quan gốc — BẮT BUỘC bác sĩ đối chiếu nguyên văn trước khi duyệt. Mục chỉ định nhổ khi có bệnh lý là thực hành lâm sàng chung, KHÔNG phải kết luận của tổng quan Cochrane này.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Surgical removal versus retention for the management of asymptomatic disease-free impacted wisdom teeth",
+    "authors_or_committee": "Ghaeminia H, Nienhuijs ME, Toedtling V et al.",
+    "publication_year": 2020,
+    "journal_or_series": "Cochrane Database of Systematic Reviews",
+    "doi_or_pmid": "10.1002/14651858.CD003879.pub5",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "GRADE: low"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Răng khôn Mọc ngầm Không triệu chứng: Nhổ Dự phòng hay Giữ lại Theo dõi (Tổng quan Cochrane 2020)",
+    "clinical_topic_slug": "asymptomatic-impacted-third-molar-removal-vs-retention"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Thanh thiếu niên và người lớn có răng khôn (răng 8) mọc ngầm, không triệu chứng và không có bệnh lý kèm theo.",
+    "I_intervention": "Phẫu thuật nhổ răng khôn dự phòng.",
+    "C_comparison": "Giữ lại răng và theo dõi định kỳ.",
+    "O_outcome_metrics": "Tổng quan không tìm đủ bằng chứng (chất lượng thấp đến rất thấp, rất ít thử nghiệm) để ủng hộ hay bác bỏ việc nhổ dự phòng răng khôn mọc ngầm không triệu chứng. Một thử nghiệm không cho thấy khác biệt về mức độ chen chúc răng cửa giữa nhóm nhổ và nhóm giữ lại. Nếu giữ lại, cần theo dõi định kỳ."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Răng khôn mọc ngầm có thể tồn tại nhiều năm không gây bệnh, nhưng cũng có nguy cơ gây viêm quanh thân răng, sâu răng ở răng khôn hoặc răng hàm số 7, tiêu chân răng kế cận, bệnh nha chu mặt xa răng 7 hoặc nang. Phẫu thuật nhổ lại có nguy cơ biến chứng (tổn thương thần kinh, viêm ổ răng khô, nhiễm trùng). Quyết định cần cân bằng giữa nguy cơ bệnh lý tương lai và nguy cơ phẫu thuật, cá thể hoá theo từng bệnh nhân.",
+    "indications": [
+      "Răng khôn ngầm không triệu chứng, không bệnh lý: chưa đủ bằng chứng để khuyến cáo nhổ dự phòng thường quy — cân nhắc giữ lại và theo dõi định kỳ, thảo luận nguy cơ/lợi ích với bệnh nhân",
+      "(Thực hành lâm sàng chung, ngoài phạm vi tổng quan) Cân nhắc nhổ khi có bệnh lý: viêm quanh thân răng tái phát, sâu răng không phục hồi được, sâu hoặc tiêu chân răng hàm số 7, nang/u liên quan, bệnh nha chu mặt xa răng 7"
+    ],
+    "contraindications_absolute": [
+      "Không có chống chỉ định đặc thù được tổng quan nêu; tuân thủ chống chỉ định chung của phẫu thuật miệng theo tình trạng toàn thân"
+    ],
+    "contraindications_relative": [
+      "Răng nằm sát ống thần kinh răng dưới trên phim — cần chụp CBCT đánh giá và tư vấn kỹ nguy cơ tê môi/cằm",
+      "Bệnh toàn thân chưa kiểm soát, đang dùng thuốc chống đông/chống kết tập tiểu cầu hoặc bisphosphonate — cần đánh giá và phối hợp chuyên khoa"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khám & chẩn đoán hình ảnh", "clinical_action": "Khám lâm sàng, phim toàn cảnh; chụp CBCT khi răng liên quan gần ống thần kinh răng dưới.", "technical_parameters": "Đánh giá tư thế răng, quan hệ với ống thần kinh, tình trạng răng 7 và mô nha chu"},
+      {"step": 2, "phase_name": "Ra quyết định chung với bệnh nhân", "clinical_action": "Trình bày rằng bằng chứng về nhổ dự phòng còn hạn chế; so sánh nguy cơ phẫu thuật với nguy cơ bệnh lý nếu giữ lại.", "technical_parameters": "Ghi nhận lựa chọn và đồng thuận của bệnh nhân"},
+      {"step": 3, "phase_name": "Theo dõi định kỳ (nếu giữ lại)", "clinical_action": "Khám định kỳ phát hiện sớm viêm quanh thân răng, sâu răng 7, bệnh nha chu, nang.", "technical_parameters": "Chụp phim kiểm tra theo chỉ định lâm sàng"},
+      {"step": 4, "phase_name": "Phẫu thuật (nếu có chỉ định)", "clinical_action": "Phẫu thuật nhổ răng theo kỹ thuật chuẩn, hạn chế sang chấn.", "technical_parameters": "Theo phác đồ phẫu thuật miệng của cơ sở"}
+    ],
+    "complications_and_management": [
+      {"complication": "Tổn thương thần kinh răng dưới hoặc thần kinh lưỡi (tê môi, cằm, lưỡi)", "prevention": "Đánh giá CBCT khi răng sát ống thần kinh; cân nhắc kỹ thuật phù hợp", "management_protocol": "Đa số tạm thời; theo dõi và tái khám sớm, chuyển chuyên khoa khi kéo dài"},
+      {"complication": "Viêm ổ răng khô (alveolar osteitis), nhiễm trùng, chảy máu, sưng đau", "prevention": "Kỹ thuật vô khuẩn, hướng dẫn chăm sóc sau nhổ, khuyên ngưng hút thuốc", "management_protocol": "Bơm rửa ổ răng, băng thuốc giảm đau tại chỗ; xử trí nhiễm trùng/chảy máu theo phác đồ"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Chỉ định nhổ dự phòng thường quy mọi răng khôn ngầm mà không thảo luận rằng bằng chứng còn hạn chế",
+        "Nhổ răng khôn với lý do 'phòng chen chúc răng cửa' — không được ủng hộ bởi thử nghiệm duy nhất hiện có"
+      ],
+      "clinical_decision_tips": [
+        "Phân biệt rõ: răng khôn có bệnh lý (thường cần nhổ) và răng khôn ngầm không triệu chứng (cá thể hoá, có thể theo dõi)",
+        "Nếu quyết định giữ lại, phải có kế hoạch theo dõi định kỳ cụ thể"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Răng khôn là răng hàm cuối cùng, thường mọc ở tuổi 17–25. Nhiều người có răng khôn mọc lệch hoặc nằm ngầm dưới nướu.",
+      "why_needed": "Nếu răng khôn mọc ngầm nhưng không đau, không sưng và không gây hại răng bên cạnh, hiện chưa có đủ bằng chứng khoa học cho thấy phải nhổ sớm cho mọi người. Bác sĩ sẽ cùng anh/chị cân nhắc giữa việc nhổ và theo dõi.",
+      "what_to_expect": "Bác sĩ khám và chụp phim. Nếu răng gây viêm sưng lặp lại, sâu răng bên cạnh hoặc có nang, thường sẽ được khuyên nhổ. Nếu giữ lại, anh/chị cần đi khám định kỳ để kiểm tra.",
+      "home_care_instructions": [
+        "Chải răng kỹ vùng răng khôn, có thể dùng bàn chải nhỏ đầu để làm sạch",
+        "Đi khám khi vùng răng khôn sưng đau, hôi miệng, khó há miệng",
+        "Đến cấp cứu ngay nếu sưng lan ra má, cổ, sốt hoặc khó nuốt"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: COCHRANE 2020 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Đánh giá CBCT khi răng sát ống thần kinh răng dưới] Răng khôn mọc lệch, mọc ngầm không đau có nên nhổ không? Chưa đủ bằng chứng để nhổ dự phòng cho mọi người; có thể giữ lại và theo dõi định kỳ. Nên nhổ khi răng khôn gây viêm sưng tái phát, sâu răng bên cạnh, nang."
+    }
+  ]
+}

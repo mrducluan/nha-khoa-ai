@@ -16,7 +16,7 @@ from .embeddings import strip_accents
 # (mẫu regex trên văn bản đã bỏ dấu, thuật ngữ bổ sung)
 LAY_TO_CLINICAL: list[tuple[str, str]] = [
     (r"chay mau (nuou|chan rang|loi|khi danh rang)|hoi mieng|lung lay|tut loi|tut nuou|vien loi|viem nuou|"
-     r"cao rang|voi rang|nha chu|sung loi|sung nuou|tieu xuong rang",
+     r"cao rang|voi rang|nha chu|sung loi|sung nuou|tieu xuong rang|\bsrp\b|scaling|root planing|perio|efp s3",
      "viêm nha chu periodontitis nha chu học cạo vôi xử lý mặt gốc răng túi nha chu tiêu xương ổ răng"),
     (r"nieng|chinh nha|rang ho|rang mom|rang khap khenh|khay trong suot|invisalign|mac cai",
      "chỉnh nha khay trong suốt clear aligner orthodontics di chuyển răng"),
@@ -30,6 +30,12 @@ LAY_TO_CLINICAL: list[tuple[str, str]] = [
      "implant tức thì immediate implant vùng thẩm mỹ răng cửa hàm trên"),
     (r"viem quanh implant|implant (bi )?(viem|chay mau|lung lay|dau)",
      "viêm quanh implant peri-implantitis bảo trì implant"),
+    (r"rang khon|rang so 8|rang 8|moc lech|moc ngam|rang ham thu ba|third molar",
+     "răng khôn mọc ngầm third molar nhổ dự phòng theo dõi"),
+    (r"dau rang|nhuc rang|buot rang|sau rang vao tuy|viem tuy|ap xe|sung mu",
+     "viêm tuỷ hoại tử tuỷ áp xe cuống răng kháng sinh đau răng điều trị tuỷ"),
+    (r"sau rang|rang sua|tram rang|fluoride|flour|vecni|sdf|bac fluoride|chom sau",
+     "sâu răng không xâm lấn fluoride varnish SDF trám bít hố rãnh"),
     (r"trong rang|cay ghep|implant",
      "cấy ghép implant implantology"),
 ]

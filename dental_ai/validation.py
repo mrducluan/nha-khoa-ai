@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from functools import lru_cache
 from typing import Any
 
@@ -17,12 +18,27 @@ def ingestion_validator() -> Draft7Validator:
     return Draft7Validator(schema)
 
 
+# Giới hạn độ dài cột trong db/01 — schema 02 không ràng buộc nên phải kiểm tra thêm
+DB_LIMITS = [
+    (("source_metadata", "grade_of_recommendation"), 20),
+    (("source_metadata", "doi_or_pmid"), 120),
+    (("protocol_core", "clinical_topic_slug"), 150),
+]
+
+
 def validate_document(doc: dict[str, Any]) -> list[str]:
     """Trả về danh sách lỗi (rỗng = hợp lệ)."""
     errors = []
     for err in sorted(ingestion_validator().iter_errors(doc), key=lambda e: list(e.path)):
         where = "/".join(str(p) for p in err.path) or "(gốc)"
         errors.append(f"{where}: {err.message[:300]}")
+    for (section, key), limit in DB_LIMITS:
+        value = (doc.get(section) or {}).get(key)
+        if isinstance(value, str) and len(value) > limit:
+            errors.append(f"{section}/{key}: dài {len(value)} ký tự, CSDL chỉ cho phép tối đa {limit}")
+    slug = (doc.get("protocol_core") or {}).get("clinical_topic_slug")
+    if isinstance(slug, str) and not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", slug):
+        errors.append("protocol_core/clinical_topic_slug: chỉ dùng chữ thường không dấu, số và dấu gạch ngang")
     return errors
 
 

@@ -13,7 +13,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Literal
 
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, UploadFile
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -87,6 +87,11 @@ def require_admin(x_admin_token: str | None = Header(default=None)) -> None:
 @app.get("/", include_in_schema=False)
 def index() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
+
+
+@app.get("/admin", include_in_schema=False)
+def admin_page() -> FileResponse:
+    return FileResponse(STATIC_DIR / "admin.html")
 
 
 @app.get("/health")
@@ -240,3 +245,69 @@ def admin_logs(limit: int = 50, only_negative: bool = False) -> list[dict[str, A
                 ORDER BY created_at DESC LIMIT %s""",
             (min(max(limit, 1), 500),),
         ).fetchall()
+
+
+@app.get("/api/admin/reviews/{review_id}", dependencies=[Depends(require_admin)])
+def admin_review_detail(review_id: str) -> dict[str, Any]:
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM knowledge_review_queue WHERE review_id::text = %s", (review_id,)).fetchone()
+    if not row:
+        raise HTTPException(404, "Không tìm thấy")
+    return row
+
+
+@app.post("/api/admin/extract", dependencies=[Depends(require_admin)])
+def admin_extract(file: UploadFile = File(...), hints: str | None = Form(default=None),
+                  submitted_by: str = Form(default="admin-web")) -> dict[str, Any]:
+    """Tải PDF/văn bản lên → Claude bóc tách → kiểm định → hàng chờ duyệt (có thể mất vài phút)."""
+    import tempfile
+
+    from .extractor import GuidelineExtractor
+
+    if not get_settings().anthropic_api_key:
+        raise HTTPException(503, "Cần cấu hình ANTHROPIC_API_KEY để dùng chức năng bóc tách")
+    suffix = Path(file.filename or "tai-lieu.pdf").suffix.lower()
+    if suffix not in (".pdf", ".txt", ".md"):
+        raise HTTPException(415, "Chỉ hỗ trợ .pdf, .txt, .md")
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / f"upload{suffix}"
+        path.write_bytes(file.file.read())
+        try:
+            result = GuidelineExtractor().extract(path, hints)
+        except ValueError as exc:
+            raise HTTPException(413, str(exc)) from exc
+    if not result.ok:
+        return {"status": "FAILED", "errors": result.errors, "attempts": result.attempts, "document": result.document}
+    with connect() as conn:
+        rid = submit_for_review(conn, result.document, f"extractor:{submitted_by}")
+    return {"status": "PENDING", "review_id": rid, "attempts": result.attempts,
+            "title": result.document["protocol_core"]["protocol_title"]}
+
+
+@app.get("/api/admin/logs/{log_id}", dependencies=[Depends(require_admin)])
+def admin_log_detail(log_id: str) -> dict[str, Any]:
+    with connect() as conn:
+        row = conn.execute(
+            """SELECT l.*, (SELECT jsonb_agg(p.protocol_title) FROM parent_clinical_protocols p
+                            WHERE p.protocol_id = ANY(l.protocol_ids)) AS protocol_titles
+               FROM qa_logs l WHERE l.log_id::text = %s""", (log_id,)).fetchone()
+    if not row:
+        raise HTTPException(404, "Không tìm thấy")
+    return row
+
+
+@app.get("/api/admin/stats", dependencies=[Depends(require_admin)])
+def admin_stats(days: int = 30) -> dict[str, Any]:
+    with connect() as conn:
+        return conn.execute(
+            """SELECT count(*) AS questions,
+                      count(*) FILTER (WHERE persona_mode = 'PATIENT') AS patient_questions,
+                      count(*) FILTER (WHERE persona_mode = 'DOCTOR') AS doctor_questions,
+                      count(*) FILTER (WHERE feedback_rating = 1) AS positive,
+                      count(*) FILTER (WHERE feedback_rating = -1) AS negative,
+                      count(*) FILTER (WHERE used_fallback) AS used_fallback,
+                      count(*) FILTER (WHERE cardinality(red_flags) > 0) AS red_flag_questions,
+                      round(avg(latency_ms)) AS avg_latency_ms,
+                      (SELECT count(*) FROM knowledge_review_queue WHERE status = 'PENDING') AS pending_reviews
+               FROM qa_logs WHERE created_at > NOW() - make_interval(days => %s)""",
+            (min(max(days, 1), 365),)).fetchone()

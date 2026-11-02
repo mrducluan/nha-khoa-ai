@@ -65,6 +65,15 @@ python -m dental_ai serve                              # http://localhost:8000
 | `FALLBACK_ENABLED`, `NCBI_API_KEY`, `NCBI_EMAIL` | Tự tra PubMed 2016–2026 khi DB chưa đủ dữ liệu |
 | `ADMIN_TOKEN` | Mật khẩu cho các API quản trị `/api/admin/*` |
 
+## Trang quản trị cho bác sĩ — http://localhost:8000/admin
+
+Đăng nhập bằng `ADMIN_TOKEN`. Các chức năng:
+- **Hàng chờ duyệt:** xem toàn bộ nội dung phác đồ (nguồn, PICO, chỉ định, quy trình, bản dành cho bệnh nhân) rồi **Duyệt** hoặc **Từ chối**.
+- **Thêm tài liệu:** tải **PDF hướng dẫn**, Claude tự bóc tách thành JSON chuẩn schema 02 và đưa vào hàng chờ. Hoặc dán JSON đã soạn sẵn.
+- **Hỏi đáp & phản hồi:** xem câu hỏi thực tế, lọc các câu trả lời bị đánh giá 👎 để cải thiện dữ liệu.
+- **Kiểm định dữ liệu:** kiểm tra mọi phác đồ theo schema 02.
+- **Thống kê 30 ngày:** số câu hỏi, tỷ lệ bệnh nhân/bác sĩ, cảnh báo đỏ, tỷ lệ dùng PubMed.
+
 ## Dòng lệnh quản trị
 
 ```bash
@@ -73,7 +82,8 @@ python -m dental_ai ask "Torque MUA bao nhiêu Ncm?" --role doctor
 python -m dental_ai search "nâng xoang hở"                             # chỉ tìm kiếm, không gọi AI
 python -m dental_ai audit                                              # kiểm định dữ liệu theo schema 02
 python -m dental_ai verify-citations                                   # đối chiếu DOI với Crossref
-python -m dental_ai ingest data/examples/mau_sau_rang_fluoride_ADA2018.json   # gửi tài liệu vào hàng chờ duyệt
+python -m dental_ai extract huong-dan.pdf --hints "Chỉ lấy phác đồ nâng xoang hở"  # Claude bóc tách PDF → hàng chờ duyệt
+python -m dental_ai ingest data/knowledge_drafts/*.json                # gửi các bản nháp có sẵn vào hàng chờ duyệt
 python -m dental_ai review list                                        # xem hàng chờ
 python -m dental_ai review approve <review_id> --by "BS. Nguyễn Văn A"  # duyệt → tài liệu lên hệ thống
 python -m dental_ai reindex                                            # sinh lại chỉ mục
@@ -83,9 +93,12 @@ Khi chạy bằng Docker, thêm tiền tố `docker compose exec app`, ví dụ:
 
 ## Thêm tri thức mới
 
-1. Soạn file JSON theo `schemas/02_pdf_ingestion_pico_schema.json` (xem mẫu `data/examples/`).
-2. `python -m dental_ai ingest file.json` → tài liệu vào **hàng chờ duyệt** (chưa xuất hiện với người dùng).
-3. Bác sĩ phụ trách đối chiếu nguồn gốc → `review approve` → hệ thống tự sinh chunk + embedding.
+1. Chọn một trong ba cách:
+   - **Tải PDF** ở trang `/admin`, hoặc chạy lệnh `extract`: Claude tự bóc tách.
+   - **Soạn JSON** theo `schemas/02_pdf_ingestion_pico_schema.json` (mẫu ở `data/examples/`) rồi chạy lệnh `ingest`.
+   - **Dùng bản nháp có sẵn** trong `data/knowledge_drafts/`: đau răng/kháng sinh (ADA 2019) và răng khôn ngầm (Cochrane 2020).
+2. Tài liệu vào **hàng chờ duyệt** và chưa hiển thị với người dùng.
+3. Bác sĩ phụ trách đối chiếu với nguyên văn tài liệu, rồi bấm **Duyệt** ở `/admin` (hoặc chạy `review approve`). Hệ thống tự sinh chunk và embedding.
 4. Chạy `verify-citations` để xác minh DOI.
 
 Quy trình duyệt bắt buộc này đảm bảo **không có nội dung y khoa nào lên hệ thống mà chưa qua bác sĩ**.
@@ -124,8 +137,9 @@ API, và kiểm tra request gửi tới Claude API ở tầng HTTP. GitHub Actio
 
 ## Lộ trình đề xuất
 
-- [ ] Bổ sung phác đồ cho các chủ đề hay được hỏi: răng khôn, nội nha, sâu răng trẻ em, tẩy trắng, viêm quanh implant, bệnh nhân dùng thuốc chống đông.
-- [ ] Công cụ bóc tách PDF hướng dẫn (ADA/ITI…) thành JSON schema 02 bằng Claude, đưa vào hàng chờ duyệt.
-- [ ] Trang quản trị web cho bác sĩ duyệt tài liệu và xem phản hồi.
+- [ ] Bổ sung phác đồ: tẩy trắng, viêm quanh implant, bệnh nhân dùng thuốc chống đông, kháng sinh dự phòng (dùng công cụ bóc tách PDF).
+- [x] Công cụ bóc tách PDF hướng dẫn (ADA/ITI…) thành JSON schema 02 bằng Claude, đưa vào hàng chờ duyệt.
+- [x] Trang quản trị web cho bác sĩ duyệt tài liệu và xem phản hồi.
+- [x] Bản nháp phác đồ cho đau răng/kháng sinh và răng khôn (chờ bác sĩ duyệt).
 - [ ] Đăng nhập theo vai trò (bác sĩ được xác thực mới thấy thông số phẫu thuật).
 - [ ] Kết nối Zalo OA / Messenger cho bệnh nhân.

@@ -109,13 +109,39 @@ def cmd_verify_citations(args) -> None:
 def cmd_ingest(args) -> None:
     from .knowledge import load_json, review, submit_for_review
 
-    doc = load_json(args.file)
     with connect() as conn:
-        review_id = submit_for_review(conn, doc, submitted_by=args.by)
-        print(f"Đã đưa vào hàng chờ duyệt: review_id={review_id}")
-        if args.approve:
-            pid = review(conn, get_embedder(), review_id, True, reviewer=args.by, note="Duyệt qua CLI")
-            print(f"Đã duyệt và nạp: protocol_id={pid}")
+        for path in args.files:
+            try:
+                review_id = submit_for_review(conn, load_json(path), submitted_by=args.by)
+            except ValueError as exc:
+                print(f"❌ {path}: {exc}")
+                continue
+            print(f"✅ {path} → hàng chờ duyệt: review_id={review_id}")
+            if args.approve:
+                pid = review(conn, get_embedder(), review_id, True, reviewer=args.by, note="Duyệt qua CLI")
+                print(f"   Đã duyệt và nạp: protocol_id={pid}")
+
+
+def cmd_extract(args) -> None:
+    from pathlib import Path
+
+    from .extractor import GuidelineExtractor
+    from .knowledge import submit_for_review
+
+    print(f"Claude đang đọc {args.file} (có thể mất vài phút)...")
+    result = GuidelineExtractor().extract(args.file, args.hints)
+    out = Path(args.out or f"data/extracted/{Path(args.file).stem}.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if result.document is not None:
+        out.write_text(json.dumps(result.document, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Đã lưu: {out} (sau {result.attempts} lượt)")
+    if not result.ok:
+        print("❌ Chưa đạt schema 02:\n- " + "\n- ".join(result.errors))
+        sys.exit(1)
+    if not args.no_submit:
+        with connect() as conn:
+            rid = submit_for_review(conn, result.document, submitted_by=f"extractor:{args.by}")
+        print(f"✅ Đã đưa vào hàng chờ duyệt: review_id={rid}")
 
 
 def cmd_review(args) -> None:
@@ -168,10 +194,18 @@ def main(argv: list[str] | None = None) -> None:
     sub.add_parser("verify-citations", help="Đối chiếu DOI với Crossref").set_defaults(func=cmd_verify_citations)
 
     p = sub.add_parser("ingest", help="Nạp tài liệu JSON (schema 02) vào hàng chờ duyệt")
-    p.add_argument("file")
+    p.add_argument("files", nargs="+", help="Một hoặc nhiều file JSON")
     p.add_argument("--by", default="cli")
     p.add_argument("--approve", action="store_true", help="Duyệt và nạp ngay (chỉ bác sĩ phụ trách)")
     p.set_defaults(func=cmd_ingest)
+
+    p = sub.add_parser("extract", help="Claude bóc tách PDF/văn bản hướng dẫn → JSON schema 02 → hàng chờ duyệt")
+    p.add_argument("file", help="File .pdf, .txt hoặc .md")
+    p.add_argument("--hints", help="Gợi ý cho Claude, VD: 'Chỉ lấy phác đồ nâng xoang hở; tổ chức ITI 2023'")
+    p.add_argument("--out", help="Nơi lưu JSON (mặc định data/extracted/<tên>.json)")
+    p.add_argument("--by", default="cli")
+    p.add_argument("--no-submit", action="store_true", help="Chỉ lưu JSON, không đưa vào hàng chờ")
+    p.set_defaults(func=cmd_extract)
 
     p = sub.add_parser("review", help="Xem / duyệt / từ chối tài liệu chờ duyệt")
     p.add_argument("action", choices=["list", "approve", "reject"])
