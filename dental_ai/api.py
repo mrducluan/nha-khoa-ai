@@ -50,7 +50,7 @@ class ChatMessage(BaseModel):
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=2, max_length=4000)
-    role: Literal["auto", "doctor", "patient"] = "auto"
+    role: Literal["auto", "doctor", "patient", "content"] = "auto"
     history: list[ChatMessage] = Field(default_factory=list, max_length=20)
     specialty: Literal["IMPLANTOLOGY", "PERIODONTOLOGY", "ORTHODONTICS",
                        "ESTHETIC_PROSTHODONTICS", "GENERAL_OMFS_ENDODONTICS"] | None = None
@@ -303,6 +303,7 @@ def admin_stats(days: int = 30) -> dict[str, Any]:
             """SELECT count(*) AS questions,
                       count(*) FILTER (WHERE persona_mode = 'PATIENT') AS patient_questions,
                       count(*) FILTER (WHERE persona_mode = 'DOCTOR') AS doctor_questions,
+                      count(*) FILTER (WHERE persona_mode = 'CONTENT') AS content_requests,
                       count(*) FILTER (WHERE feedback_rating = 1) AS positive,
                       count(*) FILTER (WHERE feedback_rating = -1) AS negative,
                       count(*) FILTER (WHERE used_fallback) AS used_fallback,

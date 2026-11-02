@@ -61,11 +61,28 @@ python -m dental_ai serve                              # http://localhost:8000
 | Biến | Ý nghĩa |
 |---|---|
 | `ANTHROPIC_API_KEY` | Khoá Claude API (lấy tại console.anthropic.com). Mô hình mặc định `claude-opus-5-5` |
-| `CLAUDE_EFFORT_DOCTOR` / `CLAUDE_EFFORT_PATIENT` | Độ sâu suy luận cho từng chế độ (`low`…`max`) |
+| `CLAUDE_EFFORT_DOCTOR` / `CLAUDE_EFFORT_PATIENT` / `CLAUDE_EFFORT_CONTENT` | Độ sâu suy luận cho từng chế độ (`low`…`max`) |
 | `EMBEDDING_PROVIDER` | `openai` (khuyến nghị, cần `OPENAI_API_KEY`) hoặc `local` (offline). **Đổi xong chạy `reindex`** |
 | `FALLBACK_ENABLED`, `NCBI_API_KEY`, `NCBI_EMAIL` | Tự tra PubMed 2016–2026 khi DB chưa đủ dữ liệu |
 | `ADMIN_TOKEN` | Mật khẩu cho các API quản trị `/api/admin/*` |
 | `BRAND_DNA_ENABLED`, `BRAND_DNA_FILE` | Bật/tắt và chọn file DNA thương hiệu nối vào system prompt (mặc định `data/brand/DNA_Tam_Duc_Smile.md`) |
+
+## Chế độ C — Đội nội dung viết kịch bản video ngắn
+
+Chọn vai trò **Đội nội dung** trên giao diện (hoặc gõ yêu cầu có từ "kịch bản", "TikTok", "Reels", "hook"…, hệ thống tự nhận).
+Claude dựa vào DNA thương hiệu (`data/brand/DNA_Tam_Duc_Smile.md`) và phác đồ trong CSDL để soạn:
+brief → 3 hook → bảng phân cảnh (thời gian, B-roll, lời thoại, chữ trên màn hình) → biến thể TikTok / Reels / Shorts →
+caption & hashtag → căn cứ chuyên môn → checklist trước khi đăng → chỉ số đo.
+
+Sau mỗi bản nháp, hệ thống **tự quét** (không dùng AI) và nối phần *Rà soát tự động*:
+- ⛔ cụm từ cấm theo Mục 9 DNA: "không đau", "100%", "vĩnh viễn", "số 1", "rẻ nhất", "cam kết kết quả"…
+- ⚠️ dữ liệu cần doanh nghiệp xác nhận: giá, ưu đãi, trả góp, quà tặng, thời hạn, số năm kinh nghiệm, số chi nhánh, cấp đối tác.
+
+```bash
+python -m dental_ai ask --role content "Kịch bản TikTok 30 giây: con đưa mẹ đi khám răng, tư vấn Implant"
+```
+
+Bản nháp luôn phải qua bác sĩ duyệt chuyên môn và duyệt pháp lý quảng cáo khám chữa bệnh trước khi quay/đăng.
 
 ## Trang quản trị cho bác sĩ — http://localhost:8000/admin
 

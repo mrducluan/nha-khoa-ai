@@ -168,7 +168,7 @@ document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
 
 async function loadStats() {
   const s = await api("/api/admin/stats");
-  const items = [["Câu hỏi (30 ngày)", s.questions], ["Bệnh nhân", s.patient_questions], ["Bác sĩ", s.doctor_questions],
+  const items = [["Câu hỏi (30 ngày)", s.questions], ["Bệnh nhân", s.patient_questions], ["Bác sĩ", s.doctor_questions], ["Kịch bản video", s.content_requests],
     ["👍 Hữu ích", s.positive], ["👎 Chưa tốt", s.negative], ["Có cảnh báo đỏ", s.red_flag_questions],
     ["Dùng PubMed", s.used_fallback], ["Chờ duyệt", s.pending_reviews]];
   $("tiles").innerHTML = items.map(([k, v]) => `<div class="tile"><b>${v ?? 0}</b><span>${k}</span></div>`).join("");
@@ -262,7 +262,7 @@ async function loadLogs() {
   const rows = await api("/api/admin/logs?limit=100&only_negative=" + $("onlyNegative").checked);
   $("logDetail").classList.add("hidden");
   $("logRows").innerHTML = rows.length ? rows.map(l => `<tr class="clickable" data-id="${l.log_id}">
-      <td class="hide-sm">${fmtDate(l.created_at)}</td><td>${l.persona_mode === "DOCTOR" ? "Bác sĩ" : "Bệnh nhân"}</td><td>${esc(l.question.slice(0, 140))}</td>
+      <td class="hide-sm">${fmtDate(l.created_at)}</td><td>${({ DOCTOR: "Bác sĩ", PATIENT: "Bệnh nhân", CONTENT: "Nội dung" })[l.persona_mode] || esc(l.persona_mode)}</td><td>${esc(l.question.slice(0, 140))}</td>
       <td>${(l.red_flags || []).map(f => `<span class="pill bad">${esc(f)}</span>`).join(" ")}${l.used_fallback ? ' <span class="pill">PubMed</span>' : ""}</td>
       <td>${l.feedback_rating === 1 ? "👍" : l.feedback_rating === -1 ? "👎" : ""}</td></tr>`).join("")
     : `<tr><td colspan="5" class="muted">Chưa có dữ liệu.</td></tr>`;

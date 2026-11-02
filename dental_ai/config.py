@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     claude_model: str = "claude-opus-5-5"
     claude_effort_doctor: str = "high"     # low | medium | high | xhigh | max
     claude_effort_patient: str = "medium"
+    claude_effort_content: str = "high"   # Chế độ C — viết kịch bản video
     claude_max_tokens: int = 16000
 
     # --- Embedding (tìm kiếm ngữ nghĩa) ---

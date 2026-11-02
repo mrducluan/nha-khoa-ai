@@ -53,3 +53,7 @@ DOCTOR_DISCLAIMER = (
     "*Hỗ trợ quyết định lâm sàng dựa trên bằng chứng. Bác sĩ điều trị chịu trách nhiệm đánh giá "
     "và cá thể hoá cho từng bệnh nhân; vui lòng đối chiếu trích dẫn gốc trước khi áp dụng.*"
 )
+CONTENT_DISCLAIMER = (
+    "📝 *Bản nháp kịch bản do AI soạn cho đội nội dung nội bộ — bắt buộc duyệt chuyên môn (bác sĩ), "
+    "pháp lý quảng cáo khám chữa bệnh và xác nhận mọi dữ liệu thương mại trước khi sản xuất/đăng tải.*"
+)

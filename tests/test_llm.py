@@ -70,3 +70,23 @@ def test_assistant_sends_context_and_mode(database):
     assert len(captured[0]["body"]["messages"]) == 3
     assert captured[0]["body"]["output_config"]["effort"] == "high"
     assert result["answer"].startswith("Trả lời mẫu")
+
+
+def test_content_mode_end_to_end(database):
+    captured = []
+    draft = "## Brief\nHook: Mẹ ăn ít? Cấy Implant 100% không đau, giá 7.999.000đ/trụ."
+    settings = Settings(anthropic_api_key="sk-test", database_url=database, fallback_enabled=False,
+                        claude_effort_content="xhigh")
+    assistant = Assistant(settings, LocalHashEmbedder(), make_client(captured, draft))
+    result = assistant.ask("Viết kịch bản TikTok 30 giây về trồng răng implant, mẹ bị sưng má", "auto")
+    body = captured[0]["body"]
+    msg = body["messages"][-1]["content"]
+    assert result["mode"] == "CONTENT"
+    assert "CHẾ ĐỘ: C" in msg and "<ngu_canh_truy_xuat>" in msg
+    assert "CẢNH BÁO ĐỎ" not in msg and result["red_flags"] == []  # yêu cầu nội bộ, không phải triệu chứng
+    assert body["output_config"]["effort"] == "xhigh"
+    assert "CHẾ ĐỘ C: CONTENT STUDIO" in body["system"][0]["text"]
+    answer = result["answer"]
+    assert answer.startswith(draft)
+    assert "Rà soát tự động" in answer and "⛔" in answer and "7.999.000đ/trụ" in answer
+    assert answer.rstrip().endswith("trước khi sản xuất/đăng tải.*")

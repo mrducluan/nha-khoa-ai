@@ -2,6 +2,7 @@
 
 Chế độ A (DOCTOR): bác sĩ, nội trú, fellow, sinh viên nha khoa.
 Chế độ B (PATIENT): bệnh nhân / người dùng phổ thông.
+Chế độ C (CONTENT): đội nội dung viết kịch bản video ngắn TikTok/Reels/Shorts theo DNA thương hiệu.
 Người dùng có thể chọn vai trò trên giao diện; "auto" sẽ dùng bộ chấm điểm từ khoá.
 """
 
@@ -12,7 +13,7 @@ from dataclasses import dataclass
 
 from .embeddings import strip_accents
 
-DOCTOR, PATIENT = "DOCTOR", "PATIENT"
+DOCTOR, PATIENT, CONTENT = "DOCTOR", "PATIENT", "CONTENT"
 
 # Từ khoá đã bỏ dấu, viết thường
 _CLINICAL_TERMS = [
@@ -37,6 +38,13 @@ _PATIENT_TERMS = [
     "an gi", "kieng gi", "o nha", "chai rang", "sung ma", "sung nuou",
 ]
 
+# Yêu cầu sản xuất nội dung (đã bỏ dấu): chỉ cần 1 từ khoá là chuyển sang Chế độ C
+_CONTENT_TERMS = [
+    "kich ban", "tiktok", "tik tok", "reels", "reel", "shorts", "video ngan", "hook", "caption", "hashtag",
+    "storyboard", "voice over", "voiceover", "phan canh", "series video", "kenh tiktok", "fanpage",
+    "bai dang", "viet content", "y tuong video", "quay video", "dung video",
+]
+
 
 @dataclass
 class PersonaDecision:
@@ -52,9 +60,11 @@ def _score(text: str, terms: list[str]) -> int:
 
 def detect_persona(question: str, requested: str | None = "auto") -> PersonaDecision:
     req = (requested or "auto").upper()
-    if req in (DOCTOR, PATIENT):
+    if req in (DOCTOR, PATIENT, CONTENT):
         return PersonaDecision(req, 0, 0, "Người dùng chọn vai trò")
     text = strip_accents(question)
+    if _score(text, _CONTENT_TERMS):
+        return PersonaDecision(CONTENT, 0, 0, "Yêu cầu sản xuất nội dung video ngắn")
     d, p = _score(text, _CLINICAL_TERMS), _score(text, _PATIENT_TERMS)
     # Số liệu kỹ thuật (VD: 35 Ncm, 6mm, 875mg) là dấu hiệu mạnh của câu hỏi chuyên môn
     if re.search(r"\d+(\.\d+)?\s*(ncm|mm|mg|rpm|%)", text):

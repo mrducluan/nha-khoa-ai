@@ -1,4 +1,4 @@
-"""Bộ điều phối hỏi đáp: Persona → Red flags → Truy xuất lai → Fallback PubMed → Claude → Nhật ký."""
+"""Bộ điều phối hỏi đáp: Persona → Red flags → Truy xuất lai → Fallback PubMed → Claude → (Rà soát kịch bản) → Nhật ký."""
 
 from __future__ import annotations
 
@@ -10,14 +10,15 @@ from typing import Any, Iterator
 
 
 from .config import Settings, get_settings
+from .content_compliance import render_compliance_report, scan_claims
 from .db import connect
 from .embeddings import Embedder, get_embedder
 from .fallback import Article, PubMedClient, cache_articles, should_trigger_fallback
 from .knowledge import check_embedding_provider
 from .llm import ClaudeClient, LLMResult
-from .persona import DOCTOR, PATIENT, detect_persona
+from .persona import CONTENT, DOCTOR, PATIENT, detect_persona
 from .query_expansion import expand_query
-from .safety import DOCTOR_DISCLAIMER, PATIENT_DISCLAIMER, RedFlag, detect_red_flags
+from .safety import CONTENT_DISCLAIMER, DOCTOR_DISCLAIMER, PATIENT_DISCLAIMER, RedFlag, detect_red_flags
 
 log = logging.getLogger(__name__)
 
@@ -26,6 +27,12 @@ PATIENT_PAYLOAD_KEYS = (
     "pathophysiology_mechanism", "indications", "contraindications_absolute",
     "contraindications_relative", "patient_friendly_translation",
 )
+MODE_LINES = {
+    DOCTOR: "CHẾ ĐỘ: A — CLINICAL PRO & ACADEMIC MODE (người hỏi là bác sĩ/nội trú/sinh viên)",
+    PATIENT: "CHẾ ĐỘ: B — PATIENT EDUCATION & EMPATHY MODE (người hỏi là bệnh nhân/người dân)",
+    CONTENT: "CHẾ ĐỘ: C — CONTENT STUDIO (đội nội dung nội bộ viết kịch bản video ngắn TikTok/Reels/Shorts)",
+}
+DISCLAIMERS = {DOCTOR: DOCTOR_DISCLAIMER, PATIENT: PATIENT_DISCLAIMER, CONTENT: CONTENT_DISCLAIMER}
 
 
 @dataclass
@@ -75,7 +82,7 @@ def format_context(mode: str, results: list[dict[str, Any]], articles: list[Arti
     for i, r in enumerate(results, 1):
         tag = f"[{r['organization_code']} | {r['publication_year']} | {r['evidence_level']}]"
         payload = r["clinical_payload"]
-        if mode == PATIENT:
+        if mode in (PATIENT, CONTENT):  # kịch bản video dùng ngôn ngữ đời thường như bệnh nhân
             payload = {k: payload.get(k) for k in PATIENT_PAYLOAD_KEYS if k in payload}
         block = {
             "vai_tro": r["slot_role"],
@@ -110,10 +117,7 @@ def format_context(mode: str, results: list[dict[str, Any]], articles: list[Arti
 
 
 def build_user_message(prep: Prepared) -> str:
-    mode_line = ("CHẾ ĐỘ: A — CLINICAL PRO & ACADEMIC MODE (người hỏi là bác sĩ/nội trú/sinh viên)"
-                 if prep.mode == DOCTOR else
-                 "CHẾ ĐỘ: B — PATIENT EDUCATION & EMPATHY MODE (người hỏi là bệnh nhân/người dân)")
-    lines = [mode_line]
+    lines = [MODE_LINES[prep.mode]]
     if prep.red_flags:
         lines.append("CẢNH BÁO ĐỎ (hệ thống phát hiện): " + " | ".join(f.code for f in prep.red_flags))
     lines.append(format_context(prep.mode, prep.results, prep.articles))
@@ -123,6 +127,11 @@ def build_user_message(prep: Prepared) -> str:
 
 def render_offline_answer(prep: Prepared) -> str:
     """Câu trả lời trích thẳng từ CSDL khi chưa cấu hình Claude API (chế độ dự phòng)."""
+    if prep.mode == CONTENT:
+        refs = "\n".join(f"- {r['protocol_title']} [{r['organization_code']} | {r['publication_year']}]"
+                         for r in prep.results) or "- (chưa có phác đồ liên quan)"
+        return ("Chế độ viết kịch bản cần cấu hình Claude API (`ANTHROPIC_API_KEY`). "
+                "Các phác đồ trong cơ sở dữ liệu có thể làm căn cứ chuyên môn cho chủ đề này:\n\n" + refs)
     if not prep.results:
         return ("Hiện cơ sở dữ liệu chưa có phác đồ phù hợp với câu hỏi này. "
                 "Vui lòng hỏi bác sĩ nha khoa để được thăm khám trực tiếp.")
@@ -163,7 +172,8 @@ class Assistant:
                 specialty: str | None = None) -> Prepared:
         question = question.strip()
         persona = detect_persona(question, role)
-        flags = detect_red_flags(question)
+        # Chế độ C là yêu cầu nội bộ viết kịch bản, không phải người bệnh mô tả triệu chứng
+        flags = [] if persona.mode == CONTENT else detect_red_flags(question)
         prior_user = [m["content"] for m in (history or []) if m.get("role") == "user"]
         retrieval_query = f"{prior_user[-1]} {question}" if prior_user and len(question) < 80 else question
         results = search(conn, self.embedder, retrieval_query, self.settings.retrieval_top_k, specialty)
@@ -216,7 +226,8 @@ class Assistant:
                 model = "offline-database"
                 yield {"type": "delta", "text": answer}
             else:
-                effort = self.settings.claude_effort_doctor if prep.mode == DOCTOR else self.settings.claude_effort_patient
+                effort = {DOCTOR: self.settings.claude_effort_doctor, PATIENT: self.settings.claude_effort_patient,
+                          CONTENT: self.settings.claude_effort_content}[prep.mode]
                 try:
                     for item in self.llm.stream_answer(self._messages(prep, history), effort):
                         if isinstance(item, LLMResult):
@@ -237,7 +248,12 @@ class Assistant:
                         yield {"type": "delta", "text": msg}
                         answer = msg
 
-            disclaimer = "\n\n---\n" + (PATIENT_DISCLAIMER if prep.mode == PATIENT else DOCTOR_DISCLAIMER)
+            if prep.mode == CONTENT and result and not result.refused:  # chỉ quét bản nháp do Claude viết
+                report = "\n\n---\n" + render_compliance_report(scan_claims(answer))
+                yield {"type": "delta", "text": report}
+                answer += report
+
+            disclaimer = "\n\n---\n" + DISCLAIMERS[prep.mode]
             yield {"type": "delta", "text": disclaimer}
             answer += disclaimer
 

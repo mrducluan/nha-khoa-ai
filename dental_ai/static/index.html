@@ -71,6 +71,7 @@
     <button type="button" data-role="auto" class="active">Tự động</button>
     <button type="button" data-role="patient">Bệnh nhân</button>
     <button type="button" data-role="doctor">Bác sĩ / SV</button>
+    <button type="button" data-role="content">Đội nội dung</button>
   </div>
 </header>
 
@@ -78,13 +79,16 @@
   <section class="welcome" id="welcome">
     <h2>Xin chào! Tôi có thể giúp gì cho anh/chị?</h2>
     <p>Hệ thống trả lời dựa trên cơ sở dữ liệu phác đồ chuẩn quốc tế (ADA, ITI, FDI, CGDent, EFP, Cochrane…).
-       Chọn <b>Bệnh nhân</b> để được giải thích dễ hiểu, hoặc <b>Bác sĩ / SV</b> để nhận phân tích chuyên sâu kèm trích dẫn.</p>
+       Chọn <b>Bệnh nhân</b> để được giải thích dễ hiểu, <b>Bác sĩ / SV</b> để nhận phân tích chuyên sâu kèm trích dẫn,
+       hoặc <b>Đội nội dung</b> để viết kịch bản video TikTok/Reels/Shorts theo DNA Tâm Đức Smile.</p>
     <div class="chips">
       <button class="chip">Tôi bị chảy máu chân răng khi đánh răng, có sao không?</button>
       <button class="chip">Niềng răng trong suốt có hiệu quả bằng mắc cài không?</button>
       <button class="chip">Mất hết răng hàm trên, làm răng cố định trên implant thế nào?</button>
       <button class="chip">Torque cài đặt MUA và giới hạn cantilever trong All-on-4?</button>
       <button class="chip">Xử trí thủng màng Schneider theo kích thước lỗ thủng?</button>
+      <button class="chip">Viết kịch bản TikTok 30 giây: con đưa mẹ đi khám răng, tư vấn Implant</button>
+      <button class="chip">Kịch bản Reels: niềng mắc cài hay khay trong, chọn theo gì?</button>
     </div>
   </section>
 </main>
@@ -105,7 +109,7 @@ const sendBtn = document.getElementById("send");
 let role = "auto";
 const history = [];
 
-const MODE_LABEL = { DOCTOR: "Chế độ Bác sĩ (A)", PATIENT: "Chế độ Bệnh nhân (B)" };
+const MODE_LABEL = { DOCTOR: "Chế độ Bác sĩ (A)", PATIENT: "Chế độ Bệnh nhân (B)", CONTENT: "Chế độ Đội nội dung (C)" };
 
 function renderMarkdown(text) {
   if (window.marked && window.DOMPurify) return DOMPurify.sanitize(marked.parse(text));

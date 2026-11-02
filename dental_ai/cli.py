@@ -186,7 +186,7 @@ def main(argv: list[str] | None = None) -> None:
 
     p = sub.add_parser("ask", help="Hỏi đáp trên dòng lệnh")
     p.add_argument("question")
-    p.add_argument("--role", choices=["auto", "doctor", "patient"], default="auto")
+    p.add_argument("--role", choices=["auto", "doctor", "patient", "content"], default="auto")
     p.set_defaults(func=cmd_ask)
 
     sub.add_parser("audit", help="Kiểm định dữ liệu theo schema 02").set_defaults(func=cmd_audit)
