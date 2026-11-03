@@ -31,9 +31,15 @@ trọn đời, 100%, số 1, tốt nhất, rẻ nhất, cam kết kết quả ·
 (chưa có xác nhận của doanh nghiệp) · không ảnh người thật, không lời chứng thực giả — bối cảnh gia đình ở i03 có nhãn
 "Tình huống minh họa".
 
-**Hình ảnh:** tự vẽ bằng SVG có khối 3D (bóng men răng, đổ bóng mềm, ánh kim trên trụ Implant, quầng sáng sau hình, máy quay đẩy chậm) (răng hàm, xương hàm, trụ Implant, khớp nối, mão sứ, mặt cắt răng sứ kim loại / toàn sứ,
-nụ cười, bảng so màu, khuôn mặt…) — không dùng ảnh kho có bản quyền. Môi trường dựng không truy cập được Pexels / Unsplash /
-Pixabay; nếu anh có ảnh/video thật của phòng khám (đã được đồng ý), có thể thay vào các cảnh minh họa.
+**Hình ảnh:**
+- **Ảnh kho Pexels** (giấy phép thương mại miễn phí, danh sách ở `anh/NGUON.md`, ghép theo cảnh trong `anh-kho.mjs`):
+  - Cảnh mở đầu: 1,2 giây đầu ảnh người thật hiện sáng cùng tiêu đề, dùng làm ảnh bìa.
+  - Cảnh chữ lớn và cảnh cuối: ảnh hiện rõ phía sau.
+  - Cảnh minh họa và danh sách: ảnh mờ tối làm nền.
+  - Video i03 (chuyện gia đình) cố ý không dùng ảnh người lạ.
+- **Minh họa nha khoa tự vẽ bằng SVG** có khối 3D: men răng bóng, đổ bóng, ánh kim trên trụ Implant, quầng sáng, máy quay đẩy chậm.
+- **Logo:** dùng logo gốc của Tâm Đức Smile (`logo/logo-1.png`).
+- **Lưu ý:** người trong ảnh kho không phải bác sĩ hay bệnh nhân của phòng khám. Không viết chú thích ngụ ý điều đó, và không dùng các ảnh này làm "trước/sau điều trị".
 
 **Bố cục cố định** (chữ và hình không bao giờ chồng nhau): thương hiệu y 150–215 · tiêu đề y 250–470 · hình y 490–1130 ·
 phụ đề karaoke y 1190–1370 · lề trái/phải ≥ 90 px (tránh cột nút TikTok).
@@ -110,7 +116,7 @@ phụ đề karaoke y 1190–1370 · lề trái/phải ≥ 90 px (tránh cột n
 1. Fanpage/TikTok có người trực inbox để nhận lịch (CTA duy nhất là inbox).
 2. Quy trình "scan răng", "thiết kế nụ cười", "thử mẫu trước" (s01, s03) có ở mọi chi nhánh không — nếu không, sửa thành "có thể".
 3. Bác sĩ duyệt câu chuyên môn: tiêu xương sau mất răng (i01), chỉ định veneer / mão sứ (s01), nguyên nhân viền tối (s02).
-4. Logo: đang dùng bản vẽ lại vector theo logo anh gửi (cỏ 4 lá tim + "TÂM ĐỨC Smile" + "Răng Tốt Sức Khoẻ Tốt"). Đặt file logo gốc vào `video-ngan/logo/` (png/svg) rồi `node dung.mjs && node render.mjs` là video tự dùng logo gốc.
+4. Logo gốc đã có tại `video-ngan/logo/logo-1.png` (tải từ cms.nhakhoatamducsmile.com). Nếu có bản đẹp hơn, chỉ cần thay file này.
 
 ## Đo lường gợi ý
 

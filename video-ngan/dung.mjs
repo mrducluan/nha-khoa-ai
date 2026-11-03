@@ -14,6 +14,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { VIDEO, MIEN_TRU, HOTLINE, SLOGAN, CTA_NUT, CTA_PHU } from "./kich-ban.mjs";
 import { HINH, MAU, defs, logoSvg } from "./minh-hoa.mjs";
+import { ANH, DO_CHE } from "./anh-kho.mjs";
 
 const GOC = path.dirname(fileURLToPath(import.meta.url));
 // Logo chính thức: đặt file vào logo/ (png/svg/webp). Có logo → CTA và đầu khung dùng logo thật; chưa có → chữ + biểu tượng răng.
@@ -48,6 +49,12 @@ const CHUNG = `${PHONG}
 .tde .w { display: inline-block; }
 .nho { position: absolute; left: 110px; right: 110px; text-align: center; font-weight: 700; font-size: 44px; line-height: 1.3; color: ${MAU.mo}; }
 .hinh { position: absolute; left: 90px; top: ${VUNG.hinh}px; width: 900px; height: ${VUNG.hinhCao}px; overflow: visible; }
+.anhnen { position: absolute; inset: 0; overflow: hidden; }
+.anhnen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.anhmo { position: absolute; inset: 0; background: ${MAU.nen}; }
+.anhphu { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,24,38,0.9) 0%, rgba(6,24,38,0.55) 11%, rgba(6,24,38,0) 30%, rgba(6,24,38,0) 54%, rgba(6,24,38,0.88) 62%, rgba(6,24,38,0.97) 72%, rgba(6,24,38,0.97) 100%); }
+.coanh .tde { text-shadow: 0 6px 24px rgba(0,0,0,0.75), 0 2px 0 rgba(0,0,0,0.45); }
+.pan { position: absolute; left: 66px; top: ${VUNG.hinh - 24}px; width: 948px; height: ${VUNG.hinhCao + 48}px; border-radius: 44px; background: rgba(6,24,38,0.74); border: 2px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
 .quang { position: absolute; left: 190px; top: ${VUNG.hinh + 40}px; width: 700px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, rgba(108,196,255,0.28), rgba(79,224,200,0.10) 55%, rgba(79,224,200,0) 100%); opacity: 0; }
 .chip { display: inline-block; padding: 14px 30px; border-radius: 999px; background: rgba(79,224,200,0.12); border: 2px solid rgba(79,224,200,0.6); color: ${MAU.ngoc}; font-weight: 800; font-size: 36px; white-space: nowrap; }
 `;
@@ -89,7 +96,7 @@ const KIEU = {
       css: "",
       // Quầng sáng sau hình + máy quay đẩy chậm (Ken Burns) + ánh kim quét qua trụ Implant.
       html: `${td.html}<div id="${x.p}-quang" class="quang"></div><svg id="${x.p}-svg" class="hinh" viewBox="0 0 900 640">${defs(x.p)}${h.svg}</svg>`,
-      js: `tl.fromTo("#${x.p}-svg", {opacity:${x.dau ? 1 : 0}, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out"}, 0.05);
+      js: `${x.anhDau ? `tl.set("#${x.p}-svg", {opacity:0}, 0);` : `tl.fromTo("#${x.p}-svg", {opacity:${x.dau ? 1 : 0}, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out"}, 0.05);`}
 tl.to("#${x.p}-svg", {scale:1.025, duration:${r3(Math.max(1, x.d - 0.8))}, ease:"none"}, 0.55);
 tl.fromTo("#${x.p}-quang", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.8, ease:"expo.out"}, 0.05);
 tl.to("#${x.p}-quang", {scale:1.12, opacity:0.7, duration:1.8, yoyo:true, repeat:${Math.max(1, Math.floor(x.d / 1.8) - 1)}, ease:"sine.inOut"}, 0.9);
@@ -312,8 +319,21 @@ function canhFile(video, s) {
   const f = KIEU[s.c.loai];
   if (!f) throw new Error(`Chưa có kiểu cảnh ${s.c.loai}`);
   const p = `${video.ma}${s.c.id.replace(/-/g, "")}`;
-  const k = f(s.c, { p, d: s.d, moc: s.moc, video, dau: s.bd === 0 });
+  // Ảnh nền thật (anh-kho.mjs): cảnh mở đầu cho ảnh sáng ~1,2 s rồi tối dần, hình minh hoạ hiện trên tấm nền riêng.
+  const anh = ANH[video.ma]?.[s.c.id];
+  const k = f(s.c, { p, d: s.d, moc: s.moc, video, dau: s.bd === 0, anhDau: !!anh && s.bd === 0 && s.c.loai === "minh_hoa" });
   const ra = r3(s.d - 0.28);
+  let anhHtml = "", anhJs = "";
+  if (anh) {
+    const che = DO_CHE[s.c.loai] ?? 0.8, moDau = s.bd === 0 && s.c.loai === "minh_hoa";
+    const pan = s.c.loai === "minh_hoa" ? `<div id="${p}-pan" class="pan"></div>` : "";
+    anhHtml = `<div class="anhnen"><img id="${p}-anh" src="assets/anh/pexels-${anh[0]}.jpg" style="object-position:${anh[1]}" alt="" /></div><div id="${p}-mo" class="anhmo" style="opacity:${moDau ? 0.15 : che}"></div><div class="anhphu"></div>${pan}`;
+    anhJs = `tl.fromTo("#${p}-anh", {scale:1.12}, {scale:1.0, duration:${s.d}, ease:"none"}, 0);
+${moDau ? `tl.to("#${p}-mo", {opacity:${che}, duration:0.6, ease:"power2.inOut"}, 1.2);
+tl.fromTo("#${p}-pan", {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"expo.out"}, 1.2);
+tl.fromTo("#${p}-svg", {opacity:0, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out", immediateRender:false}, 1.3);`
+    : (pan ? `tl.fromTo("#${p}-pan", {opacity:0, scale:0.97}, {opacity:1, scale:1, duration:0.5, ease:"expo.out"}, 0.05);` : "")}`;
+  }
   return {
     sfx: (k.sfx ?? []).map((x) => ({ ...x, t: r3(s.bd + Math.max(0, x.t)) })).filter((x) => x.t < s.bd + s.d),
     html: `<template>
@@ -323,17 +343,40 @@ ${k.css}
 </style>
 <div id="root" data-composition-id="${s.c.id}" data-width="${W}" data-height="${H}">
 <div id="${p}-khung" class="clip khung" data-start="0" data-duration="${s.d}">
-<div id="${p}-noi" class="khung">
+<div id="${p}-noi" class="khung${anh ? " coanh" : ""}">
+${anhHtml}
 ${k.html}
 </div></div></div>
 <script>
 const tl = gsap.timeline({ paused: true });
 ${k.js}
+${anhJs}
 tl.to("#${p}-noi", {opacity:0, filter:"blur(10px)", duration:0.24, ease:"power2.in"}, ${ra});
 window.__timelines["${s.c.id}"] = tl;
 </script>
 </template>`,
   };
+}
+
+/** Lớp trên cùng (dưới phụ đề): logo + khẩu hiệu — nằm trên ảnh nền của từng cảnh. */
+function dauFile(tong) {
+  return `<template>
+<style>
+${PHONG}
+#root { position:absolute; inset:0; }
+#nen-hieu { position:absolute; left:0; right:0; top:156px; display:flex; justify-content:center; align-items:center; gap:16px; font-family:"BVP"; font-weight:800; font-size:34px; color:${MAU.chu}; }
+#nen-hieu i { font-style:normal; font-weight:700; font-size:26px; color:${MAU.ngoc}; padding:6px 16px; border-radius:999px; border:2px solid rgba(79,224,200,0.5); }
+#nen-chan { position:absolute; left:0; right:0; top:1452px; text-align:center; font-family:"BVP"; font-weight:800; font-size:30px; color:rgba(79,224,200,0.38); letter-spacing:0.1em; }
+</style>
+<div id="root" data-composition-id="dau" data-width="${W}" data-height="${H}">
+<div id="dau-khung" class="clip" data-start="0" data-duration="${tong}" data-layout-ignore>
+  ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:76px; background:#FFFFFF; padding:8px 18px; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.35);" /></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 260)}</span></div>`}
+  <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
+</div></div>
+<script>
+window.__timelines["dau"] = gsap.timeline({ paused: true });
+</script>
+</template>`;
 }
 
 function nenFile(tong, video) {
@@ -352,9 +395,6 @@ ${PHONG}
 #root { position:absolute; inset:0; }
 #nen-day { position:absolute; inset:0; background: radial-gradient(1100px 900px at 50% 30%, #0F3550 0%, ${MAU.nen} 65%); }
 #nen-bot, #nen-lap { position:absolute; left:0; top:0; width:${W}px; height:${H}px; }
-#nen-hieu { position:absolute; left:0; right:0; top:156px; display:flex; justify-content:center; align-items:center; gap:16px; font-family:"BVP"; font-weight:800; font-size:34px; color:${MAU.chu}; }
-#nen-hieu i { font-style:normal; font-weight:700; font-size:26px; color:${MAU.ngoc}; padding:6px 16px; border-radius:999px; border:2px solid rgba(79,224,200,0.5); }
-#nen-chan { position:absolute; left:0; right:0; top:1452px; text-align:center; font-family:"BVP"; font-weight:800; font-size:30px; color:rgba(79,224,200,0.38); letter-spacing:0.1em; }
 </style>
 <div id="root" data-composition-id="nen" data-width="${W}" data-height="${H}">
 <div id="nen-khung" class="clip" data-start="0" data-duration="${tong}" data-layout-ignore>
@@ -362,8 +402,6 @@ ${PHONG}
   <div id="nen-toi" style="position:absolute; inset:0; background: radial-gradient(1300px 1500px at 50% 42%, rgba(0,0,0,0) 55%, rgba(0,6,12,0.55) 100%);"></div>
   <svg id="nen-bot" viewBox="0 0 ${W} ${H}">${bot}</svg>
   <svg id="nen-lap" viewBox="0 0 ${W} ${H}">${lap}</svg>
-  ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:58px; background:#FFFFFF; padding:6px 14px; border-radius:14px;" /></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 260)}</span></div>`}
-  <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
 </div></div>
 <script>
 const tl = gsap.timeline({ paused: true });
@@ -390,6 +428,9 @@ function dung(video) {
   fs.copyFileSync(path.join(GOC, "node_modules/gsap/dist/gsap.min.js"), path.join(thu, "assets/gsap.min.js"));
   if (LOGO) { fs.mkdirSync(path.join(thu, "assets/logo"), { recursive: true }); fs.copyFileSync(path.join(GOC, "logo", LOGO), path.join(thu, "assets/logo", LOGO)); }
 
+  fs.rmSync(path.join(thu, "assets/anh"), { recursive: true, force: true });
+  fs.mkdirSync(path.join(thu, "assets/anh"), { recursive: true });
+  for (const [id] of Object.values(ANH[video.ma] ?? {})) fs.copyFileSync(path.join(GOC, "anh", `pexels-${id}.jpg`), path.join(thu, "assets/anh", `pexels-${id}.jpg`));
   const hosts = [], sfx = [], giong = [];
   for (const s of lich) {
     const cf = canhFile(video, s);
@@ -430,6 +471,7 @@ function dung(video) {
   }
 
   fs.writeFileSync(path.join(thu, "compositions", "nen.html"), nenFile(tong, video));
+  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong));
   fs.writeFileSync(path.join(thu, "compositions", "phu-de.html"), canhPhuDe(lich));
   fs.writeFileSync(path.join(thu, "hyperframes.json"), JSON.stringify({
     $schema: "https://hyperframes.heygen.com/schema/hyperframes.json",
@@ -452,6 +494,7 @@ function dung(video) {
     <div id="root" data-composition-id="main" data-start="0" data-duration="${tong}" data-width="${W}" data-height="${H}">
     <div id="nen" data-composition-id="nen" data-composition-src="compositions/nen.html" data-start="0" data-duration="${tong}" data-track-index="1" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:1"></div>
     ${hosts.join("\n    ")}
+    <div id="dau" data-composition-id="dau" data-composition-src="compositions/dau.html" data-start="0" data-duration="${tong}" data-track-index="20" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:4"></div>
     <div id="phu-de" data-composition-id="phu-de" data-composition-src="compositions/phu-de.html" data-start="0" data-duration="${tong}" data-track-index="3" data-track-kind="captions" data-width="${W}" data-height="${H}" style="z-index:5"></div>
     ${nhac}
     ${giong.join("\n    ")}
