@@ -9,7 +9,7 @@
 // Cảnh không có trong bảng → giữ nền xanh đậm (vd. i03 kể chuyện gia đình: giữ minh hoạ ấm).
 export const ANH = {
   i01: {
-    hook: ["pexels-3845735.jpg", "45% 50%"], "xo-lech": ["pexels-3845738.jpg", "42% 50%"], xuong: ["pexels-3845745.jpg", "50% 40%"],
+    hook: [["bac-si-tri"], "50% 30%"], "xo-lech": ["pexels-3845738.jpg", "42% 50%"], xuong: ["pexels-3845745.jpg", "50% 40%"],
     "he-qua": ["pexels-3845766.jpg", "45% 50%"], implant: [["bac-si-implant", "tru-implant", "bac-si-implant"], "50% 40%"], cta: ["td-phong-3.jpg", "55% 50%"],
   },
   i02: {
