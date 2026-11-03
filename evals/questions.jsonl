@@ -69,10 +69,10 @@
 {"category": "B_doctor", "q": "Nhổ dự phòng răng 8 ngầm không triệu chứng theo Cochrane", "persona": "DOCTOR", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Đánh giá CBCT răng 38 sát ống thần kinh răng dưới trước phẫu thuật", "persona": "DOCTOR", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_whitening", "q": "Tẩy trắng răng có hại men răng không?", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Răng ê buốt khi uống nước lạnh nhưng không sâu là bị gì", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_sensitivity", "q": "Răng ê buốt khi uống nước lạnh nhưng không sâu là bị gì", "persona": null, "topic": ["dentin-hypersensitivity-desensitizing-management"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_bruxism", "q": "Tôi hay nghiến răng khi ngủ phải làm sao", "persona": null, "topic": ["sleep-awake-bruxism-assessment-management"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Hàm kêu lục cục khi há miệng, đau khớp thái dương hàm", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Nhiệt miệng tái đi tái lại nhiều lần", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_tmd", "q": "Hàm kêu lục cục khi há miệng, đau khớp thái dương hàm", "persona": null, "topic": ["temporomandibular-disorders-dc-tmd-conservative"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_aphthous", "q": "Nhiệt miệng tái đi tái lại nhiều lần", "persona": null, "topic": ["recurrent-aphthous-stomatitis-mouth-ulcers"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Bé 1 tuổi chưa mọc răng có sao không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_crown", "q": "Bọc răng sứ toàn sứ hay kim loại tốt hơn", "persona": null, "topic": ["metal-ceramic-vs-all-ceramic-crown-grey-margin"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Trám răng thẩm mỹ composite giữ được bao lâu", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
@@ -162,9 +162,25 @@
 {"category": "B_doctor", "q": "Điều trị peri-implantitis tiêu xương 4mm khuyết hổng trong xương: tái tạo hay cắt bỏ", "persona": "DOCTOR", "topic": ["peri-implant-mucositis-peri-implantitis-treatment"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_prophylaxis", "q": "Tôi thay khớp gối có cần uống kháng sinh trước khi nhổ răng không", "persona": "PATIENT", "topic": ["antibiotic-prophylaxis-prosthetic-joint-endocarditis"], "flags": [], "scope": "dental", "caution": []}
 {"category": "G_special_population", "q": "Tôi có van tim nhân tạo, đi cạo vôi răng có phải uống kháng sinh trước không", "persona": null, "topic": ["antibiotic-prophylaxis-prosthetic-joint-endocarditis"], "flags": [], "scope": "dental", "caution": ["CARDIAC"]}
-{"category": "A_patient_bruxism", "q": "Ngủ nghiến răng ken két, sáng dậy mỏi hàm", "persona": "PATIENT", "topic": ["sleep-awake-bruxism-assessment-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_bruxism", "q": "Ngủ nghiến răng ken két, sáng dậy mỏi hàm", "persona": "PATIENT", "topic": ["sleep-awake-bruxism-assessment-management", "temporomandibular-disorders-dc-tmd-conservative"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_bruxism", "q": "Máng chống nghiến răng có tác dụng gì", "persona": null, "topic": ["sleep-awake-bruxism-assessment-management"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_whitening", "q": "Tẩy trắng răng xong bị ê buốt có sao không", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_whitening", "q": "Bà bầu có tẩy trắng răng được không", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy"], "flags": [], "scope": "dental", "caution": ["PREGNANCY"]}
-{"category": "C_out_of_db", "q": "Làm cầu răng sứ thì phải mài hai răng bên cạnh à", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Răng ê buốt khi chải răng do mòn cổ răng", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_bridge", "q": "Làm cầu răng sứ thì phải mài hai răng bên cạnh à", "persona": null, "topic": ["tooth-supported-fixed-bridge-fdp"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_sensitivity", "q": "Răng ê buốt khi chải răng do mòn cổ răng", "persona": null, "topic": ["dentin-hypersensitivity-desensitizing-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_sensitivity", "q": "Kem đánh răng chống ê buốt có tác dụng không", "persona": "PATIENT", "topic": ["dentin-hypersensitivity-desensitizing-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_sensitivity", "q": "Bị tụt nướu lộ chân răng ê buốt quá", "persona": null, "topic": ["dentin-hypersensitivity-desensitizing-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_bridge", "q": "Cầu răng sứ dùng được bao lâu thì phải làm lại", "persona": null, "topic": ["tooth-supported-fixed-bridge-fdp"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_bridge", "q": "Nên làm cầu răng hay trồng implant cho răng mất", "persona": null, "topic": ["tooth-supported-fixed-bridge-fdp", "peri-implant-mucositis-peri-implantitis-treatment"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_aphthous", "q": "Nhiệt miệng uống thuốc gì cho nhanh khỏi", "persona": "PATIENT", "topic": ["recurrent-aphthous-stomatitis-mouth-ulcers"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_aphthous", "q": "Bị loét miệng hoài có phải thiếu vitamin không", "persona": null, "topic": ["recurrent-aphthous-stomatitis-mouth-ulcers"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_tmd", "q": "Há miệng bị kẹt hàm không há to được", "persona": null, "topic": ["temporomandibular-disorders-dc-tmd-conservative"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_tmd", "q": "Đau khớp hàm khi nhai đồ cứng", "persona": null, "topic": ["temporomandibular-disorders-dc-tmd-conservative"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_mronj", "q": "Đang uống Fosamax có nhổ răng được không", "persona": null, "topic": ["medication-related-osteonecrosis-jaw-mronj"], "flags": [], "scope": "dental", "caution": ["BISPHOSPHONATE"]}
+{"category": "A_patient_mronj", "q": "Xương hàm bị lộ ra sau nhổ răng không lành", "persona": null, "topic": ["medication-related-osteonecrosis-jaw-mronj"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_oral_lesion", "q": "Mảng trắng trong má không cạo được có nguy hiểm không", "persona": null, "topic": ["oral-potentially-malignant-disorders-cancer-detection"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_oral_lesion", "q": "Dấu hiệu ung thư miệng sớm là gì", "persona": null, "topic": ["oral-potentially-malignant-disorders-cancer-detection"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Chỉ định sinh thiết bạch sản và hồng sản niêm mạc miệng", "persona": "DOCTOR", "topic": ["oral-potentially-malignant-disorders-cancer-detection"], "flags": [], "scope": "dental", "caution": []}
+{"category": "B_doctor", "q": "Bệnh nhân truyền zoledronate liều ung thư cần nhổ răng 36", "persona": "DOCTOR", "topic": ["medication-related-osteonecrosis-jaw-mronj"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Lưỡi bị nấm trắng ở người già", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Răng giả tháo lắp làm đau nướu", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}

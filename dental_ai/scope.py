@@ -63,11 +63,11 @@ _CAUTIONS: list[tuple[str, str, str, str]] = [
      "Đái tháo đường: kiểm soát đường huyết tốt giúp điều trị nha chu và implant thành công hơn; đường huyết cao làm tăng nguy cơ "
      "nhiễm trùng và chậm lành. Báo nha sĩ chỉ số HbA1c gần nhất."),
     ("RADIOTHERAPY", "Xạ trị / hoá trị",
-     r"xa tri|hoa tri|ung thu (vom|vung)? ?(dau|co|hong|luoi|mieng)|chemo|radiotherapy",
+     r"xa tri|hoa tri|ung thu (vom|vung)? ?(dau|co|hong|luoi|mieng)|ung thu .{0,30}di can|dang (dieu tri|chua) ung thu|chemo|radiotherapy",
      "Từng xạ trị vùng đầu cổ: nhổ răng/phẫu thuật có nguy cơ hoại tử xương do tia xạ — cần nha sĩ đánh giá và phối hợp bác sĩ ung bướu. "
      "Đang hoá trị: cần kiểm tra công thức máu trước can thiệp."),
     ("CARDIAC", "Bệnh tim mạch",
-     r"van tim|benh tim|viem noi tam mac|tim bam sinh|stent|may tao nhip|suy tim|nhoi mau co tim|cao huyet ap|tang huyet ap|huyet ap cao",
+     r"van tim|benh tim|viem noi tam mac|tim bam sinh|stent|may tao nhip|suy tim|nhoi mau co tim|cao huyet ap|tang huyet ap|huyet ap cao|thuoc (ha |tri |dieu tri )?huyet ap",
      "Bệnh tim mạch: báo nha sĩ bệnh và thuốc đang dùng. Một số trường hợp (van tim nhân tạo, tiền sử viêm nội tâm mạc, một số bệnh tim "
      "bẩm sinh) có thể cần kháng sinh dự phòng trước thủ thuật — do bác sĩ quyết định. Huyết áp cao cần được kiểm soát trước điều trị."),
     ("IMMUNOCOMPROMISED", "Suy giảm miễn dịch",

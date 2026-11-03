@@ -100,3 +100,51 @@ Các chủ đề engine đã nhận diện được nhưng vẫn **chưa có ph�
 
 Danh sách nguồn của schema 02 chưa có SDCEP, AHA, AAOMS, AAE. Khi cần, nên bổ sung các mã này vào `organization_code`
 (schema 02, ràng buộc CHECK trong db/01 qua file nâng cấp db/08).
+
+
+---
+
+# Đợt 2 — ê buốt ngà, cầu răng và bệnh lý nha khoa
+
+## 7. Sáu bản nháp mới
+
+Cách xác minh giống đợt 1: thư mục được đối chiếu qua tìm kiếm web, nội dung dựa trên tóm tắt (chưa đọc toàn văn); mỗi file có `_ghi_chu`.
+
+| # | Chủ đề | File | Nguồn chính (đã xác minh thư mục) |
+|---|---|---|---|
+| 9 | **Ê buốt ngà** | `JDent2018_e_buot_nga.json` | Tổng quan hệ thống *J Dent* 2018;75:12-21, doi:10.1016/j.jdent.2018.05.012 (53 RCT, 4796 bệnh nhân) |
+| 10 | **Cầu răng sứ** | `DentMater2015_cau_rang_su.json` | Pjetursson, Sailer và cs., *Dent Mater* 2015;31:624-639, doi:10.1016/j.dental.2015.02.013 (tồn tại 5 năm của cầu sứ-kim loại 94.4%, zirconia 90.4%) |
+| 11 | Nhiệt miệng (loét áp-tơ) | `Cochrane2012_nhiet_mieng_loet_apto.json` | Cochrane CD005411.pub2 (2012): chưa có thuốc toàn thân nào được chứng minh hiệu quả |
+| 12 | Khớp thái dương hàm | `JOFPH2014_khop_thai_duong_ham_TMD.json` | Tiêu chí DC/TMD, Schiffman và cs., *J Oral Facial Pain Headache* 2014, doi:10.11607/jop.1151 |
+| 13 | Hoại tử xương hàm do thuốc (MRONJ) | `AAOMS2022_hoai_tu_xuong_ham_do_thuoc_MRONJ.json` | AAOMS Position Paper 2022, *J Oral Maxillofac Surg* 80:920-943, doi:10.1016/j.joms.2022.02.008 |
+| 14 | Tổn thương tiền ung thư / ung thư miệng | `ADA2017_ton_thuong_tien_ung_thu_mieng.json` | **ADA** 2017, *JADA* 148:712-727, doi:10.1016/j.adaj.2017.07.032 (đã có bản cập nhật 2026 — cần đối chiếu) |
+
+Lưu ý riêng:
+- Tên tác giả bài J Dent 2018 chưa đối chiếu được, nên file ghi "đối chiếu PubMed".
+- AAOMS không có trong danh mục tổ chức của schema 02, nên tạm ghi theo nhà xuất bản (ELSEVIER).
+
+## 8. Lỗi engine phát hiện thêm & đã sửa
+
+| # | Lỗi | Hậu quả | Cách sửa |
+|---|---|---|---|
+| 9 | Bỏ dấu khiến "**ngà** răng" và "răng **ngả**" trùng "**ngã**" | Câu về nhạy cảm ngà, răng nghiêng bị báo 🚨 **cấp cứu chấn thương** | Kiểm tra "ngã" trên văn bản có dấu; mẫu không dấu "bị ngã" chỉ áp dụng khi người dùng gõ hoàn toàn không dấu |
+| 10 | Chủ đề "niêm mạc miệng" gộp nhiệt miệng với nấm miệng, lưỡi bản đồ | Có phác đồ nhiệt miệng thì engine tưởng đã có dữ liệu về nấm miệng | Tách `APHTHOUS` (nhiệt miệng) khỏi `MUCOSA` |
+| 11 | "răng **trụ**" (trụ cầu) hiểu thành "trụ implant" | Phác đồ cầu răng bị gán chủ đề implant | Loại trừ "răng trụ", "trụ cầu" |
+| 12 | "cầu răng sứ" chứa "răng sứ" | Câu về cầu răng bị coi là câu về bọc mão | Loại trừ "cầu răng sứ" khỏi chủ đề bọc sứ |
+| 13 | Thiếu cách nói: "cầu 3 răng", "buốt lên tận óc", "nốt loét trắng trong má", "đau mang tai khi nhai", "thuốc huyết áp", "ung thư di căn" | Không nhận ra chủ đề hoặc đối tượng đặc biệt | Bổ sung mẫu; thêm chủ đề `MRONJ`, `ORAL_LESION` |
+
+## 9. Kết quả đánh giá đợt 2
+
+| Chỉ số | Dev (186) | Độc lập cũ (49) | v2 (18) | **v3 (19) — lần chạy đầu** | v3 sau sửa |
+|---|---|---|---|---|---|
+| Bác sĩ / bệnh nhân | 100% | 96% | 100% | 75% | 100% |
+| Không báo cấp cứu nhầm | 100% | 100% | 100% | 94% | 100% |
+| Tìm đúng phác đồ top-1 | 100% | 100% | 100% | **81%** | 100% |
+| Nhận ra CSDL chưa có dữ liệu | 100% | 100% | 100% | 100% | 100% |
+
+Bộ v3 được viết trước khi chạy; con số trung thực là cột *lần chạy đầu*. Kiểm thử tự động: **126 test, tất cả đạt**.
+
+## 10. Còn thiếu (đề xuất đợt 3)
+
+Thuốc chống đông khi nhổ răng (SDCEP), khô miệng, nấm miệng, hàm giả tháo lắp, nha khoa trẻ em (mọc răng, thói quen mút tay),
+trám composite, cười hở lợi, vệ sinh răng miệng, và các hướng dẫn ITI/EAO gốc (cần anh cung cấp PDF).

@@ -47,12 +47,12 @@ INTENTS: list[Intent] = [
            r"dan su|mat dan|veneer|laminate|rang (bi )?me|rang (bi )?thua(?! dan)|thua rang|ke thua|rang cua (bi )?me",
            "mặt dán sứ veneer phục hình thẩm mỹ dán dính adhesive"),
     Intent("CROWN", "bọc răng sứ / mão sứ / inlay-onlay / vật liệu sứ",
-           r"boc (rang )?su|boc mao|boc rang|mao (rang|su|rang su)|chup (rang )?su|lam rang su|rang su( (toan su|kim loai|zirconia|thuy tinh))?|"
+           r"boc (rang )?su|boc mao|boc rang|mao (rang|su|rang su)|chup (rang )?su|lam rang su|(?<!cau )rang su( (toan su|kim loai|zirconia|thuy tinh))?|"
            r"toan su|su kim loai|(su|rang|rang su) (khong|co) (suon )?kim loai|suon kim loai|su (titan|zirconia|cercon)|zirconia (nguyen khoi|phu su)|monolithic|"
            r"vien (den|xam|toi|kim loai)|(den|xam|tham) (vien|chan rang su|co rang su)|"
            r"\bcrowns?\b|\binlay\b|\bonlay\b|endocrown|\bpfm\b|metal.?ceramic|all.?ceramic",
            "mão răng sứ crown sứ kim loại toàn sứ zirconia viền đen cổ răng"),
-    Intent("BRIDGE", "cầu răng sứ", r"cau rang|cau su|\bbridges?\b|\bfdp\b|rang tru cau|nhip cau",
+    Intent("BRIDGE", "cầu răng sứ", r"cau rang|cau su|cau (\d|ba|bon|hai) (rang|don vi)|\bbridges?\b|\bfdp\b|rang tru cau|nhip cau",
            "cầu răng sứ bridge răng trụ nhịp cầu"),
     Intent("POST_ENDO", "phục hồi răng sau chữa tuỷ (bọc mão, chốt)",
            r"((chua|lay|dieu tri|chet|mat|da (chua|lay)) tuy|noi nha).{0,50}(boc|mao|chup|onlay|chot|tram lai|phuc hoi|gion|de vo|vo)|"
@@ -84,6 +84,16 @@ INTENTS: list[Intent] = [
            r"khang sinh du phong|du phong khang sinh|(uong|dung|tiem) khang sinh truoc|thay khop|khop (nhan tao|gia)|"
            r"van tim nhan tao|viem noi tam mac|premedicat\w*|prophyla\w*|endocarditis|prosthetic joint",
            "kháng sinh dự phòng trước thủ thuật nha khoa khớp nhân tạo viêm nội tâm mạc"),
+    Intent("MRONJ", "hoại tử xương hàm do thuốc (bisphosphonate, denosumab)",
+           r"hoai tu xuong ham|\bmronj\b|\bbronj\b|bisphosphonate|alendronate|zoledron\w*|denosumab|prolia|xgeva|zometa|aclasta|fosamax|"
+           r"(thuoc|tiem|truyen) (chong |dieu tri )?(loang xuong|huy xuong)|xuong (bi )?lo (ra )?(trong mieng|o ham)|lo xuong (ham|trong mieng)",
+           "hoại tử xương hàm do thuốc MRONJ bisphosphonate denosumab"),
+    Intent("ORAL_LESION", "tổn thương tiền ung thư / phát hiện sớm ung thư miệng",
+           r"bach san|hong san|leukoplakia|erythroplakia|tien ung thu|ung thu (mieng|luoi|nuou|khoang mieng|niem mac|moi)|oral cancer|"
+           r"potentially malignant|sinh thiet|mang (trang|do).{0,30}(khong (lau|chui|cao|het)|lau khong|cao khong)|"
+           r"(cuc|khoi) (u|sui|cung).{0,15}(mieng|luoi|ma|nuou|san mieng)|"
+           r"(loet|vet loet|ton thuong).{0,25}(lau|khong|chua) (lanh|khoi|het)|(loet|vet loet).{0,25}(2|3|hai|ba|nhieu) tuan",
+           "tổn thương tiềm năng ác tính bạch sản hồng sản ung thư khoang miệng sinh thiết"),
     Intent("WHITENING_COLOR", "tẩy trắng / đổi màu răng",
            r"tay trang|trang rang|lam trang|than hoat tinh|o vang|xin mau|nhiem mau|tetracycline|rang (bi )?(xam|den|vang) (mau|di)|"
            r"bleach\w*|whitening|carbamide|peroxide",
@@ -94,7 +104,7 @@ INTENTS: list[Intent] = [
            r"(ham|rang) (gia )?(thao lap|thao ra).{0,40}co dinh|co dinh.{0,40}(ham|rang) (gia )?thao lap",
            "mất răng toàn bộ edentulous all-on-4 all-on-6 phục hình toàn hàm cố định implant"),
     Intent("IMPLANT", "cấy ghép implant",
-           r"implant|cay ghep|trong rang|\btru\b|osseointegration|tich hop xuong",
+           r"implant|cay ghep|trong rang|(?<!rang )\btru\b(?! cau)|osseointegration|tich hop xuong",
            "cấy ghép implant implantology"),
     Intent("SINUS", "nâng xoang hàm trên",
            r"nang xoang|xoang (ham|thap)|schneider|sinus|transcrestal|lateral window|osteotome|\brbh\b|lindhe",
@@ -120,17 +130,22 @@ INTENTS: list[Intent] = [
            r"rang (so )?(18|28|38|48)|(18|28|38|48) (moc|ngam|lech|sat|nam)|ham thu ba",
            "răng khôn mọc ngầm third molar nhổ dự phòng theo dõi"),
     Intent("SENSITIVITY", "ê buốt răng / mòn cổ răng",
-           r"e buot|\be rang|buot rang|nhay cam (nga|rang)|e khi (uong|an)|mon co (chan )?rang|mon rang",
+           r"e buot|\be rang|buot (len|nhoi|tan|rang|khi)|hit (gio|hoi|khi) lanh .{0,20}buot|nhay cam nga|\bnga (rang )?(bi )?lo|lo nga|buot rang|nhay cam (nga|rang)|e khi (uong|an)|mon co (chan )?rang|mon rang",
            "ê buốt ngà nhạy cảm mòn cổ răng"),
     Intent("BRUXISM", "nghiến răng",
            r"nghien rang|can chat rang|bruxism", "nghiến răng bruxism máng nhai"),
     Intent("TMJ", "khớp thái dương hàm",
-           r"khop thai duong|thai duong ham|ham keu|keu (lup cup|luc cuc|lop cop|cuc cuc)|moi ham|lech ham|\btmj\b|\btmd\b",
+           r"khop thai duong|thai duong ham|khop ham|ham keu|keu (lup cup|luc cuc|lop cop|cuc cuc|lao xao)|moi ham|lech ham|ket ham|trat khop ham|\btmj\b|\btmd\b|"
+           r"(dau|moi|nhuc) .{0,25}(mang tai|truoc tai|thai duong).{0,30}(nhai|ha mieng|an)|(nhai|ha mieng).{0,20}dau .{0,15}(mang tai|truoc tai|thai duong)|"
+           r"ha mieng .{0,15}(khong (to|het|duoc)|bi han che|bi ket)|myalgia|arthralgia|dc.?tmd",
            "rối loạn khớp thái dương hàm TMD"),
-    Intent("MUCOSA", "niêm mạc miệng: nhiệt miệng, loét, nấm, lưỡi",
-           r"nhiet mieng|loet (mieng|luoi|ma)|ap.?to|aphth\w*|nam (mieng|luoi)|luoi (bi )?(trang|ban do|te|rat|nut)|"
-           r"bong (mieng|niem mac)|lichen|mang trang|tua luoi",
-           "bệnh niêm mạc miệng loét áp-tơ nấm miệng"),
+    Intent("APHTHOUS", "nhiệt miệng / loét áp-tơ",
+           r"nhiet mieng|loet (mieng|luoi|ma|moi|nuou)|ap.?to|aphth\w*|lo mieng|(bi )?loet .{0,20}tai (di tai lai|phat)|"
+           r"(not|vet|noi|mun) loet|loet (trang|nho)|loet .{0,15}(trong|o) (ma|mieng|luoi|moi)",
+           "nhiệt miệng loét áp-tơ tái phát recurrent aphthous stomatitis"),
+    Intent("MUCOSA", "niêm mạc miệng khác: nấm miệng, lưỡi, lichen",
+           r"nam (mieng|luoi|trang|candida)|(luoi|mieng) (bi )?nam|candida\w*|luoi (bi )?(trang|ban do|te|rat|nut)|bong (mieng|niem mac)|lichen|tua luoi",
+           "bệnh niêm mạc miệng nấm miệng lưỡi bản đồ lichen phẳng"),
     Intent("DRY_MOUTH", "khô miệng", r"kho mieng|it nuoc bot|xerostomia", "khô miệng xerostomia"),
     Intent("HYGIENE", "vệ sinh răng miệng / sản phẩm",
            r"ban chai|chi nha khoa|tam nuoc|may tam|nuoc suc mieng|kem danh rang|cach (danh|chai) rang|danh rang may lan",

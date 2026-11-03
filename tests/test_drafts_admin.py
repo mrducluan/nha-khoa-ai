@@ -40,6 +40,12 @@ def test_drafts_answer_new_topics_after_approval(conn):
         ("Thay khớp gối có cần uống kháng sinh trước khi nhổ răng", "antibiotic-prophylaxis-prosthetic-joint-endocarditis"),
         ("Ngủ hay nghiến răng ken két", "sleep-awake-bruxism-assessment-management"),
         ("Tẩy trắng răng có hại men không", "tooth-whitening-bleaching-safety-efficacy"),
+        ("Răng ê buốt khi uống nước lạnh", "dentin-hypersensitivity-desensitizing-management"),
+        ("Làm cầu răng sứ có phải mài răng bên cạnh", "tooth-supported-fixed-bridge-fdp"),
+        ("Nhiệt miệng tái đi tái lại", "recurrent-aphthous-stomatitis-mouth-ulcers"),
+        ("Hàm kêu lục cục, đau khớp thái dương hàm", "temporomandibular-disorders-dc-tmd-conservative"),
+        ("Đang uống Fosamax có nhổ răng được không", "medication-related-osteonecrosis-jaw-mronj"),
+        ("Mảng trắng trong má không cạo được", "oral-potentially-malignant-disorders-cancer-detection"),
     ]
     for question, slug in cases:
         rows = search(conn, LocalHashEmbedder(), question, 3)

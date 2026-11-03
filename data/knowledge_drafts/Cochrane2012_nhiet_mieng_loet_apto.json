@@ -1,0 +1,84 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Brocklehurst P và cs. Systemic interventions for recurrent aphthous stomatitis (mouth ulcers). Cochrane Database Syst Rev 2012;(9):CD005411, doi:10.1002/14651858.CD005411.pub2 — 21 can thiệp toàn thân, chỉ 1 nghiên cứu nguy cơ sai lệch thấp, KHÔNG có thuốc toàn thân nào được chứng minh hiệu quả vượt trội. Phần điều trị tại chỗ, nguyên nhân toàn thân liên quan và dấu hiệu cần sinh thiết là tổng hợp thực hành y học răng miệng — BÁC SĨ cần đối chiếu. Danh sách đầy đủ tác giả cần đối chiếu trên Cochrane Library.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Systemic interventions for recurrent aphthous stomatitis (mouth ulcers)",
+    "authors_or_committee": "Brocklehurst P và cs. (Cochrane Oral Health) — đối chiếu danh sách tác giả",
+    "publication_year": 2012,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2012, Issue 9, CD005411",
+    "doi_or_pmid": "10.1002/14651858.CD005411.pub2",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "Chưa đủ bằng chứng"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Nhiệt miệng (loét áp-tơ tái phát): nhận biết, điều trị tại chỗ, tìm nguyên nhân toàn thân và dấu hiệu cần khám chuyên khoa",
+    "clinical_topic_slug": "recurrent-aphthous-stomatitis-mouth-ulcers"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người bị loét miệng tái đi tái lại dạng áp-tơ (nhiệt miệng): vết loét tròn/bầu dục, đáy vàng xám, viền đỏ, đau, tự lành.",
+    "I_intervention": "Điều trị triệu chứng tại chỗ (corticosteroid bôi, nước súc miệng sát khuẩn/giảm đau), tìm và điều chỉnh yếu tố khởi phát, xét nghiệm khi nghi bệnh toàn thân; thuốc toàn thân cho ca nặng kháng trị.",
+    "C_comparison": "Giả dược hoặc can thiệp khác.",
+    "O_outcome_metrics": "Cochrane 2012: đánh giá 21 can thiệp toàn thân; chỉ 1 nghiên cứu có nguy cơ sai lệch thấp; KHÔNG có thuốc toàn thân nào được chứng minh hiệu quả rõ — thuốc toàn thân thường chỉ dành cho bệnh nhân không đáp ứng điều trị tại chỗ. Mục tiêu điều trị là giảm đau, rút ngắn thời gian lành và giảm tần suất tái phát; hiện chưa có cách chữa khỏi hẳn."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Loét áp-tơ tái phát là rối loạn miễn dịch niêm mạc chưa rõ cơ chế, không lây. Yếu tố khởi phát thường gặp: chấn thương nhỏ (cắn má, bàn chải), căng thẳng, thay đổi nội tiết (chu kỳ kinh), một số thực phẩm, có thể liên quan chất tạo bọt SLS trong kem đánh răng ở một số người. Ba thể: thể nhỏ (phổ biến nhất, < 10 mm, lành trong 1–2 tuần không để sẹo), thể lớn (> 10 mm, sâu, lành lâu vài tuần, có thể để sẹo), thể dạng herpes (nhiều vết loét nhỏ li ti). Loét giống áp-tơ có thể là biểu hiện của bệnh toàn thân: thiếu sắt, vitamin B12, folate; bệnh celiac; viêm ruột (Crohn, viêm loét đại tràng); bệnh Behçet (kèm loét sinh dục, viêm mắt); nhiễm HIV; giảm bạch cầu trung tính chu kỳ; phản ứng thuốc. Loét KHÔNG lành sau 2–3 tuần, cứng, bờ gồ, không đau hoặc kèm mảng trắng/đỏ cần loại trừ ung thư miệng.",
+    "indications": [
+      "Thể nhỏ, thưa: điều trị triệu chứng — gel/thuốc tê bôi, nước súc miệng chlorhexidine hoặc giảm đau, tránh thức ăn cay nóng/chua/cứng",
+      "Đau nhiều hoặc tái phát dày: corticosteroid bôi tại chỗ do bác sĩ kê (VD: dạng gel/kem bám niêm mạc, dạng xịt/viên ngậm)",
+      "Thể lớn, tái phát rất dày, khởi phát ở người lớn tuổi hoặc kèm triệu chứng toàn thân: xét nghiệm máu (công thức máu, sắt/ferritin, B12, folate, tầm soát celiac) và phối hợp chuyên khoa",
+      "Ca nặng kháng trị: thuốc toàn thân do bác sĩ chuyên khoa chỉ định (bằng chứng hạn chế)"
+    ],
+    "contraindications_absolute": [
+      "Chẩn đoán 'nhiệt miệng' và điều trị kéo dài cho vết loét KHÔNG lành sau 2–3 tuần mà chưa sinh thiết/chuyển khám",
+      "Tự dùng corticosteroid toàn thân không có chỉ định của bác sĩ"
+    ],
+    "contraindications_relative": [
+      "Corticosteroid bôi kéo dài khi nghi nấm miệng hoặc nhiễm herpes (cần chẩn đoán phân biệt)",
+      "Nước súc miệng chứa cồn trên vết loét (gây rát)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác & khám", "clinical_action": "Hỏi tuổi khởi phát, tần suất, số lượng, thời gian lành, yếu tố khởi phát, triệu chứng toàn thân (tiêu hoá, sụt cân, loét sinh dục, viêm mắt, khớp, sốt), thuốc đang dùng; khám vị trí, kích thước, bờ, độ cứng của vết loét, hạch cổ.", "technical_parameters": "Ghi nhận và hẹn kiểm tra lại sau 2 tuần với vết loét đơn độc không rõ nguyên nhân"},
+      {"step": 2, "phase_name": "Loại trừ nguyên nhân tại chỗ", "clinical_action": "Tìm cạnh răng sắc, phục hình cọ xát, hàm giả, thói quen cắn má.", "technical_parameters": "Loại bỏ nguyên nhân rồi đánh giá lại sau khoảng 2 tuần"},
+      {"step": 3, "phase_name": "Điều trị triệu chứng", "clinical_action": "Thuốc tê/giảm đau bôi, súc miệng sát khuẩn, corticosteroid bôi khi cần; hướng dẫn chế độ ăn.", "technical_parameters": "Kem đánh răng không chứa SLS có thể thử ở người tái phát nhiều"},
+      {"step": 4, "phase_name": "Xét nghiệm khi có chỉ định", "clinical_action": "Công thức máu, ferritin, B12, folate, tầm soát celiac; chuyển chuyên khoa khi nghi Behçet, viêm ruột, HIV, giảm bạch cầu.", "technical_parameters": "Chỉ định khi thể lớn, tái phát dày, khởi phát muộn hoặc có triệu chứng toàn thân"},
+      {"step": 5, "phase_name": "Sinh thiết / chuyển tuyến", "clinical_action": "Vết loét không lành sau 2–3 tuần dù đã loại bỏ nguyên nhân, cứng, bờ gồ, kèm mảng trắng/đỏ, hạch cổ → sinh thiết hoặc chuyển chuyên khoa ngay.", "technical_parameters": "Không trì hoãn ở người hút thuốc, uống rượu, ăn trầu"}
+    ],
+    "complications_and_management": [
+      {"complication": "Bỏ sót ung thư miệng giai đoạn sớm", "prevention": "Quy tắc 2–3 tuần: loét không lành phải được đánh giá lại và sinh thiết", "management_protocol": "Sinh thiết/chuyển chuyên khoa ung bướu hàm mặt"},
+      {"complication": "Bỏ sót bệnh toàn thân (thiếu máu, celiac, Behçet, viêm ruột)", "prevention": "Hỏi triệu chứng toàn thân, xét nghiệm khi có chỉ định", "management_protocol": "Phối hợp chuyên khoa điều trị nguyên nhân"},
+      {"complication": "Nấm miệng do corticosteroid bôi kéo dài", "prevention": "Dùng đúng liều, thời gian ngắn", "management_protocol": "Thuốc kháng nấm tại chỗ"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Gọi mọi vết loét miệng là 'nhiệt miệng' — loét đơn độc không lành là dấu hiệu cảnh báo ung thư",
+        "Không hỏi triệu chứng toàn thân ở bệnh nhân loét thể lớn hoặc khởi phát ở tuổi trung niên",
+        "Kê kháng sinh toàn thân cho loét áp-tơ"
+      ],
+      "clinical_decision_tips": [
+        "Loét áp-tơ: tái phát, tự lành trong 1–2 tuần, đau; loét ác tính: không lành, có thể ít đau, cứng",
+        "Quy tắc 2–3 tuần cho mọi vết loét đơn độc",
+        "Thuốc toàn thân chưa có bằng chứng rõ (Cochrane 2012) — ưu tiên điều trị tại chỗ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Nhiệt miệng (loét áp-tơ) là những vết loét nhỏ, tròn, đáy vàng trắng, viền đỏ trong miệng, rất đau khi ăn nói, thường tự lành sau 1–2 tuần và có thể tái phát nhiều lần. Bệnh không lây.",
+      "why_needed": "Hiện chưa có thuốc chữa dứt hẳn, nhưng có thể giảm đau, giúp mau lành và tìm nguyên nhân làm tái phát (căng thẳng, cắn vào má, thiếu sắt, thiếu vitamin B12…). Điều quan trọng: một vết loét không lành sau 2–3 tuần KHÔNG được coi là nhiệt miệng thông thường và cần nha sĩ hoặc bác sĩ khám sớm.",
+      "what_to_expect": "Nha sĩ khám vết loét, tìm răng sắc hoặc răng giả cọ xát, hỏi về sức khoẻ chung. Có thể kê thuốc bôi giảm đau, chống viêm; nếu tái phát nhiều hoặc có dấu hiệu bất thường, có thể xét nghiệm máu hoặc giới thiệu chuyên khoa.",
+      "home_care_instructions": [
+        "Tránh đồ cay, nóng, chua, giòn cứng khi đang loét; ăn mềm, uống đủ nước",
+        "Chải răng nhẹ nhàng bằng bàn chải mềm; có thể thử kem đánh răng không chứa SLS nếu hay tái phát",
+        "Dùng thuốc bôi hoặc nước súc miệng theo hướng dẫn của nha sĩ, dược sĩ",
+        "Đi khám ngay nếu vết loét không lành sau 2–3 tuần, ngày càng to, cứng, kèm mảng trắng hoặc đỏ, nổi hạch cổ, hoặc kèm sốt, sụt cân, loét ở bộ phận sinh dục"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: Cochrane 2012 (CD005411) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không coi vết loét không lành sau 2–3 tuần là nhiệt miệng; không tự dùng corticoid toàn thân] Bị nhiệt miệng, loét miệng tái đi tái lại, áp-tơ, lở miệng phải làm sao? Thường tự lành 1–2 tuần, không lây; tránh đồ cay nóng chua, dùng thuốc bôi giảm đau; tái phát nhiều nên xét nghiệm thiếu sắt, B12; loét không lành sau 2–3 tuần phải đi khám ngay."
+    }
+  ]
+}

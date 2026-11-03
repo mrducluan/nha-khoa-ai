@@ -33,6 +33,7 @@ _CLINICAL_TERMS = [
     "noi nha", "ferrule", "mod", "chot soi", "chot cui", "che phu mui", "cuspal", "endocrown", "chipping", "monolithic",
     "supraeruption", "overeruption", "rang doi khang", "khoang phuc hinh", "dung truc", "minivis", "uprighting",
     "delta e(00|ab)?", "ciede2000", "cielab", "metamerism", "peri-implantitis", "mucositis", "khuyet hong", "implantoplasty",
+    "kali nitrat", "potassium nitrate", "arginine", "stannous", "nhay cam nga", "desensitiz\w*", "connector",
     "polysomnography", "emg", "bruxism", "hydrogen peroxide", "carbamide", "walking bleach",
     "benh nhan nam", "benh nhan nu", "bn nam", "bn nu", "so sanh nghien cuu", "level of evidence", "efp", "ada", "cgdent", "fdi",
 ]

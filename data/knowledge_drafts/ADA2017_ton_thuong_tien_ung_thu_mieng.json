@@ -1,0 +1,84 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Lingen MW (chủ tịch hội đồng) và cs. Evidence-based clinical practice guideline for the evaluation of potentially malignant disorders in the oral cavity: A report of the American Dental Association. J Am Dent Assoc 2017;148(10):712-727.e10, doi:10.1016/j.adaj.2017.07.032 (PMID 28958308). LƯU Ý: ADA đã chuyển hướng dẫn này thành 'hướng dẫn sống' và cập nhật năm 2026 (cytology, vital staining, adjunct dùng ánh sáng) — BÁC SĨ cần đối chiếu bản cập nhật 2026 trên ada.org trước khi duyệt. Danh sách đầy đủ tác giả cần đối chiếu trên PubMed. Các yếu tố nguy cơ (thuốc lá, rượu, trầu cau, HPV) là kiến thức y văn chung.",
+  "source_metadata": {
+    "organization_code": "ADA",
+    "authority_tier": "TIER_1_GOLD_STANDARD",
+    "document_title": "Evidence-based clinical practice guideline for the evaluation of potentially malignant disorders in the oral cavity: A report of the American Dental Association",
+    "authors_or_committee": "Lingen MW (chủ tịch hội đồng) và cs. — ADA Council on Scientific Affairs & ADA Center for Evidence-Based Dentistry",
+    "publication_year": 2017,
+    "journal_or_series": "Journal of the American Dental Association 148(10):712-727.e10",
+    "doi_or_pmid": "10.1016/j.adaj.2017.07.032",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "Conditional"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Tổn thương tiền ung thư và phát hiện sớm ung thư khoang miệng: bạch sản, hồng sản, tổn thương không lành — khám, sinh thiết và chuyển tuyến",
+    "clinical_topic_slug": "oral-potentially-malignant-disorders-cancer-detection"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn có tổn thương niêm mạc miệng phát hiện khi khám: mảng trắng không cạo được, mảng đỏ, vết loét/ sùi không lành, tổn thương nghi ngờ; đặc biệt người hút thuốc, uống rượu, ăn trầu cau.",
+    "I_intervention": "Khám ngoài miệng và trong miệng có hệ thống; với tổn thương nghi ngờ: sinh thiết hoặc chuyển chuyên khoa NGAY; với tổn thương có vẻ lành tính: theo dõi, loại bỏ yếu tố kích thích và đánh giá lại.",
+    "C_comparison": "Dùng các phương tiện hỗ trợ (tự phát huỳnh quang, phản xạ mô, nhuộm sống, xét nghiệm nước bọt thương mại, tế bào học) để quyết định có sinh thiết hay không.",
+    "O_outcome_metrics": "ADA 2017: hội đồng KHÔNG khuyến nghị dùng tự phát huỳnh quang, phản xạ mô hoặc nhuộm sống cho tổn thương có vẻ lành tính hay nghi ngờ, và không khuyến nghị xét nghiệm nước bọt thương mại — do tỷ lệ dương tính giả cao, bằng chứng chất lượng thấp đến rất thấp (khuyến nghị có điều kiện). Tổn thương nghi ngờ → sinh thiết hoặc chuyển chuyên khoa ngay; tổn thương có vẻ lành tính → theo dõi định kỳ. Bản cập nhật 2026 (hướng dẫn sống) tiếp tục ưu tiên khám lâm sàng và không khuyến nghị tế bào học làm phương tiện sàng lọc để quyết định sinh thiết — đối chiếu nguyên văn."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Ung thư khoang miệng phần lớn là ung thư biểu mô tế bào vảy, thường phát triển qua giai đoạn tổn thương tiềm năng ác tính (rối loạn tiềm năng ác tính khoang miệng): bạch sản (mảng trắng không cạo được, không xếp được vào bệnh khác), hồng sản (mảng đỏ — nguy cơ ác tính cao), bạch sản dạng sùi tăng sinh, xơ hoá dưới niêm mạc (liên quan nhai trầu cau), lichen phẳng (nguy cơ thấp). Yếu tố nguy cơ chính: thuốc lá (hút, nhai), rượu (cộng hưởng với thuốc lá), trầu cau, HPV (chủ yếu ung thư hầu họng), tiếp xúc nắng (môi), suy giảm miễn dịch, kích thích cơ học mạn tính. Vị trí nguy cơ cao: bờ bên lưỡi, mặt dưới lưỡi, sàn miệng. Phát hiện sớm giúp tiên lượng tốt hơn rất nhiều.",
+    "indications": [
+      "Khám niêm mạc miệng và vùng cổ (hạch) có hệ thống ở MỌI lần khám nha khoa định kỳ, đặc biệt người có yếu tố nguy cơ",
+      "Tổn thương nghi ngờ (mảng đỏ hoặc trắng–đỏ, loét/sùi cứng, bờ gồ, cố định, không lành, kèm tê, hạch cổ) → sinh thiết hoặc chuyển chuyên khoa NGAY",
+      "Tổn thương có vẻ lành tính hoặc có nguyên nhân rõ (cạnh răng sắc, hàm giả cọ): loại bỏ nguyên nhân và đánh giá lại sau khoảng 2–3 tuần; không lành → sinh thiết",
+      "Tư vấn cai thuốc lá, hạn chế rượu, bỏ trầu cau"
+    ],
+    "contraindications_absolute": [
+      "Trì hoãn sinh thiết/chuyển tuyến tổn thương nghi ngờ để 'theo dõi thêm' hoặc dựa vào kết quả âm tính của phương tiện hỗ trợ",
+      "Dùng phương tiện hỗ trợ (đèn huỳnh quang, nhuộm, xét nghiệm nước bọt) thay thế sinh thiết"
+    ],
+    "contraindications_relative": [
+      "Cắt bỏ tổn thương nghi ngờ lớn tại phòng khám tổng quát khi chưa có chẩn đoán mô bệnh học — nên chuyển chuyên khoa",
+      "Điều trị thử kéo dài (kháng sinh, kháng nấm, corticosteroid) cho vết loét không rõ nguyên nhân"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác yếu tố nguy cơ", "clinical_action": "Hỏi thuốc lá, rượu, trầu cau, tiền sử ung thư, triệu chứng (đau, tê, khó nuốt, nói khó, chảy máu, sụt cân).", "technical_parameters": "Ghi vào hồ sơ; tư vấn cai thuốc"},
+      {"step": 2, "phase_name": "Khám có hệ thống", "clinical_action": "Khám ngoài miệng (mặt, cổ, sờ hạch), môi, niêm mạc má, nướu, lưỡi (mặt lưng, bờ bên, mặt dưới — kéo lưỡi bằng gạc), sàn miệng, khẩu cái, họng.", "technical_parameters": "Mô tả tổn thương: vị trí, kích thước, màu, bề mặt, độ cứng, thời gian; chụp ảnh lưu hồ sơ"},
+      {"step": 3, "phase_name": "Phân loại", "clinical_action": "Có vẻ lành tính có nguyên nhân rõ → loại bỏ nguyên nhân, hẹn lại 2–3 tuần; nghi ngờ → sinh thiết/chuyển ngay.", "technical_parameters": "Không dựa vào phương tiện hỗ trợ để quyết định (ADA 2017)"},
+      {"step": 4, "phase_name": "Sinh thiết / chuyển tuyến", "clinical_action": "Sinh thiết (rạch hoặc cắt) ở vùng nghi ngờ nhất hoặc chuyển chuyên khoa răng hàm mặt/ung bướu; đảm bảo bệnh nhân thực sự đến khám (theo dõi chuyển tuyến).", "technical_parameters": "Gửi giải phẫu bệnh kèm mô tả lâm sàng"},
+      {"step": 5, "phase_name": "Theo dõi", "clinical_action": "Tổn thương tiềm năng ác tính đã chẩn đoán: theo dõi định kỳ suốt đời, sinh thiết lại khi thay đổi.", "technical_parameters": "Chụp ảnh so sánh theo thời gian"}
+    ],
+    "complications_and_management": [
+      {"complication": "Chẩn đoán muộn ung thư miệng", "prevention": "Khám niêm mạc thường quy; quy tắc 2–3 tuần; không trì hoãn sinh thiết", "management_protocol": "Chuyển chuyên khoa ung bướu đầu cổ ngay"},
+      {"complication": "Bệnh nhân không đến khám chuyên khoa sau chuyển tuyến", "prevention": "Giải thích rõ tầm quan trọng, hẹn cụ thể", "management_protocol": "Liên hệ theo dõi, ghi nhận vào hồ sơ"},
+      {"complication": "Lo âu do dương tính giả của phương tiện hỗ trợ", "prevention": "Không dùng phương tiện hỗ trợ để sàng lọc thường quy", "management_protocol": "Giải thích, dựa vào khám lâm sàng và sinh thiết"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Chỉ nhìn răng mà không khám lưỡi, sàn miệng",
+        "Kê thuốc thử cho vết loét không lành nhiều tuần",
+        "Tin vào kết quả âm tính của đèn huỳnh quang/nhuộm"
+      ],
+      "clinical_decision_tips": [
+        "Mảng đỏ đáng lo hơn mảng trắng",
+        "Bờ bên lưỡi, sàn miệng ở người hút thuốc + uống rượu: ngưỡng sinh thiết thấp",
+        "Mọi tổn thương không lành sau 2–3 tuần (đã loại nguyên nhân) → sinh thiết"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Một số thay đổi trong miệng như mảng trắng không lau đi được, mảng đỏ, vết loét hoặc cục sùi lâu không lành có thể là dấu hiệu sớm của ung thư miệng hoặc tình trạng có thể chuyển thành ung thư.",
+      "why_needed": "Ung thư miệng phát hiện sớm thì điều trị hiệu quả hơn rất nhiều. Người hút thuốc, uống rượu, ăn trầu có nguy cơ cao hơn. Cách phát hiện đáng tin cậy nhất là nha sĩ khám kỹ và lấy mẫu mô (sinh thiết) khi cần — các loại đèn soi hay xét nghiệm nước bọt bán sẵn chưa đủ chính xác để thay thế.",
+      "what_to_expect": "Nha sĩ khám kỹ lưỡi, má, sàn miệng, vòm miệng và sờ cổ. Nếu chỗ bất thường có nguyên nhân rõ (răng sắc, hàm giả cọ), nha sĩ xử lý rồi hẹn kiểm tra lại sau 2–3 tuần. Nếu nghi ngờ, nha sĩ sẽ lấy một mẩu mô nhỏ gửi xét nghiệm hoặc giới thiệu bạn đến chuyên khoa ngay.",
+      "home_care_instructions": [
+        "Đi khám ngay nếu có vết loét, mảng trắng, mảng đỏ hoặc cục u trong miệng không hết sau 2–3 tuần",
+        "Đi khám nếu tê lưỡi/môi, khó nuốt, khàn tiếng kéo dài, nổi hạch cổ, răng tự nhiên lung lay không rõ lý do",
+        "Bỏ thuốc lá, hạn chế rượu bia, không ăn trầu",
+        "Khám răng định kỳ — nha sĩ sẽ kiểm tra cả niêm mạc miệng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: ADA 2017 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không trì hoãn sinh thiết tổn thương nghi ngờ; không dùng đèn soi/nhuộm thay sinh thiết] Mảng trắng trong miệng không lau được, mảng đỏ, vết loét lâu không lành, cục sùi ở lưỡi có phải ung thư miệng không? Cần nha sĩ khám; không lành sau 2–3 tuần phải sinh thiết hoặc chuyển chuyên khoa; người hút thuốc, uống rượu, ăn trầu có nguy cơ cao."
+    }
+  ]
+}

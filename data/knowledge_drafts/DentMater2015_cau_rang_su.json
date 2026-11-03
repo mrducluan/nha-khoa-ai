@@ -1,0 +1,89 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Pjetursson BE, Sailer I, Makarov NA, Zwahlen M, Thoma DS. All-ceramic or metal-ceramic tooth-supported fixed dental prostheses (FDPs)? A systematic review of the survival and complication rates. Part II: Multiple-unit FDPs. Dent Mater 2015;31(6):624-639, doi:10.1016/j.dental.2015.02.013 — 40 nghiên cứu, 1796 cầu sứ-kim loại và 1110 cầu toàn sứ. BÁC SĨ đối chiếu bảng số liệu nguyên văn trước khi duyệt; phần lựa chọn cầu răng so với implant/hàm tháo lắp là tổng hợp thực hành.",
+  "source_metadata": {
+    "organization_code": "ELSEVIER",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "All-ceramic or metal-ceramic tooth-supported fixed dental prostheses (FDPs)? A systematic review of the survival and complication rates. Part II: Multiple-unit FDPs",
+    "authors_or_committee": "Pjetursson BE, Sailer I, Makarov NA, Zwahlen M, Thoma DS",
+    "publication_year": 2015,
+    "journal_or_series": "Dental Materials 31(6):624-639",
+    "doi_or_pmid": "10.1016/j.dental.2015.02.013",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "SR/MA"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": ["PERIODONTOLOGY"],
+    "protocol_title": "Cầu răng cố định trên răng thật (cầu sứ): chỉ định, mài răng trụ, chọn vật liệu và tuổi thọ",
+    "clinical_topic_slug": "tooth-supported-fixed-bridge-fdp"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân mất một (hoặc vài) răng, có răng thật hai bên khoảng mất răng làm trụ.",
+    "I_intervention": "Cầu răng cố định 3 đơn vị trở lên trên răng thật: sứ-kim loại hoặc toàn sứ (zirconia, sứ thuỷ tinh tăng cường, sứ oxit nhôm thấm thuỷ tinh).",
+    "C_comparison": "Cầu sứ-kim loại (chuẩn đối chứng); các lựa chọn khác: implant đơn lẻ, cầu dán (Maryland), hàm tháo lắp bán phần, không phục hình.",
+    "O_outcome_metrics": "Pjetursson 2015 (40 nghiên cứu): tồn tại 5 năm — cầu sứ-kim loại 94.4% (KTC 95%: 91.2–96.5%); zirconia 90.4%; sứ thuỷ tinh tăng cường 89.1%; sứ oxit nhôm thấm thuỷ tinh 86.2%. Gãy sườn sau 5 năm: sứ thuỷ tinh tăng cường 8.0%, oxit nhôm 12.9%, so với sứ-kim loại 0.6% và zirconia 1.9%. Cầu zirconia có nhiều mẻ sứ phủ, bong cầu và sâu răng trụ hơn sứ-kim loại. Tỷ lệ tồn tại của các loại cầu toàn sứ thấp hơn sứ-kim loại, nhưng khác biệt chỉ có ý nghĩa thống kê với oxit nhôm thấm thuỷ tinh. Biến chứng sinh học hay gặp ở răng trụ: sâu răng, cần chữa tuỷ, bệnh nha chu."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Cầu răng thay răng mất bằng một răng giả (nhịp cầu) nối cứng với các mão trên răng trụ hai bên. Lực nhai trên nhịp cầu truyền sang răng trụ qua các điểm nối (connector) — nơi tập trung ứng suất, là điểm yếu của vật liệu sứ giòn (cần kích thước connector đủ lớn). Mài răng trụ lấy đi mô răng thật lành (khoảng 1–2 mm) nên có nguy cơ kích thích hoặc hoại tử tuỷ về sau, nhất là răng trụ trẻ, buồng tuỷ lớn. Vùng dưới nhịp cầu và quanh connector dễ đọng mảng bám → sâu răng trụ, viêm nướu nếu không vệ sinh bằng chỉ luồn/bàn chải kẽ. Cầu răng không ngăn tiêu xương vùng mất răng dưới nhịp cầu.",
+    "indications": [
+      "Răng trụ hai bên đã có miếng trám lớn hoặc cần bọc mão (khi đó cầu răng tận dụng được việc mài)",
+      "Không thể hoặc không muốn cấy implant (bệnh toàn thân, xương không đủ, chi phí, mong muốn của bệnh nhân)",
+      "Khoảng mất răng ngắn (thường 1 răng, tối đa 2 răng liên tiếp tuỳ vị trí), răng trụ đủ chắc, nha chu ổn định",
+      "Cầu toàn sứ zirconia hoặc sứ-kim loại cho vùng răng sau; vùng răng trước chú ý thẩm mỹ"
+    ],
+    "contraindications_absolute": [
+      "Răng trụ lung lay nhiều, viêm nha chu chưa kiểm soát, tỷ lệ thân/chân răng bất lợi",
+      "Khoảng mất răng dài không đủ răng trụ nâng đỡ",
+      "Sứ thuỷ tinh tăng cường/ lithium disilicate cho cầu vùng răng cối lớn hoặc cầu nhiều đơn vị (ngoài chỉ định nhà sản xuất)"
+    ],
+    "contraindications_relative": [
+      "Hai răng trụ còn nguyên vẹn, lành mạnh — cân nhắc implant đơn lẻ hoặc cầu dán để tránh mài răng lành",
+      "Bệnh nhân trẻ buồng tuỷ lớn (nguy cơ tổn thương tuỷ khi mài)",
+      "Nghiến răng nặng, connector không đủ kích thước",
+      "Nguy cơ sâu răng cao, vệ sinh kém",
+      "Cầu đua (cantilever) trên răng thật — chỉ dùng chọn lọc"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá & lựa chọn", "clinical_action": "Khám răng trụ (sâu, tuỷ, nha chu, độ lung lay), phim X-quang, khoảng mất răng, khớp cắn; tư vấn các lựa chọn: implant, cầu răng, cầu dán, hàm tháo lắp.", "technical_parameters": "Thử tuỷ răng trụ; điều trị nha chu và sâu răng trước"},
+      {"step": 2, "phase_name": "Mài răng trụ & lấy dấu", "clinical_action": "Mài răng trụ song song (trục lắp chung), bờ ngang nướu hoặc trong khe nướu nông; lấy dấu hoặc quét trong miệng; làm cầu tạm.", "technical_parameters": "Lượng mài theo vật liệu (theo hướng dẫn nhà sản xuất); làm mát đầy đủ để bảo vệ tuỷ"},
+      {"step": 3, "phase_name": "Thiết kế & thử cầu", "clinical_action": "Thiết kế connector đủ kích thước, nhịp cầu dễ vệ sinh (mặt tiếp xúc nướu lồi, không ôm sát); thử sườn, khớp cắn.", "technical_parameters": "Kích thước connector tối thiểu theo vật liệu (zirconia lớn hơn sứ-kim loại)"},
+      {"step": 4, "phase_name": "Gắn cầu", "clinical_action": "Gắn bằng xi măng phù hợp vật liệu; lấy sạch xi măng dư; chỉnh khớp cắn.", "technical_parameters": "Kiểm tra luồn chỉ dưới nhịp cầu"},
+      {"step": 5, "phase_name": "Hướng dẫn & tái khám", "clinical_action": "Hướng dẫn chỉ luồn, bàn chải kẽ, tăm nước dưới nhịp cầu; tái khám định kỳ.", "technical_parameters": "Kiểm tra sâu răng trụ, nha chu, mẻ sứ, độ khít bờ"}
+    ],
+    "complications_and_management": [
+      {"complication": "Sâu răng trụ dưới bờ cầu", "prevention": "Vệ sinh dưới nhịp cầu, fluoride, tái khám", "management_protocol": "Sâu nhỏ: trám bờ; sâu lớn: tháo cầu, điều trị, làm lại"},
+      {"complication": "Viêm/ hoại tử tuỷ răng trụ", "prevention": "Mài có làm mát, đánh giá tuỷ trước", "management_protocol": "Chữa tuỷ qua mão (nếu được) hoặc tháo cầu"},
+      {"complication": "Mẻ sứ phủ, gãy sườn/connector", "prevention": "Connector đủ lớn, đúng vật liệu, máng chống nghiến", "management_protocol": "Đánh bóng/sửa composite; gãy sườn → làm lại"},
+      {"complication": "Bong cầu (mất lưu giữ)", "prevention": "Răng trụ đủ chiều cao, độ thuôn phù hợp, xi măng đúng", "management_protocol": "Kiểm tra sâu răng trụ, gắn lại hoặc làm lại"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Mài hai răng trụ còn nguyên vẹn khi implant đơn lẻ khả thi — cần tư vấn đủ lựa chọn",
+        "Connector quá nhỏ ở cầu zirconia → gãy",
+        "Nhịp cầu ôm sát nướu (ridge lap) không vệ sinh được → viêm, hôi"
+      ],
+      "clinical_decision_tips": [
+        "Răng trụ đã cần mão → cầu răng hợp lý; răng trụ nguyên vẹn → cân nhắc implant",
+        "Sứ-kim loại vẫn là chuẩn về độ bền cầu; zirconia là lựa chọn toàn sứ hợp lý nhất cho cầu",
+        "Tuổi thọ cầu phụ thuộc lớn vào vệ sinh và sức khoẻ răng trụ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Cầu răng sứ là cách làm răng giả cố định cho chỗ mất răng: nha sĩ mài nhỏ hai răng bên cạnh để làm 'trụ', rồi gắn một dải gồm các răng sứ liền nhau, trong đó răng ở giữa thay cho răng đã mất.",
+      "why_needed": "Cầu răng giúp ăn nhai và thẩm mỹ, làm nhanh, không cần phẫu thuật. Nhược điểm là phải mài hai răng bên cạnh (kể cả khi chúng còn khoẻ) và xương ở chỗ mất răng vẫn tiếp tục tiêu. Nghiên cứu tổng hợp cho thấy khoảng 9/10 cầu răng vẫn tốt sau 5 năm; cầu sứ kim loại bền nhất, cầu toàn sứ zirconia đẹp hơn và cũng bền.",
+      "what_to_expect": "Nha sĩ khám răng trụ, chụp phim, tư vấn so sánh với implant. Buổi đầu mài răng, lấy dấu và gắn cầu tạm; vài ngày sau thử và gắn cầu thật. Răng trụ có thể ê nhẹ vài ngày đầu.",
+      "home_care_instructions": [
+        "Làm sạch dưới nhịp cầu mỗi ngày bằng chỉ luồn, bàn chải kẽ hoặc tăm nước",
+        "Chải răng 2 lần/ngày với kem có fluoride, chú ý viền cổ răng trụ",
+        "Tránh cắn vật quá cứng; đeo máng nếu nghiến răng",
+        "Tái khám định kỳ; báo nha sĩ khi cầu lỏng, hôi miệng, đau răng trụ hoặc mẻ sứ"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: Dental Materials 2015 (Pjetursson, tổng quan hệ thống) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Răng trụ lung lay, nha chu chưa kiểm soát; khoảng mất răng quá dài] Làm cầu răng sứ có phải mài răng bên cạnh không, cầu răng dùng được bao lâu, nên làm cầu răng hay implant? Cầu răng cần mài hai răng trụ; khoảng 9/10 cầu còn tốt sau 5 năm; nếu răng bên cạnh còn nguyên vẹn nên cân nhắc implant. Vệ sinh dưới nhịp cầu bằng chỉ luồn."
+    }
+  ]
+}

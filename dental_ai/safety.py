@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from .textnorm import lower_nfc, normalize
+from .textnorm import lower_nfc, normalize, strip_accents
 
 
 @dataclass(frozen=True)
@@ -38,7 +38,7 @@ _RULES: list[tuple[str, str, str]] = [
      "Chảy máu không cầm sau nhổ răng/phẫu thuật: cắn chặt gạc sạch liên tục 30 phút, ngồi đầu cao, không súc miệng. "
      "Nếu vẫn chảy hoặc đang dùng thuốc chống đông, đến cơ sở y tế NGAY."),
     ("TRAUMA",
-     r"chan thuong|tai nan|gay (xuong )?ham|va dap|dap mat|nga .{0,30}(rang|mat|ham)|te nga|"
+     r"chan thuong|tai nan|gay (xuong )?ham|va dap|dap mat|"
      r"rang .{0,30}(rot|bat|vang|bung|gay) (ra|mat|khoi)|(rot|bat|vang|gay) (mat )?(ca )?(rang|chiec rang)|"
      r"bat (ca )?rang|gay (mat )?(1|mot) nua",
      "Chấn thương răng/hàm: nếu răng vĩnh viễn bị bật khỏi ổ, cầm phần thân răng (không chạm chân răng), rửa nhẹ, cắm lại vào ổ "
@@ -66,7 +66,11 @@ _COMPILED = [(code, re.compile(pat), msg) for code, pat, msg in _RULES]
 # Từ dễ nhầm khi bỏ dấu: "ngất" ≠ "ngạt" (ngạt mũi) → kiểm tra trên văn bản CÓ dấu
 # "rơi răng" ≠ "rồi răng" ("mất răng 3 năm rồi răng bên cạnh…")
 _ACCENTED = [("SYSTEMIC", re.compile(r"\bngất\b|choáng (váng|ngất)|lịm đi")),
-             ("TRAUMA", re.compile(r"\brơi (mất )?(cả )?(chiếc )?răng"))]
+             # "té ngã" ≠ "ngà răng" (nhạy cảm ngà)
+             ("TRAUMA", re.compile(r"\brơi (mất )?(cả )?(chiếc )?răng|\bngã\b.{0,30}(răng|mặt|hàm)|\btế ngã|\bté ngã|\bvấp ngã"))]
+# Chỉ áp dụng khi người dùng gõ HOÀN TOÀN không dấu: "bi nga" có thể là "bị ngã" (té) nhưng nếu gõ có dấu
+# thì "bị ngả" (răng nghiêng) / "ngà" (ngà răng) đã được phân biệt bằng _ACCENTED ở trên.
+_UNACCENTED_ONLY = [("TRAUMA", re.compile(r"\b(bi|te|vap|cu) nga\b"))]
 
 
 def detect_red_flags(text: str) -> list[RedFlag]:
@@ -79,6 +83,10 @@ def detect_red_flags(text: str) -> list[RedFlag]:
     for code, pattern in _ACCENTED:
         if code not in found and pattern.search(accented):
             found[code] = next(m for c, _, m in _COMPILED if c == code)
+    if strip_accents(accented) == accented:
+        for code, pattern in _UNACCENTED_ONLY:
+            if code not in found and pattern.search(normalized):
+                found[code] = next(m for c, _, m in _COMPILED if c == code)
     return [RedFlag(code, msg) for code, msg in found.items()]
 
 

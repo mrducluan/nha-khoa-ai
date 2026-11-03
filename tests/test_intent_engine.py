@@ -47,6 +47,12 @@ def test_word_boundaries_prevent_false_matches():
     ("Trụ implant bị sưng chảy máu", "PERI_IMPLANT"),
     ("Thay khớp háng có cần kháng sinh dự phòng", "ANTIBIOTIC_PROPHYLAXIS"),
     ("Làm cầu răng sứ có phải mài răng bên cạnh", "BRIDGE"),
+    ("Mất 1 răng hàm, làm cầu 3 răng hay cắm implant", "BRIDGE"),
+    ("Răng hít gió lạnh vào là buốt lên tận óc", "SENSITIVITY"),
+    ("Mỗi lần ăn cay lại nổi mấy nốt loét trắng trong má", "APHTHOUS"),
+    ("Sáng dậy đau mang tai lan lên thái dương khi nhai", "TMJ"),
+    ("Mẹ tôi tiêm Prolia có nhổ răng được không", "MRONJ"),
+    ("Mảng trắng ở bờ lưỡi lau không đi", "ORAL_LESION"),
 ])
 def test_new_intents(q, code):
     assert code in codes(q)
@@ -58,6 +64,9 @@ def test_new_intents_no_false_matches():
     assert "IMPLANT" not in codes("tẩy trắng bên trong cho răng chết tuỷ")
     assert "TOOTH_LOSS_DRIFT" not in codes("Răng khôn mọc nghiêng có nên nhổ")
     assert "FULL_ARCH" in codes("All-on-4 hay All-on-6 cho hàm trên")     # có gạch nối
+    assert "CROWN" not in codes("Cầu răng sứ 3 đơn vị")                     # cầu răng ≠ bọc răng sứ
+    assert "IMPLANT" not in codes("Mài răng trụ làm cầu")                   # "răng trụ" ≠ "trụ implant"
+    assert "APHTHOUS" not in codes("Bị nấm miệng trắng lưỡi")               # nấm miệng ≠ nhiệt miệng
 
 
 @pytest.mark.parametrize("q", ["Mất răng hàm lâu năm không trồng lại có sao không",
@@ -67,7 +76,16 @@ def test_tooth_loss_is_not_trauma_emergency(q):
     assert not detect_red_flags(q)
 
 
-@pytest.mark.parametrize("q", ["Con tôi bị ngã rơi mất răng cửa", "Té xe gãy mất chiếc răng"])
+@pytest.mark.parametrize("q", ["Kali nitrat hay arginine cho nhạy cảm ngà cổ răng",   # "ngà" ≠ "ngã"
+                               "răng kế bên chỗ nhổ bị ngả vào trong",                # "ngả" ≠ "ngã"
+                               "e buot nga rang"])
+def test_dentin_and_tilting_are_not_trauma(q):
+    from dental_ai.safety import detect_red_flags
+    assert not detect_red_flags(q)
+
+
+@pytest.mark.parametrize("q", ["Con tôi bị ngã rơi mất răng cửa", "Té xe gãy mất chiếc răng",
+                               "Bé bị ngã va vào răng cửa", "be bi nga va vao rang cua"])
 def test_trauma_still_detected(q):
     from dental_ai.safety import detect_red_flags
     assert "TRAUMA" in {f.code for f in detect_red_flags(q)}
@@ -122,7 +140,7 @@ def knowledge_with_drafts(database):
 
 
 @pytest.mark.parametrize("dataset,min_scale", [("questions.jsonl", 1.0), ("holdout_questions.jsonl", 0.95),
-                                               ("holdout_v2_questions.jsonl", 0.95)])
+                                               ("holdout_v2_questions.jsonl", 0.95), ("holdout_v3_questions.jsonl", 0.95)])
 def test_quality_thresholds(knowledge_with_drafts, dataset, min_scale):
     from dental_ai.db import connect
     from dental_ai.embeddings import LocalHashEmbedder

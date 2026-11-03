@@ -13,6 +13,6 @@
 {"category": "B_doctor", "q": "Mão che phủ múi cho răng sau đã nội nha: bằng chứng Cochrane", "persona": "DOCTOR", "topic": ["root-filled-tooth-crown-vs-filling"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Supraeruption răng đối kháng ảnh hưởng khoảng phục hình implant thế nào", "persona": "DOCTOR", "topic": ["tooth-loss-drifting-tipping-overeruption"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Lithium disilicate hay zirconia nguyên khối cho răng cối lớn bệnh nhân bruxism", "persona": "DOCTOR", "topic": ["metal-ceramic-vs-all-ceramic-crown-grey-margin", "sleep-awake-bruxism-assessment-management"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Cầu răng sứ 3 đơn vị dùng được bao nhiêu năm", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Cầu răng sứ 3 đơn vị dùng được bao nhiêu năm", "persona": null, "topic": ["tooth-supported-fixed-bridge-fdp"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Răng giả tháo lắp hàm dưới bị lỏng", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Trẻ 4 tuổi bị sâu răng sữa có cần trám không", "persona": null, "topic": ["nonrestorative-caries-management-fluoride-sdf"], "flags": [], "scope": "dental", "caution": []}
