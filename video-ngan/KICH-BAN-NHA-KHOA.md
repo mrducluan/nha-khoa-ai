@@ -32,6 +32,8 @@ trọn đời, 100%, số 1, tốt nhất, rẻ nhất, cam kết kết quả ·
 "Tình huống minh họa".
 
 **Hình ảnh:**
+- **Ảnh thật của Tâm Đức Smile** (`anh/td-*.jpg`, lấy từ kho Drive truyền thông): quầy lễ tân có bảng hiệu, sảnh chờ, phòng điều trị, máy CT Cone Beam, mặt tiền chi nhánh, bác sĩ làm Implant.
+  - Dùng cho các cảnh "khám, chụp phim, scan", cảnh 4 câu hỏi, và tất cả cảnh cuối.
 - **Ảnh kho Pexels** (giấy phép thương mại miễn phí, danh sách ở `anh/NGUON.md`, ghép theo cảnh trong `anh-kho.mjs`):
   - Cảnh mở đầu: 1,2 giây đầu ảnh người thật hiện sáng cùng tiêu đề, dùng làm ảnh bìa.
   - Cảnh chữ lớn và cảnh cuối: ảnh hiện rõ phía sau.

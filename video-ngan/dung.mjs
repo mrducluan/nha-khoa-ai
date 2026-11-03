@@ -327,7 +327,7 @@ function canhFile(video, s) {
   if (anh) {
     const che = DO_CHE[s.c.loai] ?? 0.8, moDau = s.bd === 0 && s.c.loai === "minh_hoa";
     const pan = s.c.loai === "minh_hoa" ? `<div id="${p}-pan" class="pan"></div>` : "";
-    anhHtml = `<div class="anhnen"><img id="${p}-anh" src="assets/anh/pexels-${anh[0]}.jpg" style="object-position:${anh[1]}" alt="" /></div><div id="${p}-mo" class="anhmo" style="opacity:${moDau ? 0.15 : che}"></div><div class="anhphu"></div>${pan}`;
+    anhHtml = `<div class="anhnen"><img id="${p}-anh" src="assets/anh/${anh[0]}" style="object-position:${anh[1]}" alt="" /></div><div id="${p}-mo" class="anhmo" style="opacity:${moDau ? 0.15 : che}"></div><div class="anhphu"></div>${pan}`;
     anhJs = `tl.fromTo("#${p}-anh", {scale:1.12}, {scale:1.0, duration:${s.d}, ease:"none"}, 0);
 ${moDau ? `tl.to("#${p}-mo", {opacity:${che}, duration:0.6, ease:"power2.inOut"}, 1.2);
 tl.fromTo("#${p}-pan", {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"expo.out"}, 1.2);
@@ -430,7 +430,7 @@ function dung(video) {
 
   fs.rmSync(path.join(thu, "assets/anh"), { recursive: true, force: true });
   fs.mkdirSync(path.join(thu, "assets/anh"), { recursive: true });
-  for (const [id] of Object.values(ANH[video.ma] ?? {})) fs.copyFileSync(path.join(GOC, "anh", `pexels-${id}.jpg`), path.join(thu, "assets/anh", `pexels-${id}.jpg`));
+  for (const [ten] of Object.values(ANH[video.ma] ?? {})) fs.copyFileSync(path.join(GOC, "anh", ten), path.join(thu, "assets/anh", ten));
   const hosts = [], sfx = [], giong = [];
   for (const s of lich) {
     const cf = canhFile(video, s);
