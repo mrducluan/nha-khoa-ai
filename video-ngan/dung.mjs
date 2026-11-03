@@ -365,7 +365,7 @@ window.__timelines["${s.c.id}"] = tl;
 }
 
 /** Lớp trên cùng (dưới phụ đề): logo + khẩu hiệu — nằm trên ảnh nền của từng cảnh. */
-function dauFile(tong) {
+function dauFile(tong, tCta) {
   return `<template>
 <style>
 ${PHONG}
@@ -380,7 +380,10 @@ ${PHONG}
   <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
 </div></div>
 <script>
-window.__timelines["dau"] = gsap.timeline({ paused: true });
+const tl = gsap.timeline({ paused: true });
+// Cảnh cuối (CTA) đã có logo lớn → ẩn logo nhỏ đầu khung để không trùng lặp.
+${tCta != null ? `tl.to("#nen-hieu", {opacity:0, duration:0.25, ease:"power2.in"}, ${Math.max(0, tCta - 0.2)});` : ""}
+window.__timelines["dau"] = tl;
 </script>
 </template>`;
 }
@@ -493,7 +496,7 @@ function dung(video) {
   }
 
   fs.writeFileSync(path.join(thu, "compositions", "nen.html"), nenFile(tong, video));
-  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong));
+  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong, lich.find((x) => x.c.loai === "cta")?.bd));
   fs.writeFileSync(path.join(thu, "compositions", "phu-de.html"), canhPhuDe(lich));
   fs.writeFileSync(path.join(thu, "phu-de.srt"), canhPhuDe.srt);
   fs.writeFileSync(path.join(thu, "hyperframes.json"), JSON.stringify({

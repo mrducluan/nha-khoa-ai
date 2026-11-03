@@ -214,7 +214,7 @@ ${hienNhan(`${p}-n2`, t2 + 0.2)}`,
   // i01 — lắp Implant vào chỗ trống, lực nhai truyền xuống xương
   implant_lap(c, { p, d, moc }) {
     const T = moc_(moc, d);
-    const k = 40;
+    const k = 0; // nướu và xương phẳng: răng Implant thẳng hàng với 2 răng bên
     const t0 = T(0, 0.25), tCrown = T(0, 0.75), t1 = T(1, 0.1), t2 = T(2, 0.05);
     return {
       svg: `
@@ -222,24 +222,28 @@ ${hienNhan(`${p}-n2`, t2 + 0.2)}`,
 <path id="${p}-xg" d="M40 300 L270 300 C340 300 360 ${300 + k} 450 ${300 + k} C540 ${300 + k} 560 300 630 300 L860 300 L860 610 Q860 640 830 640 L70 640 Q40 640 40 610 Z" fill="url(#${p}xp)"/>
 <ellipse id="${p}-sang" cx="450" cy="520" rx="230" ry="120" fill="url(#${p}ngocSang)" opacity="0"/>
 ${rangHam(p, `${p}-a`, 160, 135, 0.95)}${rangHam(p, `${p}-b`, 740, 135, 0.95)}
-${truImplant(p, `${p}-tru`, 450, 330, 1)}
-${khopNoi(p, `${p}-kn`, 450, 330, 1)}
-${maoSu(p, `${p}-mao`, 450, 150, 0.95)}
+${truImplant(p, `${p}-tru`, 450, 304, 1)}
+${khopNoi(p, `${p}-kn`, 450, 304, 0.95)}
+${maoSu(p, `${p}-mao`, 450, 135, 0.95)}
 <path d="M40 268 L270 268 C340 268 360 ${268 + k} 450 ${268 + k} C540 ${268 + k} 560 268 630 268 L860 268 L860 300 L630 300 C560 300 540 ${300 + k} 450 ${300 + k} C360 ${300 + k} 340 300 270 300 L40 300 Z" fill="url(#${p}gm)" opacity="0.92"/>
-<g id="${p}-luc" opacity="0">${[400, 450, 500].map((x) => `<path class="${p}-mu" d="M${x} 360 L${x} 450 M${x - 16} 433 L${x} 453 L${x + 16} 433" stroke="${MAU.ngoc}" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`).join("")}</g>
+<g id="${p}-luc" opacity="0">${[352, 548].map((x) => `<path class="${p}-mu" d="M${x} 360 L${x} 450 M${x - 16} 433 L${x} 453 L${x + 16} 433" stroke="${MAU.ngoc}" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`).join("")}</g>
 <rect id="${p}-ct" x="300" y="110" width="300" height="520" rx="26" fill="rgba(108,196,255,0.08)" stroke="${MAU.troi}" stroke-width="5" stroke-dasharray="18 12" opacity="0"/>
-${nhan(`${p}-n0`, 720, 470, "Trụ Implant", MAU.chu, { co: 30 })}
-${nhan(`${p}-n1`, 720, 60, "Mão sứ", MAU.chu, { co: 30 })}
+<g id="${p}-d0" opacity="0"><path d="M450 548 L450 588" stroke="${MAU.vang}" stroke-width="4"/><circle cx="450" cy="548" r="7" fill="${MAU.vang}"/></g>
+${nhan(`${p}-n0`, 450, 612, "Trụ Implant", MAU.vang, { co: 30 })}
+<g id="${p}-d1" opacity="0"><path d="M450 128 L450 88" stroke="${MAU.vang}" stroke-width="4"/><circle cx="450" cy="128" r="7" fill="${MAU.vang}"/></g>
+${nhan(`${p}-n1`, 450, 62, "Mão sứ", MAU.vang, { co: 30 })}
 ${nhan(`${p}-n2`, 450, 60, "Chụp phim: xương còn đủ?", MAU.troi, { co: 32 })}`,
       js: `
 tl.fromTo(["#${p}-a","#${p}-b"], {opacity:0}, {opacity:1, duration:0.4}, 0.1);
 tl.fromTo("#${p}-tru", {opacity:0, y:-420}, {opacity:1, y:0, duration:0.7, ease:"power3.in"}, ${t0});
 tl.to("#${p}-tru", {y:6, duration:0.08, yoyo:true, repeat:3}, ${r3(t0 + 0.7)});
 ${hienNhan(`${p}-n0`, t0 + 0.8)}
+tl.fromTo("#${p}-d0", {opacity:0}, {opacity:1, duration:0.3}, ${r3(t0 + 0.8)});
 tl.fromTo("#${p}-kn", {opacity:0, y:-300}, {opacity:1, y:0, duration:0.5, ease:"power3.in"}, ${r3(tCrown - 0.6)});
 tl.fromTo("#${p}-mao", {opacity:0, y:-320}, {opacity:1, y:0, duration:0.55, ease:"bounce.out"}, ${tCrown});
 ${hienNhan(`${p}-n1`, tCrown + 0.45)}
-tl.to(["#${p}-n0","#${p}-n1"], {opacity:0, duration:0.25}, ${r3(t1 - 0.05)});
+tl.fromTo("#${p}-d1", {opacity:0}, {opacity:1, duration:0.3}, ${r3(tCrown + 0.45)});
+tl.to(["#${p}-n0","#${p}-n1","#${p}-d0","#${p}-d1"], {opacity:0, duration:0.25}, ${r3(t1 - 0.05)});
 tl.fromTo("#${p}-luc", {opacity:0}, {opacity:1, duration:0.2}, ${t1});
 tl.fromTo(".${p}-mu", {y:-30, opacity:0}, {y:40, opacity:1, duration:0.8, stagger:0.12, repeat:2, ease:"power1.in"}, ${t1});
 tl.fromTo("#${p}-sang", {opacity:0}, {opacity:1, duration:0.8, yoyo:true, repeat:3}, ${r3(t1 + 0.4)});
