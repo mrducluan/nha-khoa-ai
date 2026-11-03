@@ -50,7 +50,7 @@ const CHUNG = `${PHONG}
 .nho { position: absolute; left: 110px; right: 110px; text-align: center; font-weight: 700; font-size: 44px; line-height: 1.3; color: ${MAU.mo}; }
 .hinh { position: absolute; left: 90px; top: ${VUNG.hinh}px; width: 900px; height: ${VUNG.hinhCao}px; overflow: visible; }
 .anhnen { position: absolute; inset: 0; overflow: hidden; }
-.anhnen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.anhnen img, .anhnen video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .anhmo { position: absolute; inset: 0; background: ${MAU.nen}; }
 .anhphu { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,24,38,0.9) 0%, rgba(6,24,38,0.55) 11%, rgba(6,24,38,0) 30%, rgba(6,24,38,0) 54%, rgba(6,24,38,0.88) 62%, rgba(6,24,38,0.97) 72%, rgba(6,24,38,0.97) 100%); }
 .coanh .tde { text-shadow: 0 6px 24px rgba(0,0,0,0.75), 0 2px 0 rgba(0,0,0,0.45); }
@@ -329,10 +329,12 @@ function canhFile(video, s) {
   const ra = r3(s.d - 0.28);
   let anhHtml = "", anhJs = "";
   if (anh) {
-    const che = DO_CHE[s.c.loai] ?? 0.8, moDau = s.bd === 0 && s.c.loai === "minh_hoa";
+    const che = anh[2] ?? DO_CHE[s.c.loai] ?? 0.8, moDau = s.bd === 0 && s.c.loai === "minh_hoa";
     const pan = s.c.loai === "minh_hoa" ? `<div id="${p}-pan" class="pan"></div>` : "";
-    anhHtml = `<div class="anhnen"><img id="${p}-anh" src="assets/anh/${anh[0]}" style="object-position:${anh[1]}" alt="" /></div><div id="${p}-mo" class="anhmo" style="opacity:${moDau ? 0.15 : che}"></div><div class="anhphu"></div>${pan}`;
-    anhJs = `tl.fromTo("#${p}-anh", {scale:1.12}, {scale:1.0, duration:${s.d}, ease:"none"}, 0);
+    // Nền video nằm ở index.html (HyperFrames không cho <video> lồng trong cảnh có data-start); ở đây chỉ còn lớp phủ.
+    const media = Array.isArray(anh[0]) ? "" : `<img id="${p}-anh" src="assets/anh/${anh[0]}" style="object-position:${anh[1]}" alt="" />`;
+    anhHtml = `<div class="anhnen">${media}</div><div id="${p}-mo" class="anhmo" style="opacity:${moDau ? 0.15 : che}"></div><div class="anhphu"></div>${pan}`;
+    anhJs = `${media ? `tl.fromTo("#${p}-anh", {scale:1.12}, {scale:1.0, duration:${s.d}, ease:"none"}, 0);` : ""}
 ${moDau ? `tl.to("#${p}-mo", {opacity:${che}, duration:0.6, ease:"power2.inOut"}, 1.2);
 tl.fromTo("#${p}-pan", {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"expo.out"}, 1.2);
 tl.fromTo("#${p}-svg", {opacity:0, scale:0.96}, {opacity:1, scale:1, duration:0.5, ease:"expo.out", immediateRender:false}, 1.3);`
@@ -434,11 +436,27 @@ function dung(video) {
 
   fs.rmSync(path.join(thu, "assets/anh"), { recursive: true, force: true });
   fs.mkdirSync(path.join(thu, "assets/anh"), { recursive: true });
-  for (const [ten] of Object.values(ANH[video.ma] ?? {})) fs.copyFileSync(path.join(GOC, "anh", ten), path.join(thu, "assets/anh", ten));
+  for (const [ten] of Object.values(ANH[video.ma] ?? {})) if (!Array.isArray(ten)) fs.copyFileSync(path.join(GOC, "anh", ten), path.join(thu, "assets/anh", ten));
+  // Nền video: ghép các đoạn clip/ (cắt 8% mép trên để bỏ logo nhỏ có sẵn trong video gốc), chiếu chậm 1,4×, lặp đủ độ dài cảnh.
+  for (const sc of lichCanh(video)) {
+    const e = ANH[video.ma]?.[sc.c.id];
+    if (!e || !Array.isArray(e[0])) continue;
+    const p = `${video.ma}${sc.c.id.replace(/-/g, "")}`, tam = path.join(thu, "assets/anh", `${p}.tam.mp4`);
+    const vao = e[0].flatMap((n) => ["-i", path.join(GOC, "clip", `${n}.mp4`)]);
+    const loc = e[0].map((_, i) => `[${i}:v]crop=iw*0.92:ih*0.92:(iw-ow)/2:ih*0.08,scale=1080:1920,setsar=1,setpts=1.4*(PTS-STARTPTS),fps=30[v${i}]`).join(";") + ";" + e[0].map((_, i) => `[v${i}]`).join("") + `concat=n=${e[0].length}:v=1:a=0[ra]`;
+    execFileSync("ffmpeg", ["-nostdin", "-loglevel", "error", "-y", ...vao, "-filter_complex", loc, "-map", "[ra]", "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", tam]);
+    execFileSync("ffmpeg", ["-nostdin", "-loglevel", "error", "-y", "-stream_loop", "-1", "-i", tam, "-t", String(sc.d + 0.2), "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", path.join(thu, "assets/anh", `${p}.mp4`)]);
+    fs.rmSync(tam);
+  }
   const hosts = [], sfx = [], giong = [];
   for (const s of lich) {
     const cf = canhFile(video, s);
     fs.writeFileSync(path.join(thu, "compositions", `${s.c.id}.html`), cf.html);
+    const nv = ANH[video.ma]?.[s.c.id];
+    if (nv && Array.isArray(nv[0])) {
+      const p = `${video.ma}${s.c.id.replace(/-/g, "")}`;
+      hosts.push(`<video id="bg-${p}" class="clip" src="assets/anh/${p}.mp4" data-start="${s.bd}" data-duration="${s.d}" muted playsinline style="position:absolute; left:0; top:0; width:${W}px; height:${H}px; object-fit:cover; object-position:${nv[1]}; z-index:1"></video>`);
+    }
     hosts.push(`<div id="${s.c.id}" data-composition-id="${s.c.id}" data-composition-src="compositions/${s.c.id}.html" data-start="${s.bd}" data-duration="${s.d}" data-track-index="2" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:2"></div>`);
     if (s !== lich[0]) sfx.push({ f: ["whoosh", "whoosh-short", "whoosh-cinematic"][sfx.length % 3], t: r3(s.bd - 0.12), v: 0.28 });
     sfx.push(...cf.sfx);

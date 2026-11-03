@@ -85,7 +85,12 @@ for (const v of VIDEO) {
   tronLan(au.filter((a) => a.id === "nhac-nen").map((a) => ({ ...a, v: 1 })), tong, path.join(ra, "am-thanh", "nhac-nen.mp3"));
   tronLan(au.filter((a) => a.id.startsWith("sfx-")).map((a) => ({ ...a, v: Math.min(1, a.v * 2) })), tong, path.join(ra, "am-thanh", "hieu-ung.mp3"));
   ff(["-i", coPD, "-vn", "-ar", "44100", "-b:a", "192k", path.join(ra, "am-thanh", "tron-day-du.mp3")]);
-  for (const [ten] of Object.values(ANH[v.ma] ?? {})) fs.copyFileSync(path.join(GOC, "anh", ten), path.join(ra, "anh", ten));
+  for (const [ten] of Object.values(ANH[v.ma] ?? {})) if (!Array.isArray(ten)) fs.copyFileSync(path.join(GOC, "anh", ten), path.join(ra, "anh", ten));
+  // Video nền thật (đã ghép, chiếu chậm) từng cảnh → video-nen/
+  for (const f of fs.readdirSync(path.join(thu, "assets/anh")).filter((x) => x.endsWith(".mp4"))) {
+    fs.mkdirSync(path.join(ra, "video-nen"), { recursive: true });
+    fs.copyFileSync(path.join(thu, "assets/anh", f), path.join(ra, "video-nen", f));
+  }
   for (const f of fs.readdirSync(path.join(GOC, "logo"))) fs.copyFileSync(path.join(GOC, "logo", f), path.join(ra, "logo", f));
   fs.writeFileSync(path.join(ra, "HUONG-DAN-CAPCUT.md"), HUONG_DAN(v, tong));
   const zip = path.join(GOC, "xuat", "capcut", `${v.ma}-capcut.zip`);

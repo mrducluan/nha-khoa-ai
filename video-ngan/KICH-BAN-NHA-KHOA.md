@@ -34,6 +34,10 @@ trọn đời, 100%, số 1, tốt nhất, rẻ nhất, cam kết kết quả ·
 **Hình ảnh:**
 - **Ảnh thật của Tâm Đức Smile** (`anh/td-*.jpg`, lấy từ kho Drive truyền thông): quầy lễ tân có bảng hiệu, sảnh chờ, phòng điều trị, máy CT Cone Beam, mặt tiền chi nhánh, bác sĩ làm Implant.
   - Dùng cho các cảnh "khám, chụp phim, scan", cảnh 4 câu hỏi, và tất cả cảnh cuối.
+- **Video thật của Tâm Đức Smile** (`clip/*.mp4`, cắt từ video truyền thông trên Drive; doanh nghiệp xác nhận khách đã đồng ý dùng hình ảnh):
+  - Cảnh quay sạch: không chữ giá/ưu đãi, không ảnh trước/sau.
+  - Gồm: cụ bà cười, ông cụ được tư vấn, hàng trụ Implant, bác sĩ làm Implant, cận cảnh nụ cười, so màu răng, thiết kế CAD/CAM, bác sĩ khám, khách ăn uống.
+  - Ghép theo cảnh trong `anh-kho.mjs`, chiếu chậm 1,4 lần, cắt 8% mép trên để bỏ logo nhỏ có sẵn trong video gốc.
 - **Ảnh kho Pexels** (giấy phép thương mại miễn phí, danh sách ở `anh/NGUON.md`, ghép theo cảnh trong `anh-kho.mjs`):
   - Cảnh mở đầu: 1,2 giây đầu ảnh người thật hiện sáng cùng tiêu đề, dùng làm ảnh bìa.
   - Cảnh chữ lớn và cảnh cuối: ảnh hiện rõ phía sau.

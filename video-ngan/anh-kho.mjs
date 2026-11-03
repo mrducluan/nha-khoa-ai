@@ -1,4 +1,6 @@
-// Ảnh nền thật cho từng cảnh: [tên file trong anh/, object-position].
+// Nền thật cho từng cảnh: [tên file trong anh/ HOẶC mảng tên đoạn video trong clip/, object-position, độ che riêng?].
+//  clip/*.mp4    — đoạn quay THẬT cắt từ video truyền thông của Tâm Đức Smile (khách đã đồng ý dùng hình ảnh),
+//                  chỉ lấy cảnh sạch: không chữ giá/ưu đãi, không ảnh trước/sau. dung.mjs ghép, chiếu chậm 1,4×, lặp đủ cảnh.
 //  td-*.jpg      — ảnh THẬT của Nha khoa Tâm Đức Smile (kho Drive truyền thông do chủ dự án cung cấp):
 //                  quầy lễ tân, sảnh, phòng điều trị, máy CT Cone Beam, mặt tiền chi nhánh, bác sĩ làm Implant.
 //  pexels-*.jpg  — ảnh kho Pexels (giấy phép thương mại miễn phí), chỉ làm nền không khí. Xem anh/NGUON.md.
@@ -10,21 +12,21 @@ export const ANH = {
     "he-qua": ["pexels-3845766.jpg", "45% 50%"], implant: ["td-bac-si-implant.jpg", "40% 30%"], cta: ["td-le-tan-1.jpg", "38% 50%"],
   },
   i02: {
-    hook: ["td-phong-3.jpg", "55% 50%"], "cau-tao": ["td-bac-si-implant.jpg", "40% 30%"], "bon-cau": ["td-may-ct-1.jpg", "70% 50%"],
-    lat: ["td-sanh-2.jpg", "35% 50%"], cta: ["td-le-tan-2.jpg", "45% 50%"],
+    hook: ["td-phong-3.jpg", "55% 50%"], "cau-tao": [["tru-implant", "bac-si-implant", "tru-implant"], "50% 45%"], "bon-cau": ["td-may-ct-1.jpg", "70% 50%"],
+    lat: [["ong-tu-van"], "50% 40%"], cta: ["td-le-tan-2.jpg", "45% 50%"],
   },
-  i03: { "giai-phap": ["td-phong-1.jpg", "50% 50%"], cta: ["td-mat-tien.jpg", "50% 50%"] },
+  i03: { "giai-phap": [["ong-tu-van", "ba-cuoi"], "50% 40%"], "mon-qua": [["ba-cuoi"], "50% 35%", 0.62], cta: ["td-mat-tien.jpg", "50% 50%"] },
   s01: {
-    hook: ["pexels-3845686.jpg", "60% 50%"], "truong-hop": ["pexels-3845744.jpg", "33% 50%"], "vi-sao": ["pexels-3845710.jpg", "50% 40%"],
-    "quy-trinh": ["td-may-ct-2.jpg", "62% 50%"], cta: ["td-le-tan-1.jpg", "38% 50%"],
+    hook: ["pexels-3845686.jpg", "60% 50%"], "truong-hop": [["an-nhai", "nu-cuoi-can"], "50% 40%"], "vi-sao": ["pexels-3845710.jpg", "50% 40%"],
+    "quy-trinh": [["bac-si-kham", "thiet-ke-cadcam", "bac-si-lam"], "50% 45%"], cta: ["td-le-tan-1.jpg", "38% 50%"],
   },
   s02: {
     hook: ["pexels-3845853.jpg", "50% 45%"], "cat-lop": ["pexels-3845856.jpg", "50% 50%"], "toan-su": ["pexels-3845757.jpg", "50% 50%"],
-    "luu-y": ["td-phong-2.jpg", "40% 50%"], cta: ["td-le-tan-2.jpg", "45% 50%"],
+    "luu-y": [["bac-si-kham", "bac-si-lam"], "50% 45%"], cta: ["td-le-tan-2.jpg", "45% 50%"],
   },
   s03: {
-    hook: ["pexels-3845840.jpg", "50% 40%"], mau: ["pexels-3845623.jpg", "45% 50%"], dang: ["pexels-3845627.jpg", "56% 50%"],
-    trong: ["pexels-3845625.jpg", "48% 50%"], "thu-truoc": ["td-phong-3.jpg", "55% 50%"], cta: ["td-sanh-1.jpg", "45% 50%"],
+    hook: [["nu-cuoi-can", "hai-nu-cuoi"], "50% 40%"], mau: [["so-mau-nam", "so-mau-nu"], "50% 40%"], dang: [["hai-nu-cuoi", "cuoi-ghe"], "50% 40%"],
+    trong: ["pexels-3845625.jpg", "48% 50%"], "thu-truoc": [["thiet-ke-cadcam", "so-mau-nu"], "50% 45%"], cta: ["td-sanh-1.jpg", "45% 50%"],
   },
 };
 
