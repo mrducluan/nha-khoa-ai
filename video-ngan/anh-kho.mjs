@@ -9,7 +9,7 @@
 export const ANH = {
   i01: {
     hook: ["pexels-3845735.jpg", "45% 50%"], "xo-lech": ["pexels-3845738.jpg", "42% 50%"], xuong: ["pexels-3845745.jpg", "50% 40%"],
-    "he-qua": ["pexels-3845766.jpg", "45% 50%"], implant: ["td-bac-si-implant.jpg", "40% 30%"], cta: ["td-le-tan-1.jpg", "38% 50%"],
+    "he-qua": ["pexels-3845766.jpg", "45% 50%"], implant: [["bac-si-implant", "tru-implant", "bac-si-implant"], "50% 40%"], cta: ["td-le-tan-1.jpg", "38% 50%"],
   },
   i02: {
     hook: ["td-phong-3.jpg", "55% 50%"], "cau-tao": [["tru-implant", "bac-si-implant", "tru-implant"], "50% 45%"], "bon-cau": ["td-may-ct-1.jpg", "70% 50%"],
