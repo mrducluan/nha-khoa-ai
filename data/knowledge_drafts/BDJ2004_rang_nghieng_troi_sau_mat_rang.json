@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Craddock HL, Youngson CC. Br Dent J 2004;196(6):341-348, doi:10.1038/sj.bdj.4811083. Nguồn bổ trợ (nêu trong nội dung, đã xác minh thư mục): Kiliaridis S và cs. Int J Prosthodont 2000;13(6):480-486 (PMID 11203673); Craddock HL và cs. J Prosthodont 2007;16 (Part 1) & 2008 (Part 3). BÁC SĨ cần đối chiếu nguyên văn các con số (tỷ lệ trồi răng, mm) trước khi duyệt — các con số ở đây lấy từ tóm tắt (abstract), chưa đọc toàn văn. Mức bằng chứng: nghiên cứu quan sát (cắt ngang có nhóm chứng / theo dõi dài hạn); schema chỉ có 5 mức nên tạm xếp 2B_CASE_CONTROL.",
+  "source_metadata": {
+    "organization_code": "PUBMED_NCBI",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "A study of the incidence of overeruption and occlusal interferences in unopposed posterior teeth",
+    "authors_or_committee": "Craddock HL, Youngson CC (Leeds Dental Institute); bổ trợ: Kiliaridis S, Lyka I, Friede H, Carlsson GE, Ahlqwist M (2000)",
+    "publication_year": 2004,
+    "journal_or_series": "British Dental Journal 196(6):341-348",
+    "doi_or_pmid": "10.1038/sj.bdj.4811083",
+    "evidence_level": "2B_CASE_CONTROL",
+    "grade_of_recommendation": "Quan sát"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": ["ORTHODONTICS", "IMPLANTOLOGY"],
+    "protocol_title": "Mất răng lâu không phục hình: răng kế cận nghiêng đổ, răng đối diện trồi (thừa trồi) — đánh giá, chỉnh nha dựng trục và kế hoạch phục hình",
+    "clinical_topic_slug": "tooth-loss-drifting-tipping-overeruption"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người trưởng thành mất một hoặc nhiều răng sau (răng hàm) chưa được phục hình; răng còn lại ở hai bên khoảng mất răng và răng đối diện không còn răng đối kháng.",
+    "I_intervention": "Phục hình sớm khoảng mất răng (implant, cầu răng, hàm tháo lắp) hoặc giữ khoảng/duy trì tiếp xúc khớp cắn, kèm theo dõi định kỳ vị trí răng.",
+    "C_comparison": "Để trống khoảng mất răng lâu dài không theo dõi.",
+    "O_outcome_metrics": "Craddock & Youngson 2004 (BDJ): trồi răng ở răng không có đối kháng là hiện tượng PHỔ BIẾN và thường đi kèm cản trở khớp cắn (occlusal interferences); mức độ trồi thay đổi lớn giữa các cá nhân. Kiliaridis 2000 (84 răng cối lớn mất đối kháng ≥ 10 năm): 18% không trồi, 58% trồi < 2 mm, 24% trồi mức trung bình–nặng — tức KHÔNG phải mọi răng mất đối kháng đều trồi nhiều, và răng mất đối kháng khi đã trưởng thành có nguy cơ thấp hơn. Hệ quả lâm sàng chính: mất khoảng phục hình theo chiều đứng, thay đổi đường cong khớp cắn, cản trở khớp cắn, nghiêng răng kế cận làm khó đặt implant/cầu răng."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Vị trí răng được giữ cân bằng bởi các lực: tiếp xúc bên với răng kế cận, tiếp xúc khớp cắn với răng đối diện, lực lưỡi–má–môi và hệ dây chằng nha chu. Khi mất răng: (1) răng kế cận mất điểm tiếp xúc nên có xu hướng NGHIÊNG (tipping) và xoay vào khoảng trống — điển hình là răng cối lớn hàm dưới nghiêng về phía gần khi mất răng 6; (2) răng đối diện mất tiếp xúc khớp cắn nên tiếp tục mọc theo chiều đứng (TRỒI / thừa trồi, supraeruption), đôi khi kéo theo cả xương ổ răng và nướu; (3) hậu quả thứ phát: mở tiếp xúc bên gây giắt thức ăn, sâu mặt bên và viêm nha chu, hình thành túi nha chu ở mặt nghiêng, cản trở khớp cắn khi vận động hàm, tiêu xương sống hàm tại vị trí mất răng (chiều ngang mất nhiều hơn chiều đứng, chủ yếu trong năm đầu). Mức độ di chuyển KHÔNG đồng đều: phụ thuộc thời gian mất răng, tuổi lúc mất răng, tình trạng nha chu (nha chu yếu → di lệch nhiều hơn), khớp cắn và lực nhai.",
+    "indications": [
+      "Tư vấn phục hình sớm khi mất răng sau, đặc biệt ở người trẻ, bệnh nhân viêm nha chu, hoặc khi răng đối diện chưa có đối kháng",
+      "Đánh giá định kỳ (mẫu hàm/quét trong miệng so sánh theo thời gian) nếu bệnh nhân chưa muốn phục hình ngay",
+      "Lập kế hoạch tiền phục hình khi đã có răng nghiêng/trồi: đo khoảng phục hình chiều đứng (interocclusal space) và chiều gần–xa trước khi chọn implant hoặc cầu răng",
+      "Cân nhắc dựng trục răng nghiêng bằng chỉnh nha (molar uprighting, có thể dùng minivis/TADs) hoặc lún răng trồi (intrusion) trước phục hình",
+      "Cung răng ngắn (shortened dental arch) có thể chấp nhận ở một số bệnh nhân lớn tuổi còn đủ răng cối nhỏ, nha chu ổn định — quyết định cá thể hoá, không phải mọi khoảng mất răng đều bắt buộc phục hình"
+    ],
+    "contraindications_absolute": [
+      "Phục hình cố định khi khoảng phục hình chiều đứng/chiều gần–xa không đủ mà chưa xử trí răng trồi/nghiêng (gây cản trở khớp cắn, thất bại phục hình)",
+      "Di chuyển răng chỉnh nha khi viêm nha chu đang hoạt động chưa kiểm soát"
+    ],
+    "contraindications_relative": [
+      "Mài chỉnh/điều chỉnh khớp cắn răng trồi nhiều: có thể làm lộ ngà, phải lấy tuỷ và bọc mão — cân nhắc lún răng chỉnh nha thay thế",
+      "Bệnh nhân lớn tuổi, nhu cầu chức năng thấp, khoảng mất răng ổn định lâu năm không tiến triển: có thể theo dõi thay vì can thiệp lớn",
+      "Đặt implant khi răng kế cận nghiêng làm hẹp khoảng ở phía cổ răng và chóp chân răng sát vùng khoan (nguy cơ chạm chân răng)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá ban đầu", "clinical_action": "Khám khoảng mất răng, răng kế cận và răng đối diện; ghi nhận thời gian mất răng, tình trạng nha chu, đường cong khớp cắn (Spee/Wilson), cản trở khi đưa hàm sang bên/ra trước.", "technical_parameters": "Mẫu hàm/quét trong miệng gắn càng nhai; phim X-quang/CBCT đánh giá trục chân răng nghiêng và xương sống hàm"},
+      {"step": 2, "phase_name": "Đo khoảng phục hình", "clinical_action": "Đo khoảng gần–xa (ở mặt nhai và ở cổ răng) và khoảng chiều đứng tới răng đối diện.", "technical_parameters": "Tham khảo thực hành: implant đơn lẻ răng sau thường cần khoảng gần–xa ≥ 7 mm (≥ 1.5 mm từ implant tới chân răng kế cận) và đủ chiều cao cho trụ phục hình + mão; xác nhận theo hệ thống implant sử dụng"},
+      {"step": 3, "phase_name": "Xử trí tiền phục hình", "clinical_action": "Tuỳ mức độ: dựng trục răng nghiêng bằng chỉnh nha; lún răng trồi bằng minivis; hoặc mài chỉnh/bọc mão răng trồi để tái lập mặt phẳng khớp cắn; điều trị nha chu trước.", "technical_parameters": "Ưu tiên giải pháp bảo tồn mô răng (chỉnh nha) khi răng trồi nhiều; điều trị nha chu ổn định trước khi di chuyển răng"},
+      {"step": 4, "phase_name": "Phục hình khoảng mất răng", "clinical_action": "Chọn implant, cầu răng hoặc hàm tháo lắp theo xương, răng trụ, nha chu, mong muốn và điều kiện bệnh nhân.", "technical_parameters": "Thiết lập lại tiếp xúc bên và tiếp xúc khớp cắn; tránh cản trở khi vận động hàm"},
+      {"step": 5, "phase_name": "Theo dõi", "clinical_action": "Tái khám định kỳ, kiểm tra tiếp xúc, khớp cắn, nha chu.", "technical_parameters": "Nếu chưa phục hình: so sánh mẫu hàm/quét số theo thời gian để phát hiện di lệch tiến triển"}
+    ],
+    "complications_and_management": [
+      {"complication": "Giắt thức ăn, sâu mặt bên và túi nha chu ở mặt răng nghiêng", "prevention": "Phục hình sớm hoặc theo dõi; hướng dẫn chải kẽ (bàn chải kẽ, chỉ nha khoa)", "management_protocol": "Điều trị sâu/nha chu; dựng trục răng để loại bỏ khuyết hổng giả dạng túi; phục hình tái lập tiếp xúc"},
+      {"complication": "Mất khoảng phục hình chiều đứng do răng đối diện trồi", "prevention": "Phục hình khoảng mất răng hoặc giữ tiếp xúc khớp cắn (máng/hàm tạm)", "management_protocol": "Lún răng chỉnh nha, mài chỉnh có kiểm soát hoặc bọc mão răng trồi; trường hợp nặng cân nhắc lấy tuỷ hoặc nhổ"},
+      {"complication": "Cản trở khớp cắn khi vận động hàm sau khi răng di lệch", "prevention": "Đánh giá khớp cắn động trước phục hình", "management_protocol": "Điều chỉnh khớp cắn có chọn lọc; thiết kế lại mặt nhai phục hình"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Đặt implant/cầu ngay mà không đo khoảng chiều đứng — răng đối diện trồi chiếm chỗ, mão quá thấp hoặc gây cản trở",
+        "Mặc định mọi răng mất đối kháng đều sẽ trồi nhiều — bằng chứng cho thấy mức độ rất khác nhau, nhiều răng trồi < 2 mm",
+        "Chẩn đoán nhầm khuyết hổng ở mặt gần răng cối nghiêng là túi nha chu thật"
+      ],
+      "clinical_decision_tips": [
+        "Hỏi thời gian mất răng và tuổi lúc mất răng: mất răng từ tuổi thiếu niên và nha chu yếu → nguy cơ di lệch cao hơn",
+        "Trước mọi kế hoạch phục hình răng sau: gắn mẫu lên càng nhai hoặc dùng mẫu số để đánh giá mặt phẳng khớp cắn",
+        "Răng trồi nhiều: ưu tiên chỉnh nha lún răng hơn là mài sâu tới tuỷ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Khi mất một chiếc răng mà không làm răng thay thế, các răng xung quanh không còn 'chỗ tựa' nên có thể từ từ nghiêng đổ vào chỗ trống, còn chiếc răng ở hàm đối diện không còn răng để cắn vào nên có thể dài ra (trồi xuống hoặc trồi lên).",
+      "why_needed": "Răng xô lệch làm thức ăn dễ giắt, dễ sâu răng, viêm nướu, cắn lệch và về sau làm răng giả (implant, cầu răng) khó hơn vì mất chỗ. Mức độ khác nhau ở mỗi người — không phải ai cũng bị nhiều — nên cần nha sĩ khám và theo dõi.",
+      "what_to_expect": "Nha sĩ sẽ khám, chụp phim và có thể lấy dấu/quét răng để xem răng đã di lệch bao nhiêu. Nếu răng đã nghiêng hoặc trồi nhiều, có thể cần niềng răng nhẹ để dựng răng lại hoặc chỉnh răng trồi trước khi làm răng thay thế.",
+      "home_care_instructions": [
+        "Nên khám tư vấn làm răng thay thế sớm sau khi mất răng (sau khi vết nhổ lành theo hướng dẫn của nha sĩ)",
+        "Vệ sinh kỹ kẽ răng cạnh chỗ mất răng bằng chỉ nha khoa hoặc bàn chải kẽ",
+        "Nếu chưa làm răng ngay, tái khám định kỳ để nha sĩ theo dõi răng có bị xô lệch thêm không"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: BDJ 2004 (Craddock & Youngson) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không phục hình cố định khi chưa xử trí răng trồi/nghiêng làm thiếu khoảng] Mất răng lâu không trồng lại có sao không? Răng bên cạnh bị nghiêng, đổ, xô lệch vào chỗ trống; răng đối diện bị trồi, dài ra, chìa xuống; mất chỗ làm răng giả, giắt thức ăn, sâu răng, cắn lệch. Nên khám để làm răng thay thế sớm hoặc theo dõi định kỳ."
+    }
+  ]
+}

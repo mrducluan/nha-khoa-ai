@@ -1,0 +1,90 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Eachempati P, Kumbargere Nagraj S, Kiran Kumar Krishanappa S, Gupta P, Yaylali IE. Home-based chemically-induced whitening (bleaching) of teeth in adults. Cochrane Database Syst Rev 2018;12:CD006202, doi:10.1002/14651858.CD006202.pub2 — 71 thử nghiệm, độ chắc chắn thấp đến rất thấp, tác dụng phụ hay gặp: ê buốt và kích ứng nướu mức nhẹ–trung bình. Thông tin bổ trợ (nêu trong nội dung): Chỉ thị EU 2011/84/EU về nồng độ hydrogen peroxide; tổng quan JADA 2017 (Brooks JK và cs.) về kem đánh răng than hoạt tính chưa đủ bằng chứng. BÁC SĨ cần đối chiếu nguyên văn và quy định pháp lý tại Việt Nam trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Home-based chemically-induced whitening (bleaching) of teeth in adults",
+    "authors_or_committee": "Eachempati P, Kumbargere Nagraj S, Kiran Kumar Krishanappa S, Gupta P, Yaylali IE (Cochrane Oral Health)",
+    "publication_year": 2018,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2018, Issue 12, CD006202",
+    "doi_or_pmid": "10.1002/14651858.CD006202.pub2",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "GRADE: thấp"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Tẩy trắng răng: tẩy trắng tại nhà bằng máng, tại phòng khám và tẩy trắng bên trong cho răng chết tuỷ — hiệu quả, tác dụng phụ và an toàn",
+    "clinical_topic_slug": "tooth-whitening-bleaching-safety-efficacy"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn có răng đổi màu muốn làm trắng răng (đổi màu do tuổi, thực phẩm, thuốc lá; nhiễm màu nội sinh như tetracycline, nhiễm fluor; răng chết tuỷ sẫm màu).",
+    "I_intervention": "Tẩy trắng hoá học tại nhà: gel carbamide peroxide (CP) hoặc hydrogen peroxide (HP) trong máng cá nhân, miếng dán HP, gel bôi; tẩy trắng tại phòng khám nồng độ cao; tẩy trắng trong (walking bleach) cho răng đã chữa tuỷ.",
+    "C_comparison": "Giả dược, sản phẩm khác hoặc nồng độ/thời gian khác.",
+    "O_outcome_metrics": "Cochrane 2018 (71 thử nghiệm): các sản phẩm tẩy trắng tại nhà có hiệu quả làm trắng ngắn hạn so với giả dược, nhưng độ chắc chắn của bằng chứng THẤP đến RẤT THẤP (đa số thử nghiệm nhỏ, ngắn hạn, nhiều thử nghiệm do nhà sản xuất tài trợ); hiệu quả khác nhau theo hoạt chất và nồng độ. Tác dụng phụ hay gặp nhất: ê buốt răng và kích ứng nướu mức nhẹ đến trung bình, thường thoáng qua; sản phẩm nồng độ HP cao gây ê buốt nhiều hơn. Chưa đủ dữ liệu dài hạn về độ bền màu."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Hydrogen peroxide (hoặc carbamide peroxide — phân huỷ thành khoảng 1/3 lượng HP tương đương, VD: CP 10% ≈ HP 3.5%) khuếch tán qua men và ngà, tạo gốc oxy hoá phân cắt các phân tử sắc tố lớn trong răng thành phân tử nhỏ ít hấp thụ ánh sáng hơn → răng sáng màu hơn. Chất tẩy trắng không làm trắng được miếng trám, răng sứ, mặt dán. Ê buốt do peroxide tới tuỷ qua ống ngà gây viêm tuỷ hồi phục thoáng qua. Đổi màu bề mặt (ngoại sinh: trà, cà phê, thuốc lá) đáp ứng tốt; nhiễm màu nội sinh nặng (tetracycline dải xám) đáp ứng chậm, cần thời gian dài và có thể không đạt. Răng chết tuỷ sẫm màu do sản phẩm phân huỷ máu/tuỷ trong ống ngà — tẩy trắng trong (đặt thuốc trong buồng tuỷ) sau khi trám bít ống tuỷ kín. Than hoạt tính/bột mài chỉ làm sạch vết ố bề mặt bằng cách mài, không đổi màu bên trong, có thể mài mòn men – ngà; bằng chứng hiệu quả và an toàn chưa đủ.",
+    "indications": [
+      "Răng đổi màu ngoại sinh và đổi màu do tuổi: tẩy trắng tại nhà bằng máng cá nhân (CP 10–16% hoặc HP nồng độ thấp) dưới sự giám sát của nha sĩ, hoặc tẩy trắng tại phòng khám",
+      "Nhiễm màu nội sinh (tetracycline, fluor nhẹ): thử tẩy trắng kéo dài trước; không đạt → cân nhắc mặt dán sứ/mão",
+      "Răng chết tuỷ đổi màu đơn lẻ: tẩy trắng trong (walking bleach) sau khi điều trị tuỷ đạt và đặt lớp ngăn cách cổ răng",
+      "Tẩy trắng TRƯỚC khi làm phục hình thẩm mỹ, rồi chọn màu phục hình theo màu mới"
+    ],
+    "contraindications_absolute": [
+      "Sâu răng chưa điều trị, miếng trám hở, viêm tuỷ, viêm nướu/nha chu chưa kiểm soát — điều trị trước",
+      "Dị ứng với peroxide hoặc thành phần gel",
+      "Tự dùng sản phẩm nồng độ cao không có giám sát của nha sĩ"
+    ],
+    "contraindications_relative": [
+      "Phụ nữ mang thai và cho con bú — khuyến cáo trì hoãn (thiếu dữ liệu an toàn)",
+      "Trẻ em và thanh thiếu niên (tuỷ rộng, ê buốt nhiều): tại EU, sản phẩm HP 0.1–6% chỉ dùng qua nha sĩ và không dùng cho người dưới 18 tuổi",
+      "Ê buốt răng nặng sẵn có, mòn cổ răng lộ ngà, tụt nướu nhiều",
+      "Nhiều phục hình ở vùng răng trước (phục hình sẽ lệch màu sau tẩy trắng — cần làm lại)",
+      "Kỳ vọng phi thực tế về độ trắng"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khám & chẩn đoán nguyên nhân đổi màu", "clinical_action": "Khám sâu răng, nha chu, phục hình cũ, ê buốt, răng chết tuỷ (phim, thử tuỷ); chụp ảnh và ghi màu ban đầu.", "technical_parameters": "Lấy cao răng, đánh bóng trước; giải thích phục hình không đổi màu"},
+      {"step": 2, "phase_name": "Tẩy trắng tại nhà bằng máng", "clinical_action": "Làm máng cá nhân; hướng dẫn lượng gel nhỏ, lau gel tràn ra nướu.", "technical_parameters": "Thường CP 10% đeo ban đêm hoặc theo thời gian của nhà sản xuất, khoảng 2–4 tuần (tetracycline có thể lâu hơn); tái khám theo dõi ê buốt và kích ứng nướu"},
+      {"step": 3, "phase_name": "Tẩy trắng tại phòng khám", "clinical_action": "Cách ly và bảo vệ nướu (đê cao su lỏng/che nướu), bôi gel HP nồng độ cao theo hướng dẫn nhà sản xuất.", "technical_parameters": "Đèn chiếu không được chứng minh tăng hiệu quả rõ rệt và có thể tăng ê buốt; theo dõi ê buốt"},
+      {"step": 4, "phase_name": "Tẩy trắng trong (răng chết tuỷ)", "clinical_action": "Kiểm tra trám bít ống tuỷ; đặt lớp ngăn cách (khoảng 2 mm) ở cổ răng; đặt sodium perborate trộn nước vào buồng tuỷ, trám tạm kín; thay thuốc mỗi vài ngày đến khi đạt màu.", "technical_parameters": "Tránh dùng HP nồng độ cao + nhiệt trong buồng tuỷ (nguy cơ tiêu ngót chân răng vùng cổ)"},
+      {"step": 5, "phase_name": "Hoàn tất & duy trì", "clinical_action": "Chờ màu ổn định trước khi trám/dán thẩm mỹ; hướng dẫn hạn chế chất màu; tẩy trắng bổ sung khi cần.", "technical_parameters": "Chờ khoảng 1–2 tuần sau tẩy trắng mới dán composite/sứ (oxy tồn lưu giảm độ bám dính)"}
+    ],
+    "complications_and_management": [
+      {"complication": "Ê buốt răng", "prevention": "Nồng độ thấp, giảm thời gian/tần suất, kem chống ê (kali nitrat, fluoride) trước và trong quá trình", "management_protocol": "Tạm ngưng vài ngày, dùng chất chống ê; thường hết sau khi ngưng tẩy trắng"},
+      {"complication": "Kích ứng/bỏng nướu", "prevention": "Máng vừa khít, không bôi quá nhiều gel, bảo vệ nướu khi làm tại phòng khám", "management_protocol": "Rửa sạch, ngưng tạm thời; thường tự lành"},
+      {"complication": "Tiêu ngót chân răng vùng cổ sau tẩy trắng trong", "prevention": "Lớp ngăn cách cổ răng, tránh HP cao + nhiệt", "management_protocol": "Phát hiện bằng phim định kỳ; xử trí theo mức độ"},
+      {"complication": "Phục hình cũ lệch màu sau tẩy trắng", "prevention": "Tư vấn trước", "management_protocol": "Thay phục hình sau khi màu ổn định"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Tẩy trắng khi còn sâu răng/miếng trám hở → ê buốt nặng, viêm tuỷ",
+        "Dán composite/sứ ngay sau tẩy trắng → giảm độ bám dính",
+        "Hứa 'trắng vĩnh viễn' — màu có thể ngả lại, cần duy trì"
+      ],
+      "clinical_decision_tips": [
+        "Chẩn đoán nguyên nhân đổi màu trước khi chọn phương pháp",
+        "Tẩy trắng tại nhà có giám sát là lựa chọn bảo tồn, hiệu quả, ít xâm lấn",
+        "Một răng sẫm màu đơn lẻ → nghĩ tới răng chết tuỷ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Tẩy trắng răng dùng gel chứa peroxide để làm sáng màu răng thật, có thể làm tại nhà với máng do nha sĩ làm riêng hoặc làm tại phòng khám.",
+      "why_needed": "Răng có thể ố vàng do tuổi, trà, cà phê, thuốc lá hoặc bị nhiễm màu. Tẩy trắng đúng cách dưới sự theo dõi của nha sĩ là phương pháp an toàn, ít xâm lấn. Tác dụng phụ hay gặp là ê buốt răng và rát nướu nhẹ, thường hết sau khi ngưng. Tẩy trắng không làm trắng được răng sứ, miếng trám.",
+      "what_to_expect": "Nha sĩ khám, điều trị sâu răng và lấy cao răng trước, ghi màu răng ban đầu. Tẩy trắng tại nhà thường kéo dài vài tuần; răng nhiễm màu kháng sinh có thể cần lâu hơn và không phải lúc nào cũng trắng như ý. Răng chết tuỷ bị sẫm màu có cách tẩy trắng riêng từ bên trong.",
+      "home_care_instructions": [
+        "Dùng đúng lượng gel và thời gian nha sĩ hướng dẫn, lau sạch gel tràn ra nướu",
+        "Nếu ê buốt: tạm ngưng 1–2 ngày, dùng kem đánh răng chống ê buốt và báo nha sĩ",
+        "Hạn chế trà, cà phê, rượu vang, thuốc lá để giữ màu lâu hơn",
+        "Không tự mua thuốc tẩy trắng nồng độ cao; không chà than hoạt tính hay bột mài thường xuyên (có thể mài mòn men răng)",
+        "Phụ nữ đang mang thai hoặc cho con bú nên hoãn tẩy trắng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: Cochrane 2018 (CD006202) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không tẩy trắng khi còn sâu răng, viêm tuỷ, viêm nướu chưa điều trị] Tẩy trắng răng có hại men răng không, có ê buốt không, giữ được bao lâu? Tẩy trắng có nha sĩ theo dõi hiệu quả ngắn hạn; tác dụng phụ hay gặp là ê buốt và rát nướu nhẹ, thoáng qua. Than hoạt tính không tẩy trắng được, có thể mòn men. Răng sứ, miếng trám không trắng lên."
+    }
+  ]
+}

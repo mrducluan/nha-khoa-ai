@@ -46,11 +46,47 @@ INTENTS: list[Intent] = [
     Intent("VENEER", "mặt dán sứ veneer",
            r"dan su|mat dan|veneer|laminate|rang (bi )?me|rang (bi )?thua(?! dan)|thua rang|ke thua|rang cua (bi )?me",
            "mặt dán sứ veneer phục hình thẩm mỹ dán dính adhesive"),
-    Intent("CROWN_BRIDGE", "bọc răng sứ / cầu răng / inlay-onlay",
-           r"boc (rang )?su|mao su|cau rang|chup su|rang su (toan su|kim loai|zirconia)|\bcrown\b|\binlay\b|\bonlay\b",
-           "mão răng sứ crown cầu răng bridge"),
+    Intent("CROWN", "bọc răng sứ / mão sứ / inlay-onlay / vật liệu sứ",
+           r"boc (rang )?su|boc mao|boc rang|mao (rang|su|rang su)|chup (rang )?su|lam rang su|rang su( (toan su|kim loai|zirconia|thuy tinh))?|"
+           r"toan su|su kim loai|(su|rang|rang su) (khong|co) (suon )?kim loai|suon kim loai|su (titan|zirconia|cercon)|zirconia (nguyen khoi|phu su)|monolithic|"
+           r"vien (den|xam|toi|kim loai)|(den|xam|tham) (vien|chan rang su|co rang su)|"
+           r"\bcrowns?\b|\binlay\b|\bonlay\b|endocrown|\bpfm\b|metal.?ceramic|all.?ceramic",
+           "mão răng sứ crown sứ kim loại toàn sứ zirconia viền đen cổ răng"),
+    Intent("BRIDGE", "cầu răng sứ", r"cau rang|cau su|\bbridges?\b|\bfdp\b|rang tru cau|nhip cau",
+           "cầu răng sứ bridge răng trụ nhịp cầu"),
+    Intent("POST_ENDO", "phục hồi răng sau chữa tuỷ (bọc mão, chốt)",
+           r"((chua|lay|dieu tri|chet|mat|da (chua|lay)) tuy|noi nha).{0,50}(boc|mao|chup|onlay|chot|tram lai|phuc hoi|gion|de vo|vo)|"
+           r"(boc|mao|chup|chot|che phu mui).{0,50}((chua|lay|dieu tri) tuy|noi nha)|che phu mui|cuspal coverage|chot (soi|kim loai|rang|cui)|ferrule|"
+           r"root.?filled|endodontically treated|post.?and.?core|post.?endo",
+           "răng đã điều trị tuỷ phục hồi che phủ múi mão răng chốt ferrule"),
+    Intent("SMILE_DESIGN", "chọn màu răng / dáng răng / thiết kế nụ cười",
+           r"(chon|so|lay|ghi|lech|khac) mau (rang|su)|mau rang su|mau (su|rang) (nao|tu nhien|hop)|"
+           r"(dang|hinh dang|form|kieu) rang|thiet ke nu cuoi|nu cuoi (dep|hai hoa|tu nhien)|"
+           r"(dang|mau) rang.{0,30}(khuon|guong) mat|(khuon|guong) mat.{0,30}(dang|mau) rang|(hop|theo) (khuon|guong) mat|"
+           r"mat (vuong|tron|trai xoan|chu dien)|smile design|\bdsd\b|\bshades?\b|mock.?up|wax.?up|"
+           r"(mau|tong mau) (nao|gi)( thi)? (hop|dep|tu nhien)|(hop|theo) (voi )?(mau )?da|so mau|delta e(00|ab)?|ciede\w*|cielab|thang mau|\bvita\b",
+           "chọn màu răng shade selection thiết kế nụ cười dáng răng khuôn mặt mock-up"),
+    Intent("TOOTH_LOSS_DRIFT", "mất răng lâu: răng bên cạnh nghiêng, răng đối diện trồi",
+           r"(rang|cac rang) (\d{2} )?(ben canh|ke ben|ke can|hai ben|xung quanh|doi dien|ham doi dien|ham tren|ham duoi|phia (tren|duoi)|"
+           r"ben (tren|duoi))? ?(bi |se |co )?(nghieng|xo lech|xo vao|do vao|troi|chia (ra|xuong|len)|thong xuong)|"
+           r"rang doi dien.{0,20}dai ra|(moc|troi) (dai )?(xuong|len) (cho|khoang)|moc dai xuong|nghieng do|do nghieng|nga vao|thua troi|troi (xuong|len)|"
+           r"(bo|de) trong (cho |khoang )?(rang|mat rang)|"
+           r"mat rang (lau|lau nam|\d+ nam|nhieu nam|tu lau)|mat rang.{0,30}(khong (trong|lam rang|phuc hinh|thay)|de trong|bo trong)|"
+           r"nho rang (xong |roi )?.{0,20}khong (trong|lam rang|phuc hinh|thay)|"
+           r"supraerupt\w*|overerupt\w*|drifting|tipping|uprighting|dung truc( rang)?",
+           "mất răng không phục hình răng kế cận nghiêng đổ răng đối diện trồi thừa trồi khoảng phục hình"),
+    Intent("PERI_IMPLANT", "viêm quanh implant",
+           r"viem quanh (implant|tru)|peri.?implant\w*|mucositis|implantoplasty|"
+           r"(implant|tru implant|tru) (bi )?(viem|chay mau|sung|co mu|mu|ra mu|lung lay|lac|lo ren|ho ren|tieu xuong|hong|hoi)|"
+           r"(viem|sung|chay mau|mu|tieu xuong|tut nuou|ho ren) (nuou )?(quanh|o|chan) (tru|implant)",
+           "viêm quanh implant peri-implantitis viêm niêm mạc quanh implant mucositis"),
+    Intent("ANTIBIOTIC_PROPHYLAXIS", "kháng sinh dự phòng (khớp nhân tạo, bệnh tim)",
+           r"khang sinh du phong|du phong khang sinh|(uong|dung|tiem) khang sinh truoc|thay khop|khop (nhan tao|gia)|"
+           r"van tim nhan tao|viem noi tam mac|premedicat\w*|prophyla\w*|endocarditis|prosthetic joint",
+           "kháng sinh dự phòng trước thủ thuật nha khoa khớp nhân tạo viêm nội tâm mạc"),
     Intent("WHITENING_COLOR", "tẩy trắng / đổi màu răng",
-           r"tay trang|trang rang|lam trang|than hoat tinh|o vang|xin mau|nhiem mau|tetracycline|rang (bi )?(xam|den|vang) (mau|di)",
+           r"tay trang|trang rang|lam trang|than hoat tinh|o vang|xin mau|nhiem mau|tetracycline|rang (bi )?(xam|den|vang) (mau|di)|"
+           r"bleach\w*|whitening|carbamide|peroxide",
            "tẩy trắng răng whitening đổi màu răng"),
     Intent("FULL_ARCH", "mất răng toàn hàm / phục hình toàn hàm trên implant",
            r"mat (het|toan bo|ca|gan het|nhieu) rang|rung (gan )?het rang|toan ham|nguyen ham|ca ham|all on|"
@@ -105,7 +141,7 @@ INTENTS: list[Intent] = [
     Intent("CLEFT", "khe hở môi – vòm miệng", r"sut moi|ho ham ech|khe ho moi", "khe hở môi vòm miệng"),
     Intent("GUMMY_SMILE", "cười hở nướu", r"cuoi ho nuou|ho nuou khi cuoi", "cười hở nướu"),
     Intent("DENTURE_CARE", "hàm giả tháo lắp",
-           r"(ham|rang) gia (thao lap )?(bi )?(dau|long|loet|cop|gay|lung lay)|deo ham (gia|thao lap)|ham thao lap (bi )?(dau|long)",
+           r"(ham|rang) gia( thao lap)?.{0,20}(bi )?(dau|long|loet|cop|gay|lung lay|roi)|deo ham (gia|thao lap)|ham thao lap (bi )?(dau|long)",
            "hàm giả tháo lắp"),
     Intent("TRAUMA", "chấn thương răng", r"gay rang|me rang|rang (bi )?(rot|bat|vang|gay)|chan thuong|va dap|te nga",
            "chấn thương răng"),
@@ -161,8 +197,22 @@ def coverage(question_intents: list[Intent], results: list[dict[str, Any]]) -> t
 
 
 def rerank(question_intents: list[Intent], results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Ưu tiên phác đồ trùng NHIỀU chủ đề với câu hỏi; giữ thứ tự điểm trong cùng nhóm."""
+    """Ưu tiên phác đồ trùng NHIỀU chủ đề với câu hỏi.
+
+    Khi số chủ đề trùng bằng nhau, ưu tiên phác đồ khớp chủ đề ĐẶC HIỆU hơn — chủ đề ít phác đồ trong
+    kết quả cùng có (trọng số kiểu IDF). VD: "van tim nhân tạo, cạo vôi có phải uống kháng sinh trước?"
+    → "kháng sinh dự phòng" đặc hiệu hơn "nha chu". Hoà nữa thì giữ thứ tự điểm tìm kiếm.
+    """
     wanted = clinical_codes(question_intents)
     if not wanted:
         return results
-    return sorted(results, key=lambda r: -len(wanted & protocol_intents(r)))
+    shared = [wanted & protocol_intents(r) for r in results]
+    df: dict[str, int] = {}
+    for r in results:
+        for code in protocol_intents(r) & wanted:
+            df[code] = df.get(code, 0) + 1
+
+    def key(i: int) -> tuple[int, float]:
+        return (-len(shared[i]), -sum(1.0 / df[c] for c in shared[i]))
+
+    return [results[i] for i in sorted(range(len(results)), key=key)]

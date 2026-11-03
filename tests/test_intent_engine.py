@@ -35,6 +35,44 @@ def test_word_boundaries_prevent_false_matches():
     assert "THIRD_MOLAR" not in codes("SDF 38% cho sâu răng sữa")               # "38%" ≠ răng 38
 
 
+@pytest.mark.parametrize("q,code", [
+    ("Mất răng hàm lâu năm không trồng lại có sao không", "TOOTH_LOSS_DRIFT"),
+    ("răng đối diện bị trồi xuống chỗ mất răng", "TOOTH_LOSS_DRIFT"),
+    ("Răng sứ kim loại bị viền đen cổ răng", "CROWN"),
+    ("Nên làm sứ không kim loại hay sứ có sườn kim loại", "CROWN"),
+    ("Răng chữa tủy rồi có cần bọc mão không", "POST_ENDO"),
+    ("Mão che phủ múi cho răng sau đã nội nha", "POST_ENDO"),
+    ("Dáng răng có nên chọn theo khuôn mặt không", "SMILE_DESIGN"),
+    ("Ngưỡng ΔE00 chấp nhận được khi so màu", "SMILE_DESIGN"),
+    ("Trụ implant bị sưng chảy máu", "PERI_IMPLANT"),
+    ("Thay khớp háng có cần kháng sinh dự phòng", "ANTIBIOTIC_PROPHYLAXIS"),
+    ("Làm cầu răng sứ có phải mài răng bên cạnh", "BRIDGE"),
+])
+def test_new_intents(q, code):
+    assert code in codes(q)
+
+
+def test_new_intents_no_false_matches():
+    assert "CROWN" not in codes("Tiêu mào xương quanh implant")            # "mào" ≠ "mão"
+    assert "CROWN" not in codes("Độ dày mài men cho laminate veneer lithium disilicate")  # vật liệu dùng chung
+    assert "IMPLANT" not in codes("tẩy trắng bên trong cho răng chết tuỷ")
+    assert "TOOTH_LOSS_DRIFT" not in codes("Răng khôn mọc nghiêng có nên nhổ")
+    assert "FULL_ARCH" in codes("All-on-4 hay All-on-6 cho hàm trên")     # có gạch nối
+
+
+@pytest.mark.parametrize("q", ["Mất răng hàm lâu năm không trồng lại có sao không",
+                               "mat rang 3 nam roi rang ben canh xo lech het"])
+def test_tooth_loss_is_not_trauma_emergency(q):
+    from dental_ai.safety import detect_red_flags
+    assert not detect_red_flags(q)
+
+
+@pytest.mark.parametrize("q", ["Con tôi bị ngã rơi mất răng cửa", "Té xe gãy mất chiếc răng"])
+def test_trauma_still_detected(q):
+    from dental_ai.safety import detect_red_flags
+    assert "TRAUMA" in {f.code for f in detect_red_flags(q)}
+
+
 def test_protocol_topics_come_from_title():
     assert protocol_intents({"protocol_title": "Phác đồ Mặt dán sứ Veneer",
                              "pico_structured": {"P_population_problem": "răng nhiễm màu tetracycline"}}) == {"VENEER"}
@@ -83,7 +121,8 @@ def knowledge_with_drafts(database):
     return database
 
 
-@pytest.mark.parametrize("dataset,min_scale", [("questions.jsonl", 1.0), ("holdout_questions.jsonl", 0.95)])
+@pytest.mark.parametrize("dataset,min_scale", [("questions.jsonl", 1.0), ("holdout_questions.jsonl", 0.95),
+                                               ("holdout_v2_questions.jsonl", 0.95)])
 def test_quality_thresholds(knowledge_with_drafts, dataset, min_scale):
     from dental_ai.db import connect
     from dental_ai.embeddings import LocalHashEmbedder

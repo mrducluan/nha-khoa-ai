@@ -25,7 +25,7 @@
 {"category": "C_out_of_db", "q": "Hàm răng giả tháo lắp bị đau nướu khi ăn", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Răng bị mòn cổ chân răng hình chữ V", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Bị nấm miệng trắng lưỡi", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Đánh răng bằng than hoạt tính có trắng răng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Đánh răng bằng than hoạt tính có trắng răng không", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Trẻ mút tay có làm hô răng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Chi phí làm cầu răng sứ 3 đơn vị", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Mọc răng ở trẻ có gây sốt không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}

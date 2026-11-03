@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn đã xác minh thư mục: Lobbezoo F, Ahlberg J, Raphael KG, Wetselaar P, Glaros AG, Kato T, Santiago V, Winocur E, De Laat A, De Leeuw R, Koyano K, Lavigne GJ, Svensson P, Manfredini D. International consensus on the assessment of bruxism: Report of a work in progress. J Oral Rehabil 2018;45(11):837-844, doi:10.1111/joor.12663 (PMID 29926505). Đồng thuận này tập trung vào ĐỊNH NGHĨA và ĐÁNH GIÁ; phần xử trí (máng nhai, vệ sinh giấc ngủ, botulinum…) là tổng hợp thực hành và bằng chứng chung, BÁC SĨ cần đối chiếu với tổng quan hệ thống chuyên biệt trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "WILEY",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "International consensus on the assessment of bruxism: Report of a work in progress",
+    "authors_or_committee": "Lobbezoo F, Ahlberg J, Raphael KG, Wetselaar P, Glaros AG, Kato T, Santiago V, Winocur E, De Laat A, De Leeuw R, Koyano K, Lavigne GJ, Svensson P, Manfredini D",
+    "publication_year": 2018,
+    "journal_or_series": "Journal of Oral Rehabilitation 45(11):837-844",
+    "doi_or_pmid": "10.1111/joor.12663",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "Đồng thuận QT"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": ["GENERAL_OMFS_ENDODONTICS"],
+    "protocol_title": "Nghiến răng (bruxism) khi ngủ và khi thức: định nghĩa, đánh giá theo đồng thuận quốc tế 2018 và xử trí bảo tồn (máng nhai, kiểm soát yếu tố nguy cơ)",
+    "clinical_topic_slug": "sleep-awake-bruxism-assessment-management"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn nghi nghiến/siết chặt răng khi ngủ hoặc khi thức: mòn răng, mẻ răng/phục hình, mỏi/đau cơ hàm, đau đầu buổi sáng, phì đại cơ cắn.",
+    "I_intervention": "Đánh giá có hệ thống (tự khai báo, khám lâm sàng, đo điện cơ/đa ký giấc ngủ khi cần) và xử trí bảo tồn: giáo dục – nhận biết thói quen, máng nhai cứng bảo vệ răng ban đêm, vệ sinh giấc ngủ, quản lý căng thẳng, xử trí yếu tố liên quan (ngưng thở khi ngủ, trào ngược, thuốc, caffeine/rượu/thuốc lá).",
+    "C_comparison": "Can thiệp không hồi phục (mài chỉnh khớp cắn, phục hình toàn hàm để 'chữa' nghiến răng) hoặc không xử trí.",
+    "O_outcome_metrics": "Đồng thuận 2018: nghiến răng khi ngủ và khi thức là hai hoạt động cơ nhai KHÁC NHAU; ở người khoẻ mạnh, nghiến răng KHÔNG nên coi là bệnh mà là một HÀNH VI có thể là yếu tố nguy cơ (hoặc đôi khi bảo vệ) cho các hậu quả lâm sàng; không dùng ngưỡng cắt cố định để kết luận có/không ở người khoẻ. Phân mức: 'có thể' (chỉ tự khai báo), 'nhiều khả năng' (tự khai báo + khám lâm sàng), 'chắc chắn' (+ đo bằng thiết bị: đa ký giấc ngủ cho nghiến khi ngủ, điện cơ cho nghiến khi thức). Không có phương pháp 'chữa khỏi'; mục tiêu là bảo vệ răng/phục hình và giảm triệu chứng."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Nghiến răng khi ngủ là hoạt động cơ nhai nhịp nhàng hoặc không nhịp nhàng trong giấc ngủ, thường gắn với các vi thức tỉnh (micro-arousal) — điều hoà chủ yếu bởi hệ thần kinh trung ương, KHÔNG phải do 'khớp cắn lệch'. Nghiến răng khi thức là chạm răng lặp lại hoặc kéo dài, siết chặt, gồng/đẩy hàm — liên quan căng thẳng, tập trung, lo âu. Yếu tố liên quan: căng thẳng/lo âu, ngưng thở tắc nghẽn khi ngủ, trào ngược dạ dày – thực quản, hút thuốc, rượu, caffeine, một số thuốc (VD: thuốc chống trầm cảm nhóm SSRI/SNRI, chất kích thích). Hậu quả có thể gặp: mòn răng, nứt/mẻ răng và phục hình, thất bại implant/phục hình, đau cơ nhai, rối loạn thái dương hàm, đau đầu, phì đại cơ cắn.",
+    "indications": [
+      "Máng nhai cứng (máng ổn định, phủ toàn hàm) đeo ban đêm để BẢO VỆ răng và phục hình khi có mòn/mẻ răng hoặc nhiều phục hình sứ, implant",
+      "Giáo dục nhận biết nghiến khi thức: tư thế nghỉ 'môi khép – răng hở – lưỡi chạm vòm', nhắc nhở thói quen trong ngày",
+      "Vệ sinh giấc ngủ, quản lý căng thẳng; hạn chế caffeine, rượu, thuốc lá buổi tối",
+      "Chuyển khám chuyên khoa giấc ngủ khi nghi ngưng thở khi ngủ (ngáy to, ngừng thở, buồn ngủ ban ngày); phối hợp bác sĩ điều trị khi nghi do thuốc",
+      "Lên kế hoạch phục hình cho bệnh nhân nghiến: vật liệu bền (VD: zirconia nguyên khối), thiết kế khớp cắn phù hợp, máng bảo vệ sau phục hình"
+    ],
+    "contraindications_absolute": [
+      "Mài chỉnh khớp cắn hoặc phục hình toàn hàm với mục đích 'chữa' nghiến răng — không có bằng chứng, gây tổn hại không hồi phục",
+      "Máng chỉ phủ một phần răng (máng trước/máng mềm tự làm) đeo lâu dài không theo dõi — có thể gây di lệch răng, thay đổi khớp cắn"
+    ],
+    "contraindications_relative": [
+      "Máng nhai ở bệnh nhân nghi ngưng thở tắc nghẽn khi ngủ chưa được đánh giá — một số máng có thể làm nặng thêm; cần chẩn đoán giấc ngủ trước",
+      "Tiêm botulinum toxin cơ cắn: bằng chứng còn hạn chế, hiệu quả tạm thời, có tác dụng phụ — chỉ cân nhắc ở ca chọn lọc do bác sĩ được đào tạo thực hiện"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác & tự khai báo", "clinical_action": "Hỏi nghiến khi ngủ (người ngủ cùng nghe tiếng), siết răng ban ngày, mỏi/đau hàm buổi sáng, đau đầu, ngáy/ngưng thở, thuốc đang dùng, caffeine/rượu/thuốc lá, căng thẳng.", "technical_parameters": "Tự khai báo đơn thuần = nghiến răng 'có thể'"},
+      {"step": 2, "phase_name": "Khám lâm sàng", "clinical_action": "Đánh giá mòn răng (phân biệt mòn do axit), nứt/mẻ răng và phục hình, phì đại/ấn đau cơ cắn – cơ thái dương, dấu ấn răng trên lưỡi/má, khớp thái dương hàm.", "technical_parameters": "Tự khai báo + khám = 'nhiều khả năng'; ghi nhận mức mòn để theo dõi (ảnh, mẫu hàm số)"},
+      {"step": 3, "phase_name": "Đo bằng thiết bị (khi cần)", "clinical_action": "Đa ký giấc ngủ (± ghi hình/âm thanh) cho nghiến khi ngủ, đặc biệt khi nghi rối loạn giấc ngủ đi kèm; điện cơ cho nghiến khi thức.", "technical_parameters": "Đo thiết bị = 'chắc chắn'; không dùng ngưỡng cắt cố định ở người khoẻ — đánh giá theo mức độ liên tục"},
+      {"step": 4, "phase_name": "Xử trí bảo tồn", "clinical_action": "Giáo dục, thay đổi thói quen, vệ sinh giấc ngủ; máng nhai cứng phủ toàn hàm ban đêm nếu cần bảo vệ răng; điều trị đau cơ (chườm ấm, bài tập hàm, thuốc giảm đau ngắn hạn theo chỉ định).", "technical_parameters": "Máng ổn định cứng, tiếp xúc đều các răng, chỉnh khớp cắn trên máng; kiểm tra định kỳ"},
+      {"step": 5, "phase_name": "Theo dõi", "clinical_action": "Tái khám định kỳ: mòn răng, tình trạng máng, phục hình, triệu chứng cơ – khớp.", "technical_parameters": "So sánh ảnh/mẫu hàm số theo thời gian"}
+    ],
+    "complications_and_management": [
+      {"complication": "Mòn răng tiến triển, nứt/mẻ răng và phục hình", "prevention": "Máng bảo vệ ban đêm, vật liệu phục hình bền", "management_protocol": "Phục hồi theo mức độ; chỉ phục hồi lại kích thước dọc khi có kế hoạch toàn diện"},
+      {"complication": "Đau cơ nhai, rối loạn thái dương hàm", "prevention": "Giảm thói quen siết răng ban ngày, quản lý căng thẳng", "management_protocol": "Điều trị bảo tồn (giáo dục, bài tập, máng, thuốc ngắn hạn); chuyển chuyên khoa nếu đau mạn"},
+      {"complication": "Thay đổi khớp cắn do máng không đúng loại", "prevention": "Dùng máng cứng phủ toàn hàm do nha sĩ làm", "management_protocol": "Ngưng máng, đánh giá và điều chỉnh"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Cho rằng nghiến răng do 'khớp cắn sai' rồi mài chỉnh khớp cắn",
+        "Hứa máng nhai sẽ 'chữa khỏi nghiến răng' — máng chủ yếu bảo vệ răng, bằng chứng giảm hoạt động nghiến còn yếu",
+        "Bỏ sót ngưng thở khi ngủ và nguyên nhân do thuốc"
+      ],
+      "clinical_decision_tips": [
+        "Tách bạch nghiến khi NGỦ và khi THỨC — xử trí khác nhau",
+        "Phân mức có thể – nhiều khả năng – chắc chắn theo đồng thuận 2018",
+        "Bệnh nhân nghiến + phục hình sứ/implant: luôn tư vấn máng bảo vệ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Nghiến răng là thói quen siết chặt hoặc nghiến hai hàm răng vào nhau, có thể xảy ra khi ngủ (thường không tự biết, người nằm cạnh nghe tiếng ken két) hoặc khi thức (siết răng lúc căng thẳng, tập trung).",
+      "why_needed": "Nghiến răng kéo dài có thể làm mòn, mẻ, nứt răng và răng sứ, gây mỏi đau hàm, đau đầu buổi sáng. Đây thường là một thói quen chứ không phải bệnh, chưa có cách 'chữa dứt', nhưng có thể bảo vệ răng và giảm triệu chứng.",
+      "what_to_expect": "Nha sĩ hỏi thói quen, khám độ mòn răng, cơ hàm; có thể làm máng nhai cứng đeo ban đêm để bảo vệ răng. Nếu bạn ngáy to, ngừng thở khi ngủ, buồn ngủ ban ngày, nha sĩ có thể giới thiệu khám chuyên khoa giấc ngủ.",
+      "home_care_instructions": [
+        "Ban ngày tập nhận biết: môi khép, răng hở, lưỡi chạm nhẹ vòm miệng — khi thấy đang siết răng thì thả lỏng hàm",
+        "Hạn chế cà phê, rượu bia, thuốc lá, đặc biệt buổi tối; ngủ đúng giờ, thư giãn trước khi ngủ",
+        "Đeo máng đúng hướng dẫn và mang máng khi tái khám; không tự mua máng mềm đeo lâu dài",
+        "Không tự mài răng; đi khám khi răng mẻ, ê buốt hoặc đau hàm kéo dài"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: J Oral Rehabil 2018 (đồng thuận quốc tế) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không mài chỉnh khớp cắn để chữa nghiến răng] Nghiến răng khi ngủ, nghiến răng ken két ban đêm, siết chặt răng, mỏi hàm đau đầu buổi sáng phải làm sao? Nghiến răng là thói quen, chưa có cách chữa dứt; máng nhai cứng ban đêm giúp bảo vệ răng; giảm căng thẳng, cà phê, rượu; khám giấc ngủ nếu ngáy, ngừng thở."
+    }
+  ]
+}

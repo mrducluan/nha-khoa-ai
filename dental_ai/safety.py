@@ -39,7 +39,7 @@ _RULES: list[tuple[str, str, str]] = [
      "Nếu vẫn chảy hoặc đang dùng thuốc chống đông, đến cơ sở y tế NGAY."),
     ("TRAUMA",
      r"chan thuong|tai nan|gay (xuong )?ham|va dap|dap mat|nga .{0,30}(rang|mat|ham)|te nga|"
-     r"rang .{0,30}(rot|bat|vang|bung|gay) (ra|mat|khoi)|(rot|bat|vang|mat|gay) (mat )?(ca )?(rang|chiec rang)|roi (mat )?rang|"
+     r"rang .{0,30}(rot|bat|vang|bung|gay) (ra|mat|khoi)|(rot|bat|vang|gay) (mat )?(ca )?(rang|chiec rang)|"
      r"bat (ca )?rang|gay (mat )?(1|mot) nua",
      "Chấn thương răng/hàm: nếu răng vĩnh viễn bị bật khỏi ổ, cầm phần thân răng (không chạm chân răng), rửa nhẹ, cắm lại vào ổ "
      "hoặc ngâm trong sữa tươi và đến nha sĩ trong vòng 60 phút. Nghi gãy xương hàm, chấn thương đầu: đến cấp cứu ngay."),
@@ -64,7 +64,9 @@ _RULES: list[tuple[str, str, str]] = [
 ]
 _COMPILED = [(code, re.compile(pat), msg) for code, pat, msg in _RULES]
 # Từ dễ nhầm khi bỏ dấu: "ngất" ≠ "ngạt" (ngạt mũi) → kiểm tra trên văn bản CÓ dấu
-_ACCENTED = [("SYSTEMIC", re.compile(r"\bngất\b|choáng (váng|ngất)|lịm đi"))]
+# "rơi răng" ≠ "rồi răng" ("mất răng 3 năm rồi răng bên cạnh…")
+_ACCENTED = [("SYSTEMIC", re.compile(r"\bngất\b|choáng (váng|ngất)|lịm đi")),
+             ("TRAUMA", re.compile(r"\brơi (mất )?(cả )?(chiếc )?răng"))]
 
 
 def detect_red_flags(text: str) -> list[RedFlag]:

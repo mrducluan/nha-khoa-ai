@@ -86,7 +86,7 @@ def test_follow_up_question_stays_in_scope(client):
 
 
 def test_uncovered_topic_is_honest_offline(client):
-    r = client.post("/api/ask", json={"question": "Tẩy trắng răng có hại men không?"}).json()
+    r = client.post("/api/ask", json={"question": "Nhiệt miệng tái đi tái lại có sao không?"}).json()
     assert r["uncovered"] and r["sources"] == []
     assert "chưa có phác đồ" in r["answer"]
 
@@ -95,7 +95,7 @@ def test_new_topic_after_history_is_not_merged(client):
     """Câu mới có chủ đề riêng KHÔNG bị ghép với câu trước; câu ngoài lề vẫn bị từ chối dù có lịch sử."""
     history = [{"role": "user", "content": "Tôi đang mang thai, chảy máu lợi khi đánh răng"},
                {"role": "assistant", "content": "..."}]
-    r = client.post("/api/ask", json={"question": "Tẩy trắng răng có hại men không?", "history": history}).json()
+    r = client.post("/api/ask", json={"question": "Nhiệt miệng tái đi tái lại có sao không?", "history": history}).json()
     assert r["sources"] == [] and r["uncovered"]
     r = client.post("/api/ask", json={"question": "Giá vàng hôm nay bao nhiêu?", "history": history}).json()
     assert r["off_topic"] is True

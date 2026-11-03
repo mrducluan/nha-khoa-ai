@@ -96,7 +96,12 @@ Khi chạy bằng Docker, thêm tiền tố `docker compose exec app`, ví dụ:
 1. Chọn một trong ba cách:
    - **Tải PDF** ở trang `/admin`, hoặc chạy lệnh `extract`: Claude tự bóc tách.
    - **Soạn JSON** theo `schemas/02_pdf_ingestion_pico_schema.json` (mẫu ở `data/examples/`) rồi chạy lệnh `ingest`.
-   - **Dùng bản nháp có sẵn** trong `data/knowledge_drafts/`: đau răng/kháng sinh (ADA 2019) và răng khôn ngầm (Cochrane 2020).
+   - **Dùng bản nháp có sẵn** trong `data/knowledge_drafts/` (gửi tất cả vào hàng chờ: `make drafts`). Hiện có 10 bản nháp:
+     đau răng/kháng sinh (ADA 2019), răng khôn ngầm (Cochrane 2020), răng nghiêng/trồi sau mất răng (BDJ 2004),
+     viền xám sứ kim loại so với toàn sứ (Dent Mater 2015), răng chữa tuỷ có cần bọc mão (Cochrane 2015),
+     chọn màu & dáng răng theo khuôn mặt (JERD 2015), viêm quanh implant (EFP S3 2023),
+     kháng sinh dự phòng khớp nhân tạo/bệnh tim (ADA 2015), nghiến răng (đồng thuận quốc tế 2018), tẩy trắng (Cochrane 2018).
+     Chi tiết nguồn và những điểm bác sĩ cần đối chiếu: [`docs/BO_SUNG_TRI_THUC_2026_11.md`](docs/BO_SUNG_TRI_THUC_2026_11.md).
 2. Tài liệu vào **hàng chờ duyệt** và chưa hiển thị với người dùng.
 3. Bác sĩ phụ trách đối chiếu với nguyên văn tài liệu, rồi bấm **Duyệt** ở `/admin` (hoặc chạy `review approve`). Hệ thống tự sinh chunk và embedding.
 4. Chạy `verify-citations` để xác minh DOI.
@@ -128,11 +133,11 @@ Tài liệu tương tác tự động: **http://localhost:8000/docs**
 ## Kiểm soát chất lượng (QC)
 
 ```bash
-python -m dental_ai eval --failures      # chấm 136 câu hỏi mô phỏng khách hàng thật, liệt kê câu chưa đạt
+python -m dental_ai eval --failures      # chấm 170 câu hỏi mô phỏng khách hàng thật, liệt kê câu chưa đạt
 ```
 
 Bộ máy nhận diện ý định hiểu được chữ không dấu, viết tắt kiểu chat, lỗi gõ và từ vùng miền. Nó nhận ra
-26 chủ đề nha khoa (biết chủ đề nào CSDL **chưa có** để trả lời trung thực), câu ngoài nha khoa,
+31 chủ đề nha khoa (biết chủ đề nào CSDL **chưa có** để trả lời trung thực), câu ngoài nha khoa,
 câu hỏi nối tiếp, và 9 nhóm đối tượng đặc biệt (thai phụ, thuốc chống đông, bisphosphonate…).
 Kết quả chi tiết xem [`docs/BAO_CAO_QC.md`](docs/BAO_CAO_QC.md).
 
@@ -148,7 +153,8 @@ API, và kiểm tra request gửi tới Claude API ở tầng HTTP. GitHub Actio
 
 ## Lộ trình đề xuất
 
-- [ ] Bổ sung phác đồ: tẩy trắng, viêm quanh implant, bệnh nhân dùng thuốc chống đông, kháng sinh dự phòng (dùng công cụ bóc tách PDF).
+- [x] Bản nháp phác đồ: tẩy trắng, viêm quanh implant, kháng sinh dự phòng, nghiến răng, bọc sứ, răng chữa tuỷ, chọn màu/dáng răng, răng nghiêng/trồi (chờ bác sĩ duyệt).
+- [ ] Bổ sung phác đồ: ê buốt ngà, cầu răng, thuốc chống đông, khớp thái dương hàm, MRONJ, hướng dẫn ITI/EAO gốc (cần PDF).
 - [x] Công cụ bóc tách PDF hướng dẫn (ADA/ITI…) thành JSON schema 02 bằng Claude, đưa vào hàng chờ duyệt.
 - [x] Trang quản trị web cho bác sĩ duyệt tài liệu và xem phản hồi.
 - [x] Bản nháp phác đồ cho đau răng/kháng sinh và răng khôn (chờ bác sĩ duyệt).
