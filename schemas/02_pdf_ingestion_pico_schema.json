@@ -17,7 +17,8 @@
       "properties": {
         "organization_code": {
           "type": "string",
-          "enum": ["ADA", "ITI", "FDI", "CGDent", "EFP", "AAP", "EAO", "AAID", "ICOI", "SPRINGER_COI", "SPRINGER_PIR", "COCHRANE", "PUBMED_NCBI", "WILEY", "ELSEVIER"]
+          "enum": ["ADA", "ITI", "FDI", "CGDent", "EFP", "AAP", "EAO", "AAID", "ICOI", "SPRINGER_COI", "SPRINGER_PIR", "COCHRANE", "PUBMED_NCBI", "WILEY", "ELSEVIER",
+                   "SDCEP", "AAPD", "ACP", "IDSA", "AAOMS", "AHA", "AAE", "WHO"]
         },
         "authority_tier": {
           "type": "string",

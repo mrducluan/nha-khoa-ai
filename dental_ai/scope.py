@@ -77,7 +77,7 @@ _CAUTIONS: list[tuple[str, str, str, str]] = [
      r"di ung (thuoc|khang sinh|penicillin|amoxicillin|thuoc te|latex)|tung bi soc (thuoc|phan ve)",
      "Có tiền sử dị ứng thuốc: luôn báo nha sĩ tên thuốc và biểu hiện dị ứng trước khi kê đơn hoặc gây tê."),
     ("CHILD", "Trẻ em",
-     r"\b(be|tre|con|chau|em be)( nha| toi| em| minh)? (\d+|mot|hai|ba|bon|nam|sau) (tuoi|thang)\b|\btre (em|nho|so sinh)\b|\bem be\b|"
+     r"\b(be|tre|con|chau|em be)( nha| toi| em| minh)?( moi| duoc| da| len)? (\d+|mot|hai|ba|bon|nam|sau) (tuoi|thang)\b|\btre so sinh\b|\btre (em|nho|so sinh)\b|\bem be\b|"
      r"\bbe (nha|toi|minh)\b|\bcon (toi|em|minh)\b",
      "Trẻ em: liều thuốc và kem đánh răng có fluoride tính theo tuổi (trẻ dưới 3 tuổi dùng lượng bằng hạt gạo, 3–6 tuổi bằng hạt đậu). "
      "Không tự ý dùng thuốc người lớn cho trẻ; nên khám nha khoa nhi định kỳ."),

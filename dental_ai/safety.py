@@ -33,7 +33,7 @@ _RULES: list[tuple[str, str, str]] = [
      "Sưng mặt lan rộng, kèm sốt hoặc há miệng hạn chế là dấu hiệu nhiễm trùng răng miệng đang lan. "
      "Cần khám nha khoa/cấp cứu trong hôm nay — không tự điều trị tại nhà."),
     ("BLEEDING",
-     r"chay mau (khong|chua) (cam|ngung|dung|het)|chay mau (lien tuc|nhieu|o at|mai|hoai)|mau chay (mai|lien tuc|o at|nhieu|uot)|"
+     r"chay mau (khong|chua) (cam|ngung|dung|het)|chay mau (lien tuc|o at|mai|hoai)|chay mau nhieu(?! khong\b(?! (cam|ngung|dung)))|mau chay (mai|lien tuc|o at|nhieu|uot)|"
      r"uot (het )?gac|mau khong (cam|ngung|dung)|khong cam (duoc )?mau",
      "Chảy máu không cầm sau nhổ răng/phẫu thuật: cắn chặt gạc sạch liên tục 30 phút, ngồi đầu cao, không súc miệng. "
      "Nếu vẫn chảy hoặc đang dùng thuốc chống đông, đến cơ sở y tế NGAY."),

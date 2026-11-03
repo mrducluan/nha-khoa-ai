@@ -46,6 +46,13 @@ def test_drafts_answer_new_topics_after_approval(conn):
         ("Hàm kêu lục cục, đau khớp thái dương hàm", "temporomandibular-disorders-dc-tmd-conservative"),
         ("Đang uống Fosamax có nhổ răng được không", "medication-related-osteonecrosis-jaw-mronj"),
         ("Mảng trắng trong má không cạo được", "oral-potentially-malignant-disorders-cancer-detection"),
+        ("Đang uống thuốc chống đông có nhổ răng được không", "anticoagulant-antiplatelet-dental-treatment-bleeding"),
+        ("Khô miệng ở người già do thuốc", "dry-mouth-xerostomia-management"),
+        ("Bị nấm miệng trắng lưỡi", "oral-candidiasis-denture-stomatitis"),
+        ("Vệ sinh hàm giả tháo lắp như thế nào", "complete-denture-care-maintenance"),
+        ("Trẻ mút tay có làm hô răng không", "infant-teething-oral-habits-pacifier-thumb"),
+        ("Trám răng composite giữ được bao lâu", "composite-vs-amalgam-posterior-fillings"),
+        ("Bàn chải điện có tốt hơn bàn chải thường không", "oral-hygiene-toothbrush-interdental-cleaning"),
     ]
     for question, slug in cases:
         rows = search(conn, LocalHashEmbedder(), question, 3)

@@ -75,14 +75,14 @@
 {"category": "A_patient_aphthous", "q": "Nhiệt miệng tái đi tái lại nhiều lần", "persona": null, "topic": ["recurrent-aphthous-stomatitis-mouth-ulcers"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Bé 1 tuổi chưa mọc răng có sao không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_crown", "q": "Bọc răng sứ toàn sứ hay kim loại tốt hơn", "persona": null, "topic": ["metal-ceramic-vs-all-ceramic-crown-grey-margin"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Trám răng thẩm mỹ composite giữ được bao lâu", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Trám răng thẩm mỹ composite giữ được bao lâu", "persona": null, "topic": ["composite-vs-amalgam-posterior-fillings"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Cười hở lợi có chữa được không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient_whitening", "q": "Răng bị nhiễm màu tetracycline", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy", "ceramic-laminate-veneer-adhesive-protocol"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Trẻ bị sứt môi hở hàm ếch phẫu thuật lúc mấy tuổi", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Lưỡi bản đồ có nguy hiểm không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Khô miệng ở người già do thuốc", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Bao lâu nên thay bàn chải đánh răng một lần", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Chỉ nha khoa và tăm nước cái nào tốt hơn", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Khô miệng ở người già do thuốc", "persona": null, "topic": ["dry-mouth-xerostomia-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Bao lâu nên thay bàn chải đánh răng một lần", "persona": null, "topic": ["oral-hygiene-toothbrush-interdental-cleaning"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Chỉ nha khoa và tăm nước cái nào tốt hơn", "persona": null, "topic": ["oral-hygiene-toothbrush-interdental-cleaning"], "flags": [], "scope": "dental", "caution": []}
 {"category": "D_emergency", "q": "Nhổ răng khôn xong 3 ngày má sưng to lan xuống cổ, sốt 39 độ", "persona": null, "topic": null, "flags": ["SPREADING_INFECTION"], "scope": "dental", "caution": []}
 {"category": "D_emergency", "q": "Sưng dưới hàm, khó nuốt, nói không rõ", "persona": null, "topic": null, "flags": ["AIRWAY"], "scope": "dental", "caution": []}
 {"category": "D_emergency", "q": "toi bi sung mat va sot cao sau khi dau rang", "persona": null, "topic": null, "flags": ["SPREADING_INFECTION"], "scope": "dental", "caution": []}
@@ -182,5 +182,16 @@
 {"category": "A_patient_oral_lesion", "q": "Dấu hiệu ung thư miệng sớm là gì", "persona": null, "topic": ["oral-potentially-malignant-disorders-cancer-detection"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Chỉ định sinh thiết bạch sản và hồng sản niêm mạc miệng", "persona": "DOCTOR", "topic": ["oral-potentially-malignant-disorders-cancer-detection"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Bệnh nhân truyền zoledronate liều ung thư cần nhổ răng 36", "persona": "DOCTOR", "topic": ["medication-related-osteonecrosis-jaw-mronj"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Lưỡi bị nấm trắng ở người già", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Răng giả tháo lắp làm đau nướu", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Lưỡi bị nấm trắng ở người già", "persona": null, "topic": ["oral-candidiasis-denture-stomatitis"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Răng giả tháo lắp làm đau nướu", "persona": null, "topic": ["complete-denture-care-maintenance"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_anticoag", "q": "Đang uống thuốc chống đông có nhổ răng được không", "persona": "PATIENT", "topic": ["anticoagulant-antiplatelet-dental-treatment-bleeding"], "flags": [], "scope": "dental", "caution": ["ANTICOAGULANT"]}
+{"category": "A_patient_anticoag", "q": "Uống warfarin đi cạo vôi có bị chảy máu nhiều không", "persona": null, "topic": ["anticoagulant-antiplatelet-dental-treatment-bleeding"], "flags": [], "scope": "dental", "caution": ["ANTICOAGULANT"]}
+{"category": "B_doctor", "q": "Bệnh nhân dùng clopidogrel cần nhổ 3 răng: có ngưng thuốc kháng kết tập không", "persona": "DOCTOR", "topic": ["anticoagulant-antiplatelet-dental-treatment-bleeding"], "flags": [], "scope": "dental", "caution": ["ANTICOAGULANT"]}
+{"category": "A_patient_dry_mouth", "q": "Bị khô miệng uống nước hoài không đỡ", "persona": null, "topic": ["dry-mouth-xerostomia-management"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_candida", "q": "Trẻ sơ sinh bị nấm lưỡi trắng", "persona": null, "topic": ["oral-candidiasis-denture-stomatitis"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_denture", "q": "Vệ sinh hàm giả tháo lắp như thế nào", "persona": null, "topic": ["complete-denture-care-maintenance"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_teething", "q": "Trẻ mọc răng có cần dùng vòng hổ phách không", "persona": null, "topic": ["infant-teething-oral-habits-pacifier-thumb"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_teething", "q": "Con hay mút ngón tay cái khi ngủ", "persona": null, "topic": ["infant-teething-oral-habits-pacifier-thumb"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_filling", "q": "Miếng trám composite bị sâu lại ở viền", "persona": null, "topic": ["composite-vs-amalgam-posterior-fillings"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient_hygiene", "q": "Cách đánh răng đúng cách", "persona": null, "topic": ["oral-hygiene-toothbrush-interdental-cleaning"], "flags": [], "scope": "dental", "caution": []}
+{"category": "C_out_of_db", "q": "Lưỡi bị tê rát kéo dài không rõ lý do", "persona": null, "topic": ["NONE"], "flags": ["NERVE"], "scope": "dental", "caution": []}

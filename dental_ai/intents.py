@@ -94,6 +94,10 @@ INTENTS: list[Intent] = [
            r"(cuc|khoi) (u|sui|cung).{0,15}(mieng|luoi|ma|nuou|san mieng)|"
            r"(loet|vet loet|ton thuong).{0,25}(lau|khong|chua) (lanh|khoi|het)|(loet|vet loet).{0,25}(2|3|hai|ba|nhieu) tuan",
            "tổn thương tiềm năng ác tính bạch sản hồng sản ung thư khoang miệng sinh thiết"),
+    Intent("ANTICOAG", "thuốc chống đông / chống kết tập tiểu cầu khi làm răng",
+           r"chong dong|loang mau|chong ket tap|warfarin|sintrom|acenocoumarol|xarelto|rivaroxaban|apixaban|eliquis|dabigatran|"
+           r"pradaxa|edoxaban|lixiana|clopidogrel|plavix|ticagrelor|brilinta|prasugrel|\binr\b|heparin|aspirin|anticoagul\w*|antiplatelet",
+           "thuốc chống đông chống kết tập tiểu cầu nguy cơ chảy máu cầm máu tại chỗ"),
     Intent("WHITENING_COLOR", "tẩy trắng / đổi màu răng",
            r"tay trang|trang rang|lam trang|than hoat tinh|o vang|xin mau|nhiem mau|tetracycline|rang (bi )?(xam|den|vang) (mau|di)|"
            r"bleach\w*|whitening|carbamide|peroxide",
@@ -119,7 +123,7 @@ INTENTS: list[Intent] = [
            r"boi thuoc|sealant|tram bit ho ranh|resin infiltration|cavitated",
            "sâu răng không xâm lấn fluoride varnish SDF trám bít hố rãnh"),
     Intent("FILLING", "trám răng / hàn răng",
-           r"tram rang|han rang|composite|mieng tram|rang (bi )?vo (nho|mieng)",
+           r"tram rang|han rang|composite|amalgam|mieng tram|mieng han (rang|bi|cu|bong)|rang (bi )?vo (nho|mieng)",
            "trám răng composite phục hồi"),
     Intent("PULP_PAIN", "đau răng / viêm tuỷ / áp xe / điều trị tuỷ",
            r"dau rang|nhuc|dau giat|dau buot (ve|ban) dem|viem tuy|tuy rang|vao tuy|ap xe|\bmu\b|cuc mu|lo mu|chay mu|"
@@ -143,20 +147,29 @@ INTENTS: list[Intent] = [
            r"nhiet mieng|loet (mieng|luoi|ma|moi|nuou)|ap.?to|aphth\w*|lo mieng|(bi )?loet .{0,20}tai (di tai lai|phat)|"
            r"(not|vet|noi|mun) loet|loet (trang|nho)|loet .{0,15}(trong|o) (ma|mieng|luoi|moi)",
            "nhiệt miệng loét áp-tơ tái phát recurrent aphthous stomatitis"),
-    Intent("MUCOSA", "niêm mạc miệng khác: nấm miệng, lưỡi, lichen",
-           r"nam (mieng|luoi|trang|candida)|(luoi|mieng) (bi )?nam|candida\w*|luoi (bi )?(trang|ban do|te|rat|nut)|bong (mieng|niem mac)|lichen|tua luoi",
-           "bệnh niêm mạc miệng nấm miệng lưỡi bản đồ lichen phẳng"),
+    Intent("CANDIDA", "nấm miệng / viêm miệng do hàm giả",
+           r"nam (mieng|luoi|trang|candida|ham)|(luoi|mieng|ham gia|ham) (bi )?nam|candida\w*|tua luoi|luoi (bi )?trang|"
+           r"(bi )?den trang|den (o )?luoi|tua mieng|(viem|nut|loet) (mep|khoe) (moi|mieng)|viem (mieng|niem mac) (do|duoi) ham|denture stomatitis|thrush",
+           "nấm miệng Candida viêm miệng do hàm giả thuốc kháng nấm"),
+    Intent("MUCOSA", "niêm mạc miệng khác: lưỡi bản đồ, lichen, rát lưỡi",
+           r"luoi (bi )?(ban do|te|rat|nut)|bong (mieng|niem mac)|lichen|rat (mieng|luoi)",
+           "bệnh niêm mạc miệng lưỡi bản đồ lichen phẳng hội chứng rát miệng"),
     Intent("DRY_MOUTH", "khô miệng", r"kho mieng|it nuoc bot|xerostomia", "khô miệng xerostomia"),
     Intent("HYGIENE", "vệ sinh răng miệng / sản phẩm",
            r"ban chai|chi nha khoa|tam nuoc|may tam|nuoc suc mieng|kem danh rang|cach (danh|chai) rang|danh rang may lan",
            "vệ sinh răng miệng bàn chải chỉ nha khoa"),
-    Intent("PEDIATRIC_DEV", "mọc răng & thói quen ở trẻ",
-           r"moc rang|chua moc rang|thay rang|rang sua (lung lay|chua rung|moc)|mut tay|mut ti|bu binh",
-           "mọc răng trẻ em răng sữa thói quen răng miệng"),
+    Intent("TEETHING_HABITS", "trẻ mọc răng sữa / thói quen mút tay, ti giả, bú bình",
+           r"(be|tre|con|em be)\b.{0,20}(?<!chua )moc rang|(?<!chua )moc rang (sua|o tre|bi|co)|moc rang.{0,20}(sot|quay|chay dai|tieu chay|ngua)|"
+           r"mut (tay|ngon|ti|mieng)|ti gia|num ti|bu binh|ngam binh|vong (ho phach|moc rang)|vong ngam|teething|thumb.?sucking|pacifier",
+           "trẻ mọc răng sữa thói quen mút ngón tay ti giả khớp cắn"),
+    Intent("PEDIATRIC_DEV", "phát triển răng ở trẻ: chậm mọc, thay răng",
+           r"chua moc rang|cham moc rang|moc rang .{0,20}cham|moi moc (\d+|mot|hai|ba) rang|thay rang|rang sua (lung lay|chua rung)|rang vinh vien moc|moc lech .{0,20}rang sua|rang sua chua rung",
+           "mọc răng trẻ em thay răng sữa răng vĩnh viễn"),
     Intent("CLEFT", "khe hở môi – vòm miệng", r"sut moi|ho ham ech|khe ho moi", "khe hở môi vòm miệng"),
     Intent("GUMMY_SMILE", "cười hở nướu", r"cuoi ho nuou|ho nuou khi cuoi", "cười hở nướu"),
     Intent("DENTURE_CARE", "hàm giả tháo lắp",
-           r"(ham|rang) gia( thao lap)?.{0,20}(bi )?(dau|long|loet|cop|gay|lung lay|roi)|deo ham (gia|thao lap)|ham thao lap (bi )?(dau|long)",
+           r"(ham|rang) gia( thao lap)?.{0,20}(bi )?(dau|long|loet|cop|gay|lung lay|roi|hoi)|deo ham (gia|thao lap)|ham thao lap (bi )?(dau|long)|"
+           r"(ve sinh|lam sach|ngam|cham soc) ham (gia|thao lap)|keo dan ham|(deo|thao) ham .{0,10}ngu|ngu .{0,20}(deo|thao) ham|(deo|thao|thao lap) ham (rang )?gia|complete dentures?",
            "hàm giả tháo lắp"),
     Intent("TRAUMA", "chấn thương răng", r"gay rang|me rang|rang (bi )?(rot|bat|vang|gay)|chan thuong|va dap|te nga",
            "chấn thương răng"),

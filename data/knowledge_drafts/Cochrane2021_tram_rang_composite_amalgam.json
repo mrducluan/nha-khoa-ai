@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Direct composite resin fillings versus amalgam fillings for permanent posterior teeth. Cochrane Database Syst Rev 2021, CD005620.pub3, doi:10.1002/14651858.CD005620.pub3 (nhóm tác giả do Worthington HV đứng đầu theo hiểu biết của AI — cần đối chiếu) — 8 RCT; phân tích chính 2 thử nghiệm song song (921 trẻ, 1645 miếng composite, 1365 miếng amalgam): composite thất bại cao gần gấp đôi (RR 1.89, KTC 95% 1.52–2.35, bằng chứng chắc chắn thấp), sâu tái phát cao hơn (RR 2.14, KTC 95% 1.67–2.74), gãy miếng trám không khác biệt (RR 0.87, KTC 95% 0.46–1.64); không có bằng chứng khác biệt về triệu chứng thần kinh, miễn dịch (chắc chắn rất thấp); các thử nghiệm cũ, vật liệu composite đã cải tiến nhiều. Bối cảnh giảm dần amalgam theo Công ước Minamata về thuỷ ngân là kiến thức chung — BÁC SĨ đối chiếu.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Direct composite resin fillings versus amalgam fillings for permanent posterior teeth",
+    "authors_or_committee": "Worthington HV và cs. (Cochrane Oral Health) — đối chiếu danh sách tác giả",
+    "publication_year": 2021,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2021, CD005620.pub3",
+    "doi_or_pmid": "10.1002/14651858.CD005620.pub3",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "GRADE: thấp"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["ESTHETIC_PROSTHODONTICS"],
+    "protocol_title": "Trám răng (hàn răng) bằng composite thẩm mỹ so với amalgam cho răng hàm vĩnh viễn: độ bền, sâu tái phát, an toàn và chăm sóc miếng trám",
+    "clinical_topic_slug": "composite-vs-amalgam-posterior-fillings"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Răng hàm (răng sau) vĩnh viễn bị sâu cần trám trực tiếp.",
+    "I_intervention": "Trám composite (nhựa tổng hợp màu răng) dán dính.",
+    "C_comparison": "Trám amalgam (hợp kim bạc – thuỷ ngân).",
+    "O_outcome_metrics": "Cochrane 2021 (8 RCT; phân tích chính 2 thử nghiệm song song ở 921 trẻ): composite có tỷ lệ thất bại cao gần gấp đôi amalgam (RR 1.89; KTC 95% 1.52–2.35; chắc chắn thấp), chủ yếu do sâu tái phát (RR 2.14; KTC 95% 1.67–2.74); gãy miếng trám không khác biệt (RR 0.87; KTC 95% 0.46–1.64). Không có bằng chứng khác biệt về tác hại toàn thân (thần kinh, miễn dịch) giữa hai vật liệu (chắc chắn rất thấp). Các thử nghiệm đã cũ và đều có nguy cơ sai lệch cao (không thể làm mù); composite hiện đại đã được cải tiến."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Composite bám dính vào men – ngà qua hệ thống dán, cho phép mài bảo tồn và thẩm mỹ; nhược điểm: co ngót khi trùng hợp, nhạy cảm kỹ thuật (cần cách ly khô, đặc biệt bờ dưới nướu), dễ đọng mảng bám ở bờ nếu kỹ thuật chưa tốt → sâu tái phát. Amalgam bền, ít nhạy cảm kỹ thuật, tự 'bịt kín' bờ theo thời gian, nhưng không thẩm mỹ, cần mài lưu giữ cơ học nhiều hơn và đang được giảm dần sử dụng toàn cầu vì lý do môi trường (thuỷ ngân — Công ước Minamata); một số quốc gia hạn chế dùng amalgam cho trẻ em, phụ nữ mang thai và cho con bú. Tuổi thọ miếng trám phụ thuộc nhiều vào nguy cơ sâu răng của bệnh nhân, kích thước xoang, kỹ thuật và vệ sinh.",
+    "indications": [
+      "Composite: lựa chọn phổ biến hiện nay cho xoang nhỏ – trung bình, vùng thẩm mỹ, khi kiểm soát được độ ẩm",
+      "Bệnh nhân nguy cơ sâu răng cao: tăng cường phòng ngừa (fluoride, chế độ ăn, vệ sinh) vì sâu tái phát là nguyên nhân thất bại chính",
+      "Xoang lớn mất nhiều múi ở răng sau: cân nhắc phục hồi gián tiếp che phủ múi (onlay/mão)",
+      "Amalgam (nơi còn sử dụng): cân nhắc khi khó cách ly khô và không có yêu cầu thẩm mỹ — theo quy định hiện hành của từng quốc gia"
+    ],
+    "contraindications_absolute": [
+      "Trám composite khi không thể kiểm soát độ ẩm/cách ly (bờ sâu dưới nướu chảy máu) mà không có biện pháp thay thế",
+      "Tháo bỏ miếng trám amalgam còn tốt chỉ vì lo ngại thuỷ ngân — không có chỉ định y khoa và làm mất thêm mô răng"
+    ],
+    "contraindications_relative": [
+      "Amalgam ở phụ nữ mang thai/cho con bú, trẻ em — nhiều quốc gia hạn chế (đối chiếu quy định hiện hành)",
+      "Composite xoang rất lớn ở bệnh nhân nghiến răng nặng",
+      "Dị ứng đã xác định với thành phần vật liệu"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Chẩn đoán & đánh giá nguy cơ sâu", "clinical_action": "Khám, phim cắn cánh; đánh giá nguy cơ sâu răng; cân nhắc điều trị không xâm lấn cho sang thương sớm.", "technical_parameters": "Sang thương chưa tạo lỗ → ưu tiên tái khoáng (xem phác đồ sâu răng không xâm lấn)"},
+      {"step": 2, "phase_name": "Sửa soạn bảo tồn", "clinical_action": "Lấy mô sâu chọn lọc, bảo tồn tối đa mô lành.", "technical_parameters": "Với sâu sâu sát tuỷ: lấy sâu chọn lọc để tránh lộ tuỷ"},
+      {"step": 3, "phase_name": "Cách ly & dán", "clinical_action": "Cách ly đê cao su khi có thể; quy trình dán theo hệ thống keo; đặt composite từng lớp, chiếu đèn đủ thời gian.", "technical_parameters": "Kiểm soát co ngót bằng kỹ thuật đắp lớp; khuôn trám và nêm tạo điểm tiếp xúc"},
+      {"step": 4, "phase_name": "Hoàn tất", "clinical_action": "Chỉnh khớp cắn, đánh bóng bờ, kiểm tra tiếp xúc bằng chỉ nha khoa.", "technical_parameters": "Bờ nhẵn, không dư vật liệu"},
+      {"step": 5, "phase_name": "Theo dõi", "clinical_action": "Tái khám định kỳ; sửa chữa (repair) miếng trám khi khuyết nhỏ thay vì thay toàn bộ.", "technical_parameters": "Ưu tiên sửa chữa để bảo tồn mô răng"}
+    ],
+    "complications_and_management": [
+      {"complication": "Sâu tái phát ở bờ miếng trám", "prevention": "Kỹ thuật dán tốt, phòng sâu răng, vệ sinh", "management_protocol": "Sửa chữa hoặc trám lại"},
+      {"complication": "Ê buốt sau trám", "prevention": "Cách ly, dán đúng quy trình, tránh khô ngà quá mức, chỉnh khớp cắn", "management_protocol": "Theo dõi; chỉnh khớp cắn; đau kéo dài → đánh giá tuỷ"},
+      {"complication": "Gãy/mẻ miếng trám", "prevention": "Chỉ định đúng kích thước xoang, chỉnh khớp cắn", "management_protocol": "Sửa chữa hoặc phục hồi gián tiếp"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Trám composite không cách ly ở bờ dưới nướu",
+        "Thay toàn bộ miếng trám cũ khi chỉ cần sửa chữa",
+        "Tháo amalgam còn tốt theo yêu cầu vì lo ngại thuỷ ngân mà không tư vấn"
+      ],
+      "clinical_decision_tips": [
+        "Thất bại chính của composite là sâu tái phát → kiểm soát nguy cơ sâu răng là then chốt",
+        "Kỹ thuật dán và cách ly quyết định tuổi thọ composite",
+        "Bằng chứng so sánh còn từ các thử nghiệm cũ — vật liệu hiện đại đã tốt hơn"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Trám răng (hàn răng) là lấy phần răng sâu và lấp lại bằng vật liệu. Composite là vật liệu màu giống răng, dán vào răng; amalgam là vật liệu màu bạc (có thuỷ ngân) dùng nhiều trước đây, hiện được hạn chế dần.",
+      "why_needed": "Nghiên cứu tổng hợp cho thấy ở răng hàm, miếng trám composite có thể phải làm lại nhiều hơn amalgam, chủ yếu do sâu lại ở viền miếng trám — nhưng các nghiên cứu này đã cũ và composite ngày nay tốt hơn. Không có bằng chứng miếng amalgam gây hại sức khoẻ toàn thân; không nên tháo miếng amalgam còn tốt chỉ vì lo ngại.",
+      "what_to_expect": "Nha sĩ làm tê nếu cần, lấy sạch phần sâu, giữ khô răng và trám từng lớp, chiếu đèn cho cứng, sau đó chỉnh khớp cắn và đánh bóng. Răng có thể hơi ê vài ngày.",
+      "home_care_instructions": [
+        "Chải răng 2 lần/ngày với kem fluoride, dùng chỉ nha khoa ở kẽ răng có miếng trám",
+        "Hạn chế đồ ngọt, nước ngọt để tránh sâu lại ở viền miếng trám",
+        "Tránh cắn vật quá cứng; báo nha sĩ nếu miếng trám mẻ, vướng khi cắn hoặc ê buốt kéo dài",
+        "Khám định kỳ để phát hiện sớm sâu viền miếng trám"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: Cochrane 2021 (CD005620) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không trám composite khi không cách ly được; không tháo amalgam còn tốt chỉ vì lo ngại thuỷ ngân] Trám răng composite thẩm mỹ giữ được bao lâu, hàn răng bằng gì tốt, amalgam có độc không? Composite ở răng hàm có thể phải làm lại nhiều hơn amalgam do sâu tái phát; amalgam chưa có bằng chứng gây hại toàn thân; giữ vệ sinh, hạn chế đường để miếng trám bền."
+    }
+  ]
+}

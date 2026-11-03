@@ -121,7 +121,7 @@ Cách xác minh giống đợt 1: thư mục được đối chiếu qua tìm ki
 
 Lưu ý riêng:
 - Tên tác giả bài J Dent 2018 chưa đối chiếu được, nên file ghi "đối chiếu PubMed".
-- AAOMS không có trong danh mục tổ chức của schema 02, nên tạm ghi theo nhà xuất bản (ELSEVIER).
+- AAOMS ban đầu tạm ghi theo nhà xuất bản (ELSEVIER); đợt 3 đã bổ sung mã tổ chức `AAOMS` (xem mục 11).
 
 ## 8. Lỗi engine phát hiện thêm & đã sửa
 
@@ -148,3 +148,64 @@ Bộ v3 được viết trước khi chạy; con số trung thực là cột *l�
 
 Thuốc chống đông khi nhổ răng (SDCEP), khô miệng, nấm miệng, hàm giả tháo lắp, nha khoa trẻ em (mọc răng, thói quen mút tay),
 trám composite, cười hở lợi, vệ sinh răng miệng, và các hướng dẫn ITI/EAO gốc (cần anh cung cấp PDF).
+
+
+---
+
+# Đợt 3 — các chủ đề còn thiếu
+
+## 11. Về việc tự tìm PDF để nạp
+
+Em đã thử cho công cụ đọc web mở toàn văn từ sdcep.org.uk, aapd.org, pubmed.ncbi.nlm.nih.gov, cochrane.org,
+cochranelibrary.com và academic.oup.com. **Tất cả đều bị chặn** bởi chính sách mạng của môi trường cloud
+(lỗi phân giải tên miền). Vì vậy đợt 3 vẫn chỉ dựa vào thông tin đã đối chiếu qua tìm kiếm web (thư mục và tóm tắt).
+Với 3 tài liệu không đọc được cả phần tóm tắt khuyến nghị (SDCEP, IDSA, AAPD), `_ghi_chu` của từng file ghi rõ
+**"AI CHƯA đọc được"** và bắt buộc bác sĩ đối chiếu.
+
+Cách mở để lần sau em đọc được toàn văn: vào menu môi trường cloud trên thanh tiêu đề phiên → **Edit** → **Network access**.
+Chọn mức truy cập rộng hơn, hoặc thêm các tên miền trên vào **Allowed domains**
+(hướng dẫn: https://code.claude.com/docs/en/cloud-environments#network-access).
+Cách khác: anh tải PDF lên trang `/admin` → **Tải PDF**. Công cụ bóc tách sẵn có sẽ dùng Claude API để chuyển PDF thành JSON chuẩn schema 02.
+
+**Danh mục tổ chức:** file nâng cấp `db/08_more_source_organizations.sql` (chạy lại an toàn) và schema 02 bổ sung
+`SDCEP`, `AAPD`, `ACP`, `IDSA`, `AAOMS`, `AHA`, `AAE`, `WHO`. Tài liệu không có DOI dùng mã định danh (VD: `SDCEP-ANTICOAG-2022`).
+
+## 12. Bảy bản nháp mới
+
+| # | Chủ đề | File | Nguồn | Mức đã đọc |
+|---|---|---|---|---|
+| 15 | **Thuốc chống đông / chống kết tập tiểu cầu khi làm răng** | `SDCEP2022_thuoc_chong_dong_nho_rang.json` | SDCEP, bản 2 (3/2022) | ⚠️ Chỉ thư mục — **chưa đọc được nội dung**; ngưỡng INR, cách bỏ/hoãn liều DOAC bắt buộc đối chiếu |
+| 16 | Khô miệng | `Cochrane2011_kho_mieng.json` | Cochrane CD008934 (2011): 36 RCT, không có bằng chứng mạnh cho điều trị tại chỗ nào | Tóm tắt |
+| 17 | Nấm miệng / viêm miệng do hàm giả | `IDSA2016_nam_mieng_candida.json` | IDSA 2016, doi:10.1093/cid/civ933 | ⚠️ Chỉ thư mục — liều thuốc bắt buộc đối chiếu |
+| 18 | Chăm sóc hàm giả tháo lắp | `ACP2011_cham_soc_ham_gia_thao_lap.json` | ACP 2011 (15 khuyến nghị; Felton và cs.) | Tóm tắt (PMID cần đối chiếu) |
+| 19 | Trẻ mọc răng, mút tay, ti giả | `AAPD2024_moc_rang_thoi_quen_mut_tay_ti_gia.json` | AAPD Policy on Pacifiers 2024, Policy on Oral Habits | ⚠️ Trích đoạn — mốc tuổi bắt buộc đối chiếu |
+| 20 | Trám composite so với amalgam | `Cochrane2021_tram_rang_composite_amalgam.json` | Cochrane CD005620.pub3 (2021): composite thất bại RR 1.89, sâu tái phát RR 2.14 | Tóm tắt |
+| 21 | Vệ sinh răng miệng | `Cochrane2014_ve_sinh_rang_mieng_ban_chai.json` | Cochrane CD002281 (2014): bàn chải điện giảm mảng bám 11–21% | Tóm tắt |
+
+## 13. Lỗi engine phát hiện thêm & đã sửa
+
+| # | Lỗi | Cách sửa |
+|---|---|---|
+| 14 | Câu hỏi giả định "uống warfarin cạo vôi **có bị chảy máu nhiều không**" bị báo 🚨 cấp cứu chảy máu | Phân biệt câu hỏi với tình trạng đang chảy máu; vẫn bắt "chảy máu nhiều không cầm" |
+| 15 | "há **miệng hạn** chế" khớp với "**miếng hàn**" | Thu hẹp mẫu "miếng hàn" |
+| 16 | "đẹn" (nấm miệng trẻ sơ sinh) chưa được nhận ra; "bé **mới** 2 tháng" không được coi là trẻ em | Bổ sung mẫu |
+| 17 | Chủ đề trẻ em gộp "đang mọc răng" với "chậm mọc răng" | Tách `TEETHING_HABITS` khỏi `PEDIATRIC_DEV` |
+| 18 | Nấm miệng gộp chung với lưỡi bản đồ, lichen | Tách `CANDIDA` khỏi `MUCOSA` |
+| 19 | Từ khoá có ký tự regex (`\d`, `\w`) bị escape nên không bao giờ khớp (lỗi em đưa vào ở đợt 2) | Viết lại đúng dạng regex; chạy test với `-W error::SyntaxWarning` |
+| 20 | Thiếu thuật ngữ bác sĩ: "INR 3.2", "Newton type II", "thủ thuật nguy cơ chảy máu" | Bổ sung |
+
+## 14. Kết quả đánh giá đợt 3
+
+| Chỉ số | Dev (197) | Độc lập cũ | v2 | v3 | **v4 (18) — lần chạy đầu** | v4 sau sửa |
+|---|---|---|---|---|---|---|
+| Bác sĩ / bệnh nhân | 100% | 96% | 100% | 100% | **0/3** | 100% |
+| Không báo cấp cứu nhầm | 100% | 100% | 100% | 100% | 100% | 100% |
+| Tìm đúng phác đồ top-1 | 100% | 100% | 100% | 100% | **94%** | 100% |
+| Nhận ra CSDL chưa có dữ liệu | 100% | 100% | — | 100% | 50% | 100% |
+
+Engine nhận diện **37 chủ đề**. Tổng **23 bản nháp** chờ duyệt, **141 kiểm thử tự động** đều đạt.
+
+## 15. Còn thiếu
+
+Cười hở nướu, khe hở môi – vòm miệng, lưỡi bản đồ/lichen/hội chứng rát miệng, trẻ chậm mọc răng – thay răng,
+chỉnh nha mắc cài (hiện mới có khay trong suốt), và các hướng dẫn ITI/EAO gốc (cần PDF hoặc mở mạng).

@@ -14,6 +14,6 @@
 {"category": "B_doctor", "q": "Kích thước connector tối thiểu cho cầu zirconia 3 đơn vị vùng răng sau", "persona": "DOCTOR", "topic": ["tooth-supported-fixed-bridge-fdp"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Phân giai đoạn MRONJ theo AAOMS 2022 và xử trí giai đoạn 2", "persona": "DOCTOR", "topic": ["medication-related-osteonecrosis-jaw-mronj"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Đau cơ cắn khi sờ, há miệng 32mm có đau quen thuộc: chẩn đoán theo DC/TMD", "persona": "DOCTOR", "topic": ["temporomandibular-disorders-dc-tmd-conservative"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Khô miệng ban đêm do uống thuốc huyết áp", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": ["CARDIAC"]}
-{"category": "C_out_of_db", "q": "Lưỡi trắng dày như nấm có phải nấm miệng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Khô miệng ban đêm do uống thuốc huyết áp", "persona": null, "topic": ["dry-mouth-xerostomia-management"], "flags": [], "scope": "dental", "caution": ["CARDIAC"]}
+{"category": "A_patient", "q": "Lưỡi trắng dày như nấm có phải nấm miệng không", "persona": null, "topic": ["oral-candidiasis-denture-stomatitis"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Trẻ 6 tuổi răng cửa mọc lệch sau răng sữa chưa rụng", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}

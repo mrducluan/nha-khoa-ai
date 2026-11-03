@@ -1,8 +1,8 @@
 {
-  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Ruggiero SL, Dodson TB, Aghaloo T, Carlson ER, Ward BB, Kademani D. American Association of Oral and Maxillofacial Surgeons' Position Paper on Medication-Related Osteonecrosis of the Jaws — 2022 Update. J Oral Maxillofac Surg 2022;80(5):920-943, doi:10.1016/j.joms.2022.02.008 (PMID 35300956; PDF miễn phí tại aaoms.org). AAOMS không có trong danh mục tổ chức của schema 02 nên tạm ghi ELSEVIER (nhà xuất bản). BÁC SĨ cần đối chiếu nguyên văn: tỷ lệ nguy cơ theo nhóm thuốc/chỉ định, định nghĩa và phân giai đoạn, khuyến nghị về 'ngưng thuốc tạm thời' (drug holiday) trước khi duyệt.",
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Ruggiero SL, Dodson TB, Aghaloo T, Carlson ER, Ward BB, Kademani D. American Association of Oral and Maxillofacial Surgeons' Position Paper on Medication-Related Osteonecrosis of the Jaws — 2022 Update. J Oral Maxillofac Surg 2022;80(5):920-943, doi:10.1016/j.joms.2022.02.008 (PMID 35300956; PDF miễn phí tại aaoms.org). BÁC SĨ cần đối chiếu nguyên văn: tỷ lệ nguy cơ theo nhóm thuốc/chỉ định, định nghĩa và phân giai đoạn, khuyến nghị về 'ngưng thuốc tạm thời' (drug holiday) trước khi duyệt.",
   "source_metadata": {
-    "organization_code": "ELSEVIER",
-    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "organization_code": "AAOMS",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
     "document_title": "American Association of Oral and Maxillofacial Surgeons' Position Paper on Medication-Related Osteonecrosis of the Jaws — 2022 Update",
     "authors_or_committee": "Ruggiero SL, Dodson TB, Aghaloo T, Carlson ER, Ward BB, Kademani D (AAOMS)",
     "publication_year": 2022,

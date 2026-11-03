@@ -1,0 +1,86 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn đã xác minh thư mục: SDCEP (Scottish Dental Clinical Effectiveness Programme). Management of Dental Patients Taking Anticoagulants or Antiplatelet Drugs — Dental Clinical Guidance, 2nd Edition, 3/2022 (PDF miễn phí tại sdcep.org.uk; bản 2 giữ nguyên phần lớn khuyến nghị bản 2015, bổ sung edoxaban và heparin trọng lượng phân tử thấp). Tài liệu KHÔNG có DOI nên dùng mã định danh nội bộ. QUAN TRỌNG: phiên soạn thảo bị chặn truy cập sdcep.org.uk nên AI CHƯA đọc được PDF — nội dung khuyến nghị (phân nhóm thủ thuật, ngưỡng INR, cách bỏ/hoãn liều DOAC, kháng kết tập tiểu cầu) được viết theo hiểu biết của AI về hướng dẫn này. BÁC SĨ BẮT BUỘC đối chiếu từng con số với bản PDF gốc hoặc Quick Reference Guide trước khi duyệt. Ưu tiên hướng dẫn của Bộ Y tế Việt Nam nếu có.",
+  "source_metadata": {
+    "organization_code": "SDCEP",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "Management of Dental Patients Taking Anticoagulants or Antiplatelet Drugs — Dental Clinical Guidance (2nd Edition)",
+    "authors_or_committee": "Scottish Dental Clinical Effectiveness Programme (SDCEP) Guidance Development Group",
+    "publication_year": 2022,
+    "journal_or_series": "SDCEP Dental Clinical Guidance",
+    "doi_or_pmid": "SDCEP-ANTICOAG-2022",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "SDCEP 2022"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["PERIODONTOLOGY", "IMPLANTOLOGY"],
+    "protocol_title": "Bệnh nhân dùng thuốc chống đông (warfarin, DOAC) hoặc chống kết tập tiểu cầu (aspirin, clopidogrel) khi điều trị nha khoa: đánh giá nguy cơ chảy máu và cầm máu tại chỗ",
+    "clinical_topic_slug": "anticoagulant-antiplatelet-dental-treatment-bleeding"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân đang dùng thuốc kháng vitamin K (warfarin, acenocoumarol), thuốc chống đông đường uống thế hệ mới (DOAC: apixaban, dabigatran, rivaroxaban, edoxaban), heparin trọng lượng phân tử thấp hoặc thuốc chống kết tập tiểu cầu (aspirin, clopidogrel, ticagrelor, prasugrel — đơn hoặc kép) cần điều trị nha khoa có thể gây chảy máu.",
+    "I_intervention": "Đánh giá nguy cơ chảy máu theo thủ thuật và theo bệnh nhân; nhìn chung điều trị KHÔNG ngưng thuốc; với DOAC và thủ thuật nguy cơ cao hơn: bỏ hoặc hoãn liều buổi sáng theo loại thuốc; kiểm tra INR trước điều trị với thuốc kháng vitamin K; biện pháp cầm máu tại chỗ.",
+    "C_comparison": "Ngưng thuốc chống đông/chống kết tập tiểu cầu trước thủ thuật.",
+    "O_outcome_metrics": "Nguyên tắc của hướng dẫn: nguy cơ biến cố huyết khối nghiêm trọng (đột quỵ, nhồi máu, tắc stent) khi ngưng thuốc thường lớn hơn nhiều so với nguy cơ chảy máu sau thủ thuật nha khoa — vốn thường kiểm soát được bằng biện pháp tại chỗ. Bản 2 (2022) giữ nguyên phần lớn khuyến nghị bản 2015, bổ sung edoxaban và heparin trọng lượng phân tử thấp. Các ngưỡng cụ thể (INR, thời điểm xét nghiệm, giờ dùng lại thuốc) cần đối chiếu nguyên văn."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Thuốc kháng vitamin K ức chế tổng hợp các yếu tố đông máu phụ thuộc vitamin K; mức độ chống đông dao động, theo dõi bằng INR. DOAC ức chế trực tiếp thrombin (dabigatran) hoặc yếu tố Xa (apixaban, rivaroxaban, edoxaban); tác dụng đạt đỉnh vài giờ sau uống và giảm nhanh, không cần theo dõi INR — vì vậy điều chỉnh THỜI ĐIỂM liều quanh thủ thuật nguy cơ cao hơn. Thuốc chống kết tập tiểu cầu kéo dài thời gian chảy máu; dùng kép (VD: aspirin + clopidogrel sau đặt stent) làm chảy máu kéo dài hơn nhưng ngưng thuốc có nguy cơ tắc stent nguy hiểm. Chảy máu nha khoa là chảy máu tại chỗ, dễ tiếp cận, thường cầm được bằng ép, vật liệu cầm máu và khâu.",
+    "indications": [
+      "Phân nhóm thủ thuật (đối chiếu nguyên văn): ÍT KHẢ NĂNG gây chảy máu — gây tê tại chỗ, khám, cạo vôi trên nướu, trám/phục hình có bờ trên nướu, điều trị tuỷ thông thường, lấy dấu, chỉnh nha; NGUY CƠ THẤP — nhổ đơn giản 1–3 răng với vết thương giới hạn, rạch dẫn lưu trong miệng, khám nha chu chi tiết, cạo vôi dưới nướu/làm láng chân răng, phục hồi có bờ dưới nướu; NGUY CƠ CAO HƠN — nhổ răng phức tạp, nhổ nhiều răng kế cận tạo vết thương lớn, lật vạt, phẫu thuật nướu, sinh thiết",
+      "Thuốc kháng vitamin K (warfarin): kiểm tra INR gần thời điểm điều trị (thường trong vòng 24 giờ; bệnh nhân ổn định có thể đến 72 giờ); nếu INR dưới ngưỡng của hướng dẫn (thường nêu < 4) có thể điều trị tại phòng khám không ngưng thuốc; INR cao hơn → hoãn, liên hệ bác sĩ điều trị",
+      "DOAC: thủ thuật ít khả năng chảy máu và nguy cơ thấp → điều trị không ngưng thuốc, ưu tiên hẹn buổi sáng sớm; thủ thuật nguy cơ cao hơn → thuốc uống 2 lần/ngày (apixaban, dabigatran) bỏ liều buổi sáng; thuốc uống 1 lần/ngày buổi sáng (rivaroxaban, edoxaban) hoãn liều đến sau thủ thuật; dùng lại liều sau khi đã cầm máu (thường ít nhất khoảng 4 giờ)",
+      "Thuốc chống kết tập tiểu cầu (đơn hoặc kép): điều trị KHÔNG ngưng thuốc; chuẩn bị biện pháp cầm máu tại chỗ, dự kiến chảy máu kéo dài hơn với dùng kép",
+      "Chia nhỏ điều trị (VD: nhổ từng nhóm ít răng mỗi lần) để giới hạn vết thương"
+    ],
+    "contraindications_absolute": [
+      "Nha sĩ tự ý yêu cầu bệnh nhân ngưng thuốc chống đông/chống kết tập tiểu cầu (đặc biệt sau đặt stent mạch vành, van tim cơ học, rung nhĩ) mà không phối hợp bác sĩ kê đơn",
+      "Thực hiện thủ thuật gây chảy máu với bệnh nhân dùng warfarin khi chưa có INR gần đây hoặc INR vượt ngưỡng an toàn"
+    ],
+    "contraindications_relative": [
+      "Bệnh nhân có thêm yếu tố tăng nguy cơ chảy máu (bệnh gan, suy thận, rối loạn đông máu, giảm tiểu cầu, đang hoá trị, nghiện rượu, dùng nhiều thuốc chống huyết khối) — cân nhắc tham vấn bác sĩ hoặc chuyển tuyến",
+      "Dùng thuốc kháng viêm không steroid (NSAIDs) để giảm đau sau thủ thuật — tăng nguy cơ chảy máu; ưu tiên paracetamol",
+      "Kê kháng sinh nhóm có tương tác làm tăng INR (VD: metronidazole, macrolide) cho bệnh nhân dùng warfarin mà không tham vấn"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác & đánh giá nguy cơ", "clinical_action": "Hỏi tên thuốc, liều, giờ uống, lý do dùng (van tim, rung nhĩ, stent, huyết khối tĩnh mạch), bệnh kèm theo; phân nhóm nguy cơ chảy máu của thủ thuật.", "technical_parameters": "Ghi rõ thuốc và giờ uống vào hồ sơ; nghi ngờ → liên hệ bác sĩ kê đơn"},
+      {"step": 2, "phase_name": "Chuẩn bị theo nhóm thuốc", "clinical_action": "Warfarin: có kết quả INR gần thời điểm điều trị. DOAC + thủ thuật nguy cơ cao hơn: hướng dẫn bỏ/hoãn liều buổi sáng theo loại thuốc. Kháng kết tập tiểu cầu: không ngưng.", "technical_parameters": "Đối chiếu ngưỡng INR và cách bỏ/hoãn liều với bản gốc SDCEP 2022"},
+      {"step": 3, "phase_name": "Thủ thuật ít sang chấn", "clinical_action": "Hẹn buổi sáng, đầu tuần (để xử trí chảy máu trong giờ làm việc); nhổ nhẹ nhàng, giới hạn số răng; gây tê có thuốc co mạch nếu không chống chỉ định.", "technical_parameters": "Tránh gây tê vùng sâu (VD: tê thần kinh răng dưới) khi có thể thay thế bằng tê tại chỗ ở bệnh nhân nguy cơ cao — đối chiếu khuyến nghị"},
+      {"step": 4, "phase_name": "Cầm máu tại chỗ", "clinical_action": "Đặt vật liệu cầm máu tự tiêu vào ổ răng (cellulose oxy hoá, bọt gelatin/collagen), khâu, cắn gạc ép.", "technical_parameters": "Ép gạc liên tục khoảng 20–30 phút; chỉ cho bệnh nhân về khi đã cầm máu"},
+      {"step": 5, "phase_name": "Dặn dò sau thủ thuật", "clinical_action": "Không súc miệng mạnh, không mút ổ răng, ăn mềm nguội trong ngày đầu; giảm đau bằng paracetamol; hướng dẫn xử trí khi chảy máu lại và số điện thoại liên hệ.", "technical_parameters": "DOAC bị bỏ/hoãn: dùng lại theo hướng dẫn khi đã cầm máu"}
+    ],
+    "complications_and_management": [
+      {"complication": "Chảy máu kéo dài sau nhổ răng", "prevention": "Đánh giá nguy cơ, hạn chế vết thương, vật liệu cầm máu + khâu", "management_protocol": "Cắn gạc ép 20–30 phút; mở lại vết thương, đặt thêm vật liệu cầm máu, khâu lại; chảy máu không cầm → chuyển cơ sở y tế/cấp cứu"},
+      {"complication": "Biến cố huyết khối do ngưng thuốc", "prevention": "Không tự ý ngưng thuốc; phối hợp bác sĩ kê đơn", "management_protocol": "Cấp cứu nội khoa theo biểu hiện (đột quỵ, đau ngực…)"},
+      {"complication": "INR tăng do tương tác thuốc", "prevention": "Tránh hoặc tham vấn trước khi kê kháng sinh/thuốc giảm đau tương tác", "management_protocol": "Liên hệ bác sĩ điều chỉnh thuốc chống đông"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Yêu cầu bệnh nhân 'ngưng thuốc chống đông 5–7 ngày' trước nhổ răng — thường không cần và có thể nguy hiểm",
+        "Kê ibuprofen cho bệnh nhân dùng warfarin/DOAC/kháng tiểu cầu",
+        "Hẹn nhổ nhiều răng cùng lúc vào cuối ngày thứ Sáu"
+      ],
+      "clinical_decision_tips": [
+        "Câu hỏi 1: thuốc gì? Câu hỏi 2: thủ thuật thuộc nhóm nguy cơ nào? Câu hỏi 3: bệnh nhân có thêm yếu tố chảy máu không?",
+        "Warfarin → INR; DOAC → thời điểm liều; kháng tiểu cầu → không ngưng",
+        "Cầm máu tại chỗ tốt quan trọng hơn ngưng thuốc"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Nhiều người đang dùng thuốc chống đông máu (như warfarin, Xarelto, Eliquis, Pradaxa) hoặc thuốc chống kết tập tiểu cầu (như aspirin, Plavix) vì bệnh tim, đột quỵ, đặt stent hoặc huyết khối. Các thuốc này làm máu khó đông hơn.",
+      "why_needed": "Ngưng thuốc có thể gây đột quỵ, nhồi máu hoặc tắc stent — nguy hiểm hơn nhiều so với chảy máu khi làm răng, vốn thường cầm được tại chỗ. Vì vậy hầu hết trường hợp KHÔNG cần ngưng thuốc; với một số thuốc và thủ thuật lớn, bác sĩ có thể hướng dẫn bỏ hoặc dời một liều buổi sáng.",
+      "what_to_expect": "Nha sĩ hỏi kỹ tên thuốc và giờ uống, có thể yêu cầu xét nghiệm INR nếu bạn dùng warfarin, hẹn bạn vào buổi sáng, nhổ nhẹ nhàng, đặt thuốc cầm máu và khâu vết nhổ, và chỉ cho bạn về khi máu đã cầm.",
+      "home_care_instructions": [
+        "KHÔNG tự ý ngưng thuốc chống đông hay aspirin; luôn mang theo tên thuốc và liều khi đi khám răng",
+        "Sau nhổ răng: cắn chặt gạc 20–30 phút, không súc miệng mạnh, không mút, không khạc nhổ trong ngày đầu; ăn mềm, nguội",
+        "Giảm đau bằng paracetamol theo hướng dẫn; tránh ibuprofen, aspirin giảm đau trừ khi bác sĩ cho phép",
+        "Nếu chảy máu lại: cắn chặt gạc sạch liên tục 20–30 phút; vẫn chảy hoặc chảy nhiều → liên hệ nha sĩ hoặc đến cơ sở y tế ngay"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: SDCEP 2022 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không tự ý ngưng thuốc chống đông/chống kết tập tiểu cầu; không nhổ khi chưa có INR với warfarin] Đang uống thuốc chống đông, thuốc loãng máu, aspirin, Plavix, warfarin, Xarelto có nhổ răng, cạo vôi được không, có phải ngưng thuốc không? Thường không cần ngưng; nha sĩ đánh giá, kiểm tra INR với warfarin, cầm máu tại chỗ và khâu; giảm đau bằng paracetamol."
+    }
+  ]
+}

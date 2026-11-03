@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Furness S, Worthington HV, Bryan G, Birchenough S, McMillan R. Interventions for the management of dry mouth: topical therapies. Cochrane Database Syst Rev 2011;(12):CD008934, doi:10.1002/14651858.CD008934.pub2 — 36 RCT, 1597 người; chỉ 1 thử nghiệm nguy cơ sai lệch thấp; không có bằng chứng mạnh rằng điều trị tại chỗ nào làm giảm cảm giác khô miệng; xịt oxygenated glycerol triester hiệu quả hơn xịt điện giải (SMD 0.77, KTC 95% 0.38–1.15); kẹo cao su tăng tiết nước bọt ở người còn khả năng tiết. Danh sách tác giả theo hiểu biết, cần đối chiếu. Phần nguyên nhân (thuốc, hội chứng Sjögren, xạ trị) và phòng sâu răng là kiến thức y văn chung — BÁC SĨ đối chiếu.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Interventions for the management of dry mouth: topical therapies",
+    "authors_or_committee": "Furness S và cs. (Cochrane Oral Health) — đối chiếu danh sách tác giả",
+    "publication_year": 2011,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2011, Issue 12, CD008934",
+    "doi_or_pmid": "10.1002/14651858.CD008934.pub2",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "Bằng chứng yếu"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Khô miệng (xerostomia, giảm tiết nước bọt): nguyên nhân do thuốc, bệnh toàn thân, xạ trị — biện pháp tại chỗ và phòng sâu răng",
+    "clinical_topic_slug": "dry-mouth-xerostomia-management"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người bị khô miệng (cảm giác khô) hoặc giảm tiết nước bọt — thường gặp ở người cao tuổi dùng nhiều thuốc, hội chứng Sjögren, sau xạ trị vùng đầu cổ, đái tháo đường, thở bằng miệng.",
+    "I_intervention": "Biện pháp tại chỗ: chất kích thích tiết nước bọt (kẹo cao su không đường, viên ngậm) và chất thay thế nước bọt (xịt, gel, nước súc miệng); xem lại thuốc gây khô miệng; phòng sâu răng tăng cường bằng fluoride.",
+    "C_comparison": "Giả dược hoặc biện pháp tại chỗ khác.",
+    "O_outcome_metrics": "Cochrane 2011 (36 RCT, 1597 người): KHÔNG có bằng chứng mạnh rằng điều trị tại chỗ nào làm giảm rõ cảm giác khô miệng; chỉ 1 thử nghiệm nguy cơ sai lệch thấp, 17 thử nghiệm nguy cơ cao. Xịt oxygenated glycerol triester hiệu quả hơn xịt điện giải (SMD 0.77; KTC 95% 0.38–1.15; khoảng 2 điểm trên thang 10). Kẹo cao su làm tăng tiết nước bọt ở đa số người còn khả năng tiết, nhưng không rõ hơn hay kém chất thay thế nước bọt. Nên tránh sản phẩm có tính axit hoặc chứa đường."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Nước bọt làm sạch, trung hoà axit, cung cấp canxi–phosphat tái khoáng men răng, bôi trơn niêm mạc và có chất kháng khuẩn. Giảm tiết nước bọt làm tăng nhanh sâu răng (đặc biệt sâu cổ và chân răng), nấm miệng, khó nhai nuốt, khó nói, khó giữ hàm giả, rát niêm mạc, thay đổi vị giác. Nguyên nhân thường gặp nhất là THUỐC (thuốc kháng cholinergic, chống trầm cảm, chống loạn thần, kháng histamin, lợi tiểu, một số thuốc huyết áp, thuốc giảm đau opioid — nguy cơ tăng khi dùng nhiều thuốc); ngoài ra: hội chứng Sjögren, xạ trị vùng đầu cổ (tổn thương tuyến nước bọt), đái tháo đường kiểm soát kém, mất nước, thở bằng miệng, lo âu.",
+    "indications": [
+      "Xem lại danh sách thuốc; phối hợp bác sĩ điều trị cân nhắc đổi thuốc/giảm liều nếu có thể (không tự ngưng)",
+      "Kích thích tiết nước bọt khi tuyến còn chức năng: kẹo cao su không đường (xylitol), viên ngậm không đường",
+      "Thay thế nước bọt: xịt/gel/nước súc miệng giữ ẩm, uống từng ngụm nước thường xuyên",
+      "Phòng sâu răng tăng cường: kem đánh răng fluoride nồng độ cao theo chỉ định nha sĩ, vecni fluoride tại phòng khám, hạn chế đường, tái khám thường xuyên hơn",
+      "Nghi hội chứng Sjögren (khô mắt + khô miệng, đau khớp) hoặc khô miệng nặng không rõ nguyên nhân: chuyển khám chuyên khoa; thuốc kích thích tiết toàn thân (VD: pilocarpine) do bác sĩ chỉ định"
+    ],
+    "contraindications_absolute": [
+      "Tự ý ngưng thuốc điều trị bệnh toàn thân vì khô miệng",
+      "Dùng sản phẩm chứa đường hoặc có tính axit để giảm khô (kẹo ngọt, nước chanh) — tăng sâu răng, mòn răng"
+    ],
+    "contraindications_relative": [
+      "Nước súc miệng chứa cồn (làm khô và rát thêm)",
+      "Pilocarpine toàn thân ở bệnh nhân hen, glôcôm góc đóng, bệnh tim mạch nặng — do bác sĩ cân nhắc"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá", "clinical_action": "Hỏi triệu chứng (khô, khó nuốt đồ khô, phải uống nước khi ăn, rát), thuốc đang dùng, bệnh toàn thân, xạ trị; khám niêm mạc khô dính, lưỡi nứt, nấm miệng, sâu cổ răng.", "technical_parameters": "Có thể đo tốc độ tiết nước bọt khi nghỉ/kích thích để theo dõi"},
+      {"step": 2, "phase_name": "Xử trí nguyên nhân", "clinical_action": "Phối hợp bác sĩ xem lại thuốc; điều trị đái tháo đường, mất nước; chuyển chuyên khoa khi nghi Sjögren.", "technical_parameters": "Không tự ngưng thuốc"},
+      {"step": 3, "phase_name": "Giảm triệu chứng", "clinical_action": "Kẹo cao su không đường, chất thay thế nước bọt, uống nước từng ngụm, làm ẩm không khí phòng ngủ, bôi ẩm môi.", "technical_parameters": "Chọn sản phẩm không đường, pH trung tính"},
+      {"step": 4, "phase_name": "Phòng biến chứng", "clinical_action": "Fluoride tăng cường, hướng dẫn chế độ ăn ít đường, điều trị nấm miệng khi có, chỉnh hàm giả.", "technical_parameters": "Tái khám thường xuyên hơn (VD: 3–6 tháng) theo nguy cơ"}
+    ],
+    "complications_and_management": [
+      {"complication": "Sâu răng lan nhanh (cổ răng, chân răng)", "prevention": "Fluoride tăng cường, hạn chế đường, tái khám dày", "management_protocol": "Điều trị sâu răng; cân nhắc vật liệu giải phóng fluoride"},
+      {"complication": "Nấm miệng", "prevention": "Vệ sinh miệng và hàm giả", "management_protocol": "Thuốc kháng nấm theo chỉ định"},
+      {"complication": "Loét, rát niêm mạc do hàm giả", "prevention": "Giữ ẩm, chỉnh hàm giả", "management_protocol": "Chỉnh sửa hàm, điều trị tổn thương"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Không hỏi thuốc đang dùng — nguyên nhân hay gặp nhất",
+        "Khuyên ngậm kẹo chanh/kẹo ngọt để tăng nước bọt",
+        "Không tăng cường phòng sâu răng cho bệnh nhân khô miệng"
+      ],
+      "clinical_decision_tips": [
+        "Khô miệng + nhiều thuốc → nghĩ do thuốc trước",
+        "Khô miệng + khô mắt → nghĩ Sjögren",
+        "Bằng chứng cho từng sản phẩm tại chỗ còn yếu (Cochrane 2011) — chọn theo đáp ứng và sở thích"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Khô miệng là cảm giác miệng thiếu nước bọt: khô dính, khó nuốt đồ khô, phải uống nước khi ăn, rát lưỡi. Thường gặp ở người lớn tuổi, nhất là khi uống nhiều loại thuốc.",
+      "why_needed": "Nước bọt bảo vệ răng; thiếu nước bọt làm răng sâu rất nhanh, dễ nấm miệng, khó đeo hàm giả. Nguyên nhân hay gặp là tác dụng phụ của thuốc (thuốc huyết áp, chống trầm cảm, dị ứng…), ngoài ra có thể do bệnh Sjögren, tiểu đường hoặc xạ trị. Hiện chưa có sản phẩm xịt/gel nào chắc chắn hết khô, nhưng nhiều biện pháp giúp dễ chịu hơn.",
+      "what_to_expect": "Nha sĩ hỏi thuốc đang dùng, khám răng và niêm mạc, có thể đề nghị bác sĩ điều trị xem lại thuốc, kê kem đánh răng fluoride nồng độ cao và hẹn khám định kỳ thường xuyên hơn.",
+      "home_care_instructions": [
+        "Uống nước từng ngụm nhỏ trong ngày; nhai kẹo cao su không đường (xylitol) để kích thích nước bọt",
+        "Dùng xịt hoặc gel giữ ẩm miệng; tránh nước súc miệng có cồn",
+        "Hạn chế đồ ngọt, nước ngọt, đồ chua; hạn chế cà phê, rượu, thuốc lá",
+        "Chải răng bằng kem có fluoride 2 lần/ngày; không tự ý ngưng thuốc — hỏi bác sĩ điều trị",
+        "Khám nếu kèm khô mắt, đau khớp, sưng tuyến nước bọt hoặc khô miệng ngày càng nặng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: Cochrane 2011 (CD008934) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không tự ngưng thuốc; không dùng kẹo ngọt/đồ chua để giảm khô] Bị khô miệng, miệng khô khốc, ít nước bọt, khô miệng ở người già do thuốc phải làm sao? Thường do thuốc; uống nước từng ngụm, nhai kẹo cao su không đường, dùng gel/xịt giữ ẩm, kem đánh răng fluoride để phòng sâu răng; hỏi bác sĩ xem lại thuốc."
+    }
+  ]
+}

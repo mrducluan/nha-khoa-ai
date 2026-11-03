@@ -22,13 +22,13 @@
 {"category": "B_doctor", "q": "Kháng sinh toàn thân trong áp xe cuống khu trú khi đã dẫn lưu", "persona": "DOCTOR", "topic": ["antibiotic-use-pulpal-periapical-dental-pain-swelling"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Bằng chứng về nhổ răng 8 dự phòng để tránh chen chúc răng cửa", "persona": "DOCTOR", "topic": ["asymptomatic-impacted-third-molar-removal-vs-retention"], "flags": [], "scope": "dental", "caution": []}
 {"category": "B_doctor", "q": "Kiểm soát nhiễm bẩn khi gắn veneer bằng resin cement", "persona": "DOCTOR", "topic": ["ceramic-laminate-veneer-adhesive-protocol"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Hàm răng giả tháo lắp bị đau nướu khi ăn", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Hàm răng giả tháo lắp bị đau nướu khi ăn", "persona": null, "topic": ["complete-denture-care-maintenance"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient", "q": "Răng bị mòn cổ chân răng hình chữ V", "persona": null, "topic": ["dentin-hypersensitivity-desensitizing-management"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Bị nấm miệng trắng lưỡi", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Bị nấm miệng trắng lưỡi", "persona": null, "topic": ["oral-candidiasis-denture-stomatitis"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient", "q": "Đánh răng bằng than hoạt tính có trắng răng không", "persona": null, "topic": ["tooth-whitening-bleaching-safety-efficacy"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Trẻ mút tay có làm hô răng không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Trẻ mút tay có làm hô răng không", "persona": null, "topic": ["infant-teething-oral-habits-pacifier-thumb"], "flags": [], "scope": "dental", "caution": []}
 {"category": "A_patient", "q": "Chi phí làm cầu răng sứ 3 đơn vị", "persona": null, "topic": ["tooth-supported-fixed-bridge-fdp"], "flags": [], "scope": "dental", "caution": []}
-{"category": "C_out_of_db", "q": "Mọc răng ở trẻ có gây sốt không", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
+{"category": "A_patient", "q": "Mọc răng ở trẻ có gây sốt không", "persona": null, "topic": ["infant-teething-oral-habits-pacifier-thumb"], "flags": [], "scope": "dental", "caution": []}
 {"category": "C_out_of_db", "q": "Lưỡi bị tê rát khi ăn cay", "persona": null, "topic": ["NONE"], "flags": [], "scope": "dental", "caution": []}
 {"category": "D_emergency", "q": "Sưng cứng vùng dưới cằm, thở khò khè", "persona": null, "topic": null, "flags": ["AIRWAY"], "scope": "dental", "caution": []}
 {"category": "D_emergency", "q": "con toi te nga gay rang cua mat 1 nua", "persona": null, "topic": null, "flags": ["TRAUMA"], "scope": "dental", "caution": []}

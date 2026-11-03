@@ -53,6 +53,12 @@ def test_word_boundaries_prevent_false_matches():
     ("Sáng dậy đau mang tai lan lên thái dương khi nhai", "TMJ"),
     ("Mẹ tôi tiêm Prolia có nhổ răng được không", "MRONJ"),
     ("Mảng trắng ở bờ lưỡi lau không đi", "ORAL_LESION"),
+    ("Đang uống Xarelto có nhổ răng được không", "ANTICOAG"),
+    ("Bé mới 2 tháng bị đẹn trắng lưỡi", "CANDIDA"),
+    ("Ngủ có nên tháo hàm răng giả ra không", "DENTURE_CARE"),
+    ("Con 8 tháng mọc răng quấy khóc", "TEETHING_HABITS"),
+    ("Hàn răng bằng amalgam có độc không", "FILLING"),
+    ("Bé 15 tháng mới mọc 2 răng có chậm không", "PEDIATRIC_DEV"),
 ])
 def test_new_intents(q, code):
     assert code in codes(q)
@@ -67,6 +73,8 @@ def test_new_intents_no_false_matches():
     assert "CROWN" not in codes("Cầu răng sứ 3 đơn vị")                     # cầu răng ≠ bọc răng sứ
     assert "IMPLANT" not in codes("Mài răng trụ làm cầu")                   # "răng trụ" ≠ "trụ implant"
     assert "APHTHOUS" not in codes("Bị nấm miệng trắng lưỡi")               # nấm miệng ≠ nhiệt miệng
+    assert "FILLING" not in codes("Há miệng hạn chế, đau khớp hàm")         # "miệng hạn" ≠ "miếng hàn"
+    assert "TEETHING_HABITS" not in codes("Bé 1 tuổi chưa mọc răng")        # chậm mọc ≠ đang mọc răng
 
 
 @pytest.mark.parametrize("q", ["Mất răng hàm lâu năm không trồng lại có sao không",
@@ -82,6 +90,13 @@ def test_tooth_loss_is_not_trauma_emergency(q):
 def test_dentin_and_tilting_are_not_trauma(q):
     from dental_ai.safety import detect_red_flags
     assert not detect_red_flags(q)
+
+
+@pytest.mark.parametrize("q", ["Uống warfarin đi cạo vôi có bị chảy máu nhiều không"])  # câu hỏi giả định
+def test_hypothetical_bleeding_question_is_not_emergency(q):
+    from dental_ai.safety import detect_red_flags
+    assert "BLEEDING" not in {f.code for f in detect_red_flags(q)}
+    assert "BLEEDING" in {f.code for f in detect_red_flags("nhổ răng xong chảy máu nhiều không cầm")}
 
 
 @pytest.mark.parametrize("q", ["Con tôi bị ngã rơi mất răng cửa", "Té xe gãy mất chiếc răng",
@@ -140,7 +155,8 @@ def knowledge_with_drafts(database):
 
 
 @pytest.mark.parametrize("dataset,min_scale", [("questions.jsonl", 1.0), ("holdout_questions.jsonl", 0.95),
-                                               ("holdout_v2_questions.jsonl", 0.95), ("holdout_v3_questions.jsonl", 0.95)])
+                                               ("holdout_v2_questions.jsonl", 0.95), ("holdout_v3_questions.jsonl", 0.95),
+                                               ("holdout_v4_questions.jsonl", 0.95)])
 def test_quality_thresholds(knowledge_with_drafts, dataset, min_scale):
     from dental_ai.db import connect
     from dental_ai.embeddings import LocalHashEmbedder
