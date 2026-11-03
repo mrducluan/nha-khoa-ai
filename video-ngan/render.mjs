@@ -8,13 +8,16 @@ import { fileURLToPath } from "node:url";
 import { VIDEO } from "./kich-ban.mjs";
 
 const GOC = path.dirname(fileURLToPath(import.meta.url));
-const chon = process.argv.slice(2);
+// node render.mjs --sach [ma…] → xuat/<ma>-sach.mp4 (bản không phụ đề, dựng bằng node dung.mjs --sach).
+const SACH = process.argv.includes("--sach");
+const chon = process.argv.slice(2).filter((x) => !x.startsWith("--"));
 fs.mkdirSync(path.join(GOC, "xuat"), { recursive: true });
 for (const v of VIDEO) {
   if (chon.length && !chon.includes(v.ma)) continue;
-  const thu = path.join(GOC, "ban-dung", v.ma);
+  const ten = SACH ? `${v.ma}-sach` : v.ma;
+  const thu = path.join(GOC, "ban-dung", ten);
   if (!fs.existsSync(thu)) { console.error(`${v.ma}: chưa dựng — chạy node dung.mjs ${v.ma}`); continue; }
-  const ra = path.join(GOC, "xuat", `${v.ma}.mp4`);
+  const ra = path.join(GOC, "xuat", `${ten}.mp4`);
   execFileSync(path.join(GOC, "node_modules/.bin/hyperframes"), ["render", "-o", ra, "--quiet"], { cwd: thu, stdio: "inherit" });
   console.log(`${v.ma} → ${path.relative(GOC, ra)}`);
 }

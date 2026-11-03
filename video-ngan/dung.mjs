@@ -288,6 +288,10 @@ function canhPhuDe(lich) {
     nhom.push(...nhomPhuDe(cau, s.bd + m.bd, s.bd + Math.max(m.kt, m.bd + 0.6)));
   });
   nhom.forEach((g, i) => { const sau = nhom[i + 1]; g.het = r3(sau ? Math.min(sau.bd, g.kt + 0.6) : g.kt + 0.6); });
+  // Phụ đề .srt cho CapCut (cùng nhóm chữ, cùng mốc với phụ đề trong video).
+  const ms = (t) => { const x = Math.round(t * 1000), h = Math.floor(x / 3600000), m = Math.floor(x / 60000) % 60, s = Math.floor(x / 1000) % 60;
+    return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")},${String(x % 1000).padStart(3, "0")}`; };
+  canhPhuDe.srt = nhom.map((g, i) => `${i + 1}\n${ms(g.bd)} --> ${ms(g.het)}\n${g.words.map((w) => w.w).join(" ")}\n`).join("\n");
   const html = nhom.map((g, i) => `<div id="pd-${i}" class="pd"><span class="pd-nen">${g.words.map((w, j) => `<span id="pd-${i}-${j}" class="pw${w.vang ? " hl" : ""}">${esc(w.w)}</span>`).join(" ")}</span></div>`).join("\n");
   const js = nhom.map((g, i) => `
 tl.fromTo("#pd-${i}", {opacity:0, y:16, scale:0.96}, {opacity:1, y:0, scale:1, duration:0.12, ease:"power3.out"}, ${r3(g.bd)});
@@ -421,7 +425,7 @@ function dodai(f) {
 function dung(video) {
   const lich = lichCanh(video);
   const tong = r3(lich.at(-1).bd + lich.at(-1).d);
-  const thu = path.join(GOC, "ban-dung", video.ma);
+  const thu = path.join(GOC, "ban-dung", SACH ? `${video.ma}-sach` : video.ma);
   fs.rmSync(path.join(thu, "compositions"), { recursive: true, force: true });
   for (const d of ["compositions", "assets/fonts", "assets/sfx", "assets/giong", "assets/nhac"]) fs.mkdirSync(path.join(thu, d), { recursive: true });
   for (const f of fs.readdirSync(path.join(GOC, "phong"))) if (f.endsWith(".ttf")) fs.copyFileSync(path.join(GOC, "phong", f), path.join(thu, "assets/fonts", f));
@@ -473,6 +477,7 @@ function dung(video) {
   fs.writeFileSync(path.join(thu, "compositions", "nen.html"), nenFile(tong, video));
   fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong));
   fs.writeFileSync(path.join(thu, "compositions", "phu-de.html"), canhPhuDe(lich));
+  fs.writeFileSync(path.join(thu, "phu-de.srt"), canhPhuDe.srt);
   fs.writeFileSync(path.join(thu, "hyperframes.json"), JSON.stringify({
     $schema: "https://hyperframes.heygen.com/schema/hyperframes.json",
     paths: { blocks: "compositions", components: "compositions/components", assets: "assets" },
@@ -495,7 +500,7 @@ function dung(video) {
     <div id="nen" data-composition-id="nen" data-composition-src="compositions/nen.html" data-start="0" data-duration="${tong}" data-track-index="1" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:1"></div>
     ${hosts.join("\n    ")}
     <div id="dau" data-composition-id="dau" data-composition-src="compositions/dau.html" data-start="0" data-duration="${tong}" data-track-index="20" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:4"></div>
-    <div id="phu-de" data-composition-id="phu-de" data-composition-src="compositions/phu-de.html" data-start="0" data-duration="${tong}" data-track-index="3" data-track-kind="captions" data-width="${W}" data-height="${H}" style="z-index:5"></div>
+    ${SACH ? "" : `<div id="phu-de" data-composition-id="phu-de" data-composition-src="compositions/phu-de.html" data-start="0" data-duration="${tong}" data-track-index="3" data-track-kind="captions" data-width="${W}" data-height="${H}" style="z-index:5"></div>`}
     ${nhac}
     ${giong.join("\n    ")}
     ${sfxHtml}
@@ -509,5 +514,7 @@ function dung(video) {
   return { ma: video.ma, tong, canh: lich.map((s) => `${s.c.id}:${s.d}s${s.giong ? "🎙" : ""}`), coGiong };
 }
 
-const chon = process.argv.slice(2);
+// node dung.mjs --sach [ma…] → ban-dung/<ma>-sach/: bản KHÔNG phụ đề (cho CapCut tự làm phụ đề).
+const SACH = process.argv.includes("--sach");
+const chon = process.argv.slice(2).filter((x) => !x.startsWith("--"));
 for (const v of VIDEO) if (!chon.length || chon.includes(v.ma)) console.log(JSON.stringify(dung(v)));
