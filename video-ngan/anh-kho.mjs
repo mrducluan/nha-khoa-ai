@@ -29,6 +29,12 @@ export const ANH = {
     hook: [["nu-cuoi-can", "hai-nu-cuoi"], "50% 40%"], mau: [["so-mau-nam", "so-mau-nu"], "50% 40%"], dang: [["hai-nu-cuoi", "cuoi-ghe"], "50% 40%"],
     trong: [["cuoi-b", "nu-cuoi-can"], "50% 35%"], "thu-truoc": [["thiet-ke-cadcam", "so-mau-nu"], "50% 45%"], cta: ["td-phong-3.jpg", "55% 50%"],
   },
+  a01: {
+    "ham-thao-lap": ["td-phong-1.jpg", "50% 50%"], "that-1": [["co-ao-xanh-duong"], "50% 30%"],
+    "all-on-4": [["tru-implant", "bac-si-implant"], "50% 45%"], "that-2": [["chu-ngon-cai"], "50% 30%"],
+    "hanh-trinh": ["td-may-ct-1.jpg", "70% 50%"], "phu-hop": [["ong-tu-van"], "50% 40%"],
+    "that-3": [["co-ao-xanh-la"], "50% 30%"], cta: ["td-sanh-1.jpg", "45% 50%"],
+  },
 };
 
 /** Độ che của lớp tối giữa khung theo kiểu cảnh (0 = ảnh rõ, 1 = tối hẳn). */

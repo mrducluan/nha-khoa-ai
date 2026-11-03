@@ -6,11 +6,12 @@ import { VIDEO, MIEN_TRU, SLOGAN } from "./kich-ban.mjs";
 
 const DOC_SO = [
   ["1900 8040", "một chín không không, tám không bốn không"],
+  ["All-on-4", "All on Four"], ["3D", "ba đê"], ["30", "ba mươi"], ["6", "sáu"],
   ["1", "một"], ["2", "hai"], ["3", "ba"], ["4", "bốn"],
 ];
 const boDau = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
 const chuan = (s) => s.toLowerCase().replace(/\[[^\]]*\]/g, " ").replace(/\*/g, "").replace(/…|\.\.\./g, " ")
-  .replace(/[.,!?:;—–-]/g, " ").replace(/\s+/g, " ").trim();
+  .replace(/[.,!?:;—–\-\/]/g, " ").replace(/\s+/g, " ").trim();
 function docPhuDe(s) {
   let x = s;
   for (const [so, chu] of DOC_SO) x = x.replace(new RegExp(`(^|[^\\d])${so.replace(" ", "\\s")}(?![\\d])`, "g"), `$1${chu}`);
@@ -32,7 +33,7 @@ let loi = 0;
 const bao = (m) => { loi++; console.log("✗ " + m); };
 const chuoi = (c) => [
   ...(c.noi ?? []), ...(c.phu_de ?? []), ...(c.tieu_de ?? []), ...(c.dong ?? []), c.phu ?? "", c.loi ?? "",
-  ...(c.muc ?? []).flatMap((m) => [m.chu, m.phu ?? "", m.ra ?? ""]), c.chot?.chu ?? "", ...(c.chip ?? []),
+  ...(c.muc ?? []).flatMap((m) => [m.chu, m.phu ?? "", m.ra ?? ""]), c.chot?.chu ?? "", ...(c.chip ?? []), ...Object.values(c.khuyen_mai ?? {}),
 ];
 
 for (const v of VIDEO) {
@@ -47,7 +48,11 @@ for (const v of VIDEO) {
       if (tag.length > 2) bao(`${id} câu ${i + 1}: quá nhiều tag cảm xúc`);
       if (/\d/.test(n.replace(/\[[^\]]*\]/g, ""))) bao(`${id} câu ${i + 1}: lời đọc còn chữ số — đọc bằng chữ`);
     });
-    for (const s of chuoi(c)) for (const [muc, ma, re] of CAM) if (re.test(boDau(s))) bao(`${id}: [${muc} · ${ma}] “${s}”`);
+    for (const s of chuoi(c)) for (const [muc, ma, re] of CAM) {
+      if (!re.test(boDau(s))) continue;
+      if (muc === "CẦN XÁC NHẬN" && (v.xac_nhan ?? []).some((x) => s.includes(x))) { console.log(`  ℹ ${id}: “${s}” — đã được chủ dự án xác nhận`); continue; }
+      bao(`${id}: [${muc} · ${ma}] “${s}”`);
+    }
     tong += c.noi.map((n) => n.replace(/\[[^\]]*\]/g, "")).join(" ").split(/\s+/).length;
   }
   if (!v.canh.some((c) => c.noi.some((n) => n.includes("[warmly]")))) bao(`${v.ma}: thiếu đoạn [warmly] để lắng`);

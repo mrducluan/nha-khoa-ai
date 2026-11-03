@@ -117,6 +117,24 @@ phụ đề karaoke y 1190–1370 · lề trái/phải ≥ 90 px (tránh cột n
 
 ---
 
+## a01 — "Cốc nước đầu giường của bố" (Implant All-on-4 · 80s · nhạc piano ấm)
+
+Nguồn chuyên môn lấy từ engine: `db/06`, phác đồ "Phục hình toàn hàm cố định tải lực tức thì trên 4–6 Implant" (ITI 7th Consensus, EAO, ADA).
+Không dùng các câu tuyệt đối trong bản dành cho bệnh nhân của engine ("hơn 90% sức nhai", "loại bỏ hoàn toàn"), vì DNA thương hiệu cấm.
+Có 3 cảnh chèn video thật "sau điều trị", toàn khung, không chữ hay logo chồng lên (khách đã đồng ý dùng hình ảnh).
+
+| Cảnh | Hình | Lời đọc | Đối chiếu engine |
+|---|---|---|---|
+| Hook | Cốc nước đầu giường, hàm giả chìm dần, ánh trăng · *Tình huống minh họa* | `[softly]` Mỗi tối, hàm răng của bố nằm trong một cốc nước. `[curious]` Và đã lâu lắm rồi... bố không cười thật to. | — |
+| Hàm tháo lắp | Lỏng, cộm khi ăn nhai · Tháo ra vệ sinh mỗi ngày · Xương hàm vẫn tiêu dần | `[warmly]` Hàm tháo lắp giúp được nhiều người, nhưng hay gặp ba chuyện. Lỏng và cộm khi ăn nhai. Phải tháo ra vệ sinh mỗi ngày. Và xương hàm bên dưới vẫn tiêu dần theo thời gian. | Tiêu xương ở người mất răng toàn hàm (Cawood & Howell, `db/06`) |
+| **Video thật 1** | Chị áo xanh cười tươi | `[warmly]` Cho đến ngày... nụ cười ấy quay trở lại. | — |
+| All-on-4 | 4 trụ: 2 thẳng, 2 nghiêng 30–45° né dây thần kinh; cả dãy răng bắt vít | `[enthusiastic]` All on Four là trồng lại cả một hàm răng cố định, chỉ trên bốn trụ Implant. Hai trụ phía sau được đặt nghiêng, để tận dụng vùng xương chắc, nhiều trường hợp không cần ghép xương phức tạp. Cả dãy răng được bắt vít lên các trụ, không phải tháo ra mỗi tối nữa. | ✅ Trụ sau nghiêng 30–45°, tránh xoang/lỗ cằm, hạn chế ghép xương; cầu bắt vít |
+| **Video thật 2** | Chú áo trắng giơ ngón cái | `[cheerfully]` Ăn ngon miệng, cười thật tươi. | — |
+| Hành trình | Chụp CT, lên kế hoạch · Cấy trụ, gắn răng tạm cố định · 4–6 tháng: răng chính thức | `[enthusiastic]` Bác sĩ chụp phim CT, lên kế hoạch trên máy tính trước khi cấy. Nếu trụ đủ chắc, có thể gắn răng tạm cố định chỉ sau một đến ba ngày. Khoảng bốn đến sáu tháng sau, răng tạm được thay bằng răng sứ chính thức. | ✅ CBCT và kế hoạch 3D; răng tạm trong 24–72 giờ khi trụ đủ ổn định; phục hình chính thức sau 4–6 tháng |
+| Phù hợp | Xương hàm phía trước đủ · Bệnh nền được kiểm soát · Có khi cần 6 trụ | `[warmly]` Nhưng không phải ai cũng hợp All on Four. Xương hàm phía trước phải đủ chiều cao và độ dày. Bệnh nền như tiểu đường cần được kiểm soát tốt. Có trường hợp bác sĩ sẽ khuyên làm sáu trụ cho chắc hơn. | ✅ Chống chỉ định: xương phía trước < 10 mm cao / < 5 mm rộng, HbA1c > 8,5%; xương xốp D3–D4 nên chọn All-on-6 |
+| **Video thật 3** | Cô áo xanh lá cười nói | `[warmly]` Để nụ cười của bố mẹ... không phải giấu đi nữa. | — |
+| CTA | Logo · thẻ giá **TRỒNG RĂNG IMPLANT ALL-ON-4 · chỉ 30 triệu đồng** · INBOX ĐẶT LỊCH | `[cheerfully]` Trồng răng Implant All on Four, chỉ ba mươi triệu đồng. `[excited]` Inbox Tâm Đức Smile để bác sĩ khám và tư vấn cho bố mẹ nha! | Giá do chủ dự án xác nhận ngày 2026-11-03 |
+
 ## Cần anh / phòng khám xác nhận trước khi đăng
 
 1. Fanpage/TikTok có người trực inbox để nhận lịch (CTA duy nhất là inbox).

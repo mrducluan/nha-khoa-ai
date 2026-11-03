@@ -529,4 +529,122 @@ export const VIDEO = [
       },
     ],
   },
+  // ===================================================================== IMPLANT 4 — ALL-ON-4 (nguồn: db/06 ITI 7th Consensus + EAO + ADA)
+  {
+    ma: "a01",
+    ten: "Cốc nước đầu giường của bố — All-on-4",
+    nhom: "Implant",
+    nhac: "am",
+    // Giá do chủ dự án xác nhận ngày 2026-11-03 (bỏ qua cảnh báo "cần xác nhận" cho đúng chuỗi này).
+    xac_nhan: ["30 triệu đồng"],
+    canh: [
+      {
+        id: "hook", loai: "minh_hoa", hinh: "ly_ham_gia",
+        tieu_de: ["Cốc nước đầu giường", "*của bố*"],
+        noi: [
+          "[softly] Mỗi tối, hàm răng của bố nằm trong một cốc nước.",
+          "[curious] Và đã lâu lắm rồi... bố không cười thật to.",
+        ],
+        phu_de: [
+          "Mỗi tối, hàm răng của bố nằm trong *một cốc nước*.",
+          "Và đã lâu lắm rồi… bố *không cười thật to*.",
+        ],
+      },
+      {
+        id: "ham-thao-lap", loai: "danh_sach", kieu: "so",
+        tieu_de: ["Hàm tháo lắp *hay gặp…*"],
+        muc: [{ chu: "Lỏng, cộm khi ăn nhai" }, { chu: "Tháo ra vệ sinh mỗi ngày" }, { chu: "Xương hàm vẫn tiêu dần" }],
+        noi: [
+          "[warmly] Hàm tháo lắp giúp được nhiều người, nhưng hay gặp ba chuyện.",
+          "Lỏng và cộm khi ăn nhai.",
+          "Phải tháo ra vệ sinh mỗi ngày.",
+          "Và xương hàm bên dưới vẫn tiêu dần theo thời gian.",
+        ],
+        phu_de: [
+          "Hàm tháo lắp giúp được nhiều người, nhưng hay gặp *3 chuyện*.",
+          "*Lỏng và cộm* khi ăn nhai.",
+          "Phải *tháo ra vệ sinh* mỗi ngày.",
+          "Và xương hàm bên dưới vẫn *tiêu dần* theo thời gian.",
+        ],
+      },
+      {
+        id: "that-1", loai: "that",
+        noi: ["[warmly] Cho đến ngày... nụ cười ấy quay trở lại."],
+        phu_de: ["Cho đến ngày… *nụ cười ấy quay trở lại*."],
+      },
+      {
+        id: "all-on-4", loai: "minh_hoa", hinh: "all_on_4",
+        tieu_de: ["All-on-4: *4 trụ* cho cả hàm"],
+        noi: [
+          "[enthusiastic] All on Four là trồng lại cả một hàm răng cố định, chỉ trên bốn trụ Implant.",
+          "Hai trụ phía sau được đặt nghiêng, để tận dụng vùng xương chắc, nhiều trường hợp không cần ghép xương phức tạp.",
+          "Cả dãy răng được bắt vít lên các trụ, không phải tháo ra mỗi tối nữa.",
+        ],
+        phu_de: [
+          "*All-on-4* là trồng lại cả một hàm răng cố định, chỉ trên *4 trụ Implant*.",
+          "Hai trụ phía sau được *đặt nghiêng*, để tận dụng vùng xương chắc, nhiều trường hợp không cần ghép xương phức tạp.",
+          "Cả dãy răng được *bắt vít* lên các trụ, không phải tháo ra mỗi tối nữa.",
+        ],
+      },
+      {
+        id: "that-2", loai: "that",
+        noi: ["[cheerfully] Ăn ngon miệng, cười thật tươi."],
+        phu_de: ["*Ăn ngon miệng*, cười thật tươi."],
+      },
+      {
+        id: "hanh-trinh", loai: "danh_sach", kieu: "buoc",
+        tieu_de: ["Hành trình *All-on-4*"],
+        muc: [{ chu: "Chụp CT, lên kế hoạch" }, { chu: "Cấy trụ, gắn răng tạm cố định" }, { chu: "4–6 tháng: răng chính thức" }],
+        noi: [
+          "[enthusiastic] Bác sĩ chụp phim CT, lên kế hoạch trên máy tính trước khi cấy.",
+          "Nếu trụ đủ chắc, có thể gắn răng tạm cố định chỉ sau một đến ba ngày.",
+          "Khoảng bốn đến sáu tháng sau, răng tạm được thay bằng răng sứ chính thức.",
+        ],
+        phu_de: [
+          "Bác sĩ *chụp phim CT*, lên kế hoạch trên máy tính trước khi cấy.",
+          "Nếu trụ đủ chắc, có thể gắn *răng tạm cố định* chỉ sau 1 đến 3 ngày.",
+          "Khoảng *4 đến 6 tháng* sau, răng tạm được thay bằng răng sứ chính thức.",
+        ],
+      },
+      {
+        id: "phu-hop", loai: "danh_sach", kieu: "so",
+        tieu_de: ["Không phải ai cũng *hợp All-on-4*"],
+        muc: [{ chu: "Xương hàm phía trước đủ" }, { chu: "Bệnh nền được kiểm soát" }, { chu: "Có khi cần 6 trụ" }],
+        noi: [
+          "[warmly] Nhưng không phải ai cũng hợp All on Four.",
+          "Xương hàm phía trước phải đủ chiều cao và độ dày.",
+          "Bệnh nền như tiểu đường cần được kiểm soát tốt.",
+          "Có trường hợp bác sĩ sẽ khuyên làm sáu trụ cho chắc hơn.",
+        ],
+        phu_de: [
+          "Nhưng không phải ai cũng *hợp All-on-4*.",
+          "Xương hàm phía trước phải *đủ chiều cao và độ dày*.",
+          "Bệnh nền như *tiểu đường* cần được kiểm soát tốt.",
+          "Có trường hợp bác sĩ sẽ khuyên làm *6 trụ* cho chắc hơn.",
+        ],
+      },
+      {
+        id: "that-3", loai: "that",
+        noi: ["[warmly] Để nụ cười của bố mẹ... không phải giấu đi nữa."],
+        phu_de: ["Để nụ cười của bố mẹ… *không phải giấu đi nữa*."],
+      },
+      {
+        id: "cta", loai: "cta",
+        chip: ["Khám & chụp CT", "Tư vấn cho bố mẹ"],
+        khuyen_mai: {
+          tren: "TRỒNG RĂNG IMPLANT ALL-ON-4",
+          gia: "chỉ 30 triệu đồng",
+          chu_thich: "*Giá cho 1 hàm All-on-4. Chi phí thực tế tùy tình trạng sau khi bác sĩ thăm khám.",
+        },
+        noi: [
+          "[cheerfully] Trồng răng Implant All on Four, chỉ ba mươi triệu đồng.",
+          "[excited] Inbox Tâm Đức Smile để bác sĩ khám và tư vấn cho bố mẹ nha!",
+        ],
+        phu_de: [
+          "Trồng răng Implant *All-on-4*, chỉ *30 triệu đồng*.",
+          "*Inbox Tâm Đức Smile* để bác sĩ khám và tư vấn cho bố mẹ nha!",
+        ],
+      },
+    ],
+  },
 ];

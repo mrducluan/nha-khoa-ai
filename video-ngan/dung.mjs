@@ -87,6 +87,9 @@ tl.fromTo("#${p}-td${i} .w", {opacity:0, y:24, filter:"blur(8px)"}, {opacity:1, 
 
 // ---------------------------------------------------------------- kiểu cảnh
 const KIEU = {
+  // Cảnh chèn video THẬT toàn khung 2–3 s: không tiêu đề, không minh hoạ, không logo — chỉ còn phụ đề (lớp mờ ở đáy).
+  that() { return { css: "", html: "", js: "", sfx: [] }; },
+
   minh_hoa(c, x) {
     const f = HINH[c.hinh];
     if (!f) throw new Error(`Chưa có hình ${c.hinh}`);
@@ -182,23 +185,31 @@ tl.fromTo("#${p}-d${i} .w", {opacity:0, filter:"blur(8px)"}, {opacity:1, filter:
 
   cta(c, { p, d, moc }) {
     const tNut = moc.length > 1 ? moc[1].bd : d * 0.5;
+    // Có thẻ giá / khuyến mãi (đã được chủ dự án xác nhận) → dồn bố cục: logo nhỏ hơn, thẻ giá giữa logo và nút.
+    const km = c.khuyen_mai, Y = km
+      ? { logo: 250, logoH: 170, nut: 740, phu: 916, chips: 990, mt: 0, tay: 792 }
+      : { logo: 240, logoH: 290, nut: 600, phu: 796, chips: 890, mt: 1010, tay: 650 };
+    const tGia = moc[0] ? r3(moc[0].bd + (moc[0].kt - moc[0].bd) * 0.45) : 1.2;
     const logo = LOGO
-      ? `<img id="${p}-lg" src="assets/logo/${LOGO}" alt="Nha khoa Tâm Đức Smile" style="max-width:640px; max-height:230px; object-fit:contain; background:#FFFFFF; padding:22px 34px; border-radius:36px; box-shadow:0 24px 60px rgba(0,0,0,0.35);" />`
+      ? `<img id="${p}-lg" src="assets/logo/${LOGO}" alt="Nha khoa Tâm Đức Smile" style="max-width:${km ? 500 : 640}px; max-height:${km ? 130 : 230}px; object-fit:contain; background:#FFFFFF; padding:22px 34px; border-radius:36px; box-shadow:0 24px 60px rgba(0,0,0,0.35);" />`
       : `<div style="background:#FFFFFF; padding:30px 38px; border-radius:40px; box-shadow:0 24px 60px rgba(0,0,0,0.35); line-height:0;">${logoSvg(`${p}-lg`, 720)}</div>`;
     return {
       css: `
-#${p}-logo { position:absolute; left:0; right:0; top:240px; height:290px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+#${p}-logo { position:absolute; left:0; right:0; top:${Y.logo}px; height:${Y.logoH}px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 #${p}-nk { font-size:40px; font-weight:700; color:${MAU.mo}; letter-spacing:0.18em; text-transform:uppercase; margin-top:22px; }
 #${p}-ten { font-size:100px; font-weight:900; color:${MAU.chu}; letter-spacing:-0.02em; line-height:1.05; }
 #${p}-ten span { color:${MAU.ngoc}; }
-#${p}-nut { position:absolute; left:140px; right:140px; top:600px; height:160px; border-radius:80px; background:linear-gradient(180deg, #FFE09A, ${MAU.vang}); box-shadow:0 20px 50px rgba(255,210,122,0.35), inset 0 -6px 0 rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center; gap:26px; }
+#${p}-nut { position:absolute; left:140px; right:140px; top:${Y.nut}px; height:160px; border-radius:80px; background:linear-gradient(180deg, #FFE09A, ${MAU.vang}); box-shadow:0 20px 50px rgba(255,210,122,0.35), inset 0 -6px 0 rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center; gap:26px; }
 #${p}-nut b { font-size:70px; font-weight:900; color:${MAU.nen}; letter-spacing:0.01em; }
-#${p}-song { position:absolute; left:140px; right:140px; top:600px; height:160px; border-radius:80px; border:5px solid ${MAU.vang}; opacity:0; }
-#${p}-phu { position:absolute; left:90px; right:90px; top:796px; text-align:center; font-size:40px; font-weight:800; color:${MAU.chu}; }
-#${p}-tay { position:absolute; left:900px; top:650px; width:120px; height:140px; }
-#${p}-chips { position:absolute; left:90px; right:90px; top:890px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px 16px; }
+#${p}-song { position:absolute; left:140px; right:140px; top:${Y.nut}px; height:160px; border-radius:80px; border:5px solid ${MAU.vang}; opacity:0; }
+#${p}-phu { position:absolute; left:90px; right:90px; top:${Y.phu}px; text-align:center; font-size:${km ? 36 : 40}px; font-weight:800; color:${MAU.chu}; }
+#${p}-tay { position:absolute; left:900px; top:${Y.tay}px; width:120px; height:140px; }
+#${p}-chips { position:absolute; left:90px; right:90px; top:${Y.chips}px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px 16px; }
 #${p}-chips .chip { font-size:32px; padding:12px 26px; }
-#${p}-mt { position:absolute; left:110px; right:110px; top:1010px; text-align:center; font-size:26px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
+#${p}-gia { position:absolute; left:100px; right:100px; top:452px; height:220px; gap:6px; border-radius:36px; background:linear-gradient(135deg, #E3262F, #F2683A); box-shadow:0 24px 60px rgba(227,38,47,0.4); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+#${p}-gia small { font-size:38px; font-weight:800; color:#FFFFFF; letter-spacing:0.04em; }
+#${p}-gia b { white-space:nowrap; font-size:84px; font-weight:900; color:#FFE7A0; line-height:1.08; letter-spacing:-0.01em; text-shadow:0 4px 0 rgba(0,0,0,0.18); }
+#${p}-mt { position:absolute; left:110px; right:110px; top:${Y.mt}px; text-align:center; font-size:${km ? 24 : 26}px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
       html: `
 <div id="${p}-logo">${logo}</div>
 <div id="${p}-song"></div>
@@ -206,9 +217,12 @@ tl.fromTo("#${p}-d${i} .w", {opacity:0, filter:"blur(8px)"}, {opacity:1, filter:
 <div id="${p}-phu">${esc(CTA_PHU)}</div>
 <svg id="${p}-tay" viewBox="0 0 120 140"><path d="M44 8 C52 8 56 14 56 22 L56 62 L60 62 L60 50 C60 43 72 43 72 50 L72 64 L76 64 L76 56 C76 49 88 49 88 56 L88 70 L92 70 L92 64 C92 57 104 57 104 64 L104 100 C104 122 90 134 70 134 L58 134 C44 134 36 126 28 114 L10 86 C6 79 15 72 22 78 L32 90 L32 22 C32 14 36 8 44 8 Z" fill="#FFFFFF" stroke="${MAU.nen}" stroke-width="6" stroke-linejoin="round"/></svg>
 <div id="${p}-chips">${c.chip.slice(0, 2).map((s, i) => `<span class="chip" id="${p}-c${i}">${esc(s)}</span>`).join("")}</div>
-<div id="${p}-mt">${esc(MIEN_TRU)}</div>`,
+${km ? `<div id="${p}-gia"><small>${esc(km.tren)}</small><b>${esc(km.gia)}</b></div>` : ""}
+${km ? "" : `<div id="${p}-mt">${esc(MIEN_TRU)}</div>`}`,
       js: `
 tl.fromTo("#${p}-logo", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.6, ease:"expo.out"}, 0.05);
+${km ? `tl.fromTo("#${p}-gia", {opacity:0, scale:1.25, rotation:-3}, {opacity:1, scale:1, rotation:0, duration:0.45, ease:"back.out(2)"}, ${tGia});
+tl.to("#${p}-gia b", {scale:1.07, duration:0.35, yoyo:true, repeat:3, ease:"sine.inOut"}, ${r3(tGia + 0.6)});` : ""}
 tl.fromTo("#${p}-nut", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2)"}, 0.5);
 tl.fromTo("#${p}-phu", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"expo.out"}, 0.8);
 tl.fromTo("#${p}-chips .chip", {opacity:0, y:24, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.35, stagger:0.12, ease:"back.out(1.7)"}, 1.0);
@@ -217,7 +231,7 @@ tl.fromTo("#${p}-tay", {opacity:0, x:120, y:120}, {opacity:1, x:0, y:0, duration
 ${[0, 1, 2].map((k) => `tl.to("#${p}-tay", {scale:0.86, duration:0.12, yoyo:true, repeat:1, transformOrigin:"40% 10%"}, ${r3(tNut + 0.6 + k * 1.1)});
 tl.to("#${p}-nut", {scale:0.95, duration:0.12, yoyo:true, repeat:1}, ${r3(tNut + 0.6 + k * 1.1)});
 tl.fromTo("#${p}-song", {opacity:0.9, scale:1}, {opacity:0, scale:1.18, duration:0.7, ease:"power2.out", immediateRender:false}, ${r3(tNut + 0.66 + k * 1.1)});`).join("\n")}`,
-      sfx: [{ f: "sparkle", t: 0.3, v: 0.5 }, { f: "pop", t: 0.55, v: 0.4 }, ...[0, 1, 2].map((k) => ({ f: "click-soft", t: tNut + 0.6 + k * 1.1, v: 0.5 }))],
+      sfx: [{ f: "sparkle", t: 0.3, v: 0.5 }, ...(km ? [{ f: "impact-bass-1", t: tGia + 0.3, v: 0.4 }] : []), { f: "pop", t: 0.55, v: 0.4 }, ...[0, 1, 2].map((k) => ({ f: "click-soft", t: tNut + 0.6 + k * 1.1, v: 0.5 }))],
     };
   },
 };
@@ -328,7 +342,9 @@ function canhFile(video, s) {
   const k = f(s.c, { p, d: s.d, moc: s.moc, video, dau: s.bd === 0, anhDau: !!anh && s.bd === 0 && s.c.loai === "minh_hoa" });
   const ra = r3(s.d - 0.28);
   let anhHtml = "", anhJs = "";
-  if (anh) {
+  if (anh && s.c.loai === "that") {
+    anhHtml = `<div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,24,38,0) 52%, rgba(6,24,38,0.55) 64%, rgba(6,24,38,0.85) 80%, rgba(6,24,38,0.92) 100%)"></div>`;
+  } else if (anh) {
     const che = anh[2] ?? DO_CHE[s.c.loai] ?? 0.8, moDau = s.bd === 0 && s.c.loai === "minh_hoa";
     const pan = s.c.loai === "minh_hoa" ? `<div id="${p}-pan" class="pan"></div>` : "";
     // Nền video nằm ở index.html (HyperFrames không cho <video> lồng trong cảnh có data-start); ở đây chỉ còn lớp phủ.
@@ -365,7 +381,7 @@ window.__timelines["${s.c.id}"] = tl;
 }
 
 /** Lớp trên cùng (dưới phụ đề): logo + khẩu hiệu — nằm trên ảnh nền của từng cảnh. */
-function dauFile(tong, tCta) {
+function dauFile(tong, tCta, an = []) {
   return `<template>
 <style>
 ${PHONG}
@@ -383,6 +399,7 @@ ${PHONG}
 const tl = gsap.timeline({ paused: true });
 // Cảnh cuối (CTA) đã có logo lớn → ẩn logo nhỏ đầu khung để không trùng lặp.
 ${tCta != null ? `tl.to("#nen-hieu", {opacity:0, duration:0.25, ease:"power2.in"}, ${Math.max(0, tCta - 0.2)});` : ""}
+${an.map(([bd, kt]) => `tl.to("#nen-hieu", {opacity:0, duration:0.2}, ${Math.max(0, bd - 0.15)});${tCta != null && Math.abs(kt - tCta) < 0.05 ? "" : ` tl.to("#nen-hieu", {opacity:1, duration:0.3}, ${kt});`}`).join("\n")}
 window.__timelines["dau"] = tl;
 </script>
 </template>`;
@@ -446,7 +463,10 @@ function dung(video) {
     if (!e || !Array.isArray(e[0])) continue;
     const p = `${video.ma}${sc.c.id.replace(/-/g, "")}`, tam = path.join(thu, "assets/anh", `${p}.tam.mp4`);
     const vao = e[0].flatMap((n) => ["-i", path.join(GOC, "clip", `${n}.mp4`)]);
-    const loc = e[0].map((_, i) => `[${i}:v]crop=iw*0.92:ih*0.92:(iw-ow)/2:ih*0.08,scale=1080:1920,setsar=1,setpts=1.4*(PTS-STARTPTS),fps=30[v${i}]`).join(";") + ";" + e[0].map((_, i) => `[v${i}]`).join("") + `concat=n=${e[0].length}:v=1:a=0[ra]`;
+    // Cảnh "that": tốc độ vừa đủ phủ cảnh (không lặp lại cùng một nụ cười), tối đa chậm 2,2×.
+    const goc = e[0].reduce((t, n) => t + Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path.join(GOC, "clip", `${n}.mp4`)]).toString().trim()), 0);
+    const tocDo = sc.c.loai === "that" ? r3(Math.min(2.2, Math.max(1, (sc.d + 0.2) / goc))) : 1.4;
+    const loc = e[0].map((_, i) => `[${i}:v]crop=iw*0.92:ih*0.92:(iw-ow)/2:ih*0.08,scale=1080:1920,setsar=1,setpts=${tocDo}*(PTS-STARTPTS),fps=30[v${i}]`).join(";") + ";" + e[0].map((_, i) => `[v${i}]`).join("") + `concat=n=${e[0].length}:v=1:a=0[ra]`;
     execFileSync("ffmpeg", ["-nostdin", "-loglevel", "error", "-y", ...vao, "-filter_complex", loc, "-map", "[ra]", "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", tam]);
     execFileSync("ffmpeg", ["-nostdin", "-loglevel", "error", "-y", "-stream_loop", "-1", "-i", tam, "-t", String(sc.d + 0.2), "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", path.join(thu, "assets/anh", `${p}.mp4`)]);
     fs.rmSync(tam);
@@ -496,7 +516,7 @@ function dung(video) {
   }
 
   fs.writeFileSync(path.join(thu, "compositions", "nen.html"), nenFile(tong, video));
-  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong, lich.find((x) => x.c.loai === "cta")?.bd));
+  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong, lich.find((x) => x.c.loai === "cta")?.bd, lich.filter((x) => x.c.loai === "that").map((x) => [x.bd, r3(x.bd + x.d)])));
   fs.writeFileSync(path.join(thu, "compositions", "phu-de.html"), canhPhuDe(lich));
   fs.writeFileSync(path.join(thu, "phu-de.srt"), canhPhuDe.srt);
   fs.writeFileSync(path.join(thu, "hyperframes.json"), JSON.stringify({
