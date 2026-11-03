@@ -30,6 +30,12 @@ _CLINICAL_TERMS = [
     "resin cement", "survival rate", "ty le song con", "muc do chinh xac", "bang chung", "khu tru", "dan luu",
     "khang sinh toan than", "nhiem ban", "tai luc tuc thi", "ghep xuong", "vach ngoai", "phim cbct", "on dinh so khoi",
     "toan than", "tien luong", "chan doan phan biet", "ky thuat", "giai doan", "stage iii", "grade b", "tads",
+    "noi nha", "ferrule", "mod", "chot soi", "chot cui", "che phu mui", "cuspal", "endocrown", "chipping", "monolithic",
+    "supraeruption", "overeruption", "rang doi khang", "khoang phuc hinh", "dung truc", "minivis", "uprighting",
+    "delta e(00|ab)?", "ciede2000", "cielab", "metamerism", "peri-implantitis", "mucositis", "khuyet hong", "implantoplasty",
+    "inr (\\d)", "newton", "type (i|ii|iii|1|2|3)", "thu thuat", "khang ket tap", "khang nam", "nguy co chay mau",
+    "khu khuan", "lieu (sang|toi)", "kali nitrat", "potassium nitrate", "arginine", "stannous", "nhay cam nga", "desensitiz(\\w*)", "connector",
+    "polysomnography", "emg", "bruxism", "hydrogen peroxide", "carbamide", "walking bleach",
     "benh nhan nam", "benh nhan nu", "bn nam", "bn nu", "so sanh nghien cuu", "level of evidence", "efp", "ada", "cgdent", "fdi",
 ]
 _PATIENT_TERMS = [

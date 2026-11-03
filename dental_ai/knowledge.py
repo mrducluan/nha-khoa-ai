@@ -28,7 +28,7 @@ BASE_FILES = (
     "05_seed_core_dental_knowledge.sql",
     "06_seed_advanced_implant_prostho_sinus.sql",
 )
-UPGRADE_FILES = ("07_search_v2_and_app_tables.sql",)
+UPGRADE_FILES = ("07_search_v2_and_app_tables.sql", "08_more_source_organizations.sql")
 
 
 # ----------------------------------------------------------------------------

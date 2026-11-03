@@ -41,8 +41,8 @@ _REPLACEMENTS: list[tuple[str, str]] = [
     (r"\b(invisalign|invisaline|invisalin|invi)\b", "invisalign"),
     (r"\b(lieng|nieng)\b", "nieng"),
     (r"\bmac cai\b", "mac cai"),
-    (r"\b(all ?on ?4|allon4)\b", "all on 4"),
-    (r"\b(all ?on ?6|allon6)\b", "all on 6"),
+    (r"\ball[\s-]?on[\s-]?4\b", "all on 4"),
+    (r"\ball[\s-]?on[\s-]?6\b", "all on 6"),
     # Từ địa phương / đồng nghĩa
     (r"\brang cam\b", "rang ham"),
     # "loi" không dấu có thể là lợi/lời/lỗi → chỉ đổi khi đứng cạnh từ nha khoa
@@ -56,6 +56,7 @@ _COMPILED = [(re.compile(p), r) for p, r in _REPLACEMENTS]
 def normalize(text: str) -> str:
     """Không dấu + chữ thường + thay viết tắt/đồng nghĩa + gộp khoảng trắng."""
     t = lower_nfc(text).replace("lợi", "nướu")   # "lợi" (miền Bắc) = "nướu"; có dấu nên không nhầm lời/lỗi
+    t = t.replace("δ", " delta ").replace("∆", " delta ")       # ΔE00 (chênh lệch màu) → "delta e00"
     t = re.sub(r"\bbn (nam|nữ)\b", r"bệnh nhân \1", t)  # "BN nam/nữ" ≠ "bn năm" (bao nhiêu năm)
     t = strip_accents(t)
     t = re.sub(r"[^0-9a-z%.,/ \-]+", " ", t)

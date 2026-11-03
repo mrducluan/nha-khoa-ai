@@ -1,0 +1,86 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục qua tìm kiếm: American Academy of Pediatric Dentistry. Policy on Pacifiers (sửa đổi 2024) — trích từ tóm tắt: AAPD ủng hộ cha mẹ quyết định dùng ti giả theo nhu cầu của trẻ và lựa chọn của cha mẹ; khuyến khích nhân viên y tế tư vấn dựa trên bằng chứng về thực hành an toàn, lợi ích và nguy cơ; buộc trẻ cai ti giả quá sớm có liên quan đến mút ngón tay kéo dài. AAPD Policy on Oral Habits (bản 2003 tìm thấy; có thể đã có bản mới hơn): tiếp cận cá thể hoá; điều trị thói quen để phòng hoặc chặn sai khớp cắn khi phù hợp; các cách: tư vấn, điều chỉnh hành vi, liệu pháp cơ chức năng, khí cụ. QUAN TRỌNG: phiên soạn thảo bị chặn truy cập aapd.org nên AI CHƯA đọc được bản PDF — các MỐC TUỔI trong bản nháp (VD: đánh giá khi còn mút sau khoảng 3 tuổi) là mốc thực hành phổ biến, các nguồn thứ cấp nêu KHÔNG thống nhất; khuyến cáo không dùng gel benzocaine và vòng hổ phách cho trẻ mọc răng dựa trên cảnh báo của FDA Hoa Kỳ (2018) theo hiểu biết của AI. BÁC SĨ BẮT BUỘC đối chiếu bản AAPD hiện hành trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "AAPD",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "Policy on Pacifiers (revised 2024); Policy on Oral Habits",
+    "authors_or_committee": "American Academy of Pediatric Dentistry (Council on Clinical Affairs)",
+    "publication_year": 2024,
+    "journal_or_series": "AAPD Reference Manual — Policies",
+    "doi_or_pmid": "AAPD-PACIFIERS-2024",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "AAPD Policy"
+  },
+  "protocol_core": {
+    "primary_specialty": "ORTHODONTICS",
+    "secondary_specialties": ["GENERAL_OMFS_ENDODONTICS"],
+    "protocol_title": "Trẻ mọc răng sữa và thói quen mút ngón tay, mút ti giả, bú bình: triệu chứng mọc răng, an toàn và ảnh hưởng lên khớp cắn",
+    "clinical_topic_slug": "infant-teething-oral-habits-pacifier-thumb"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Trẻ nhũ nhi và trẻ nhỏ đang mọc răng sữa; trẻ có thói quen mút ngón tay, mút ti giả, ngậm bình bú kéo dài.",
+    "I_intervention": "Tư vấn cha mẹ: chăm sóc khi mọc răng an toàn; dùng ti giả an toàn và cai đúng thời điểm; can thiệp thói quen mút kéo dài bằng tư vấn, điều chỉnh hành vi, khí cụ khi cần.",
+    "C_comparison": "Không tư vấn; can thiệp quá sớm hoặc biện pháp không an toàn.",
+    "O_outcome_metrics": "AAPD (Policy on Pacifiers 2024): ủng hộ cha mẹ quyết định dùng ti giả theo nhu cầu trẻ; buộc cai ti giả quá sớm liên quan đến mút ngón tay kéo dài. AAPD (Policy on Oral Habits): tiếp cận cá thể hoá, điều trị thói quen khi phù hợp để phòng hoặc chặn sai khớp cắn và lệch xương. Thói quen mút kéo dài có thể gây cắn hở phía trước, cắn chéo phía sau, răng cửa trên hô; nhiều thay đổi ở hệ răng sữa có thể tự cải thiện nếu bỏ thói quen sớm — mốc tuổi cụ thể cần đối chiếu nguyên văn."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Mút là phản xạ tự nhiên giúp trẻ tự xoa dịu. Khi mút kéo dài với cường độ và tần suất cao, lực của ngón tay/núm ti đặt giữa hai hàm và áp lực của má làm: răng cửa trên nghiêng ra trước, răng cửa dưới nghiêng vào trong, cắn hở phía trước, cung hàm trên hẹp gây cắn chéo phía sau. Mức độ phụ thuộc thời gian (bao nhiêu năm), tần suất (giờ/ngày) và cường độ. Mọc răng sữa (thường bắt đầu khoảng 6 tháng tuổi) có thể gây chảy nước dãi, quấy khóc, ngứa lợi, thích cắn đồ vật; mọc răng KHÔNG giải thích được sốt cao, tiêu chảy nhiều hoặc bệnh toàn thân — các triệu chứng này cần khám nhi khoa.",
+    "indications": [
+      "Mọc răng: cho trẻ cắn vòng ngậm sạch (có thể làm mát trong ngăn mát, không đông đá cứng), xoa nhẹ lợi bằng ngón tay sạch; giảm đau toàn thân theo hướng dẫn bác sĩ nhi khi cần",
+      "Ti giả: dùng loại một khối, đúng cỡ, không buộc dây quanh cổ, không nhúng đường/mật ong, thay khi hỏng",
+      "Thói quen mút: phần lớn trẻ tự bỏ; khuyến khích bằng khen ngợi, tìm nguyên nhân (buồn chán, lo âu), nhắc nhở nhẹ nhàng; đánh giá nha khoa khi thói quen kéo dài qua tuổi mẫu giáo hoặc khi đã thấy thay đổi khớp cắn",
+      "Khí cụ chặn thói quen hoặc điều trị chỉnh nha: khi trẻ đủ lớn, hợp tác và thói quen gây sai khớp cắn — do nha sĩ nhi/chỉnh nha chỉ định",
+      "Không cho trẻ ngủ với bình sữa/nước ngọt (nguy cơ sâu răng sớm)"
+    ],
+    "contraindications_absolute": [
+      "Dùng gel/thuốc bôi chứa benzocaine hoặc lidocaine cho trẻ mọc răng (nguy cơ methemoglobin, co giật — theo cảnh báo FDA, đối chiếu)",
+      "Vòng cổ/vòng tay hổ phách, vòng mọc răng đeo người trẻ (nguy cơ hóc, siết cổ)",
+      "Buộc ti giả vào dây quanh cổ trẻ; nhúng ti giả vào mật ong (trẻ dưới 1 tuổi) hoặc đường"
+    ],
+    "contraindications_relative": [
+      "Biện pháp trừng phạt, bôi chất đắng/cay lên ngón tay mà không có tư vấn (gây căng thẳng, phản tác dụng)",
+      "Gắn khí cụ chặn thói quen khi trẻ còn quá nhỏ hoặc chưa hợp tác"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khám lần đầu sớm", "clinical_action": "Khám nha khoa khi mọc chiếc răng đầu tiên hoặc trước 1 tuổi; hướng dẫn vệ sinh, chế độ bú, fluoride, thói quen.", "technical_parameters": "Kem đánh răng fluoride lượng bằng hạt gạo cho trẻ dưới 3 tuổi"},
+      {"step": 2, "phase_name": "Tư vấn mọc răng", "clinical_action": "Giải thích triệu chứng mọc răng bình thường và dấu hiệu cần khám nhi khoa (sốt cao, bỏ bú, tiêu chảy kéo dài).", "technical_parameters": "Không dùng thuốc bôi gây tê, vòng hổ phách"},
+      {"step": 3, "phase_name": "Đánh giá thói quen mút", "clinical_action": "Hỏi loại thói quen, tần suất, thời gian; khám độ cắn chìa, cắn hở, cắn chéo.", "technical_parameters": "Ghi nhận và theo dõi theo các lần tái khám định kỳ"},
+      {"step": 4, "phase_name": "Can thiệp", "clinical_action": "Tư vấn – điều chỉnh hành vi trước; khí cụ hoặc chỉnh nha khi có chỉ định.", "technical_parameters": "Cá thể hoá theo tuổi, mức hợp tác và mức độ sai khớp cắn (AAPD)"}
+    ],
+    "complications_and_management": [
+      {"complication": "Cắn hở, hô răng cửa, cắn chéo do mút kéo dài", "prevention": "Tư vấn sớm, hỗ trợ trẻ bỏ thói quen", "management_protocol": "Theo dõi khả năng tự cải thiện sau bỏ thói quen; khí cụ/chỉnh nha khi cần"},
+      {"complication": "Sâu răng sớm ở trẻ do bú bình đêm, ti giả nhúng ngọt", "prevention": "Không ngủ với bình, không nhúng ngọt, chải răng fluoride", "management_protocol": "Điều trị sâu răng sớm (xem phác đồ sâu răng không xâm lấn)"},
+      {"complication": "Ngộ độc/hóc do sản phẩm mọc răng không an toàn", "prevention": "Tư vấn tránh benzocaine, vòng hổ phách", "management_protocol": "Cấp cứu nhi khoa"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Quy cho mọc răng mọi cơn sốt cao, tiêu chảy của trẻ — bỏ sót bệnh nhi",
+        "Can thiệp khí cụ quá sớm",
+        "Khuyên cai ti giả thật sớm bằng mọi giá — có thể chuyển sang mút ngón tay (AAPD)"
+      ],
+      "clinical_decision_tips": [
+        "Thời gian × tần suất × cường độ quyết định mức ảnh hưởng của thói quen",
+        "Ưu tiên tư vấn và hành vi trước khí cụ",
+        "Mọc răng: an toàn trước tiên — không benzocaine, không vòng hổ phách"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Trẻ thường mọc chiếc răng sữa đầu tiên khoảng 6 tháng tuổi; lúc mọc răng bé có thể chảy nhiều nước dãi, quấy, hay cắn đồ vật. Mút ngón tay hoặc ti giả là thói quen tự nhiên giúp trẻ dễ chịu.",
+      "why_needed": "Mọc răng không gây sốt cao hay tiêu chảy nhiều — nếu bé có các dấu hiệu này cần đi khám bác sĩ nhi. Mút tay hoặc ti giả kéo dài nhiều năm có thể làm răng cửa hô, hở khi cắn; đa số trẻ tự bỏ, và nếu bỏ sớm răng thường tự cải thiện.",
+      "what_to_expect": "Nha sĩ khám cho bé từ khi mọc răng đầu tiên hoặc trước 1 tuổi, hướng dẫn chải răng, dùng fluoride, và theo dõi thói quen mút. Nếu thói quen kéo dài và đã làm lệch răng, nha sĩ sẽ tư vấn cách giúp bé bỏ, đôi khi dùng khí cụ.",
+      "home_care_instructions": [
+        "Khi mọc răng: cho bé cắn vòng ngậm sạch làm mát, xoa nhẹ lợi bằng ngón tay sạch; không dùng gel bôi gây tê, không đeo vòng hổ phách",
+        "Ti giả: chọn loại đúng tuổi, một khối, không buộc dây quanh cổ, không nhúng đường/mật ong",
+        "Giúp bé bỏ mút tay bằng khen ngợi, phần thưởng nhỏ, dỗ bé khi buồn; không la mắng, phạt",
+        "Không cho bé ngủ với bình sữa; chải răng với lượng kem fluoride bằng hạt gạo cho bé dưới 3 tuổi",
+        "Đưa bé đi khám nếu sốt cao, bỏ bú, tiêu chảy kéo dài, hoặc thấy răng cửa hô, cắn hở"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ORTHODONTICS | NGUỒN: AAPD 2024 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không dùng gel gây tê benzocaine, vòng hổ phách cho trẻ mọc răng] Bé mọc răng có sốt không, bé mọc răng quấy khóc làm sao? Trẻ mút tay, mút ti giả có làm hô răng không, khi nào cần cai? Mọc răng không gây sốt cao; dùng vòng ngậm sạch; mút tay kéo dài có thể gây hô, cắn hở — nên tư vấn nha sĩ, khuyến khích nhẹ nhàng để bỏ."
+    }
+  ]
+}

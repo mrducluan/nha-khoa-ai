@@ -1,0 +1,81 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Sollecito TP, Abt E, Lockhart PB, Truelove E, Paumier TM, Tracy SL, Tampi M, Beltrán-Aguilar ED, Frantsve-Hawley J. The use of prophylactic antibiotics prior to dental procedures in patients with prosthetic joints: Evidence-based clinical practice guideline for dental practitioners — a report of the American Dental Association Council on Scientific Affairs. JADA 2015;146(1):11-16.e8, doi:10.1016/j.adaj.2014.11.012. Phần bệnh tim mạch diễn giải theo Tuyên bố khoa học AHA 2021 (Wilson WR và cs. Prevention of Viridans Group Streptococcal Infective Endocarditis. Circulation 2021;143:e963-e978) mà ADA đã thừa nhận — AHA không có trong danh mục tổ chức của schema nên chưa tách thành phác đồ riêng. BÁC SĨ cần đối chiếu nguyên văn liều và danh sách đối tượng trước khi duyệt; hướng dẫn quốc gia/Bộ Y tế Việt Nam (nếu có) được ưu tiên.",
+  "source_metadata": {
+    "organization_code": "ADA",
+    "authority_tier": "TIER_1_GOLD_STANDARD",
+    "document_title": "The use of prophylactic antibiotics prior to dental procedures in patients with prosthetic joints: Evidence-based clinical practice guideline for dental practitioners",
+    "authors_or_committee": "Sollecito TP, Abt E, Lockhart PB, Truelove E et al. (ADA Council on Scientific Affairs)",
+    "publication_year": 2015,
+    "journal_or_series": "Journal of the American Dental Association (JADA) 146(1):11-16.e8",
+    "doi_or_pmid": "10.1016/j.adaj.2014.11.012",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "ADA CPG"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["IMPLANTOLOGY", "PERIODONTOLOGY"],
+    "protocol_title": "Kháng sinh dự phòng trước thủ thuật nha khoa: bệnh nhân thay khớp nhân tạo (ADA 2015) và bệnh tim nguy cơ cao viêm nội tâm mạc (AHA 2021)",
+    "clinical_topic_slug": "antibiotic-prophylaxis-prosthetic-joint-endocarditis"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân có khớp nhân tạo (thay khớp háng, gối…) hoặc bệnh tim mạch, chuẩn bị làm thủ thuật nha khoa (nhổ răng, cạo vôi, điều trị nha chu, implant, điều trị tuỷ).",
+    "I_intervention": "Kháng sinh dự phòng uống một liều trước thủ thuật.",
+    "C_comparison": "Không dùng kháng sinh dự phòng.",
+    "O_outcome_metrics": "ADA 2015: hội đồng đánh giá với mức chắc chắn trung bình rằng KHÔNG có mối liên quan giữa thủ thuật nha khoa và nhiễm trùng khớp nhân tạo; do đó NHÌN CHUNG KHÔNG khuyến nghị kháng sinh dự phòng trước thủ thuật nha khoa để phòng nhiễm trùng khớp nhân tạo. Lý do bổ sung: nguy cơ kháng kháng sinh, phản ứng có hại (dị ứng, phản vệ, nhiễm C. difficile) và chi phí. Bác sĩ và bệnh nhân vẫn cân nhắc tình huống lâm sàng đặc biệt (VD: tiền sử biến chứng khớp, suy giảm miễn dịch) — có thể tham vấn bác sĩ chỉnh hình; nếu bác sĩ chỉnh hình yêu cầu kháng sinh thì bác sĩ đó nên kê đơn. AHA 2021: kháng sinh dự phòng chỉ dành cho nhóm bệnh tim NGUY CƠ CAO NHẤT, khi thủ thuật có thao tác trên nướu, vùng quanh chóp răng hoặc làm thủng niêm mạc miệng."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Thủ thuật nha khoa và cả sinh hoạt hằng ngày (chải răng, nhai) đều gây du khuẩn huyết thoáng qua với liên cầu nhóm viridans. Tổng lượng du khuẩn huyết tích luỹ từ sinh hoạt hằng ngày lớn hơn nhiều so với một lần làm thủ thuật, nên giữ VỆ SINH RĂNG MIỆNG TỐT quan trọng hơn kháng sinh dự phòng. Với khớp nhân tạo, vi khuẩn gây nhiễm trùng khớp thường là tụ cầu da, không phải vi khuẩn miệng, và không có bằng chứng thủ thuật nha khoa làm tăng nguy cơ. Với viêm nội tâm mạc nhiễm khuẩn, chỉ một số nhóm tim nguy cơ cao có hậu quả nặng nếu mắc bệnh — đây là nhóm duy nhất được cân nhắc dự phòng.",
+    "indications": [
+      "KHỚP NHÂN TẠO: nhìn chung KHÔNG cần kháng sinh dự phòng trước thủ thuật nha khoa (ADA 2015); cân nhắc cá thể hoá và trao đổi với bác sĩ chỉnh hình khi có tiền sử biến chứng nhiễm trùng khớp hoặc suy giảm miễn dịch nặng",
+      "TIM MẠCH — nhóm nguy cơ cao có thể cần dự phòng (AHA 2021): van tim nhân tạo hoặc vật liệu nhân tạo dùng sửa van (kể cả van qua ống thông); tiền sử viêm nội tâm mạc nhiễm khuẩn; ghép tim có bệnh van tim; một số bệnh tim bẩm sinh (tím chưa sửa chữa; đã sửa bằng vật liệu nhân tạo trong 6 tháng đầu; còn tồn lưu khuyết tật cạnh vật liệu nhân tạo)",
+      "Thủ thuật cần dự phòng ở nhóm tim nguy cơ cao: thao tác trên nướu, vùng quanh chóp, hoặc làm thủng niêm mạc (nhổ răng, cạo vôi, phẫu thuật nha chu, cấy implant, sinh thiết…)",
+      "Phác đồ người lớn (AHA 2021): amoxicillin 2 g uống một liều 30–60 phút trước thủ thuật; trẻ em 50 mg/kg; dị ứng penicillin: azithromycin hoặc clarithromycin 500 mg, hoặc doxycycline 100 mg — clindamycin KHÔNG còn được khuyến nghị (đối chiếu nguyên văn)"
+    ],
+    "contraindications_absolute": [
+      "Kê kháng sinh dự phòng thường quy cho mọi bệnh nhân có khớp nhân tạo, stent mạch vành, máy tạo nhịp, sa van hai lá không có van nhân tạo, tăng huyết áp — các nhóm này KHÔNG thuộc chỉ định",
+      "Dùng amoxicillin/penicillin cho bệnh nhân có tiền sử phản vệ, phù mạch, mày đay với penicillin"
+    ],
+    "contraindications_relative": [
+      "Bệnh nhân đang dùng kháng sinh dài ngày vì lý do khác: chọn nhóm kháng sinh khác cho dự phòng",
+      "Bệnh nhân suy giảm miễn dịch nặng có khớp nhân tạo: quyết định cá thể hoá cùng bác sĩ điều trị"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác tiền sử", "clinical_action": "Hỏi khớp nhân tạo (vị trí, thời gian, biến chứng), bệnh tim (van nhân tạo, tiền sử viêm nội tâm mạc, tim bẩm sinh, ghép tim), dị ứng thuốc, thuốc đang dùng (chống đông).", "technical_parameters": "Ghi rõ vào hồ sơ; khi không chắc chắn → liên hệ bác sĩ tim mạch/chỉnh hình"},
+      {"step": 2, "phase_name": "Phân loại nguy cơ", "clinical_action": "Khớp nhân tạo đơn thuần → không cần dự phòng; tim thuộc nhóm nguy cơ cao + thủ thuật có thao tác nướu/quanh chóp/thủng niêm mạc → dự phòng.", "technical_parameters": "Gây tê thường quy qua mô lành, chụp phim, đặt/chỉnh mắc cài, thay răng sữa rụng, chấn thương môi: không cần dự phòng"},
+      {"step": 3, "phase_name": "Kê dự phòng (nếu có chỉ định)", "clinical_action": "Một liều uống trước thủ thuật.", "technical_parameters": "Amoxicillin 2 g (trẻ 50 mg/kg) 30–60 phút trước; quên liều có thể dùng trong vòng 2 giờ sau thủ thuật (đối chiếu AHA)"},
+      {"step": 4, "phase_name": "Tối ưu sức khoẻ răng miệng", "clinical_action": "Ưu tiên kiểm soát nhiễm trùng răng miệng và hướng dẫn vệ sinh — biện pháp phòng ngừa quan trọng nhất.", "technical_parameters": "Khám định kỳ; điều trị dứt điểm ổ nhiễm trước phẫu thuật thay van/khớp theo yêu cầu bác sĩ chuyên khoa"}
+    ],
+    "complications_and_management": [
+      {"complication": "Phản ứng dị ứng/phản vệ do kháng sinh", "prevention": "Khai thác kỹ tiền sử dị ứng; không kê khi không có chỉ định", "management_protocol": "Xử trí phản vệ theo phác đồ cấp cứu; ghi nhận dị ứng vào hồ sơ"},
+      {"complication": "Kháng kháng sinh, nhiễm C. difficile", "prevention": "Tuân thủ chỉ định hẹp", "management_protocol": "Hướng dẫn bệnh nhân quay lại khi tiêu chảy kéo dài/có máu"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Kê kháng sinh dự phòng cho mọi bệnh nhân 'có bệnh tim' hoặc 'có khớp nhân tạo'",
+        "Tiếp tục dùng clindamycin cho bệnh nhân dị ứng penicillin — AHA 2021 không còn khuyến nghị do tác dụng phụ (C. difficile)",
+        "Quên rằng vệ sinh răng miệng hằng ngày quan trọng hơn liều kháng sinh trước thủ thuật"
+      ],
+      "clinical_decision_tips": [
+        "Câu hỏi 1: tim có thuộc nhóm NGUY CƠ CAO NHẤT không? Câu hỏi 2: thủ thuật có thao tác nướu/quanh chóp/thủng niêm mạc không? Cả hai CÓ → dự phòng",
+        "Khớp nhân tạo: mặc định KHÔNG; ngoại lệ bàn với bác sĩ chỉnh hình — người yêu cầu thì người đó kê đơn"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Kháng sinh dự phòng là uống một liều kháng sinh trước khi làm răng để phòng vi khuẩn từ miệng đi vào máu gây nhiễm trùng ở nơi khác (khớp nhân tạo, van tim).",
+      "why_needed": "Phần lớn người thay khớp háng, khớp gối KHÔNG cần uống kháng sinh trước khi làm răng — nghiên cứu cho thấy làm răng không làm tăng nguy cơ nhiễm trùng khớp, còn kháng sinh không cần thiết có thể gây dị ứng, tiêu chảy và vi khuẩn kháng thuốc. Chỉ một số bệnh tim đặc biệt (van tim nhân tạo, từng bị viêm nội tâm mạc, một số bệnh tim bẩm sinh, ghép tim) mới cần, và do bác sĩ quyết định.",
+      "what_to_expect": "Nha sĩ sẽ hỏi kỹ bệnh tim, khớp nhân tạo và dị ứng thuốc; khi cần sẽ trao đổi với bác sĩ tim mạch hoặc chỉnh hình. Nếu có chỉ định, bạn chỉ uống một liều duy nhất trước khi làm răng khoảng 30–60 phút.",
+      "home_care_instructions": [
+        "Luôn báo nha sĩ nếu bạn có van tim nhân tạo, từng bị viêm nội tâm mạc, bệnh tim bẩm sinh, ghép tim hoặc thay khớp",
+        "Không tự mua kháng sinh uống trước khi làm răng",
+        "Giữ vệ sinh răng miệng tốt và khám răng định kỳ — đây là cách phòng nhiễm trùng quan trọng nhất",
+        "Mang theo danh sách thuốc đang dùng (đặc biệt thuốc chống đông) khi đi khám răng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: ADA 2015 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không kê kháng sinh dự phòng thường quy cho khớp nhân tạo; không dùng penicillin khi phản vệ] Thay khớp háng, thay khớp gối, van tim nhân tạo có phải uống kháng sinh trước khi nhổ răng, cạo vôi không? Khớp nhân tạo nhìn chung không cần. Chỉ bệnh tim nguy cơ cao (van tim nhân tạo, từng viêm nội tâm mạc, tim bẩm sinh, ghép tim) mới cần, do bác sĩ quyết định."
+    }
+  ]
+}

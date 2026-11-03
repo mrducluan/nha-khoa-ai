@@ -1,0 +1,87 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Ruggiero SL, Dodson TB, Aghaloo T, Carlson ER, Ward BB, Kademani D. American Association of Oral and Maxillofacial Surgeons' Position Paper on Medication-Related Osteonecrosis of the Jaws — 2022 Update. J Oral Maxillofac Surg 2022;80(5):920-943, doi:10.1016/j.joms.2022.02.008 (PMID 35300956; PDF miễn phí tại aaoms.org). BÁC SĨ cần đối chiếu nguyên văn: tỷ lệ nguy cơ theo nhóm thuốc/chỉ định, định nghĩa và phân giai đoạn, khuyến nghị về 'ngưng thuốc tạm thời' (drug holiday) trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "AAOMS",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "American Association of Oral and Maxillofacial Surgeons' Position Paper on Medication-Related Osteonecrosis of the Jaws — 2022 Update",
+    "authors_or_committee": "Ruggiero SL, Dodson TB, Aghaloo T, Carlson ER, Ward BB, Kademani D (AAOMS)",
+    "publication_year": 2022,
+    "journal_or_series": "Journal of Oral and Maxillofacial Surgery 80(5):920-943",
+    "doi_or_pmid": "10.1016/j.joms.2022.02.008",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "AAOMS 2022"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["IMPLANTOLOGY"],
+    "protocol_title": "Hoại tử xương hàm do thuốc (MRONJ) ở người dùng thuốc chống hủy xương (bisphosphonate, denosumab) hoặc thuốc chống tạo mạch: phòng ngừa, phân giai đoạn và xử trí",
+    "clinical_topic_slug": "medication-related-osteonecrosis-jaw-mronj"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân đang hoặc đã dùng thuốc chống hủy xương (bisphosphonate uống/truyền, denosumab) hoặc thuốc chống tạo mạch — vì loãng xương hoặc vì ung thư (di căn xương, đa u tuỷ) — cần điều trị nha khoa, hoặc nghi ngờ có MRONJ.",
+    "I_intervention": "Khám và điều trị dứt điểm ổ nhiễm răng miệng TRƯỚC khi bắt đầu thuốc (đặc biệt liều ung thư); duy trì sức khoẻ răng miệng; thủ thuật xâm lấn có cân nhắc nguy cơ; xử trí MRONJ theo giai đoạn.",
+    "C_comparison": "Không chuẩn bị răng miệng; thủ thuật xâm lấn không đánh giá nguy cơ.",
+    "O_outcome_metrics": "Theo AAOMS 2022: nguy cơ MRONJ ở bệnh nhân loãng xương dùng thuốc liều loãng xương là THẤP; nguy cơ cao hơn rõ rệt ở bệnh nhân ung thư dùng liều cao đường truyền/tiêm (zoledronate, denosumab liều ung thư). Nhổ răng là yếu tố khởi phát thường gặp; bệnh nha chu và nhiễm trùng răng miệng cũng là yếu tố nguy cơ. Tác dụng của bisphosphonate lên tái tạo xương giảm phần lớn trong khoảng 6 tháng sau ngưng thuốc; denosumab có cơ chế và thời gian tác dụng khác. Đối chiếu nguyên văn các con số tỷ lệ cụ thể."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Bisphosphonate và denosumab ức chế tế bào hủy xương, làm giảm chu chuyển xương; xương hàm có tốc độ tái tạo cao và chịu nhiều sang chấn, nhiễm khuẩn (qua ổ răng, nha chu) nên dễ bị ảnh hưởng. Thuốc chống tạo mạch giảm cấp máu. Kết hợp với nhiễm khuẩn và sang chấn (nhổ răng, hàm giả cọ xát) dẫn đến xương hoại tử lộ ra trong miệng. Định nghĩa MRONJ (AAOMS): (1) đang hoặc đã dùng thuốc chống hủy xương đơn thuần hoặc kèm thuốc điều hoà miễn dịch/chống tạo mạch; (2) xương lộ hoặc có thể thăm dò tới xương qua lỗ rò trong/ngoài miệng, tồn tại > 8 tuần; (3) không có tiền sử xạ trị vùng hàm hoặc di căn rõ vào xương hàm. Phân giai đoạn: nguy cơ (dùng thuốc, chưa có tổn thương); giai đoạn 0 (không lộ xương, có triệu chứng/dấu hiệu không đặc hiệu); giai đoạn 1 (lộ xương không triệu chứng, không nhiễm trùng); giai đoạn 2 (lộ xương kèm đau, nhiễm trùng); giai đoạn 3 (lộ xương kèm nhiễm trùng và một trong: lan quá xương ổ răng, gãy xương bệnh lý, rò ra ngoài da, thông xoang/mũi, tiêu xương tới bờ dưới hàm dưới hoặc sàn xoang).",
+    "indications": [
+      "TRƯỚC khi bắt đầu thuốc liều ung thư: khám răng toàn diện, nhổ răng không giữ được, điều trị nhiễm trùng — lý tưởng hoàn tất trước khi dùng thuốc (nếu tình trạng ung thư cho phép)",
+      "Bệnh nhân loãng xương dùng thuốc liều loãng xương: nhìn chung có thể điều trị nha khoa thông thường (kể cả nhổ răng) sau khi tư vấn nguy cơ; ưu tiên kỹ thuật ít sang chấn",
+      "Bệnh nhân ung thư đang dùng liều cao: tránh thủ thuật xâm lấn xương khi có lựa chọn thay thế (VD: chữa tuỷ và cắt thân răng giữ chân thay vì nhổ), cân nhắc kỹ cấy implant",
+      "Quyết định ngưng thuốc tạm thời phải do bác sĩ kê đơn quyết định — nha sĩ không tự ý yêu cầu ngưng; bằng chứng về lợi ích của ngưng thuốc tạm thời còn hạn chế",
+      "Xử trí MRONJ theo giai đoạn: súc miệng sát khuẩn, kháng sinh khi nhiễm trùng, cắt lọc xương hoại tử; phẫu thuật cắt bỏ cho giai đoạn nặng/kháng trị"
+    ],
+    "contraindications_absolute": [
+      "Tự ý khuyên bệnh nhân ngưng thuốc chống loãng xương/chống ung thư mà không phối hợp bác sĩ kê đơn",
+      "Nhổ răng/phẫu thuật xương ở bệnh nhân dùng liều ung thư mà không đánh giá nguy cơ và không tư vấn"
+    ],
+    "contraindications_relative": [
+      "Cấy implant ở bệnh nhân ung thư đang dùng thuốc chống hủy xương liều cao",
+      "Hàm giả tháo lắp cọ xát gây loét ở bệnh nhân nguy cơ — cần chỉnh sửa thường xuyên",
+      "Bệnh nhân dùng thuốc kèm corticosteroid, đái tháo đường, hút thuốc (tăng nguy cơ)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Khai thác thuốc", "clinical_action": "Hỏi tên thuốc, đường dùng (uống, truyền, tiêm dưới da), liều, chỉ định (loãng xương hay ung thư), thời gian dùng, thời điểm liều gần nhất; thuốc kèm (corticosteroid, thuốc chống tạo mạch).", "technical_parameters": "Phân loại nguy cơ: liều loãng xương (thấp) và liều ung thư (cao hơn nhiều)"},
+      {"step": 2, "phase_name": "Chuẩn bị răng miệng", "clinical_action": "Trước khi bắt đầu thuốc: điều trị dứt điểm ổ nhiễm, nhổ răng không giữ được, chỉnh hàm giả; giáo dục vệ sinh.", "technical_parameters": "Nhổ răng trước khi bắt đầu thuốc liều ung thư, để lành thương niêm mạc nếu điều kiện cho phép (phối hợp bác sĩ ung bướu)"},
+      {"step": 3, "phase_name": "Thủ thuật ở bệnh nhân đang dùng thuốc", "clinical_action": "Tư vấn và ghi nhận đồng thuận; nhổ ít sang chấn, làm nhẵn bờ xương, đóng kín niêm mạc khi có thể; súc miệng chlorhexidine; theo dõi đến khi lành.", "technical_parameters": "Theo dõi lành thương; xương lộ kéo dài > 8 tuần → nghi MRONJ"},
+      {"step": 4, "phase_name": "Chẩn đoán & phân giai đoạn MRONJ", "clinical_action": "Khám xương lộ/lỗ rò, phim X-quang, CBCT khi cần; phân giai đoạn 0–3.", "technical_parameters": "Loại trừ di căn xương hàm, viêm xương tủy do nguyên nhân khác; sinh thiết khi nghi di căn"},
+      {"step": 5, "phase_name": "Điều trị theo giai đoạn", "clinical_action": "Giai đoạn 0–1: súc miệng sát khuẩn, theo dõi, giáo dục; giai đoạn 2: thêm kháng sinh, giảm đau, cắt lọc; giai đoạn 3 hoặc kháng trị: phẫu thuật cắt bỏ xương hoại tử (chuyên khoa phẫu thuật hàm mặt).", "technical_parameters": "Phối hợp bác sĩ kê đơn thuốc chống hủy xương"}
+    ],
+    "complications_and_management": [
+      {"complication": "MRONJ sau nhổ răng", "prevention": "Chuẩn bị răng miệng trước khi dùng thuốc, kỹ thuật ít sang chấn, tránh thủ thuật xâm lấn không cần thiết", "management_protocol": "Điều trị theo giai đoạn, chuyển chuyên khoa phẫu thuật hàm mặt"},
+      {"complication": "Nhiễm trùng thứ phát, rò ra da", "prevention": "Vệ sinh, súc miệng sát khuẩn, theo dõi sát", "management_protocol": "Kháng sinh, dẫn lưu, cắt bỏ xương hoại tử"},
+      {"complication": "Gãy xương hàm bệnh lý", "prevention": "Phát hiện và điều trị sớm", "management_protocol": "Phẫu thuật cắt đoạn và tái tạo"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Không hỏi thuốc chống loãng xương dạng tiêm/truyền (bệnh nhân hay quên kể vì chỉ tiêm 6–12 tháng/lần)",
+        "Đánh đồng nguy cơ của liều loãng xương với liều ung thư",
+        "Yêu cầu bệnh nhân tự ngưng thuốc trước nhổ răng"
+      ],
+      "clinical_decision_tips": [
+        "Câu hỏi then chốt: thuốc gì, vì bệnh gì (loãng xương hay ung thư), đường dùng, bao lâu",
+        "Xương lộ > 8 tuần ở người dùng thuốc + không xạ trị = MRONJ cho đến khi chứng minh khác",
+        "Phòng ngừa hiệu quả nhất: chuẩn bị răng miệng trước khi dùng thuốc"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Một số thuốc điều trị loãng xương hoặc ung thư di căn xương (như bisphosphonate dạng uống/truyền, denosumab dạng tiêm) có thể hiếm khi gây hoại tử xương hàm: một vùng xương hàm lộ ra trong miệng, không lành, sau khi nhổ răng hoặc do răng nhiễm trùng.",
+      "why_needed": "Với người dùng thuốc vì loãng xương, nguy cơ rất thấp và vẫn có thể chữa răng, nhổ răng sau khi nha sĩ đánh giá. Với người dùng thuốc liều cao vì ung thư, nguy cơ cao hơn nhiều, nên cần khám răng và xử lý răng hỏng TRƯỚC khi bắt đầu thuốc. Không tự ý ngưng thuốc — việc này do bác sĩ điều trị quyết định.",
+      "what_to_expect": "Nha sĩ sẽ hỏi kỹ tên thuốc, cách dùng và lý do dùng; có thể phối hợp với bác sĩ điều trị. Nếu cần nhổ răng, nha sĩ làm nhẹ nhàng, khâu kín và hẹn theo dõi đến khi lành hẳn.",
+      "home_care_instructions": [
+        "Luôn báo nha sĩ nếu bạn đang hoặc đã từng dùng thuốc chống loãng xương (uống, truyền tĩnh mạch hoặc tiêm) hay thuốc điều trị ung thư",
+        "Khám răng trước khi bắt đầu các thuốc này, nhất là khi điều trị ung thư",
+        "Giữ vệ sinh răng miệng tốt, khám định kỳ; báo nha sĩ ngay khi hàm giả gây loét",
+        "Đi khám sớm nếu thấy xương lộ trong miệng, vết nhổ răng lâu lành, đau, sưng, chảy mủ hoặc tê môi cằm",
+        "Không tự ngưng thuốc; hỏi bác sĩ điều trị"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: AAOMS 2022 (J Oral Maxillofac Surg) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không tự ý ngưng thuốc khi chưa có ý kiến bác sĩ kê đơn] Đang uống/truyền thuốc loãng xương bisphosphonate, tiêm Prolia denosumab có nhổ răng, cấy implant được không? Nguy cơ hoại tử xương hàm thấp với liều loãng xương, cao hơn với liều ung thư; cần báo nha sĩ, khám răng trước khi dùng thuốc, không tự ngưng thuốc."
+    }
+  ]
+}

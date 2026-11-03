@@ -1,0 +1,83 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Yaacob M, Worthington HV, Deacon SA và cs. Powered versus manual toothbrushing for oral health. Cochrane Database Syst Rev 2014;(6):CD002281, doi:10.1002/14651858.CD002281.pub3 — 56 nghiên cứu, 5068 người: bàn chải điện giảm mảng bám 11% (1–3 tháng) và 21% (> 3 tháng), giảm viêm nướu 6% và 11%; bằng chứng chất lượng trung bình; ý nghĩa lâm sàng chưa rõ; tác dụng phụ ít, tại chỗ, thoáng qua. Nguồn bổ trợ (CHƯA xác minh được nội dung trong phiên soạn): Worthington HV và cs. Home use of interdental cleaning devices, in addition to toothbrushing, for preventing and controlling periodontal diseases and dental caries. Cochrane 2019, CD012018.pub2 — kết luận về chỉ nha khoa, bàn chải kẽ, máy tăm nước viết theo hiểu biết của AI (bằng chứng chắc chắn thấp). Danh sách tác giả cần đối chiếu. BÁC SĨ đối chiếu trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Powered versus manual toothbrushing for oral health",
+    "authors_or_committee": "Yaacob M, Worthington HV, Deacon SA và cs. (Cochrane Oral Health) — đối chiếu danh sách tác giả",
+    "publication_year": 2014,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2014, Issue 6, CD002281",
+    "doi_or_pmid": "10.1002/14651858.CD002281.pub3",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "GRADE: trung bình"
+  },
+  "protocol_core": {
+    "primary_specialty": "PERIODONTOLOGY",
+    "secondary_specialties": [],
+    "protocol_title": "Vệ sinh răng miệng hằng ngày: bàn chải điện hay bàn chải thường, chỉ nha khoa, bàn chải kẽ, máy tăm nước và kem đánh răng",
+    "clinical_topic_slug": "oral-hygiene-toothbrush-interdental-cleaning"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn và trẻ em muốn duy trì sức khoẻ răng miệng, phòng mảng bám, viêm nướu và sâu răng.",
+    "I_intervention": "Chải răng 2 lần/ngày với kem fluoride (bàn chải điện hoặc thường), làm sạch kẽ răng hằng ngày (chỉ nha khoa, bàn chải kẽ, máy tăm nước), thay bàn chải định kỳ.",
+    "C_comparison": "Bàn chải thường; chỉ chải răng không làm sạch kẽ.",
+    "O_outcome_metrics": "Cochrane 2014 (56 nghiên cứu, 5068 người): bàn chải điện giảm mảng bám 11% sau 1–3 tháng và 21% sau > 3 tháng; giảm viêm nướu 6% và 11% tương ứng; bằng chứng chất lượng trung bình; ý nghĩa lâm sàng của mức giảm chưa rõ; tác dụng phụ hiếm, tại chỗ và thoáng qua. Làm sạch kẽ răng (Cochrane 2019 — đối chiếu): thêm chỉ nha khoa hoặc bàn chải kẽ vào chải răng có thể giảm viêm nướu so với chỉ chải răng (bằng chứng chắc chắn thấp)."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Mảng bám (màng sinh học vi khuẩn) tích tụ trên răng trong vài giờ đến vài ngày; nếu không loại bỏ sẽ gây viêm nướu (hồi phục được) và ở người nhạy cảm tiến triển thành viêm nha chu; vi khuẩn chuyển hoá đường tạo axit gây sâu răng. Bàn chải chỉ làm sạch tốt mặt ngoài, mặt trong và mặt nhai; kẽ răng cần dụng cụ chuyên biệt. Fluoride trong kem đánh răng giúp tái khoáng men, giảm sâu răng; tác dụng tốt hơn khi nhổ bọt mà không súc lại nhiều nước. Hiệu quả phụ thuộc kỹ thuật và sự đều đặn hơn là loại dụng cụ.",
+    "indications": [
+      "Chải răng 2 lần/ngày, khoảng 2 phút, với kem có fluoride; nhổ bọt, không súc lại nhiều nước",
+      "Bàn chải điện: lựa chọn tốt, đặc biệt cho người khó thao tác (người cao tuổi, khuyết tật, đang niềng răng); bàn chải thường vẫn hiệu quả khi kỹ thuật tốt",
+      "Làm sạch kẽ răng mỗi ngày: bàn chải kẽ cho kẽ hở rộng (người viêm nha chu, tụt nướu); chỉ nha khoa cho kẽ khít; máy tăm nước hữu ích cho người niềng răng, cầu răng, implant hoặc khó dùng chỉ",
+      "Thay bàn chải/đầu bàn chải khi lông xơ, thường khoảng mỗi 3 tháng (thực hành phổ biến)",
+      "Trẻ em: lượng kem fluoride bằng hạt gạo (dưới 3 tuổi), bằng hạt đậu (3–6 tuổi), người lớn giám sát"
+    ],
+    "contraindications_absolute": [
+      "Bàn chải lông cứng, chải ngang mạnh — gây tụt nướu, mòn cổ răng",
+      "Dùng tăm tre/kim loại chọc mạnh vào kẽ răng gây tổn thương nướu"
+    ],
+    "contraindications_relative": [
+      "Chải răng ngay sau khi ăn uống đồ chua (nên chờ một lúc) ở người mòn răng",
+      "Nước súc miệng thay cho chải răng và làm sạch kẽ — chỉ là hỗ trợ"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá & hướng dẫn cá nhân hoá", "clinical_action": "Nhuộm mảng bám, chỉ cho bệnh nhân vùng còn sót; chọn dụng cụ theo kích thước kẽ răng, khả năng thao tác, phục hình/khí cụ.", "technical_parameters": "Thử cỡ bàn chải kẽ vừa khít kẽ, không ép"},
+      {"step": 2, "phase_name": "Kỹ thuật chải", "clinical_action": "Đặt lông bàn chải nghiêng khoảng 45° về phía viền nướu, chuyển động rung nhẹ/xoay nhỏ, chải đủ các mặt.", "technical_parameters": "Khoảng 2 phút, 2 lần/ngày; bàn chải lông mềm"},
+      {"step": 3, "phase_name": "Làm sạch kẽ", "clinical_action": "Hướng dẫn chỉ nha khoa (ôm chữ C quanh răng) hoặc bàn chải kẽ (đưa vào – kéo ra nhẹ nhàng) hoặc tăm nước.", "technical_parameters": "Mỗi ngày một lần"},
+      {"step": 4, "phase_name": "Củng cố", "clinical_action": "Kiểm tra lại ở lần tái khám, điều chỉnh dụng cụ và kỹ thuật.", "technical_parameters": "Tái khám định kỳ theo nguy cơ"}
+    ],
+    "complications_and_management": [
+      {"complication": "Tụt nướu, mòn cổ răng do chải sai", "prevention": "Bàn chải mềm, lực nhẹ, không chải ngang mạnh", "management_protocol": "Sửa kỹ thuật; điều trị ê buốt/phục hồi nếu cần"},
+      {"complication": "Chảy máu nướu khi mới làm sạch kẽ", "prevention": "Kỹ thuật nhẹ nhàng", "management_protocol": "Thường giảm sau 1–2 tuần khi nướu hết viêm; kéo dài → khám nha chu"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Chỉ khuyên 'chải răng kỹ' mà không hướng dẫn cụ thể, không làm sạch kẽ",
+        "Chọn bàn chải kẽ quá to hoặc quá nhỏ",
+        "Khuyên súc nước nhiều sau chải (rửa trôi fluoride)"
+      ],
+      "clinical_decision_tips": [
+        "Kẽ rộng → bàn chải kẽ; kẽ khít → chỉ; niềng/cầu/implant → cân nhắc tăm nước",
+        "Sự đều đặn và kỹ thuật quan trọng hơn loại bàn chải",
+        "Chảy máu khi làm sạch kẽ là dấu hiệu viêm cần làm sạch đều, không phải dừng lại"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Vệ sinh răng miệng hằng ngày gồm chải răng với kem có fluoride và làm sạch kẽ răng bằng chỉ nha khoa, bàn chải kẽ hoặc máy tăm nước.",
+      "why_needed": "Mảng bám là nguyên nhân chính của sâu răng và viêm nướu. Bàn chải điện giúp làm sạch tốt hơn một chút so với bàn chải thường, nhưng chải đúng cách và đều đặn mới là điều quan trọng nhất. Bàn chải không làm sạch được kẽ răng, nên cần thêm chỉ nha khoa hoặc bàn chải kẽ.",
+      "what_to_expect": "Nha sĩ có thể nhuộm màu mảng bám để chỉ cho bạn chỗ chải chưa sạch, hướng dẫn cách chải và chọn đúng cỡ bàn chải kẽ hoặc loại chỉ phù hợp.",
+      "home_care_instructions": [
+        "Chải răng 2 lần/ngày, mỗi lần khoảng 2 phút, bằng bàn chải lông mềm và kem có fluoride; nhổ bọt, không súc lại quá nhiều nước",
+        "Làm sạch kẽ răng mỗi ngày: chỉ nha khoa cho kẽ khít, bàn chải kẽ cho kẽ rộng; máy tăm nước tiện cho người đang niềng răng, có cầu răng hoặc implant",
+        "Thay bàn chải khoảng mỗi 3 tháng hoặc khi lông bị xơ",
+        "Chảy máu nướu nhẹ khi mới dùng chỉ thường giảm sau 1–2 tuần; nếu kéo dài, hãy đi khám nha chu"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: PERIODONTOLOGY | NGUỒN: Cochrane 2014 (CD002281) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không dùng bàn chải lông cứng chải ngang mạnh] Bàn chải điện hay bàn chải thường tốt hơn, chỉ nha khoa hay tăm nước, bao lâu thay bàn chải, cách đánh răng đúng? Bàn chải điện giảm mảng bám nhiều hơn một chút; quan trọng là chải đúng 2 lần/ngày với kem fluoride và làm sạch kẽ răng mỗi ngày; thay bàn chải khoảng 3 tháng."
+    }
+  ]
+}

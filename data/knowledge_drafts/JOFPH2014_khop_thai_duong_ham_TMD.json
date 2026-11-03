@@ -1,0 +1,86 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Schiffman E, Ohrbach R, Truelove E và cs. Diagnostic Criteria for Temporomandibular Disorders (DC/TMD) for Clinical and Research Applications: recommendations of the International RDC/TMD Consortium Network and Orofacial Pain Special Interest Group. J Oral Facial Pain Headache 2014;28(1):6-27, doi:10.11607/jop.1151 (tóm tắt miễn phí: PMC4884471) — tiêu chí chẩn đoán đau cơ (myalgia), đau cơ lan truyền và đau khớp đạt độ nhạy ≥ 0.70 và độ đặc hiệu ≥ 0.95. Phần điều trị bảo tồn là tổng hợp thực hành và bằng chứng chung — BÁC SĨ đối chiếu với hướng dẫn chuyên biệt (VD: AAOP) trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "PUBMED_NCBI",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Diagnostic Criteria for Temporomandibular Disorders (DC/TMD) for Clinical and Research Applications",
+    "authors_or_committee": "Schiffman E, Ohrbach R, Truelove E và cs. (International RDC/TMD Consortium Network & Orofacial Pain SIG)",
+    "publication_year": 2014,
+    "journal_or_series": "Journal of Oral & Facial Pain and Headache 28(1):6-27",
+    "doi_or_pmid": "10.11607/jop.1151",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "Tiêu chí QT"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["ESTHETIC_PROSTHODONTICS"],
+    "protocol_title": "Rối loạn khớp thái dương hàm (TMD): đau cơ nhai, đau khớp, tiếng kêu khớp, há miệng hạn chế — chẩn đoán theo DC/TMD và điều trị bảo tồn",
+    "clinical_topic_slug": "temporomandibular-disorders-dc-tmd-conservative"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người có đau vùng hàm – thái dương – trước tai, đau khi nhai/há miệng, tiếng kêu khớp (lục cục, lạo xạo), há miệng hạn chế hoặc kẹt hàm.",
+    "I_intervention": "Chẩn đoán theo tiêu chí DC/TMD (Trục I: chẩn đoán thể chất; Trục II: đánh giá tâm lý – mức độ ảnh hưởng) và điều trị bảo tồn có thể hồi phục: giáo dục – tự chăm sóc, bài tập hàm, vật lý trị liệu, thuốc giảm đau ngắn hạn, máng nhai, quản lý căng thẳng.",
+    "C_comparison": "Can thiệp không hồi phục (mài chỉnh khớp cắn, chỉnh nha, phục hình toàn hàm với mục đích điều trị TMD) hoặc phẫu thuật sớm.",
+    "O_outcome_metrics": "DC/TMD 2014: tiêu chí chẩn đoán đau cơ (myalgia), đau cơ lan truyền (myofascial pain with referral) và đau khớp (arthralgia) đạt mức chấp nhận: độ nhạy ≥ 0.70, độ đặc hiệu ≥ 0.95. Đa số TMD đau cải thiện với điều trị bảo tồn; nhiều trường hợp tự giới hạn. Tiếng kêu khớp đơn thuần không đau, không hạn chế há miệng thường không cần điều trị."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "TMD là nhóm rối loạn của cơ nhai, khớp thái dương hàm và cấu trúc liên quan. Nhóm thường gặp nhất là đau cơ nhai (myalgia). Nhóm khớp gồm: đau khớp, lệch đĩa khớp có hồi vị (tiếng 'lục cục' khi há/ngậm), lệch đĩa không hồi vị (có thể kẹt hàm, há hạn chế), bệnh thoái hoá khớp (tiếng lạo xạo). Cơ chế đa yếu tố: chấn thương, thói quen cận chức năng (siết/nghiến răng, nhai một bên, nhai kẹo cao su), căng thẳng – lo âu, rối loạn giấc ngủ, nhạy cảm hoá đau trung ương; khớp cắn không phải nguyên nhân chính. TMD đau mạn tính thường đi kèm các tình trạng đau khác (đau đầu, đau cơ xơ hoá). Cần phân biệt với đau răng, viêm xoang, đau thần kinh sinh ba, viêm động mạch thái dương, viêm tai, u vùng hàm mặt.",
+    "indications": [
+      "Giáo dục bệnh nhân và tự chăm sóc: ăn mềm, tránh há quá rộng, nhai kẹo cao su, cắn móng tay; tư thế nghỉ hàm 'môi khép – răng hở'",
+      "Bài tập hàm, chườm ấm/lạnh, xoa bóp cơ; vật lý trị liệu",
+      "Thuốc giảm đau – kháng viêm ngắn hạn theo chỉ định bác sĩ",
+      "Máng nhai cứng phủ toàn hàm (máng ổn định) khi có siết/nghiến răng hoặc đau cơ",
+      "Đánh giá và hỗ trợ tâm lý, giấc ngủ khi đau mạn tính (Trục II DC/TMD)"
+    ],
+    "contraindications_absolute": [
+      "Mài chỉnh khớp cắn, chỉnh nha hoặc phục hình toàn hàm với mục đích 'chữa' TMD — can thiệp không hồi phục, không được bằng chứng ủng hộ",
+      "Bỏ qua dấu hiệu nguy hiểm: sưng vùng khớp kèm sốt, tê mặt, sụt cân, đau tăng dần không đáp ứng, há miệng hạn chế tiến triển — cần chẩn đoán hình ảnh/chuyển chuyên khoa"
+    ],
+    "contraindications_relative": [
+      "Phẫu thuật khớp khi chưa thử đủ điều trị bảo tồn",
+      "Máng chỉ phủ một phần răng đeo lâu dài (nguy cơ thay đổi khớp cắn)",
+      "Dùng opioid cho đau TMD mạn tính"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Sàng lọc & khai thác", "clinical_action": "Hỏi vị trí, tính chất, thời gian đau, yếu tố làm tăng (nhai, há miệng), tiếng kêu, kẹt hàm, thói quen, giấc ngủ, căng thẳng, đau đầu.", "technical_parameters": "Có thể dùng bảng câu hỏi sàng lọc TMD và bảng Trục II của DC/TMD"},
+      {"step": 2, "phase_name": "Khám theo DC/TMD", "clinical_action": "Đo biên độ há miệng (có/không đau), sờ cơ cắn – cơ thái dương và khớp với lực chuẩn, ghi nhận đau 'quen thuộc', nghe/sờ tiếng kêu khớp, vận động sang bên – ra trước.", "technical_parameters": "Há miệng tối đa bình thường ở người lớn thường khoảng ≥ 40 mm (tham khảo); xác định chẩn đoán: đau cơ, đau cơ lan truyền, đau khớp, lệch đĩa, thoái hoá khớp"},
+      {"step": 3, "phase_name": "Chẩn đoán hình ảnh khi cần", "clinical_action": "Phim toàn cảnh/CBCT khi nghi thoái hoá, chấn thương; MRI khi cần đánh giá đĩa khớp.", "technical_parameters": "Không chụp thường quy cho đau cơ đơn thuần"},
+      {"step": 4, "phase_name": "Điều trị bảo tồn", "clinical_action": "Giáo dục, tự chăm sóc, bài tập, thuốc ngắn hạn, máng nhai, quản lý căng thẳng.", "technical_parameters": "Đánh giá lại sau khoảng 4–6 tuần"},
+      {"step": 5, "phase_name": "Chuyển chuyên khoa", "clinical_action": "Đau mạn tính kháng trị, kẹt hàm không há được, nghi bệnh lý khác → chuyển chuyên khoa đau vùng mặt / phẫu thuật hàm mặt; phối hợp tâm lý, giấc ngủ.", "technical_parameters": "Can thiệp xâm lấn (rửa khớp, phẫu thuật) chỉ sau điều trị bảo tồn thất bại"}
+    ],
+    "complications_and_management": [
+      {"complication": "Đau chuyển sang mạn tính", "prevention": "Điều trị sớm, đánh giá yếu tố tâm lý – giấc ngủ", "management_protocol": "Tiếp cận đa chuyên khoa"},
+      {"complication": "Kẹt hàm cấp (lệch đĩa không hồi vị)", "prevention": "Theo dõi khi có tiếng kêu kèm kẹt thoáng qua", "management_protocol": "Khám chuyên khoa sớm; thủ thuật nắn, bài tập, có thể rửa khớp"},
+      {"complication": "Thay đổi khớp cắn do máng không đúng loại", "prevention": "Dùng máng cứng phủ toàn hàm, theo dõi", "management_protocol": "Ngưng máng, điều chỉnh"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Mài chỉnh khớp cắn để điều trị TMD",
+        "Điều trị tiếng kêu khớp không đau, không ảnh hưởng chức năng",
+        "Bỏ sót đau răng, viêm xoang hoặc đau thần kinh giả dạng TMD"
+      ],
+      "clinical_decision_tips": [
+        "Dùng tiêu chí DC/TMD: đau 'quen thuộc' khi sờ hoặc há miệng là then chốt",
+        "Điều trị bảo tồn, có thể hồi phục trước",
+        "Luôn đánh giá Trục II (tâm lý, mức độ ảnh hưởng) ở đau mạn tính"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Rối loạn khớp thái dương hàm là tình trạng đau hoặc trục trặc ở cơ nhai và khớp hàm (ngay trước tai): đau khi nhai, há miệng; hàm kêu lục cục; mỏi hàm; đôi khi há miệng không hết hoặc bị kẹt hàm.",
+      "why_needed": "Phần lớn trường hợp liên quan đến căng cơ, thói quen siết hoặc nghiến răng, căng thẳng, ngủ kém — và cải thiện với cách điều trị đơn giản, không cần mài răng hay phẫu thuật. Tiếng kêu khớp mà không đau, không kẹt hàm thường không cần điều trị.",
+      "what_to_expect": "Nha sĩ hỏi kỹ triệu chứng, đo độ há miệng, ấn kiểm tra cơ và khớp; chỉ chụp phim khi cần. Điều trị thường gồm hướng dẫn tự chăm sóc, bài tập hàm, chườm ấm, thuốc giảm đau ngắn ngày và có thể máng nhai đeo ban đêm.",
+      "home_care_instructions": [
+        "Ăn đồ mềm, cắt nhỏ thức ăn; tránh nhai kẹo cao su, cắn móng tay, há miệng quá to (khi ngáp nên đỡ cằm)",
+        "Chườm ấm 10–15 phút vùng cơ hàm, xoa bóp nhẹ; làm bài tập hàm theo hướng dẫn",
+        "Thả lỏng hàm: môi khép, răng hở, lưỡi chạm nhẹ vòm miệng; quản lý căng thẳng, ngủ đủ giấc",
+        "Đi khám sớm nếu bị kẹt hàm không há được, sưng vùng trước tai kèm sốt, tê mặt hoặc đau ngày càng tăng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: DC/TMD 2014 (J Oral Facial Pain Headache) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không mài chỉnh khớp cắn, chỉnh nha hay phục hình để chữa TMD] Hàm kêu lục cục khi há miệng, đau khớp thái dương hàm, mỏi hàm, há miệng không hết, kẹt hàm phải làm sao? Đa số cải thiện với điều trị bảo tồn: ăn mềm, chườm ấm, bài tập hàm, máng nhai, giảm căng thẳng; tiếng kêu không đau thường không cần điều trị."
+    }
+  ]
+}

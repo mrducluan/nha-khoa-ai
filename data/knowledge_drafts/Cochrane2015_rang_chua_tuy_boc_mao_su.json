@@ -1,0 +1,87 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Sequeira-Byron P, Fedorowicz Z, Carter B, Nasser M, Alrowaili EF. Single crowns versus conventional fillings for the restoration of root-filled teeth. Cochrane Database Syst Rev 2015;(9):CD009109, doi:10.1002/14651858.CD009109.pub3 — kết luận: chỉ 1 RCT (117 răng cối nhỏ, chốt sợi carbon), nguy cơ sai lệch cao, bằng chứng chất lượng RẤT THẤP, chưa đủ để khẳng định mão tốt hơn trám. Nguồn bổ trợ (nêu trong nội dung, đã xác minh thư mục): Aquilino SA, Caplan DJ. J Prosthet Dent 2002;87(3):256-263, doi:10.1067/mpr.2002.122014 (PMID 11941351) — nghiên cứu hồi cứu: răng chữa tuỷ không bọc mão bị mất với tỷ lệ cao gấp khoảng 6 lần (liên quan quan sát, không phải nhân quả). BÁC SĨ cần đối chiếu nguyên văn trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "COCHRANE",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Single crowns versus conventional fillings for the restoration of root-filled teeth",
+    "authors_or_committee": "Sequeira-Byron P, Fedorowicz Z, Carter B, Nasser M, Alrowaili EF (Cochrane Oral Health)",
+    "publication_year": 2015,
+    "journal_or_series": "Cochrane Database of Systematic Reviews 2015, Issue 9, CD009109",
+    "doi_or_pmid": "10.1002/14651858.CD009109.pub3",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "GRADE: rất thấp"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["ESTHETIC_PROSTHODONTICS"],
+    "protocol_title": "Phục hồi răng sau điều trị tuỷ (chữa tuỷ, lấy tuỷ): khi nào cần bọc mão sứ, khi nào chỉ cần trám — onlay, chốt và che phủ múi",
+    "clinical_topic_slug": "root-filled-tooth-crown-vs-filling"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Răng đã điều trị tuỷ (root-filled / endodontically treated teeth), đặc biệt răng sau (răng cối nhỏ, răng cối lớn) bị mất mô răng do sâu, mở tuỷ và miếng trám cũ.",
+    "I_intervention": "Phục hồi gián tiếp có che phủ múi: mão răng đơn lẻ (crown), onlay/overlay, endocrown; kèm chốt (post) khi không đủ mô răng giữ cùi.",
+    "C_comparison": "Phục hồi trực tiếp bằng trám thông thường (composite, amalgam) không che phủ múi.",
+    "O_outcome_metrics": "Cochrane 2015: chỉ 1 RCT (117 răng cối nhỏ có chốt sợi carbon, mão sứ-kim loại so với trám composite, theo dõi 3 năm, 104 răng đánh giá) — không khác biệt về thất bại không thảm hoạ; bằng chứng chất lượng RẤT THẤP, không đủ để khẳng định hay bác bỏ; khuyến cáo quyết định dựa trên kinh nghiệm lâm sàng, tình trạng răng cụ thể và mong muốn bệnh nhân. Aquilino & Caplan 2002 (hồi cứu, J Prosthet Dent): sau khi hiệu chỉnh loại răng và sâu răng, răng chữa tuỷ không bọc mão bị mất với tỷ lệ cao gấp khoảng 6 lần răng có mão — liên quan quan sát mạnh, đặc biệt ở răng sau. Yếu tố tiên lượng quan trọng nhất là LƯỢNG MÔ RĂNG CÒN LẠI (số thành còn, hiệu ứng đai/ferrule), vị trí răng và lực nhai."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Răng sau chữa tuỷ yếu đi chủ yếu do MẤT MÔ RĂNG (mất gờ bên, trần buồng tuỷ, sâu răng lan rộng), không phải do 'răng chết bị giòn'. Mất một hoặc hai gờ bên (xoang MO/MOD) làm độ cứng múi giảm mạnh; lực nhai tác động lên múi răng sau làm nứt và gãy múi, có thể nứt dọc chân răng — biến chứng thường khiến phải nhổ răng. Che phủ múi (mão hoặc onlay) phân bố lực và 'ôm' múi răng, giảm nguy cơ gãy. Hiệu ứng đai (ferrule): phần mô răng thật cao khoảng 1.5–2 mm quanh cổ răng phía trên đường hoàn tất được mão ôm lấy, giúp chống gãy cùi và chân răng. Ngoài ra, phục hồi kín khít ngăn rò rỉ vi khuẩn từ thân răng xuống ống tuỷ — yếu tố ảnh hưởng thành công lâu dài của điều trị tuỷ. Răng trước còn nguyên vẹn (chỉ có lỗ mở tuỷ) chịu lực chủ yếu theo trục nên thường KHÔNG cần mão.",
+    "indications": [
+      "Răng cối nhỏ/răng cối lớn đã chữa tuỷ, mất một hoặc hai gờ bên hoặc mất nhiều mô: nên che phủ múi (mão, onlay, endocrown)",
+      "Răng sau đã chữa tuỷ là răng trụ cầu răng hoặc móc hàm tháo lắp, hoặc bệnh nhân nghiến răng/lực nhai mạnh: ưu tiên che phủ múi",
+      "Răng trước chữa tuỷ còn gần nguyên vẹn, chỉ có lỗ mở tuỷ: thường chỉ cần trám composite kín; cân nhắc tẩy trắng trong nếu đổi màu",
+      "Răng trước mất nhiều mô, đổi màu nặng hoặc có miếng trám lớn: cân nhắc mão (± chốt sợi)",
+      "Răng sau mất mô ít, còn hai gờ bên, khớp cắn thuận lợi: có thể trám composite trực tiếp và theo dõi — quyết định cá thể hoá vì bằng chứng RCT còn hạn chế"
+    ],
+    "contraindications_absolute": [
+      "Bọc mão khi điều trị tuỷ chưa đạt chuẩn hoặc còn tổn thương quanh chóp tiến triển chưa đánh giá — cần đánh giá/điều trị lại tuỷ trước",
+      "Răng nứt dọc chân răng hoặc không thể phục hồi (không đủ mô răng, không tạo được ferrule, tỷ lệ thân/chân bất lợi): cân nhắc nhổ và thay thế"
+    ],
+    "contraindications_relative": [
+      "Đặt chốt khi còn đủ mô răng giữ cùi — chốt chỉ để giữ cùi, KHÔNG làm răng chắc hơn; sửa soạn ống chốt làm yếu chân răng",
+      "Chốt kim loại đúc ở chân răng mảnh: tăng nguy cơ nứt chân răng",
+      "Trì hoãn phục hồi cuối cùng quá lâu sau chữa tuỷ (miếng trám tạm rò rỉ, răng dễ vỡ)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá kết quả điều trị tuỷ", "clinical_action": "Khám triệu chứng, phim X-quang đánh giá chất lượng trám bít ống tuỷ và vùng quanh chóp trước khi phục hồi cuối cùng.", "technical_parameters": "Răng hết triệu chứng; trám bít kín, đủ chiều dài; nghi nứt chân răng → thăm dò túi khu trú, CBCT nếu cần"},
+      {"step": 2, "phase_name": "Đánh giá mô răng còn lại", "clinical_action": "Đếm số thành răng còn lại, độ dày thành, chiều cao mô răng trên nướu; đánh giá khả năng tạo ferrule.", "technical_parameters": "Ferrule mục tiêu khoảng 1.5–2 mm chiều cao mô răng thật quanh chu vi; thành răng còn lại đủ dày"},
+      {"step": 3, "phase_name": "Chọn loại phục hồi", "clinical_action": "Răng trước ít mất mô → trám; răng sau mất gờ bên → che phủ múi (onlay/overlay/endocrown hoặc mão); thiếu mô giữ cùi → chốt sợi + cùi composite rồi làm mão.", "technical_parameters": "Endocrown/onlay dán là lựa chọn bảo tồn ở răng cối lớn còn đủ men để dán; tôn trọng khoảng sinh học khi đặt bờ"},
+      {"step": 4, "phase_name": "Phục hồi kín sớm", "clinical_action": "Thực hiện phục hồi cuối cùng (hoặc tối thiểu cùi + phục hồi tạm kín) sớm sau chữa tuỷ.", "technical_parameters": "Hạn chế thời gian dùng miếng trám tạm; dặn tránh nhai mạnh bên răng chưa che phủ múi"},
+      {"step": 5, "phase_name": "Theo dõi", "clinical_action": "Tái khám, chụp phim định kỳ đánh giá lành thương quanh chóp và phục hồi.", "technical_parameters": "Thường kiểm tra lại phim khoảng 1 năm sau điều trị tuỷ, sau đó định kỳ"}
+    ],
+    "complications_and_management": [
+      {"complication": "Gãy múi răng hoặc vỡ răng chữa tuỷ chưa che phủ múi", "prevention": "Che phủ múi sớm ở răng sau mất gờ bên; tránh nhai vật cứng khi còn trám tạm", "management_protocol": "Gãy trên nướu: làm cùi + mão; gãy sâu dưới xương: cân nhắc kéo chân răng, làm dài thân răng hoặc nhổ"},
+      {"complication": "Nứt dọc chân răng", "prevention": "Tránh sửa soạn ống chốt quá mức, chốt kim loại ở chân răng mảnh; đảm bảo ferrule", "management_protocol": "Thường tiên lượng kém → nhổ răng và thay thế (implant, cầu răng)"},
+      {"complication": "Rò rỉ vi khuẩn từ thân răng, viêm quanh chóp tái phát", "prevention": "Phục hồi kín khít sớm", "management_protocol": "Đánh giá điều trị tuỷ lại hoặc phẫu thuật cắt chóp"},
+      {"complication": "Bong chốt/cùi", "prevention": "Chiều dài chốt và quy trình dán đúng; đủ ferrule", "management_protocol": "Gắn lại hoặc làm lại chốt–cùi–mão"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Tin rằng 'răng chết thì giòn' nên mọi răng chữa tuỷ đều phải bọc — yếu tố quyết định là lượng mô răng mất và vị trí răng",
+        "Đặt chốt cho mọi răng chữa tuỷ — chốt không gia cố chân răng, chỉ dùng khi thiếu mô giữ cùi",
+        "Để răng sau chữa tuỷ với miếng trám tạm nhiều tháng → vỡ răng, rò rỉ"
+      ],
+      "clinical_decision_tips": [
+        "Răng sau + mất gờ bên → che phủ múi; răng trước nguyên vẹn → trám kín",
+        "Không có ferrule thì mão/chốt tốt đến mấy cũng dễ thất bại — cân nhắc làm dài thân răng hoặc kéo chân răng",
+        "Nói trung thực với bệnh nhân: bằng chứng RCT còn hạn chế (Cochrane 2015), nhưng dữ liệu quan sát ủng hộ bọc mão răng sau"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Sau khi chữa tuỷ (lấy tuỷ), chiếc răng thường đã mất khá nhiều phần do sâu và do phải mở lỗ để làm sạch ống tuỷ. Bọc mão sứ là chụp một 'chiếc mũ' bằng sứ ôm trọn răng để bảo vệ.",
+      "why_needed": "Răng hàm (răng nhai phía sau) đã chữa tuỷ và mất nhiều mô dễ bị nứt, vỡ khi ăn nhai; nếu vỡ sâu có thể phải nhổ. Bọc mão hoặc làm miếng onlay giúp giảm nguy cơ này. Không phải răng nào cũng bắt buộc bọc: răng cửa còn gần nguyên vẹn thường chỉ cần trám. Nha sĩ sẽ quyết định dựa trên lượng răng còn lại.",
+      "what_to_expect": "Nha sĩ kiểm tra phim xem tuỷ đã điều trị tốt chưa, đánh giá phần răng còn lại, có thể đặt chốt và đắp cùi nếu răng mất nhiều, sau đó mài răng và lấy dấu để làm mão. Nên làm phục hồi cuối cùng sớm sau khi chữa tuỷ xong.",
+      "home_care_instructions": [
+        "Trong thời gian còn miếng trám tạm: tránh nhai đồ cứng, dai bằng răng vừa chữa tuỷ",
+        "Quay lại làm phục hồi cuối cùng (trám hoặc bọc mão) đúng hẹn, không để quá lâu",
+        "Đi khám ngay nếu răng đau khi cắn, sưng nướu hoặc miếng trám tạm bị bong",
+        "Sau khi bọc mão: chải răng và dùng chỉ nha khoa ở viền mão mỗi ngày, tái khám định kỳ"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: Cochrane 2015 (CD009109) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không bọc mão khi điều trị tuỷ chưa đạt; răng nứt dọc chân không phục hồi được] Răng đã chữa tuỷ, lấy tuỷ, răng chết tuỷ có cần bọc răng sứ không? Răng hàm sau chữa tuỷ mất nhiều mô dễ nứt vỡ nên thường cần bọc mão hoặc onlay; răng cửa còn nguyên vẹn thường chỉ cần trám. Nên làm phục hồi sớm sau khi chữa tuỷ."
+    }
+  ]
+}

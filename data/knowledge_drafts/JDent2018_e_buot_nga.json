@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Effect of desensitizing toothpastes on dentine hypersensitivity: A systematic review and meta-analysis. J Dent 2018;75:12-21, doi:10.1016/j.jdent.2018.05.012 (PMID 29787782) — 53 RCT, 4796 bệnh nhân; kem chứa kali, stannous fluoride, kali + stannous fluoride, calcium sodium phosphosilicate, arginine, nano-hydroxyapatite giảm ê buốt so với đối chứng; strontium và ACP không khác đối chứng; chất lượng bằng chứng rất thấp đến trung bình. Danh sách tác giả chưa đối chiếu được (cùng nhóm với Hu ML và cs., network meta-analysis 2019) — BÁC SĨ đối chiếu trên PubMed. Phần chẩn đoán phân biệt theo đồng thuận Canadian Advisory Board on Dentin Hypersensitivity (J Can Dent Assoc 2003) — diễn giải, cần đối chiếu.",
+  "source_metadata": {
+    "organization_code": "ELSEVIER",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Effect of desensitizing toothpastes on dentine hypersensitivity: A systematic review and meta-analysis",
+    "authors_or_committee": "Nhóm tác giả J Dent 2018 (PMID 29787782) — đối chiếu tên tác giả trên PubMed",
+    "publication_year": 2018,
+    "journal_or_series": "Journal of Dentistry 75:12-21",
+    "doi_or_pmid": "10.1016/j.jdent.2018.05.012",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "SR/MA"
+  },
+  "protocol_core": {
+    "primary_specialty": "PERIODONTOLOGY",
+    "secondary_specialties": ["GENERAL_OMFS_ENDODONTICS"],
+    "protocol_title": "Ê buốt ngà răng (nhạy cảm ngà, mòn cổ răng): chẩn đoán phân biệt và điều trị từng bước từ kem chống ê đến phục hồi",
+    "clinical_topic_slug": "dentin-hypersensitivity-desensitizing-management"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người lớn có cơn ê buốt ngắn, nhói khi gặp lạnh, hơi thở, chải răng hoặc đồ ngọt/chua ở vùng ngà lộ (tụt nướu, mòn cổ răng), không do sâu răng hay bệnh lý khác.",
+    "I_intervention": "Kem đánh răng chống ê buốt (kali nitrat, stannous fluoride, arginine, calcium sodium phosphosilicate, nano-hydroxyapatite) dùng hằng ngày; vecni fluoride/chất bít ống ngà tại phòng khám; phục hồi hoặc ghép nướu khi có chỉ định; loại bỏ nguyên nhân.",
+    "C_comparison": "Kem đánh răng fluoride thông thường/giả dược.",
+    "O_outcome_metrics": "J Dent 2018 (53 RCT, 4796 bệnh nhân): kem chứa kali, stannous fluoride, kali + stannous fluoride, calcium sodium phosphosilicate, arginine và nano-hydroxyapatite làm giảm ê buốt có ý nghĩa so với đối chứng; kem chứa strontium và calcium phosphate vô định hình (ACP) không khác đối chứng. Chất lượng bằng chứng rất thấp đến trung bình. Hiệu quả thường cần dùng đều vài tuần; nếu ê buốt không giảm sau khoảng 2–4 tuần cần khám lại để loại trừ nguyên nhân khác."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Thuyết thuỷ động học (Brännström): khi ngà lộ và ống ngà mở, kích thích (lạnh, hơi, áp lực, thẩm thấu) làm dịch trong ống ngà dịch chuyển nhanh, kích hoạt đầu tận thần kinh ở ranh giới tuỷ–ngà gây cơn đau nhói ngắn. Ngà lộ do: tụt nướu (chải răng quá mạnh, bàn chải lông cứng, viêm nha chu, sau điều trị nha chu), mòn răng (mòn hoá học do axit từ thức uống, trào ngược; mòn cơ học do chải răng; tổn thương cổ răng hình chữ V có thể liên quan lực nhai/nghiến). Điều trị nhắm vào (1) bít ống ngà (stannous fluoride, arginine–canxi carbonat, calcium sodium phosphosilicate, nano-hydroxyapatite, vecni fluoride, chất dán) hoặc (2) giảm kích thích thần kinh (kali nitrat).",
+    "indications": [
+      "Chẩn đoán ê buốt ngà chỉ sau khi LOẠI TRỪ: sâu răng, miếng trám hở/vỡ, nứt răng, viêm tuỷ, ê sau tẩy trắng hoặc sau trám, viêm nha chu cấp",
+      "Bước 1: kem chống ê buốt dùng 2 lần/ngày, có thể bôi trực tiếp lên vùng ê; hướng dẫn chải nhẹ, bàn chải lông mềm, không chải ngay sau ăn uống đồ chua",
+      "Bước 2 (tại phòng khám): vecni fluoride, chất bít ống ngà, chất dán (bonding agent)",
+      "Bước 3: trám cổ răng bằng composite/glass ionomer khi có khuyết hổng mòn rõ; ghép nướu che chân răng khi tụt nướu có chỉ định thẩm mỹ – chức năng",
+      "Kiểm soát nguyên nhân: giảm thức uống có axit, điều trị trào ngược, chỉnh kỹ thuật chải, xử trí nghiến răng"
+    ],
+    "contraindications_absolute": [
+      "Điều trị ê buốt ngà khi chưa loại trừ sâu răng, nứt răng hoặc viêm tuỷ (bỏ sót bệnh lý cần điều trị khác)",
+      "Dùng sản phẩm có thành phần bệnh nhân đã biết dị ứng"
+    ],
+    "contraindications_relative": [
+      "Đau kéo dài sau khi hết kích thích, đau tự phát hoặc đau về đêm — gợi ý viêm tuỷ, không phải ê buốt ngà",
+      "Mài chỉnh khớp cắn để điều trị tổn thương cổ răng hình chữ V — bằng chứng chưa đủ"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Chẩn đoán & loại trừ", "clinical_action": "Hỏi kích thích gây ê, thời gian cơn ê; khám sâu răng, miếng trám, nứt răng (cắn que gỗ), thử tuỷ, phim khi cần; xác định vùng ngà lộ bằng thổi hơi/thăm dò nhẹ.", "technical_parameters": "Ê buốt ngà: cơn nhói ngắn, hết ngay khi bỏ kích thích; ghi nhận mức độ (thang điểm 0–10 hoặc thang Schiff khi thổi hơi) để theo dõi"},
+      {"step": 2, "phase_name": "Tìm & kiểm soát nguyên nhân", "clinical_action": "Đánh giá chế độ ăn uống có axit, trào ngược, kỹ thuật chải, nghiến răng, tụt nướu do nha chu.", "technical_parameters": "Chải nhẹ, bàn chải lông mềm; chờ khoảng 30–60 phút sau đồ chua mới chải (thực hành phổ biến)"},
+      {"step": 3, "phase_name": "Điều trị tại nhà", "clinical_action": "Kem đánh răng chống ê buốt dùng đều đặn; có thể bôi lên vùng ê và để vài phút.", "technical_parameters": "Đánh giá lại sau khoảng 2–4 tuần"},
+      {"step": 4, "phase_name": "Điều trị tại phòng khám", "clinical_action": "Vecni fluoride, chất bít ống ngà hoặc chất dán lên vùng ngà lộ.", "technical_parameters": "Có thể lặp lại theo đáp ứng"},
+      {"step": 5, "phase_name": "Phục hồi / phẫu thuật", "clinical_action": "Trám cổ răng khi khuyết hổng rõ; ghép nướu khi có chỉ định.", "technical_parameters": "Lựa chọn theo mức độ mất mô, thẩm mỹ, nguy cơ sâu răng"}
+    ],
+    "complications_and_management": [
+      {"complication": "Bỏ sót sâu răng, nứt răng, viêm tuỷ", "prevention": "Chẩn đoán loại trừ kỹ trước khi kết luận ê buốt ngà", "management_protocol": "Điều trị bệnh lý thực sự (trám, chữa tuỷ, mão)"},
+      {"complication": "Ê buốt tái phát", "prevention": "Kiểm soát nguyên nhân, dùng kem chống ê duy trì", "management_protocol": "Lặp lại điều trị tại phòng khám; cân nhắc phục hồi"},
+      {"complication": "Bong miếng trám cổ răng", "prevention": "Kỹ thuật dán đúng, chọn vật liệu phù hợp", "management_protocol": "Trám lại"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Kết luận 'ê buốt ngà' mà không thử tuỷ và kiểm tra nứt răng",
+        "Chỉ kê kem chống ê mà không xử trí nguyên nhân (axit, chải răng sai)",
+        "Đánh giá hiệu quả quá sớm — kem chống ê cần thời gian"
+      ],
+      "clinical_decision_tips": [
+        "Đau ngắn, hết ngay khi bỏ kích thích → nghĩ ê buốt ngà; đau kéo dài, tự phát → nghĩ viêm tuỷ",
+        "Điều trị từ ít xâm lấn đến nhiều xâm lấn",
+        "Ê buốt sau tẩy trắng là cơ chế khác, thường thoáng qua"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Ê buốt răng là cảm giác buốt nhói, ngắn khi uống nước lạnh, hít hơi lạnh, chải răng hoặc ăn đồ chua, ngọt. Thường do phần ngà răng bên dưới bị lộ ra vì tụt nướu hoặc mòn cổ răng.",
+      "why_needed": "Ê buốt có thể chỉ do lộ ngà, nhưng cũng có thể do sâu răng, nứt răng hoặc viêm tuỷ. Vì vậy cần nha sĩ khám để tìm đúng nguyên nhân. Nếu đúng là ê buốt ngà, kem đánh răng chống ê buốt dùng đều đặn thường giúp giảm rõ.",
+      "what_to_expect": "Nha sĩ kiểm tra từng răng, có thể thổi hơi để tìm răng ê, chụp phim nếu cần. Thường bắt đầu bằng kem chống ê buốt và hướng dẫn chải răng đúng; nếu không đỡ, nha sĩ có thể bôi thuốc chống ê tại phòng khám, trám cổ răng hoặc ghép nướu.",
+      "home_care_instructions": [
+        "Dùng kem đánh răng chống ê buốt 2 lần/ngày, liên tục vài tuần; có thể bôi một ít lên chỗ ê",
+        "Dùng bàn chải lông mềm, chải nhẹ nhàng, không chà ngang mạnh",
+        "Hạn chế nước ngọt có ga, nước chanh, đồ chua; không chải răng ngay sau khi ăn uống đồ chua",
+        "Đi khám nếu ê buốt kéo dài, đau tự nhiên, đau về đêm hoặc đau khi cắn"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: PERIODONTOLOGY | NGUỒN: J Dent 2018 (tổng quan hệ thống) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không điều trị ê buốt ngà khi chưa loại trừ sâu răng, nứt răng, viêm tuỷ] Răng ê buốt khi uống nước lạnh, ê răng khi chải, mòn cổ răng, tụt nướu ê buốt phải làm sao? Thường do lộ ngà; dùng kem đánh răng chống ê buốt đều đặn, chải nhẹ bằng bàn chải lông mềm, hạn chế đồ chua; khám nha sĩ để loại trừ sâu, nứt răng."
+    }
+  ]
+}

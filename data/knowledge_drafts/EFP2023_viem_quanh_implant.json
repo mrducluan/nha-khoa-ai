@@ -1,0 +1,87 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn đã xác minh thư mục: Herrera D, Berglundh T, Schwarz F, Chapple I, Jepsen S, Sculean A, Kebschull M, Papapanou PN, Tonetti MS, Sanz M (EFP Workshop Participants and Methodological Consultant). Prevention and treatment of peri-implant diseases — The EFP S3 level clinical practice guideline. J Clin Periodontol 2023;50(Suppl 26):4-76, doi:10.1111/jcpe.13823 (PMID 37271498). Định nghĩa ca bệnh theo Phân loại 2017 (Berglundh T và cs. J Clin Periodontol 2018;45 Suppl 20). BÁC SĨ cần đối chiếu NGUYÊN VĂN từng khuyến nghị (mức đồng thuận, mức bằng chứng) và tiêu chí kết thúc điều trị trước khi duyệt — bản nháp diễn giải theo hiểu biết, chưa đọc toàn văn trong phiên soạn.",
+  "source_metadata": {
+    "organization_code": "EFP",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "Prevention and treatment of peri-implant diseases — The EFP S3 level clinical practice guideline",
+    "authors_or_committee": "Herrera D, Berglundh T, Schwarz F, Chapple I, Jepsen S, Sculean A, Kebschull M, Papapanou PN, Tonetti MS, Sanz M (EFP Perio Workshop 2022)",
+    "publication_year": 2023,
+    "journal_or_series": "Journal of Clinical Periodontology 50(Suppl 26):4-76",
+    "doi_or_pmid": "10.1111/jcpe.13823",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "S3 (GRADE)"
+  },
+  "protocol_core": {
+    "primary_specialty": "IMPLANTOLOGY",
+    "secondary_specialties": ["PERIODONTOLOGY"],
+    "protocol_title": "Phòng ngừa và điều trị bệnh quanh implant: viêm niêm mạc quanh implant và viêm quanh implant (peri-implantitis) theo từng bước (EFP S3 2023)",
+    "clinical_topic_slug": "peri-implant-mucositis-peri-implantitis-treatment"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân có implant nha khoa: dự phòng (từ khi lập kế hoạch), viêm niêm mạc quanh implant (peri-implant mucositis) và viêm quanh implant (peri-implantitis).",
+    "I_intervention": "Phác đồ theo bước: (1) dự phòng và kiểm soát yếu tố nguy cơ; (2) điều trị không phẫu thuật (làm sạch cơ học chuyên nghiệp + hướng dẫn vệ sinh); (3) điều trị phẫu thuật (vạt tiếp cận, phẫu thuật cắt bỏ, phẫu thuật tái tạo) khi chưa đạt mục tiêu; (4) chăm sóc nâng đỡ quanh implant định kỳ.",
+    "C_comparison": "Không điều trị, hoặc các biện pháp hỗ trợ (kháng sinh toàn thân/tại chỗ, laser, chất sát khuẩn, liệu pháp quang động) so với điều trị cơ học đơn thuần.",
+    "O_outcome_metrics": "Mục tiêu điều trị (endpoint) dùng trong hướng dẫn: độ sâu thăm dò quanh implant ≤ 5 mm, không chảy máu khi thăm dò ở quá 1 điểm, không mưng mủ, và không tiêu xương tiến triển thêm. Viêm niêm mạc quanh implant có thể hồi phục khi kiểm soát mảng bám; viêm quanh implant là bệnh tiến triển, thường không tự hết và đáp ứng hạn chế với điều trị không phẫu thuật đơn thuần — nhiều ca cần phẫu thuật. Các biện pháp hỗ trợ (kháng sinh toàn thân, chất sát khuẩn, laser…) nhìn chung chưa được chứng minh mang lại lợi ích rõ so với điều trị cơ học đơn thuần — đối chiếu khuyến nghị cụ thể trong hướng dẫn."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Bệnh quanh implant do màng sinh học vi khuẩn (mảng bám) tích tụ quanh implant. Viêm niêm mạc quanh implant: viêm khu trú ở mô mềm, chảy máu và/hoặc mưng mủ khi thăm dò nhẹ, KHÔNG tiêu xương vượt quá mức tái cấu trúc ban đầu — có thể hồi phục. Viêm quanh implant: viêm mô mềm kèm TIÊU XƯƠNG TIẾN TRIỂN; tổn thương viêm lan rộng hơn và tiến triển nhanh hơn so với viêm nha chu do mô quanh implant không có dây chằng nha chu, ít mạch máu và sợi collagen song song bề mặt implant. Định nghĩa ca bệnh (Phân loại 2017): khi có dữ liệu ban đầu — chảy máu/mưng mủ khi thăm dò, độ sâu thăm dò tăng và tiêu xương tiến triển so với lần đo trước; khi không có dữ liệu ban đầu — chảy máu/mưng mủ khi thăm dò, độ sâu thăm dò ≥ 6 mm và mức xương ≥ 3 mm phía chóp so với phần trong xương ở phía cổ của implant. Yếu tố nguy cơ: tiền sử viêm nha chu, vệ sinh kém và không tái khám định kỳ, hút thuốc, đái tháo đường kiểm soát kém, xi măng dư dưới niêm mạc, phục hình khó vệ sinh (đường thoát phục hình quá lồi), implant đặt sai vị trí, thiếu niêm mạc sừng hoá (liên quan khó chịu khi chải và mảng bám).",
+    "indications": [
+      "Dự phòng: điều trị viêm nha chu ổn định TRƯỚC khi cấy implant; kiểm soát hút thuốc và đường huyết; thiết kế phục hình dễ vệ sinh; tránh xi măng dư (ưu tiên phục hình bắt vít khi phù hợp)",
+      "Viêm niêm mạc quanh implant: làm sạch cơ học chuyên nghiệp + hướng dẫn vệ sinh tại nhà cá nhân hoá; chỉnh phục hình nếu khó vệ sinh",
+      "Viêm quanh implant: điều trị không phẫu thuật trước, đánh giá lại; nếu chưa đạt mục tiêu → phẫu thuật",
+      "Phẫu thuật tái tạo cân nhắc khi khuyết hổng trong xương (dạng hố) có thành xương nâng đỡ; phẫu thuật cắt bỏ (± tạo hình bề mặt implant/implantoplasty) cho khuyết hổng ngang/ngoài xương ở vùng không đòi hỏi thẩm mỹ",
+      "Chăm sóc nâng đỡ quanh implant định kỳ suốt đời, khoảng cách cá thể hoá theo nguy cơ (thường 3–6 tháng/lần với bệnh nhân nguy cơ cao)"
+    ],
+    "contraindications_absolute": [
+      "Chỉ dùng kháng sinh (toàn thân) như điều trị duy nhất cho viêm quanh implant mà không loại bỏ màng sinh học",
+      "Phẫu thuật tái tạo khi viêm cấp chưa kiểm soát và bệnh nhân không đạt được vệ sinh răng miệng tối thiểu"
+    ],
+    "contraindications_relative": [
+      "Phẫu thuật cắt bỏ/implantoplasty ở vùng thẩm mỹ (gây tụt niêm mạc, lộ ren implant)",
+      "Bệnh nhân hút thuốc nặng, đái tháo đường kiểm soát kém: kết quả kém hơn — kiểm soát yếu tố nguy cơ trước",
+      "Tiêu xương vượt quá khoảng 50–60% chiều dài implant hoặc implant lung lay: cân nhắc tháo implant (implant lung lay là chỉ định tháo)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Chẩn đoán", "clinical_action": "Thăm dò quanh implant (lực nhẹ) ghi độ sâu, chảy máu, mưng mủ; so sánh với dữ liệu ban đầu (phim và độ sâu thăm dò sau khi gắn phục hình); phim X-quang đánh giá mức xương; kiểm tra phục hình, xi măng dư, khả năng vệ sinh.", "technical_parameters": "Lưu phim + độ sâu thăm dò ban đầu khi gắn phục hình làm mốc; không có mốc: PD ≥ 6 mm + xương ≥ 3 mm + BOP/mủ gợi ý viêm quanh implant"},
+      {"step": 2, "phase_name": "Bước 1 — Kiểm soát yếu tố nguy cơ & vệ sinh", "clinical_action": "Hướng dẫn vệ sinh cá nhân hoá (bàn chải kẽ, chỉ chuyên dụng), cai thuốc lá, phối hợp kiểm soát đường huyết; chỉnh/tháo phục hình khó vệ sinh, lấy xi măng dư.", "technical_parameters": "Phục hình cho phép đưa dụng cụ vệ sinh vào được"},
+      {"step": 3, "phase_name": "Bước 2 — Điều trị không phẫu thuật", "clinical_action": "Làm sạch cơ học bề mặt implant/trụ phục hình dưới niêm mạc bằng dụng cụ phù hợp (đầu siêu âm chuyên dụng, cây nạo, đánh bóng khí bột).", "technical_parameters": "Đánh giá lại sau khoảng 6–12 tuần (đối chiếu hướng dẫn); mục tiêu: PD ≤ 5 mm, không BOP > 1 điểm, không mủ"},
+      {"step": 4, "phase_name": "Bước 3 — Điều trị phẫu thuật", "clinical_action": "Nếu chưa đạt mục tiêu: lật vạt tiếp cận làm sạch và khử nhiễm bề mặt; cắt bỏ (± implantoplasty) hoặc tái tạo (ghép xương ± màng) tuỳ hình thái khuyết hổng.", "technical_parameters": "Tái tạo ưu tiên khuyết hổng trong xương có thành nâng đỡ; khuyết hổng ngang → phẫu thuật cắt bỏ; cân nhắc ghép mô mềm khi thiếu niêm mạc sừng hoá gây khó vệ sinh"},
+      {"step": 5, "phase_name": "Bước 4 — Chăm sóc nâng đỡ", "clinical_action": "Tái khám định kỳ: thăm dò, làm sạch chuyên nghiệp, củng cố vệ sinh, phim X-quang khi có dấu hiệu.", "technical_parameters": "Khoảng cách cá thể hoá theo nguy cơ; bệnh nhân từng viêm nha chu/viêm quanh implant cần tái khám dày hơn"}
+    ],
+    "complications_and_management": [
+      {"complication": "Tụt niêm mạc, lộ ren implant sau điều trị (đặc biệt sau phẫu thuật cắt bỏ)", "prevention": "Chọn kỹ thuật theo vùng thẩm mỹ; tư vấn trước", "management_protocol": "Ghép mô mềm nếu phù hợp; chỉnh phục hình"},
+      {"complication": "Tái phát viêm quanh implant", "prevention": "Chăm sóc nâng đỡ định kỳ, kiểm soát hút thuốc/đường huyết", "management_protocol": "Lặp lại phác đồ theo bước; cân nhắc tháo implant nếu tiến triển"},
+      {"complication": "Implant lung lay / mất tích hợp xương", "prevention": "Phát hiện và điều trị sớm", "management_protocol": "Tháo implant, tái tạo vùng xương, lập kế hoạch thay thế"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Không ghi mốc phim và độ sâu thăm dò khi gắn phục hình → về sau không chẩn đoán được tiêu xương tiến triển",
+        "Sợ thăm dò quanh implant làm hỏng implant — thăm dò lực nhẹ là bắt buộc trong tái khám",
+        "Kê kháng sinh thay cho làm sạch cơ học",
+        "Bỏ sót xi măng dư dưới niêm mạc — nguyên nhân hay gặp của viêm quanh implant"
+      ],
+      "clinical_decision_tips": [
+        "Chảy máu khi thăm dò + KHÔNG tiêu xương = viêm niêm mạc (hồi phục được); + tiêu xương tiến triển = viêm quanh implant",
+        "Kiểm tra phục hình đầu tiên: có vệ sinh được không, có xi măng dư không",
+        "Bệnh nhân viêm nha chu cũ là nhóm nguy cơ cao — chăm sóc nâng đỡ dày hơn"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Giống như răng thật bị viêm nướu, viêm nha chu, xung quanh trụ implant cũng có thể bị viêm do mảng bám vi khuẩn. Giai đoạn nhẹ là viêm nướu quanh implant (chảy máu, sưng đỏ) — chữa khỏi được. Giai đoạn nặng là viêm quanh implant: tiêu xương giữ implant, có thể làm lung lay và mất implant.",
+      "why_needed": "Implant không bị sâu nhưng vẫn có thể hỏng vì viêm. Phát hiện sớm và vệ sinh đúng cách giúp giữ implant lâu dài. Người từng bị viêm nha chu, hút thuốc, tiểu đường có nguy cơ cao hơn.",
+      "what_to_expect": "Nha sĩ đo túi nướu quanh implant, chụp phim để so sánh với lúc mới làm, làm sạch kỹ quanh implant và hướng dẫn cách vệ sinh. Nếu đã tiêu xương nhiều, có thể cần tiểu phẫu làm sạch và ghép xương. Sau đó cần tái khám định kỳ thường xuyên.",
+      "home_care_instructions": [
+        "Chải răng 2 lần/ngày và làm sạch quanh implant mỗi ngày bằng bàn chải kẽ hoặc chỉ chuyên dụng cho implant",
+        "Tái khám và làm sạch định kỳ theo lịch nha sĩ hẹn (thường 3–6 tháng/lần với người nguy cơ cao)",
+        "Bỏ thuốc lá; kiểm soát tốt đường huyết nếu bị tiểu đường",
+        "Đi khám sớm khi nướu quanh implant chảy máu, sưng, có mủ, hôi miệng hoặc implant/răng trên implant lỏng"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: IMPLANTOLOGY | NGUỒN: EFP 2023 (S3) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không dùng kháng sinh thay cho làm sạch cơ học] Implant bị viêm, chảy máu, sưng nướu, có mủ quanh trụ implant, tiêu xương quanh implant phải làm sao? Đó có thể là viêm niêm mạc quanh implant hoặc viêm quanh implant (peri-implantitis). Cần nha sĩ đo túi, chụp phim, làm sạch quanh implant; nặng có thể phẫu thuật; tái khám định kỳ suốt đời."
+    }
+  ]
+}

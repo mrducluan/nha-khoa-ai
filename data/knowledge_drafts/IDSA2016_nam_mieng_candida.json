@@ -1,0 +1,85 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn đã xác minh thư mục: Pappas PG, Kauffman CA, Andes DR và cs. Clinical Practice Guideline for the Management of Candidiasis: 2016 Update by the Infectious Diseases Society of America. Clin Infect Dis 2016;62(4):e1-e50, doi:10.1093/cid/civ933 (PMID 26679628). QUAN TRỌNG: phiên soạn thảo bị chặn truy cập trang toàn văn nên AI CHƯA đọc được mục nấm hầu họng — tên thuốc, liều, thời gian điều trị và mức khuyến nghị được viết theo hiểu biết của AI về hướng dẫn này. BÁC SĨ BẮT BUỘC đối chiếu nguyên văn (mục oropharyngeal candidiasis) và thuốc lưu hành tại Việt Nam trước khi duyệt. Chế độ bệnh nhân không hiển thị liều thuốc.",
+  "source_metadata": {
+    "organization_code": "IDSA",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "Clinical Practice Guideline for the Management of Candidiasis: 2016 Update by the Infectious Diseases Society of America",
+    "authors_or_committee": "Pappas PG, Kauffman CA, Andes DR và cs. (Infectious Diseases Society of America)",
+    "publication_year": 2016,
+    "journal_or_series": "Clinical Infectious Diseases 62(4):e1-e50",
+    "doi_or_pmid": "10.1093/cid/civ933",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "IDSA (GRADE)"
+  },
+  "protocol_core": {
+    "primary_specialty": "GENERAL_OMFS_ENDODONTICS",
+    "secondary_specialties": ["ESTHETIC_PROSTHODONTICS"],
+    "protocol_title": "Nấm miệng (nấm Candida hầu họng) và viêm miệng do hàm giả: nhận biết, yếu tố thuận lợi, thuốc kháng nấm và vệ sinh hàm giả",
+    "clinical_topic_slug": "oral-candidiasis-denture-stomatitis"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người bị nấm Candida miệng: mảng trắng lau được để lại nền đỏ (thể giả mạc), niêm mạc đỏ rát (thể teo đỏ), viêm khoé môi, viêm niêm mạc dưới hàm giả; thường có yếu tố thuận lợi (hàm giả, khô miệng, corticosteroid dạng hít, kháng sinh, đái tháo đường, suy giảm miễn dịch, trẻ nhũ nhi).",
+    "I_intervention": "Thuốc kháng nấm tại chỗ cho thể nhẹ; thuốc kháng nấm toàn thân cho thể trung bình–nặng hoặc tái phát; khử khuẩn và vệ sinh hàm giả; xử trí yếu tố thuận lợi.",
+    "C_comparison": "Thuốc kháng nấm khác hoặc không điều trị.",
+    "O_outcome_metrics": "Theo IDSA 2016 (đối chiếu nguyên văn): thể nhẹ dùng thuốc tại chỗ (clotrimazole viên ngậm, miconazole viên dán niêm mạc má, hoặc nystatin hỗn dịch/viên ngậm) trong khoảng 7–14 ngày; thể trung bình–nặng dùng fluconazole đường uống trong khoảng 7–14 ngày; nấm liên quan hàm giả cần KHỬ KHUẨN HÀM GIẢ kèm thuốc kháng nấm; ca kháng fluconazole dùng thuốc thay thế theo hướng dẫn chuyên khoa."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Candida albicans là vi nấm cư trú bình thường trong miệng; gây bệnh khi cân bằng tại chỗ hoặc miễn dịch bị phá vỡ. Yếu tố thuận lợi tại chỗ: hàm giả (đặc biệt đeo qua đêm, vệ sinh kém — màng sinh học nấm bám trên nhựa hàm), khô miệng, corticosteroid dạng hít không súc miệng sau dùng, hút thuốc. Yếu tố toàn thân: kháng sinh phổ rộng, đái tháo đường kiểm soát kém, thiếu máu thiếu sắt, suy giảm miễn dịch (HIV, hoá trị, ghép tạng, corticosteroid toàn thân), tuổi rất nhỏ hoặc cao tuổi. Nấm miệng tái phát nhiều lần không rõ nguyên nhân ở người trẻ là dấu hiệu cần tìm suy giảm miễn dịch (VD: xét nghiệm HIV, đường huyết).",
+    "indications": [
+      "Thể nhẹ: thuốc kháng nấm tại chỗ (dạng ngậm, hỗn dịch súc–nuốt, viên dán) theo chỉ định",
+      "Thể trung bình–nặng, lan rộng, suy giảm miễn dịch: thuốc kháng nấm toàn thân theo chỉ định bác sĩ",
+      "Viêm miệng do hàm giả: tháo hàm ban đêm, làm sạch và ngâm khử khuẩn hàm hằng ngày, kèm thuốc kháng nấm; chỉnh/làm lại hàm giả không khít",
+      "Corticosteroid dạng hít: súc miệng nhổ đi sau mỗi lần dùng",
+      "Nấm miệng tái phát hoặc không rõ yếu tố thuận lợi: tầm soát đái tháo đường, thiếu máu, suy giảm miễn dịch"
+    ],
+    "contraindications_absolute": [
+      "Dùng thuốc kháng nấm nhóm azole toàn thân khi có tương tác nguy hiểm chưa được đánh giá (VD: với warfarin, một số thuốc tim mạch, statin) — phải kiểm tra tương tác",
+      "Chẩn đoán 'nấm' cho mảng trắng KHÔNG lau được và kéo dài — cần loại trừ bạch sản/tổn thương tiền ung thư"
+    ],
+    "contraindications_relative": [
+      "Miconazole (kể cả dạng gel/viên dán) ở bệnh nhân dùng warfarin — có thể tăng INR, cần tham vấn",
+      "Điều trị kéo dài không xử trí yếu tố thuận lợi (hàm giả, khô miệng, đường huyết)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Chẩn đoán lâm sàng", "clinical_action": "Mảng trắng lau được để lại nền đỏ; đỏ rát dưới hàm giả; nứt khoé môi; hỏi yếu tố thuận lợi và thuốc đang dùng.", "technical_parameters": "Phết tế bào/nuôi cấy khi không điển hình, tái phát hoặc không đáp ứng"},
+      {"step": 2, "phase_name": "Xử trí yếu tố thuận lợi", "clinical_action": "Vệ sinh và khử khuẩn hàm giả, tháo hàm qua đêm; súc miệng sau xịt corticosteroid; kiểm soát đường huyết; xử trí khô miệng.", "technical_parameters": "Hàm giả không khít → chỉnh hoặc làm mới sau khi hết viêm"},
+      {"step": 3, "phase_name": "Thuốc kháng nấm", "clinical_action": "Thể nhẹ: thuốc tại chỗ; trung bình–nặng: thuốc toàn thân theo chỉ định.", "technical_parameters": "Thời gian thường khoảng 7–14 ngày theo IDSA 2016; liều cụ thể đối chiếu nguyên văn và kiểm tra tương tác thuốc"},
+      {"step": 4, "phase_name": "Tái đánh giá", "clinical_action": "Đánh giá lại sau đợt điều trị; tái phát → tìm nguyên nhân toàn thân, cân nhắc nuôi cấy và kháng nấm đồ.", "technical_parameters": "Chuyển chuyên khoa khi kháng trị hoặc nghi suy giảm miễn dịch"}
+    ],
+    "complications_and_management": [
+      {"complication": "Tái phát nấm miệng", "prevention": "Kiểm soát yếu tố thuận lợi, vệ sinh hàm giả", "management_protocol": "Tìm nguyên nhân toàn thân; điều trị lại theo hướng dẫn"},
+      {"complication": "Tương tác thuốc kháng nấm azole", "prevention": "Kiểm tra danh sách thuốc trước khi kê", "management_protocol": "Đổi thuốc hoặc phối hợp bác sĩ điều chỉnh"},
+      {"complication": "Nấm thực quản (nuốt đau ở người suy giảm miễn dịch)", "prevention": "Điều trị sớm", "management_protocol": "Chuyển chuyên khoa, điều trị toàn thân"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Chỉ kê thuốc kháng nấm mà không xử lý hàm giả — tái phát",
+        "Bỏ qua tương tác miconazole/fluconazole với warfarin",
+        "Gọi mọi mảng trắng là nấm — mảng trắng không lau được cần nghĩ bạch sản"
+      ],
+      "clinical_decision_tips": [
+        "Lau được → nghĩ nấm; không lau được → nghĩ bạch sản/lichen",
+        "Viêm dưới hàm giả: điều trị cả bệnh nhân lẫn hàm giả",
+        "Tái phát không rõ lý do ở người trẻ → tầm soát đái tháo đường, HIV"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Nấm miệng là nhiễm nấm Candida trong miệng: mảng trắng như sữa đông trên lưỡi, má (lau đi thấy nền đỏ), hoặc niêm mạc đỏ rát dưới hàm giả, nứt khoé miệng.",
+      "why_needed": "Nấm hay gặp khi đeo hàm giả qua đêm, khô miệng, vừa dùng kháng sinh, xịt thuốc hen mà không súc miệng, tiểu đường hoặc sức đề kháng giảm. Điều trị đúng thuốc và xử lý nguyên nhân giúp khỏi và ít tái phát.",
+      "what_to_expect": "Nha sĩ hoặc bác sĩ khám, có thể lấy mẫu xét nghiệm nếu không điển hình, kê thuốc kháng nấm dạng ngậm/bôi hoặc uống và hướng dẫn vệ sinh hàm giả. Nếu tái phát nhiều lần, có thể cần xét nghiệm đường huyết hoặc kiểm tra sức khoẻ tổng quát.",
+      "home_care_instructions": [
+        "Dùng thuốc đủ thời gian theo hướng dẫn, kể cả khi đã đỡ",
+        "Tháo hàm giả khi ngủ; chải sạch và ngâm hàm giả trong dung dịch làm sạch mỗi ngày",
+        "Súc miệng bằng nước sau mỗi lần xịt thuốc hen (corticoid)",
+        "Báo bác sĩ các thuốc đang dùng, nhất là thuốc chống đông warfarin",
+        "Đi khám nếu mảng trắng không lau được, không hết sau điều trị, hoặc nuốt đau"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: GENERAL_OMFS_ENDODONTICS | NGUỒN: IDSA 2016 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Kiểm tra tương tác thuốc azole (warfarin); mảng trắng không lau được không phải nấm] Bị nấm miệng, nấm lưỡi, lưỡi trắng như sữa, nấm dưới hàm giả, nứt khoé miệng phải làm sao? Cần thuốc kháng nấm theo chỉ định, tháo và vệ sinh hàm giả mỗi đêm, súc miệng sau xịt thuốc hen; tái phát nhiều nên kiểm tra tiểu đường."
+    }
+  ]
+}

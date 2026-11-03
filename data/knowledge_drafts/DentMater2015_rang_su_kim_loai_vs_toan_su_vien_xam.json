@@ -1,0 +1,88 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Sailer I, Makarov NA, Thoma DS, Zwahlen M, Pjetursson BE. Dent Mater 2015;31(6):603-623, doi:10.1016/j.dental.2015.02.011 (PMID 25842099) — tổng quan hệ thống 67 nghiên cứu, 4663 mão sứ-kim loại và 9434 mão toàn sứ. Nguồn bổ trợ về đổi màu nướu (nêu trong nội dung): Jung RE, Sailer I, Hämmerle CHF và cs. Int J Periodontics Restorative Dent 2007 (in vitro, titan vs zirconia, độ dày niêm mạc). BÁC SĨ cần đối chiếu nguyên văn bảng tỷ lệ sống còn 5 năm theo từng loại sứ và các ngưỡng độ dày mô mềm trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "ELSEVIER",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "All-ceramic or metal-ceramic tooth-supported fixed dental prostheses (FDPs)? A systematic review of the survival and complication rates. Part I: Single crowns (SCs)",
+    "authors_or_committee": "Sailer I, Makarov NA, Thoma DS, Zwahlen M, Pjetursson BE",
+    "publication_year": 2015,
+    "journal_or_series": "Dental Materials 31(6):603-623",
+    "doi_or_pmid": "10.1016/j.dental.2015.02.011",
+    "evidence_level": "1A_SYSTEMATIC_REVIEW_META",
+    "grade_of_recommendation": "SR/MA"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": ["PERIODONTOLOGY"],
+    "protocol_title": "Mão răng sứ kim loại so với mão toàn sứ (zirconia, lithium disilicate): viền xám/đen cổ răng, thẩm mỹ, độ bền và cách lựa chọn",
+    "clinical_topic_slug": "metal-ceramic-vs-all-ceramic-crown-grey-margin"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân cần mão răng đơn lẻ trên răng thật (răng cửa hoặc răng sau), quan tâm thẩm mỹ viền cổ răng và độ bền.",
+    "I_intervention": "Mão toàn sứ: lithium disilicate (thuỷ tinh tăng cường), zirconia nguyên khối hoặc zirconia phủ sứ, sứ oxit nhôm, sứ thuỷ tinh gia cố leucite.",
+    "C_comparison": "Mão sứ-kim loại (sườn kim loại phủ sứ, PFM/metal-ceramic) — chuẩn đối chứng lâu đời.",
+    "O_outcome_metrics": "Sailer 2015: tỷ lệ tồn tại 5 năm của mão sứ-kim loại 94.7% (KTC 95%: 94.1–96.9%). Đa số loại mão toàn sứ có tỷ lệ tồn tại tương đương mão sứ-kim loại ở cả vùng răng trước và răng sau (sứ thuỷ tinh/sứ thuỷ tinh tăng cường và sứ oxit nhôm, zirconia có chỉ định phù hợp). Mão zirconia phủ sứ có tỷ lệ mẻ lớp sứ phủ (chipping) và bong mão (mất lưu giữ) cao hơn mão sứ-kim loại; tỷ lệ gãy sườn của mão toàn sứ nhìn chung cao hơn. Về thẩm mỹ mô mềm: sườn kim loại có thể làm nướu mỏng ánh xám và lộ viền tối khi nướu tụt; nghiên cứu in vitro (Jung 2007) cho thấy titan gây đổi màu niêm mạc rõ nhất, còn zirconia hầu như không gây đổi màu nhìn thấy khi niêm mạc đủ dày (khoảng 2–3 mm); độ dày mô mềm càng lớn, đổi màu càng giảm."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Mão sứ-kim loại có sườn kim loại (hợp kim quý hoặc không quý như Ni-Cr, Co-Cr) không cho ánh sáng truyền qua. 'Viền xám/đen' ở cổ răng có ba cơ chế: (1) lộ trực tiếp đường viền kim loại hoặc lớp opaque khi nướu tụt (do viêm, chải răng sai, mão sát bờ nướu xâm phạm khoảng sinh học), (2) kim loại phản chiếu qua nướu mỏng làm nướu ánh xám–xanh (hiệu ứng nhìn xuyên, rõ ở kiểu hình nướu mỏng), (3) ít gặp hơn: ion kim loại từ hợp kim không quý gây nhiễm sắc nướu và một số bệnh nhân dị ứng niken. Mão toàn sứ cho ánh sáng truyền qua và tán xạ giống răng thật hơn nên viền cổ răng và nướu tự nhiên hơn; lithium disilicate thẩm mỹ cao nhưng độ bền uốn thấp hơn zirconia; zirconia rất bền nhưng đục hơn (zirconia thế hệ mới tăng độ trong suốt nhưng giảm độ bền). Chân răng/cùi răng bị đổi màu nặng (răng chữa tuỷ sẫm màu, chốt kim loại) cần vật liệu có độ che phủ đủ — sứ quá trong sẽ lộ màu cùi.",
+    "indications": [
+      "Vùng răng trước, đường cười cao, nướu mỏng: ưu tiên mão toàn sứ (lithium disilicate hoặc zirconia phủ sứ/zirconia trong suốt) để tránh viền xám",
+      "Vùng răng sau, lực nhai lớn, khoảng phục hình thấp, nghiến răng: zirconia nguyên khối (monolithic) hoặc sứ-kim loại",
+      "Cùi răng đổi màu nặng hoặc có chốt kim loại: chọn vật liệu có độ che phủ đủ (zirconia, lithium disilicate độ đục cao) hoặc dùng cùi/chốt màu răng",
+      "Bệnh nhân có tiền sử dị ứng kim loại (niken): tránh hợp kim không quý — chọn toàn sứ hoặc hợp kim quý",
+      "Cần chụp MRI vùng đầu cổ thường xuyên: mão toàn sứ ít gây nhiễu ảnh hơn kim loại"
+    ],
+    "contraindications_absolute": [
+      "Mão sứ thuỷ tinh/lithium disilicate khi không đạt độ dày tối thiểu theo nhà sản xuất hoặc không đủ khoảng phục hình (nguy cơ gãy)",
+      "Hợp kim chứa niken cho bệnh nhân đã xác định dị ứng niken"
+    ],
+    "contraindications_relative": [
+      "Zirconia phủ sứ ở bệnh nhân nghiến răng nặng (nguy cơ mẻ sứ phủ) — cân nhắc zirconia nguyên khối và máng chống nghiến",
+      "Mão sứ-kim loại ở vùng thẩm mỹ với nướu mỏng, đường cười cao",
+      "Đặt bờ mão sâu dưới nướu chỉ để giấu viền kim loại — có thể xâm phạm khoảng sinh học gây viêm và tụt nướu",
+      "Lithium disilicate cho cầu răng dài nhịp hoặc vùng răng cối lớn chịu lực lớn"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Đánh giá thẩm mỹ & mô nha chu", "clinical_action": "Đánh giá đường cười, kiểu hình nướu (mỏng/dày), màu cùi răng, tình trạng nha chu; điều trị viêm nướu trước khi làm mão.", "technical_parameters": "Thăm dò độ trong của nướu (đầu thăm dò nhìn xuyên qua nướu gợi ý kiểu hình mỏng); ghi nhận màu cùi bằng ảnh có thang màu"},
+      {"step": 2, "phase_name": "Chọn vật liệu", "clinical_action": "Cân nhắc vị trí răng, lực nhai, nghiến răng, màu cùi, khoảng phục hình, nguyện vọng và chi phí; giải thích ưu nhược điểm cho bệnh nhân.", "technical_parameters": "Mài cùi theo yêu cầu độ dày tối thiểu của từng vật liệu (theo hướng dẫn nhà sản xuất); zirconia nguyên khối cho phép mài bảo tồn hơn"},
+      {"step": 3, "phase_name": "Sửa soạn bờ & lấy dấu", "clinical_action": "Đặt bờ mão ngang nướu hoặc trong khe nướu nông, tôn trọng mô bám dính trên xương (khoảng sinh học); kiểm soát mô mềm khi lấy dấu.", "technical_parameters": "Bờ dạng chamfer/shoulder tuỳ vật liệu; dùng chỉ co nướu hoặc quét trong miệng"},
+      {"step": 4, "phase_name": "Gắn mão", "clinical_action": "Gắn theo vật liệu: sứ thuỷ tinh/lithium disilicate gắn dán (adhesive); zirconia và sứ-kim loại gắn thường hoặc gắn dán tuỳ lưu giữ.", "technical_parameters": "Lấy sạch xi măng dư dưới nướu; chỉnh khớp cắn cả tĩnh và động"},
+      {"step": 5, "phase_name": "Duy trì", "clinical_action": "Hướng dẫn vệ sinh, tái khám định kỳ kiểm tra nướu, sâu bờ mão, mẻ sứ.", "technical_parameters": "Máng chống nghiến cho bệnh nhân nghiến răng"}
+    ],
+    "complications_and_management": [
+      {"complication": "Viền xám/đen lộ ở cổ răng mão sứ-kim loại", "prevention": "Chọn toàn sứ ở vùng thẩm mỹ; bờ mão đúng vị trí; vai sứ (porcelain shoulder) nếu vẫn dùng sứ-kim loại; kiểm soát viêm nướu", "management_protocol": "Đánh giá nguyên nhân (tụt nướu, viêm, nướu mỏng); điều trị nha chu; thay mão bằng toàn sứ; ghép mô mềm nếu tụt nướu nhiều"},
+      {"complication": "Mẻ sứ phủ (chipping) — hay gặp ở zirconia phủ sứ", "prevention": "Thiết kế sườn nâng đỡ sứ, chọn zirconia nguyên khối khi lực nhai lớn, máng chống nghiến", "management_protocol": "Đánh bóng nếu mẻ nhỏ; sửa bằng composite; thay mão nếu mẻ lớn"},
+      {"complication": "Gãy mão/sườn toàn sứ", "prevention": "Đủ độ dày vật liệu, đúng chỉ định vị trí", "management_protocol": "Thay mão bằng vật liệu bền hơn phù hợp vị trí"},
+      {"complication": "Viêm nướu, chảy máu quanh mão", "prevention": "Bờ mão khít, không xâm phạm khoảng sinh học, lấy sạch xi măng dư", "management_protocol": "Làm sạch, điều trị viêm; làm lại mão nếu bờ hở hoặc quá sâu"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Hứa với bệnh nhân rằng mão toàn sứ 'bền vĩnh viễn, không bao giờ vỡ' — bằng chứng cho thấy tỷ lệ tồn tại tương đương sứ-kim loại nhưng kiểu biến chứng khác nhau",
+        "Đặt bờ mão quá sâu để giấu viền kim loại → viêm nướu mạn, tụt nướu, lộ viền càng rõ",
+        "Dùng sứ quá trong trên cùi răng đổi màu sẫm → mão bị xám dù là toàn sứ"
+      ],
+      "clinical_decision_tips": [
+        "Viền xám thường do NƯỚU MỎNG + KIM LOẠI hoặc TỤT NƯỚU — không chỉ do 'sứ rẻ'",
+        "Răng trước + nướu mỏng → toàn sứ; răng sau + nghiến răng → zirconia nguyên khối",
+        "Luôn nêu cả độ bền, thẩm mỹ và khả năng sửa chữa khi tư vấn vật liệu"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Răng sứ kim loại có lớp sườn kim loại bên trong và sứ phủ bên ngoài. Răng toàn sứ làm hoàn toàn bằng sứ (như zirconia hoặc sứ thuỷ tinh), cho ánh sáng đi qua giống răng thật.",
+      "why_needed": "Răng sứ kim loại có thể bị viền xám hoặc đen ở cổ răng sau một thời gian, nhất là khi nướu mỏng hoặc nướu bị tụt, và nướu quanh răng có thể ánh xám. Răng toàn sứ không có kim loại nên không bị viền đen kim loại, màu tự nhiên hơn. Về độ bền, nghiên cứu tổng hợp cho thấy phần lớn loại răng toàn sứ bền tương đương răng sứ kim loại sau 5 năm nếu được chọn đúng vị trí.",
+      "what_to_expect": "Nha sĩ sẽ khám nướu, xem vị trí răng (răng cửa hay răng hàm), thói quen nghiến răng và màu răng thật để tư vấn loại sứ phù hợp. Răng cửa thường ưu tiên toàn sứ để đẹp; răng hàm chịu lực nhiều có thể dùng zirconia nguyên khối hoặc sứ kim loại.",
+      "home_care_instructions": [
+        "Chải răng nhẹ nhàng đúng cách ở viền cổ răng, dùng chỉ nha khoa hoặc bàn chải kẽ mỗi ngày để tránh viêm và tụt nướu",
+        "Tránh cắn vật cứng (đá, xương, mở nắp chai bằng răng)",
+        "Nếu nghiến răng ban đêm, hỏi nha sĩ về máng bảo vệ",
+        "Tái khám định kỳ; báo nha sĩ khi thấy viền đen, chảy máu nướu hoặc răng sứ bị mẻ"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: Dental Materials 2015 (Sailer, tổng quan hệ thống) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không dùng sứ thuỷ tinh khi không đủ độ dày; tránh hợp kim niken khi dị ứng] Bọc răng sứ kim loại bị viền đen, viền xám, đen chân răng, nướu thâm đen là do sao? Răng sứ kim loại có sườn kim loại nên khi nướu mỏng hoặc tụt nướu sẽ lộ viền tối. Răng toàn sứ (zirconia, sứ thuỷ tinh) không có kim loại nên không bị viền đen, độ bền tương đương sau 5 năm khi chọn đúng chỉ định."
+    }
+  ]
+}

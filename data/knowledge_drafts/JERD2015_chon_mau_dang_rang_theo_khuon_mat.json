@@ -1,0 +1,86 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn chính đã xác minh thư mục: Paravina RD, Ghinea R, Herrera LJ và cs. Color difference thresholds in dentistry. J Esthet Restor Dent 2015;27(Suppl 1):S1-S9, doi:10.1111/jerd.12149 (PMID 25886208) — nghiên cứu đa trung tâm, 175 người quan sát: ngưỡng nhận biết 50:50% ΔE00 = 0.8 (ΔEab 1.2), ngưỡng chấp nhận 50:50% ΔE00 = 1.8 (ΔEab 2.7). Nguồn bổ trợ về dáng răng – khuôn mặt (nêu trong nội dung, đã xác minh thư mục): Varjão FM, Nogueira SS. Quintessence Int 2006 — dáng răng cửa giữa trùng dáng mặt chỉ ~24% trường hợp, không có tương quan rõ (thuyết Williams không được ủng hộ). BÁC SĨ cần đối chiếu nguyên văn trước khi duyệt; các thông số tỷ lệ thẩm mỹ (tỷ lệ rộng/dài, đường cười) là thực hành lâm sàng phổ biến, không phải quy tắc cứng.",
+  "source_metadata": {
+    "organization_code": "WILEY",
+    "authority_tier": "TIER_3_PEER_REVIEWED",
+    "document_title": "Color difference thresholds in dentistry",
+    "authors_or_committee": "Paravina RD, Ghinea R, Herrera LJ, Bona AD, Igiel C, Linninger M, Sakai M, Takahashi H, Tashkandi E, Perez MM",
+    "publication_year": 2015,
+    "journal_or_series": "Journal of Esthetic and Restorative Dentistry 27(Suppl 1):S1-S9",
+    "doi_or_pmid": "10.1111/jerd.12149",
+    "evidence_level": "2A_COHORT_STUDY",
+    "grade_of_recommendation": "Đa trung tâm"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Chọn màu răng và thiết kế dáng răng hài hoà khuôn mặt (thiết kế nụ cười) trong phục hình thẩm mỹ",
+    "clinical_topic_slug": "tooth-shade-selection-smile-design-facial-esthetics"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Bệnh nhân làm phục hình thẩm mỹ vùng răng trước (mão sứ, mặt dán sứ, trám composite, hàm giả) cần chọn màu và dáng răng hài hoà với răng còn lại, môi và khuôn mặt.",
+    "I_intervention": "Quy trình chọn màu chuẩn hoá (ánh sáng chuẩn, thang màu có hệ thống, máy đo màu/quang phổ, ảnh chụp có thang màu và thẻ xám, truyền thông tin với kỹ thuật viên) và thiết kế nụ cười dựa trên phân tích khuôn mặt – môi – răng (mock-up, wax-up, thiết kế số).",
+    "C_comparison": "Chọn màu bằng mắt dưới ánh sáng ghế nha thông thường, chọn dáng răng theo 'dáng mặt' (thuyết Williams: mặt vuông – răng vuông, mặt thuôn – răng thuôn, mặt tam giác – răng tam giác).",
+    "O_outcome_metrics": "Paravina 2015: khác biệt màu ΔE00 ≤ 0.8 thì 50% người quan sát không nhận ra; ΔE00 ≤ 1.8 thì 50% người quan sát chấp nhận được — làm ngưỡng kiểm soát chất lượng cho phục hình thẩm mỹ. Về dáng răng: các nghiên cứu (VD: Varjão 2006, 4 nhóm chủng tộc) cho thấy dáng răng cửa giữa chỉ trùng với dáng mặt ở khoảng 24% trường hợp — chọn dáng răng chỉ theo dáng mặt KHÔNG có cơ sở bằng chứng vững; nên dựa vào phân tích tổng thể (đường giữa mặt, đường cười, môi, tỷ lệ răng, giới tính/tuổi, mong muốn của bệnh nhân) và thử nghiệm trực tiếp trong miệng (mock-up)."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Màu răng gồm ba thông số: độ sáng (value/lightness — quan trọng nhất về cảm nhận), sắc độ (chroma — độ đậm) và sắc màu (hue — vàng/đỏ); ngoài ra còn độ trong mờ (translucency), huỳnh quang và ánh men. Cảm nhận màu chịu ảnh hưởng của nguồn sáng (hiện tượng metamerism: hai vật trùng màu dưới đèn này nhưng khác màu dưới ánh sáng khác), mỏi mắt, nền xung quanh (môi son, áo, nướu), độ ẩm răng (răng khô sau vài phút cách ly trở nên sáng và đục hơn). Do đó cần chọn màu đầu buổi, trước khi cách ly/mài răng, dưới ánh sáng chuẩn. Dáng răng và nụ cười hài hoà dựa trên các mốc khuôn mặt: đường giữa mặt, đường liên đồng tử (mặt phẳng ngang), đường viền môi trên khi nghỉ và khi cười, đường cong rìa cắn song song môi dưới. Răng lộ khi môi nghỉ thay đổi theo tuổi (người trẻ lộ nhiều hơn, người lớn tuổi lộ ít hơn) và giới; dáng răng (tròn/vuông, góc rìa cắn) gợi cảm giác trẻ trung/nữ tính hay mạnh mẽ — đây là nguyên tắc thẩm mỹ thực hành, cần cá thể hoá.",
+    "indications": [
+      "Mọi phục hình thẩm mỹ vùng răng trước: mão sứ, mặt dán sứ, trám composite, implant răng cửa, hàm giả",
+      "Thay đổi màu/dáng nhiều răng cùng lúc (thiết kế nụ cười): bắt buộc phân tích khuôn mặt và thử mock-up trước khi mài",
+      "Nếu bệnh nhân muốn tẩy trắng: tẩy trắng TRƯỚC, chờ màu ổn định (thường khoảng 2 tuần) rồi mới chọn màu phục hình",
+      "Chọn dáng răng hàm giả toàn hàm khi không còn răng tham chiếu: dùng ảnh cũ của bệnh nhân, kích thước khuôn mặt và mong muốn"
+    ],
+    "contraindications_absolute": [
+      "Chọn màu sau khi đã cách ly lâu hoặc sau khi mài răng (răng mất nước, màu sáng giả)",
+      "Mài răng thay đổi dáng nhiều răng khi chưa thống nhất thiết kế với bệnh nhân (chưa thử mock-up)"
+    ],
+    "contraindications_relative": [
+      "Bệnh nhân kỳ vọng màu 'trắng nhất' không hài hoà với tuổi, màu da, răng còn lại — cần tư vấn, ghi nhận đồng thuận",
+      "Bệnh nhân có rối loạn ám ảnh ngoại hình (body dysmorphic) hoặc kỳ vọng phi thực tế — cân nhắc trì hoãn điều trị không hồi phục",
+      "Bác sĩ có rối loạn sắc giác hoặc mắt mỏi: nhờ người hỗ trợ/dùng máy đo màu"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Phân tích khuôn mặt – môi – răng", "clinical_action": "Chụp ảnh chân dung (thẳng, cười, nghiêng), ảnh trong miệng; xác định đường giữa mặt, mặt phẳng ngang, đường cười, lượng răng lộ khi nghỉ và khi cười, hành lang má.", "technical_parameters": "Tham khảo thực hành: rìa cắn răng cửa giữa thường lộ khoảng 1–3 mm khi môi nghỉ (thay đổi theo tuổi, giới); rìa cắn theo đường cong môi dưới; đường giữa răng song song đường giữa mặt"},
+      {"step": 2, "phase_name": "Thiết kế dáng răng", "clinical_action": "Xác định chiều dài răng cửa giữa trước (dựa theo môi), rồi tỷ lệ rộng/dài và dáng răng; cân nhắc giới, tuổi, cá tính và mong muốn; KHÔNG chỉ dựa vào dáng mặt.", "technical_parameters": "Tỷ lệ rộng/dài răng cửa giữa thường khoảng 75–85% (thực hành phổ biến); kiểm tra cân xứng hai bên và đường viền nướu"},
+      {"step": 3, "phase_name": "Thử nghiệm mock-up", "clinical_action": "Wax-up/thiết kế số → mock-up composite tạm trong miệng; bệnh nhân xem trực tiếp, chụp ảnh/video, kiểm tra phát âm (âm F, V, S) và chỉnh sửa.", "technical_parameters": "Dùng mock-up làm hướng dẫn mài tối thiểu (mài qua mock-up)"},
+      {"step": 4, "phase_name": "Chọn màu", "clinical_action": "Chọn màu đầu buổi hẹn, trước khi cách ly và mài; nhìn nhanh 5–7 giây mỗi lần, nghỉ mắt bằng nền xám; chọn ĐỘ SÁNG trước, rồi sắc độ, sắc màu; ghi nhận vùng cổ – thân – rìa cắn và độ trong.", "technical_parameters": "Ánh sáng chuẩn khoảng 5500–6500 K, chỉ số hoàn màu cao (CRI ≥ 90); thang màu có hệ thống (VD: thang 3D-Master) hoặc máy quang phổ; ảnh chụp kèm tab màu và thẻ xám; chụp cả ảnh phân cực chéo nếu có"},
+      {"step": 5, "phase_name": "Truyền thông tin cho labo", "clinical_action": "Gửi ảnh có tab màu, bản đồ màu, màu cùi răng (đặc biệt cùi đổi màu), thiết kế dáng răng đã duyệt.", "technical_parameters": "Kiểm tra màu phục hình trước khi gắn dưới nhiều nguồn sáng; mục tiêu ΔE00 ≤ 1.8 (ngưỡng chấp nhận) so với răng tham chiếu"},
+      {"step": 6, "phase_name": "Thử và hoàn tất", "clinical_action": "Thử phục hình với keo thử màu (try-in paste) cho sứ trong; bệnh nhân duyệt trước khi gắn.", "technical_parameters": "Với mặt dán/sứ mỏng, màu keo gắn ảnh hưởng màu cuối cùng"}
+    ],
+    "complications_and_management": [
+      {"complication": "Phục hình lệch màu so với răng thật", "prevention": "Chọn màu chuẩn hoá, ánh sáng chuẩn, ảnh + máy đo, ghi màu cùi", "management_protocol": "Labo nhuộm/chỉnh màu bề mặt nếu lệch nhẹ; làm lại nếu lệch vượt ngưỡng chấp nhận hoặc bệnh nhân không hài lòng"},
+      {"complication": "Bệnh nhân không hài lòng dáng răng sau khi gắn", "prevention": "Mock-up và ký duyệt thiết kế trước khi mài", "management_protocol": "Chỉnh sửa hình thể khi còn ở giai đoạn thử; ghi nhận và trao đổi kỹ kỳ vọng"},
+      {"complication": "Răng quá trắng, 'giả', thiếu tự nhiên", "prevention": "Tư vấn màu hài hoà tuổi và màu da; giữ chi tiết độ trong rìa cắn và kết cấu bề mặt", "management_protocol": "Thiết kế lại với độ sáng phù hợp"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Chọn màu sau khi cách ly/mài răng → phục hình quá sáng",
+        "Chọn dáng răng chỉ theo dáng mặt (thuyết Williams) — không được bằng chứng ủng hộ",
+        "Nhìn tab màu quá lâu dẫn đến mỏi mắt và thích nghi màu",
+        "Bỏ qua màu cùi răng khi làm sứ trong"
+      ],
+      "clinical_decision_tips": [
+        "Độ sáng (value) quan trọng nhất — sai độ sáng dễ nhận ra hơn sai sắc màu",
+        "Môi quyết định chiều dài răng; khuôn mặt quyết định đường giữa và mặt phẳng; bệnh nhân quyết định cá tính nụ cười",
+        "Ngưỡng định lượng: ΔE00 0.8 (nhận biết) và 1.8 (chấp nhận) — Paravina 2015"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Trước khi làm răng sứ, mặt dán sứ hay trám thẩm mỹ, nha sĩ sẽ chọn màu và thiết kế dáng răng sao cho hợp với răng thật, đôi môi và gương mặt của bạn.",
+      "why_needed": "Màu răng quá trắng hoặc lệch màu nhìn sẽ 'giả'. Dáng răng đẹp không chỉ phụ thuộc mặt vuông hay mặt tròn — nghiên cứu cho thấy dáng răng và dáng mặt thường không trùng nhau — mà phụ thuộc vào đường cười, độ dài môi, tuổi, giới tính và sở thích của bạn.",
+      "what_to_expect": "Nha sĩ chụp ảnh khuôn mặt và nụ cười, có thể làm răng thử tạm (mock-up) gắn lên răng thật để bạn xem trước trong gương, chỉnh sửa đến khi ưng ý rồi mới làm thật. Màu răng được so dưới ánh sáng chuẩn, thường chọn ở đầu buổi hẹn.",
+      "home_care_instructions": [
+        "Nếu muốn tẩy trắng răng thật, hãy làm trước khi chọn màu răng sứ vì sứ không tẩy trắng được",
+        "Đến buổi chọn màu nên tránh son môi đậm; báo nha sĩ mong muốn của bạn, có thể mang ảnh nụ cười cũ hoặc ảnh mẫu bạn thích",
+        "Xem kỹ răng thử tạm, góp ý trước khi bác sĩ làm răng thật"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: JERD 2015 (Paravina) | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không chọn màu sau khi mài/cách ly răng; không mài khi chưa thử mock-up] Chọn màu răng sứ thế nào cho tự nhiên? Dáng răng có phải theo khuôn mặt vuông, tròn, dài không? Màu răng nên chọn dưới ánh sáng chuẩn, hợp tuổi và màu da; dáng răng dựa vào môi, đường cười, giới tính và mong muốn, thử răng tạm mock-up trước khi làm thật."
+    }
+  ]
+}

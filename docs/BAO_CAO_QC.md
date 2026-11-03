@@ -61,6 +61,11 @@ Một câu hỏi mới có chủ đề riêng (VD: hỏi tẩy trắng ngay sau 
 - Câu hỏi rất mơ hồ, lẫn lộn ngôn ngữ bác sĩ và bệnh nhân (VD: "Bằng chứng về nhổ răng 8 dự phòng…"),
   có thể bị xếp vào chế độ bệnh nhân. Đây là lựa chọn an toàn hơn.
 
+## 4b. Cập nhật 11/2026
+
+Bổ sung 8 bản nháp tri thức, 6 chủ đề mới, bộ câu hỏi độc lập v2 (`evals/holdout_v2_questions.jsonl`) và sửa 8 lỗi engine
+(trong đó có lỗi báo nhầm cấp cứu với câu "mất răng"). Chi tiết: [`BO_SUNG_TRI_THUC_2026_11.md`](BO_SUNG_TRI_THUC_2026_11.md).
+
 ## 5. Cách bổ sung câu hỏi đánh giá
 
 Mỗi dòng trong `evals/questions.jsonl` là một câu:

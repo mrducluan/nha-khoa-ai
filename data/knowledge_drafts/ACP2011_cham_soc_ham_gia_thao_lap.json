@@ -1,0 +1,87 @@
+{
+  "_ghi_chu": "BẢN NHÁP do AI soạn. Nguồn đã xác minh thư mục: Felton D, Cooper L, Duqum I, Minsley G, Guckes A, Haug S, Meredith P, Solie C, Avery D, Deal Chandler N (American College of Prosthodontists, phối hợp Academy of General Dentistry và ADA Council on Scientific Affairs). Evidence-based guidelines for the care and maintenance of complete dentures. J Prosthodont 2011 và J Am Dent Assoc 2011;142 Suppl 1:1S-20S — 15 khuyến nghị dựa trên tổng hợp 120 bài báo. Đã xác minh qua tóm tắt: loại bỏ màng sinh học hằng ngày để hạn chế viêm miệng do hàm giả; không ngâm hàm vào nước sôi; chưa có bằng chứng về dùng keo dán hàm quá 6 tháng; tái khám hằng năm. PMID 21324026 xuất hiện trong kết quả tìm kiếm cho bài này nhưng chưa mở được trang PubMed — BÁC SĨ đối chiếu PMID và nguyên văn 15 khuyến nghị (đặc biệt thời gian ngâm dung dịch hypochlorite, cách dùng keo dán) trước khi duyệt.",
+  "source_metadata": {
+    "organization_code": "ACP",
+    "authority_tier": "TIER_2_INTERNATIONAL_GUIDE",
+    "document_title": "Evidence-based guidelines for the care and maintenance of complete dentures: a publication of the American College of Prosthodontists",
+    "authors_or_committee": "Felton D, Cooper L, Duqum I, Minsley G, Guckes A, Haug S, Meredith P, Solie C, Avery D, Deal Chandler N (ACP Task Force)",
+    "publication_year": 2011,
+    "journal_or_series": "Journal of Prosthodontics 2011; J Am Dent Assoc 2011;142 Suppl 1:1S-20S",
+    "doi_or_pmid": "PMID:21324026",
+    "evidence_level": "CONSENSUS_GUIDELINE",
+    "grade_of_recommendation": "ACP 2011"
+  },
+  "protocol_core": {
+    "primary_specialty": "ESTHETIC_PROSTHODONTICS",
+    "secondary_specialties": [],
+    "protocol_title": "Chăm sóc hàm giả tháo lắp: làm sạch hằng ngày, tháo hàm khi ngủ, keo dán hàm, hàm lỏng – đau – loét và tái khám định kỳ",
+    "clinical_topic_slug": "complete-denture-care-maintenance"
+  },
+  "pico_evidence_matrix": {
+    "P_population_problem": "Người mất răng toàn bộ đang đeo hàm giả tháo lắp (toàn hàm), gặp các vấn đề: hôi, viêm niêm mạc dưới hàm, hàm lỏng, đau, loét, gãy hàm.",
+    "I_intervention": "Quy trình chăm sóc theo 15 khuyến nghị ACP 2011: loại bỏ màng sinh học hằng ngày (chải + ngâm chất làm sạch), không ngâm nước sôi, tháo hàm khi ngủ, dùng keo dán đúng cách, làm sạch chuyên nghiệp và tái khám hằng năm.",
+    "C_comparison": "Chăm sóc không đúng cách (chỉ súc nước, đeo hàm 24/24, dùng nhiều keo dán thay cho chỉnh hàm).",
+    "O_outcome_metrics": "ACP 2011: loại bỏ màng sinh học trên hàm giả hằng ngày giúp hạn chế viêm miệng do hàm giả (denture stomatitis) và cải thiện sức khoẻ răng miệng – toàn thân; không được ngâm hàm giả vào nước sôi; chưa có bằng chứng về độ an toàn/hiệu quả khi dùng keo dán hàm kéo dài quá 6 tháng; người đeo hàm giả nên tái khám nha khoa hằng năm để kiểm tra hàm, niêm mạc và tầm soát tổn thương miệng."
+  },
+  "clinical_execution_payload": {
+    "pathophysiology_mechanism": "Nhựa hàm giả có lỗ xốp vi thể, là nơi bám của màng sinh học (vi khuẩn và nấm Candida). Đeo hàm liên tục, đặc biệt qua đêm, và vệ sinh kém làm niêm mạc dưới hàm viêm đỏ (viêm miệng do hàm giả). Sau mất răng, xương sống hàm tiếp tục tiêu theo thời gian nên hàm giả dần lỏng, cọ xát gây loét, tăng sinh mô xơ ở rìa hàm, mỏi cơ – khớp. Hàm lỏng không nên 'chữa' lâu dài bằng nhiều keo dán: cần đệm/làm lại hàm. Loét dưới hàm KHÔNG lành sau khi chỉnh 2–3 tuần cần sinh thiết.",
+    "indications": [
+      "Làm sạch hằng ngày: chải hàm bằng bàn chải mềm với chất làm sạch không mài mòn + ngâm trong dung dịch làm sạch hàm giả; rửa kỹ trước khi đeo lại",
+      "Tháo hàm khi ngủ (không đeo liên tục 24 giờ) để giảm viêm miệng do hàm giả; khi tháo ra, giữ hàm trong nước/dung dịch để tránh khô biến dạng",
+      "Keo dán hàm: có thể giúp tăng lưu giữ và ổn định khi hàm vừa khít; dùng lượng nhỏ, làm sạch hết keo hằng ngày; hàm lỏng nhiều → khám để đệm/làm lại",
+      "Làm sạch chuyên nghiệp và tái khám hằng năm: kiểm tra độ khít, khớp cắn, niêm mạc, tầm soát tổn thương miệng",
+      "Đau/loét do hàm: tạm tháo hàm, đến nha sĩ chỉnh sửa; viêm đỏ dưới hàm nghi nấm → điều trị kèm khử khuẩn hàm"
+    ],
+    "contraindications_absolute": [
+      "Ngâm hàm giả vào nước sôi hoặc nước quá nóng (làm biến dạng nhựa)",
+      "Dùng chất tẩy mạnh, bột mài mòn (kem đánh răng hạt thô) để chà hàm",
+      "Tiếp tục đeo hàm gây loét không lành mà không khám"
+    ],
+    "contraindications_relative": [
+      "Ngâm dung dịch hypochlorite (nước tẩy) với hàm có khung kim loại hoặc ngâm quá lâu — gây ăn mòn, bạc màu; thời gian theo khuyến nghị gốc",
+      "Dùng keo dán lượng lớn, kéo dài để bù cho hàm lỏng — cần đệm/làm lại hàm; keo chứa kẽm dùng quá nhiều có nguy cơ rối loạn thần kinh do thừa kẽm (đối chiếu)"
+    ],
+    "step_by_step_procedure": [
+      {"step": 1, "phase_name": "Giao hàm & hướng dẫn", "clinical_action": "Hướng dẫn tháo lắp, làm sạch hằng ngày, tháo khi ngủ, cách bảo quản, chế độ ăn giai đoạn đầu.", "technical_parameters": "Cung cấp hướng dẫn bằng văn bản; hẹn chỉnh sau giao hàm"},
+      {"step": 2, "phase_name": "Chỉnh hàm giai đoạn đầu", "clinical_action": "Tái khám chỉnh các điểm gây đau, loét, kiểm tra khớp cắn.", "technical_parameters": "Có thể cần nhiều lần chỉnh trong vài tuần đầu"},
+      {"step": 3, "phase_name": "Tái khám hằng năm", "clinical_action": "Kiểm tra độ khít, khớp cắn, độ mòn răng giả, niêm mạc (viêm, tăng sinh, loét), tầm soát tổn thương miệng; làm sạch chuyên nghiệp (VD: bể siêu âm).", "technical_parameters": "Đệm hàm hoặc làm lại khi hàm lỏng do tiêu xương"},
+      {"step": 4, "phase_name": "Xử trí vấn đề", "clinical_action": "Viêm miệng do hàm giả: vệ sinh + khử khuẩn hàm, tháo khi ngủ, thuốc kháng nấm khi cần; hàm lỏng: đệm/làm lại; gãy hàm: sửa tại labo.", "technical_parameters": "Loét không lành sau 2–3 tuần dù đã chỉnh → sinh thiết/chuyển chuyên khoa"}
+    ],
+    "complications_and_management": [
+      {"complication": "Viêm miệng do hàm giả", "prevention": "Làm sạch hằng ngày, tháo hàm khi ngủ", "management_protocol": "Khử khuẩn hàm, thuốc kháng nấm theo chỉ định, chỉnh hoặc làm lại hàm"},
+      {"complication": "Loét, đau do hàm cọ xát", "prevention": "Chỉnh hàm sau giao, tái khám", "management_protocol": "Mài chỉnh vùng cấn; loét không lành → sinh thiết"},
+      {"complication": "Hàm lỏng do tiêu xương", "prevention": "Tái khám hằng năm", "management_protocol": "Đệm hàm, làm lại hàm; cân nhắc hàm phủ trên implant"},
+      {"complication": "Tăng sinh mô xơ ở rìa hàm", "prevention": "Không đeo hàm lỏng kéo dài", "management_protocol": "Chỉnh hàm; phẫu thuật cắt bỏ nếu cần"}
+    ],
+    "educational_pearls_for_residents": {
+      "common_pitfalls": [
+        "Khuyên bệnh nhân đeo hàm cả đêm để 'quen hàm'",
+        "Không hẹn tái khám hằng năm cho bệnh nhân mất răng toàn bộ — bỏ lỡ tầm soát tổn thương miệng",
+        "Kê thuốc kháng nấm mà không xử lý hàm giả"
+      ],
+      "clinical_decision_tips": [
+        "Viêm đỏ dưới hàm: điều trị bệnh nhân + hàm giả",
+        "Hàm lỏng: keo dán chỉ là hỗ trợ ngắn hạn, giải pháp là đệm/làm lại",
+        "Người mất răng toàn bộ vẫn cần khám định kỳ"
+      ]
+    },
+    "patient_friendly_translation": {
+      "what_is_it": "Hàm giả tháo lắp cần được làm sạch và chăm sóc mỗi ngày giống như răng thật để giữ miệng khoẻ, không hôi và hàm bền lâu.",
+      "why_needed": "Vi khuẩn và nấm bám trên hàm giả gây viêm đỏ, rát niêm mạc dưới hàm và hôi miệng. Theo thời gian, xương hàm tiêu dần nên hàm sẽ lỏng — cần nha sĩ chỉnh hoặc làm lại, không nên chỉ dùng thật nhiều keo dán.",
+      "what_to_expect": "Những tuần đầu có thể có vài điểm đau, nha sĩ sẽ chỉnh. Sau đó nên khám ít nhất mỗi năm một lần để kiểm tra hàm, nướu và niêm mạc miệng.",
+      "home_care_instructions": [
+        "Mỗi ngày: tháo hàm, chải bằng bàn chải mềm với dung dịch/viên làm sạch hàm giả (không dùng kem đánh răng hạt thô), ngâm hàm theo hướng dẫn sản phẩm, rửa kỹ trước khi đeo",
+        "Tháo hàm khi đi ngủ, ngâm trong nước sạch hoặc dung dịch làm sạch; không để hàm khô",
+        "Tuyệt đối không ngâm hàm vào nước sôi",
+        "Keo dán hàm: dùng lượng ít, làm sạch keo mỗi ngày; nếu phải dùng nhiều keo vì hàm lỏng → đi khám để đệm hoặc làm lại hàm",
+        "Đi khám khi hàm gây đau, loét không lành sau 2 tuần, hàm gãy hoặc lỏng nhiều; khám định kỳ mỗi năm"
+      ]
+    }
+  },
+  "contextualized_child_chunks": [
+    {
+      "chunk_section_type": "PATIENT_FAQ",
+      "contextualized_text": "[CHUYÊN KHOA: ESTHETIC_PROSTHODONTICS | NGUỒN: ACP 2011 | CHỐNG CHỈ ĐỊNH CỐT LÕI: Không ngâm hàm giả vào nước sôi; không đeo hàm gây loét không lành] Hàm giả tháo lắp bị lỏng, đau, loét nướu, hôi; vệ sinh hàm giả thế nào, có nên đeo khi ngủ, dùng keo dán hàm được không? Làm sạch và ngâm hàm mỗi ngày, tháo khi ngủ, keo dán dùng ít; hàm lỏng cần đệm hoặc làm lại; khám mỗi năm."
+    }
+  ]
+}
