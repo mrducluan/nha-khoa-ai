@@ -14,17 +14,5 @@ Trong video, các ảnh này chỉ làm nền minh họa không khí.
 
 | File | Trang gốc |
 |---|---|
-| pexels-3845623.jpg | https://www.pexels.com/photo/3845623/ |
-| pexels-3845625.jpg | https://www.pexels.com/photo/3845625/ |
-| pexels-3845627.jpg | https://www.pexels.com/photo/3845627/ |
-| pexels-3845686.jpg | https://www.pexels.com/photo/3845686/ |
-| pexels-3845710.jpg | https://www.pexels.com/photo/3845710/ |
-| pexels-3845735.jpg | https://www.pexels.com/photo/3845735/ |
 | pexels-3845738.jpg | https://www.pexels.com/photo/3845738/ |
-| pexels-3845744.jpg | https://www.pexels.com/photo/3845744/ |
 | pexels-3845745.jpg | https://www.pexels.com/photo/3845745/ |
-| pexels-3845757.jpg | https://www.pexels.com/photo/3845757/ |
-| pexels-3845766.jpg | https://www.pexels.com/photo/3845766/ |
-| pexels-3845840.jpg | https://www.pexels.com/photo/3845840/ |
-| pexels-3845853.jpg | https://www.pexels.com/photo/3845853/ |
-| pexels-3845856.jpg | https://www.pexels.com/photo/3845856/ |
