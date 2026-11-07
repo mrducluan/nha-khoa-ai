@@ -599,7 +599,7 @@ export const VIDEO = [
       {
         id: "hieu-lam", loai: "lam_dung",
         sai: "Răng chết tủy thì giòn",
-        dung: "Răng yếu vì đã mất nhiều mô",
+        dung: "Răng yếu vì mất nhiều mô",
         noi: [
           "[enthusiastic] Nhiều người nghĩ răng chết tủy thì giòn.",
           "Thật ra, răng yếu đi chủ yếu vì đã mất nhiều mô: do sâu, do mở tủy, do miếng trám cũ.",
@@ -666,7 +666,7 @@ export const VIDEO = [
     canh: [
       {
         id: "hook", loai: "minh_hoa", hinh: "rang_lac",
-        tieu_de: ["“Răng này *phải nhổ*”", "vì sao vậy?"],
+        tieu_de: ["Răng này *phải nhổ*", "vì sao vậy?"],
         noi: [
           "[curious] Đi khám, bác sĩ nói: răng này không giữ được nữa, phải nhổ thôi.",
           "[dramatic] Thường là vì một trong ba lý do này!",

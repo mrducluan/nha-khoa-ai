@@ -137,7 +137,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Cảnh | Hình | Lời đọc |
 |---|---|---|
 | Hook | Răng đã chữa tủy có miếng trám, vết nứt chạy qua, chữ **RẮC!**, múi răng văng ra | `[curious]` Răng chữa tủy xong, hết đau rồi, tự nhiên một hôm cắn miếng cơm... rắc! `[dramatic]` Vỡ mất một góc. Vì sao vậy? |
-| Hiểu lầm | **Thẻ "✕ HIỂU LẦM: Răng chết tủy thì giòn"** bị gạch đỏ, rồi **thẻ "✓ SỰ THẬT: Răng yếu vì đã mất nhiều mô"** lật xuống | `[enthusiastic]` Nhiều người nghĩ răng chết tủy thì giòn. Thật ra, răng yếu đi chủ yếu vì đã mất nhiều mô: do sâu, do mở tủy, do miếng trám cũ. |
+| Hiểu lầm | **Thẻ "✕ HIỂU LẦM: Răng chết tủy thì giòn"** bị gạch đỏ, rồi **thẻ "✓ SỰ THẬT: Răng yếu vì mất nhiều mô"** lật xuống | `[enthusiastic]` Nhiều người nghĩ răng chết tủy thì giòn. Thật ra, răng yếu đi chủ yếu vì đã mất nhiều mô: do sâu, do mở tủy, do miếng trám cũ. |
 | Có cần bọc | Thẻ lớn có biểu tượng răng cửa / răng hàm / nghiến răng, kèm dòng giải thích | `[cheerfully]` Có cần bọc hay không, tùy từng răng. Răng cửa còn gần nguyên vẹn, thường chỉ cần trám kín. Răng hàm mất nhiều mô, nên có mão hoặc onlay ôm lấy các múi răng. Còn nếu hay nghiến răng, nhai mạnh, càng nên che kín múi. |
 | Hết cách | Vết nứt chạy dọc xuống chân răng → dấu X, răng bị nhổ → trụ Implant + mão sứ thay vào | `[dramatic]` Để vỡ tới mức nứt dọc xuống chân răng, thì thường không giữ được nữa. `[warmly]` Lúc đó phải nhổ, rồi tính chuyện trồng lại bằng Implant hoặc cách khác. Bảo vệ sớm vẫn nhẹ nhàng hơn nhiều. |
 | CTA | Logo · INBOX ĐẶT LỊCH · Kiểm tra răng chữa tủy · Tư vấn bọc mão | `[cheerfully]` Bạn có chiếc răng nào chữa tủy mà chưa bọc không? Comment cho mình biết! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra răng đã chữa tủy của bạn! |

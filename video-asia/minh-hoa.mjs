@@ -901,8 +901,8 @@ ${rangCat(p, `${p}-r`, 330, 80, 1.65)}
 <g id="${p}-set" opacity="0">${SET(180, 150, 1.2, MAU.vang)}${SET(480, 140, 1.4, MAU.vang)}${SET(500, 330, 1, MAU.vang)}</g>
 <path id="${p}-khien" d="M330 70 C230 70 210 140 222 230 C232 320 270 420 330 470 C390 420 428 320 438 230 C450 140 430 70 330 70 Z" fill="none" stroke="${MAU.troi}" stroke-width="6" stroke-dasharray="16 10" opacity="0"/>
 ${vien}
-${nhan(`${p}-n0`, 330, 600, hook ? "Đau nhức cả đêm" : "Tủy viêm trong buồng tủy kín", MAU.son, { co: 30 })}
-${nhan(`${p}-n1`, 690, 600, hook ? "Mua thuốc uống?" : "Thuốc khó tới nơi", MAU.vang, { co: 30 })}`,
+${nhan(`${p}-n0`, 250, 604, hook ? "Đau nhức cả đêm" : "Tủy viêm · buồng kín", MAU.son, { co: 30 })}
+${nhan(`${p}-n1`, 670, 604, hook ? "Mua thuốc uống?" : "Thuốc khó tới nơi", MAU.vang, { co: 30 })}`,
       js: `
 tl.fromTo("#${p}-r", {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"expo.out"}, 0.05);
 tl.to("#${p}-r-tuy", {fill:"#FF3B4A", duration:0.35, yoyo:true, repeat:${Math.max(3, Math.floor(d / 0.7))}, ease:"sine.inOut"}, 0.4);

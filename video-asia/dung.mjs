@@ -63,7 +63,7 @@ const CHUNG = `${PHONG}
 const SD_CSS = `
 .tde .hl { color:${MAU.nen}; background:${MAU.vang}; padding:0 16px; margin:0 2px; border-radius:16px; white-space:nowrap; box-shadow:0 8px 24px rgba(255,194,77,0.35); }
 .coanh .tde .hl { text-shadow:none; }
-.pan { background:linear-gradient(165deg, rgba(0,208,166,0.20), rgba(4,32,27,0.84) 42%); border:2px solid rgba(0,208,166,0.5); box-shadow:0 0 70px rgba(0,208,166,0.22), 0 30px 80px rgba(0,0,0,0.45); }`;
+.pan { top:${VUNG.hinh - 4}px; height:${VUNG.hinhCao + 28}px; background:linear-gradient(165deg, rgba(0,208,166,0.20), rgba(4,32,27,0.84) 42%); border:2px solid rgba(0,208,166,0.5); box-shadow:0 0 70px rgba(0,208,166,0.22), 0 30px 80px rgba(0,0,0,0.45); }`;
 
 /** Cỡ chữ để một dòng vừa 900 px (chữ đậm có dấu ≈ 0,58 em mỗi ký tự). */
 const co = (s, max = 92) => Math.min(max, Math.floor(900 / (s.replace(/\*/g, "").length * 0.58)));
@@ -230,11 +230,11 @@ tl.to(${JSON.stringify(c.muc.map((_, i) => `#${p}-m${i}`))}, {opacity:1, scale:1
     return {
       css: `
 .${p}-k { position:absolute; left:110px; right:110px; border-radius:40px; padding:34px 40px; text-align:center; box-shadow:0 30px 70px rgba(0,0,0,0.4); }
-#${p}-sai { top:520px; background:rgba(4,32,27,0.92); border:3px solid ${MAU.son}; }
-#${p}-dung { top:790px; background:linear-gradient(135deg, ${MAU.ngoc}, #078F74); }
+#${p}-sai { top:560px; background:rgba(4,32,27,0.92); border:3px solid ${MAU.son}; }
+#${p}-dung { top:820px; background:linear-gradient(135deg, ${MAU.ngoc}, #078F74); }
 .${p}-k small { display:inline-block; font-size:30px; font-weight:900; letter-spacing:0.12em; padding:6px 18px; border-radius:999px; margin-bottom:14px; }
 #${p}-sai small { background:${MAU.son}; color:#FFFFFF; } #${p}-dung small { background:#FFFFFF; color:#078F74; }
-.${p}-k .nd { font-size:60px; font-weight:900; line-height:1.12; position:relative; display:inline-block; }
+.${p}-k .nd { font-size:56px; font-weight:900; line-height:1.12; position:relative; display:inline-block; }
 #${p}-sai .nd { color:${MAU.mo}; } #${p}-dung .nd { color:#FFFFFF; }
 #${p}-gach { position:absolute; left:-10px; right:-10px; top:50%; height:10px; border-radius:5px; background:${MAU.son}; transform-origin:left center; }`,
       html: `
@@ -276,7 +276,7 @@ tl.to("#${p}-dung", {scale:1.03, duration:0.5, yoyo:true, repeat:3, ease:"sine.i
 #${p}-gia { position:absolute; left:100px; right:100px; top:452px; height:220px; gap:6px; border-radius:36px; background:linear-gradient(135deg, #E3262F, #F2683A); box-shadow:0 24px 60px rgba(227,38,47,0.4); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
 #${p}-gia small { font-size:38px; font-weight:800; color:#FFFFFF; letter-spacing:0.04em; }
 #${p}-gia b { white-space:nowrap; font-size:84px; font-weight:900; color:#FFE7A0; line-height:1.08; letter-spacing:-0.01em; text-shadow:0 4px 0 rgba(0,0,0,0.18); }
-#${p}-mt { position:absolute; left:110px; right:110px; top:${Y.mt}px; text-align:center; font-size:${km ? 24 : 26}px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
+#${p}-mt { position:absolute; left:60px; right:60px; top:${Y.mt}px; text-align:center; font-size:${km ? 24 : 26}px; color:${MAU.nhat}; font-weight:600; line-height:1.3; }`,
       html: `
 <div id="${p}-logo">${logo}</div>
 <div id="${p}-song"></div>
