@@ -13,7 +13,7 @@ import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { VIDEO, MIEN_TRU, HOTLINE, SLOGAN, CTA_NUT, CTA_PHU } from "./kich-ban.mjs";
-import { HINH, MAU, defs, logoSvg } from "./minh-hoa.mjs";
+import { HINH, MAU, ICON, defs, logoSvg } from "./minh-hoa.mjs";
 import { ANH, DO_CHE } from "./anh-kho.mjs";
 
 const GOC = path.dirname(fileURLToPath(import.meta.url));
@@ -59,13 +59,21 @@ const CHUNG = `${PHONG}
 .chip { display: inline-block; padding: 14px 30px; border-radius: 999px; background: rgba(0,208,166,0.12); border: 2px solid rgba(0,208,166,0.6); color: ${MAU.ngoc}; font-weight: 800; font-size: 36px; white-space: nowrap; }
 `;
 
+// Chế độ sôi động (đợt 2): chữ nhấn trong tiêu đề có nền dạ quang, khung minh hoạ kính viền ngọc phát sáng.
+const SD_CSS = `
+.tde .hl { color:${MAU.nen}; background:${MAU.vang}; padding:0 16px; margin:0 2px; border-radius:16px; white-space:nowrap; box-shadow:0 8px 24px rgba(255,194,77,0.35); }
+.coanh .tde .hl { text-shadow:none; }
+.pan { background:linear-gradient(165deg, rgba(0,208,166,0.20), rgba(4,32,27,0.84) 42%); border:2px solid rgba(0,208,166,0.5); box-shadow:0 0 70px rgba(0,208,166,0.22), 0 30px 80px rgba(0,0,0,0.45); }`;
+
 /** Cỡ chữ để một dòng vừa 900 px (chữ đậm có dấu ≈ 0,58 em mỗi ký tự). */
 const co = (s, max = 92) => Math.min(max, Math.floor(900 / (s.replace(/\*/g, "").length * 0.58)));
 
+let SD_NOW = false; // video đang dựng có chế độ sôi động → cụm chữ nhấn liền một khối (nền dạ quang liền mạch)
 function tachTu(s, lop = "w") {
   return s.split(/(\*[^*]+\*)/).filter(Boolean).flatMap((doan) => {
     const vang = doan.startsWith("*");
     const t = vang ? doan.slice(1, -1) : doan;
+    if (vang && SD_NOW && lop === "w") return [`<span class="${lop} hl">${esc(t)}</span>`];
     return t.split(/\s+/).filter(Boolean).map((w) => `<span class="${lop}${vang ? " hl" : ""}">${esc(w)}</span>`);
   }).join(" ");
 }
@@ -180,6 +188,65 @@ ${c.phu ? `<div id="${p}-phu" class="nho">${esc(c.phu)}</div>` : ""}`,
 tl.fromTo("#${p}-d${i} .w", {opacity:0, filter:"blur(8px)"}, {opacity:1, filter:"blur(0px)", duration:0.16, stagger:0.08, ease:"power3.out"}, ${r3(0.15 + i * 0.5)});`).join("") +
         (c.phu ? `\ntl.fromTo("#${p}-phu", {opacity:0, y:24}, {opacity:1, y:0, duration:0.4, ease:"expo.out"}, ${r3(tPhu)});` : ""),
       sfx: [{ f: "whoosh", t: 0.02, v: 0.3 }],
+    };
+  },
+
+  // Đợt 2 — thẻ lớn có biểu tượng: thẻ hiện bằng màn quét, biểu tượng nảy xoay; câu nào đang đọc thì thẻ đó sáng, thẻ khác mờ.
+  o_lon(c, x) {
+    const { p, d, moc } = x;
+    const n = c.muc.length, GAP = 26;
+    const cao = Math.min(176, Math.floor((VUNG.hinhCao - (n - 1) * GAP) / n));
+    const dau = VUNG.hinh + Math.round((VUNG.hinhCao - (n * cao + (n - 1) * GAP)) / 2);
+    const lech = Math.max(0, moc.length - n);
+    const tMuc = c.muc.map((m, i) => { const mm = moc[Math.min(moc.length - 1, i + lech)]; return r3(mm ? mm.bd : 0.4 + i * 0.8); });
+    const mau = c.tone === "son" ? [MAU.son, "#C2364A"] : [MAU.ngoc, "#078F74"];
+    const td = tieuDe(p, c.tieu_de, x.dau);
+    const the = c.muc.map((m, i) => `
+<div id="${p}-m${i}" class="${p}-the" style="top:${dau + i * (cao + GAP)}px; height:${cao}px">
+  <div class="${p}-ic" id="${p}-ic${i}"><svg viewBox="0 0 100 100" width="96" height="96">${ICON[m.icon] ?? ""}</svg><b>${i + 1}</b></div>
+  <div class="${p}-chu"><div class="${p}-ch">${esc(m.chu)}</div>${m.phu ? `<div class="${p}-ph">${esc(m.phu)}</div>` : ""}</div>
+</div>`).join("");
+    return {
+      css: `
+.${p}-the { position:absolute; left:90px; right:90px; display:flex; align-items:center; gap:32px; padding:0 34px 0 22px; border-radius:${Math.round(cao / 2)}px; background:linear-gradient(100deg, rgba(255,255,255,0.10), rgba(11,59,50,0.88) 38%); border:2px solid ${mau[0]}55; box-shadow:0 24px 60px rgba(0,0,0,0.35); }
+.${p}-ic { flex:none; position:relative; width:${cao - 30}px; height:${cao - 30}px; border-radius:50%; background:radial-gradient(circle at 32% 28%, ${mau[0]}, ${mau[1]}); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 6px ${mau[0]}33, 0 12px 30px rgba(0,0,0,0.35); }
+.${p}-ic b { position:absolute; right:-8px; top:-8px; width:46px; height:46px; border-radius:50%; background:${MAU.vang}; color:${MAU.nen}; font-size:28px; font-weight:900; display:flex; align-items:center; justify-content:center; }
+.${p}-chu { flex:1; min-width:0; }
+.${p}-ch { font-size:${cao < 160 ? 46 : 50}px; font-weight:900; line-height:1.12; color:${MAU.chu}; }
+.${p}-ph { font-size:30px; font-weight:600; color:${MAU.mo}; margin-top:8px; line-height:1.25; }`,
+      html: `${td.html}${the}`,
+      js: `${td.js}
+${c.muc.map((_, i) => `tl.fromTo("#${p}-m${i}", {opacity:0, clipPath:"inset(0% 100% 0% 0%)"}, {opacity:1, clipPath:"inset(0% 0% 0% 0%)", duration:0.55, ease:"power3.out"}, ${tMuc[i]});
+tl.fromTo("#${p}-ic${i}", {scale:0, rotation:-160}, {scale:1, rotation:0, duration:0.7, ease:"elastic.out(1, 0.55)"}, ${r3(tMuc[i] + 0.1)});
+${i > 0 ? `tl.to("#${p}-m${i - 1}", {opacity:0.5, scale:0.97, duration:0.3}, ${tMuc[i]});` : ""}`).join("\n")}
+tl.to(${JSON.stringify(c.muc.map((_, i) => `#${p}-m${i}`))}, {opacity:1, scale:1, duration:0.35}, ${r3(Math.max(tMuc[n - 1] + 1.2, d - 1.4))});`,
+      sfx: tMuc.flatMap((t) => [{ f: "whoosh-short", t, v: 0.35 }, { f: "pop", t: t + 0.15, v: 0.45 }]),
+    };
+  },
+
+  // Đợt 2 — thẻ "Hiểu lầm" bị gạch, lật sang "Sự thật".
+  lam_dung(c, { p, d, moc }) {
+    const tLat = moc[1] ? moc[1].bd : d * 0.45;
+    return {
+      css: `
+.${p}-k { position:absolute; left:110px; right:110px; border-radius:40px; padding:34px 40px; text-align:center; box-shadow:0 30px 70px rgba(0,0,0,0.4); }
+#${p}-sai { top:520px; background:rgba(4,32,27,0.92); border:3px solid ${MAU.son}; }
+#${p}-dung { top:790px; background:linear-gradient(135deg, ${MAU.ngoc}, #078F74); }
+.${p}-k small { display:inline-block; font-size:30px; font-weight:900; letter-spacing:0.12em; padding:6px 18px; border-radius:999px; margin-bottom:14px; }
+#${p}-sai small { background:${MAU.son}; color:#FFFFFF; } #${p}-dung small { background:#FFFFFF; color:#078F74; }
+.${p}-k .nd { font-size:60px; font-weight:900; line-height:1.12; position:relative; display:inline-block; }
+#${p}-sai .nd { color:${MAU.mo}; } #${p}-dung .nd { color:#FFFFFF; }
+#${p}-gach { position:absolute; left:-10px; right:-10px; top:50%; height:10px; border-radius:5px; background:${MAU.son}; transform-origin:left center; }`,
+      html: `
+<div id="${p}-sai" class="${p}-k"><small>✕ HIỂU LẦM</small><br/><span class="nd">${esc(c.sai)}<span id="${p}-gach"></span></span></div>
+<div id="${p}-dung" class="${p}-k"><small>✓ SỰ THẬT</small><br/><span class="nd">${esc(c.dung)}</span></div>`,
+      js: `
+tl.fromTo("#${p}-sai", {opacity:0, y:-60, rotation:-4}, {opacity:1, y:0, rotation:-2, duration:0.55, ease:"back.out(1.8)"}, 0.1);
+tl.fromTo("#${p}-gach", {scaleX:0}, {scaleX:1, duration:0.4, ease:"power3.in"}, ${r3(Math.max(0.8, tLat - 0.6))});
+tl.to("#${p}-sai", {opacity:0.55, scale:0.94, duration:0.3}, ${r3(Math.max(1.2, tLat - 0.2))});
+tl.fromTo("#${p}-dung", {opacity:0, rotationX:-90, transformPerspective:900, transformOrigin:"50% 0%"}, {opacity:1, rotationX:0, duration:0.7, ease:"back.out(1.4)"}, ${r3(tLat)});
+tl.to("#${p}-dung", {scale:1.03, duration:0.5, yoyo:true, repeat:3, ease:"sine.inOut"}, ${r3(tLat + 0.9)});`,
+      sfx: [{ f: "whoosh", t: 0.1, v: 0.35 }, { f: "key-press", t: Math.max(0.8, tLat - 0.6), v: 0.45 }, { f: "impact-bass-1", t: tLat + 0.1, v: 0.5 }, { f: "sparkle", t: tLat + 0.4, v: 0.4 }],
     };
   },
 
@@ -361,6 +428,7 @@ tl.fromTo("#${p}-svg", {opacity:0, scale:0.96}, {opacity:1, scale:1, duration:0.
     html: `<template>
 <style>
 ${CHUNG}
+${video.soi_dong ? SD_CSS : ""}
 ${k.css}
 </style>
 <div id="root" data-composition-id="${s.c.id}" data-width="${W}" data-height="${H}">
@@ -381,25 +449,29 @@ window.__timelines["${s.c.id}"] = tl;
 }
 
 /** Lớp trên cùng (dưới phụ đề): logo + khẩu hiệu — nằm trên ảnh nền của từng cảnh. */
-function dauFile(tong, tCta, an = []) {
+function dauFile(tong, tCta, an = [], cat = []) {
   return `<template>
 <style>
 ${PHONG}
 #root { position:absolute; inset:0; }
 #nen-hieu { position:absolute; left:0; right:0; top:156px; display:flex; justify-content:center; align-items:center; gap:16px; font-family:"BVP"; font-weight:800; font-size:34px; color:${MAU.chu}; }
 #nen-hieu i { font-style:normal; font-weight:700; font-size:26px; color:${MAU.ngoc}; padding:6px 16px; border-radius:999px; border:2px solid rgba(0,208,166,0.5); }
+.quet { position:absolute; left:0; top:-200px; height:2320px; display:flex; gap:0; transform:translateX(-1500px) skewX(-14deg); }
+.quet i { display:block; width:520px; height:100%; }
 #nen-chan { position:absolute; left:0; right:0; top:1452px; text-align:center; font-family:"BVP"; font-weight:800; font-size:30px; color:rgba(0,208,166,0.38); letter-spacing:0.1em; }
 </style>
 <div id="root" data-composition-id="dau" data-width="${W}" data-height="${H}">
 <div id="dau-khung" class="clip" data-start="0" data-duration="${tong}" data-layout-ignore>
   ${LOGO ? `<div id="nen-hieu"><img src="assets/logo/${LOGO}" alt="" style="height:76px; background:#FFFFFF; padding:8px 18px; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.35);" /></div>` : `<div id="nen-hieu"><span style="background:#FFFFFF; padding:8px 16px; border-radius:16px; line-height:0;">${logoSvg("nen-logo", 260)}</span></div>`}
   <div id="nen-chan">${esc(SLOGAN.toUpperCase())}</div>
+  ${cat.map((_, i) => `<div class="quet" id="quet-${i}"><i style="background:${MAU.ngoc}"></i><i style="background:${MAU.vang}; width:160px"></i></div>`).join("")}
 </div></div>
 <script>
 const tl = gsap.timeline({ paused: true });
 // Cảnh cuối (CTA) đã có logo lớn → ẩn logo nhỏ đầu khung để không trùng lặp.
 ${tCta != null ? `tl.to("#nen-hieu", {opacity:0, duration:0.25, ease:"power2.in"}, ${Math.max(0, tCta - 0.2)});` : ""}
 ${an.map(([bd, kt]) => `tl.to("#nen-hieu", {opacity:0, duration:0.2}, ${Math.max(0, bd - 0.15)});${tCta != null && Math.abs(kt - tCta) < 0.05 ? "" : ` tl.to("#nen-hieu", {opacity:1, duration:0.3}, ${kt});`}`).join("\n")}
+${cat.map((t, i) => `tl.fromTo("#quet-${i}", {x:-1500, skewX:-14}, {x:1800, skewX:-14, duration:0.62, ease:"power2.inOut"}, ${r3(Math.max(0, t - 0.31))});`).join("\n")}
 window.__timelines["dau"] = tl;
 </script>
 </template>`;
@@ -445,6 +517,7 @@ function dodai(f) {
 }
 
 function dung(video) {
+  SD_NOW = !!video.soi_dong;
   const lich = lichCanh(video);
   const tong = r3(lich.at(-1).bd + lich.at(-1).d);
   const thu = path.join(GOC, "ban-dung", SACH ? `${video.ma}-sach` : video.ma);
@@ -481,8 +554,12 @@ function dung(video) {
       hosts.push(`<video id="bg-${p}" class="clip" src="assets/anh/${p}.mp4" data-start="${s.bd}" data-duration="${s.d}" muted playsinline style="position:absolute; left:0; top:0; width:${W}px; height:${H}px; object-fit:cover; object-position:${nv[1]}; z-index:1"></video>`);
     }
     hosts.push(`<div id="${s.c.id}" data-composition-id="${s.c.id}" data-composition-src="compositions/${s.c.id}.html" data-start="${s.bd}" data-duration="${s.d}" data-track-index="2" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:2"></div>`);
-    if (s !== lich[0]) sfx.push({ f: ["whoosh", "whoosh-short", "whoosh-cinematic"][sfx.length % 3], t: r3(s.bd - 0.12), v: 0.28 });
-    sfx.push(...cf.sfx);
+    // Chế độ sôi động (video.soi_dong): chuyển cảnh bằng whoosh mạnh hơn, đập trầm ở khung 0, riser dẫn vào CTA.
+    const SD = !!video.soi_dong;
+    if (s !== lich[0]) sfx.push({ f: SD ? "whoosh-cinematic" : ["whoosh", "whoosh-short", "whoosh-cinematic"][sfx.length % 3], t: r3(s.bd - 0.12), v: SD ? 0.5 : 0.28 });
+    else if (SD) sfx.push({ f: "impact-bass-1", t: 0.05, v: 0.7 });
+    if (SD && s.c.loai === "cta") sfx.push({ f: "riser", t: r3(Math.max(0, s.bd - 1.6)), v: 0.45 }, { f: "impact-bass-1", t: r3(s.bd + 0.05), v: 0.55 });
+    sfx.push(...cf.sfx.map((x) => (SD ? { ...x, v: Math.min(1, (x.v ?? 0.5) * 1.35) } : x)));
     if (s.giong) {
       const ten = `${s.c.id}.mp3`;
       fs.copyFileSync(path.join(GOC, "giong", video.ma, ten), path.join(thu, "assets/giong", ten));
@@ -495,7 +572,7 @@ function dung(video) {
   const lan = [];
   const sfxHtml = sfx.filter((x) => x.t >= 0 && x.t < tong - 0.2).sort((a, b) => a.t - b.t).map((x, i) => {
     dungSfx.add(x.f);
-    const v = r3((x.v ?? 0.5) * (coGiong ? 0.5 : 1));
+    const v = r3((x.v ?? 0.5) * (coGiong ? (video.soi_dong ? 0.65 : 0.5) : 1));
     const dai = r3(Math.min(dodai(x.f), 3, tong - x.t));
     let k = lan.findIndex((het) => het <= x.t);
     if (k < 0) { lan.push(0); k = lan.length - 1; }
@@ -512,11 +589,11 @@ function dung(video) {
     const dn = r3(Math.min(tong, Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", fn]).toString().trim())));
     execFileSync("ffmpeg", ["-loglevel", "error", "-y", "-i", fn, "-t", String(dn), "-af", `afade=t=in:d=0.8,afade=t=out:st=${r3(dn - 2.5)}:d=2.5`, "-b:a", "160k", ra]);
     // Giọng −16 LUFS, nhạc −16 LUFS × 0,3 ≈ −26,5 LUFS → nhạc thấp hơn giọng ~10 dB.
-    nhac = `<audio id="nhac-nen" class="clip" src="assets/nhac/nen.mp3" data-start="0" data-duration="${dn}" data-track-index="4" data-volume="${coGiong ? 0.3 : 0.5}"></audio>`;
+    nhac = `<audio id="nhac-nen" class="clip" src="assets/nhac/nen.mp3" data-start="0" data-duration="${dn}" data-track-index="4" data-volume="${coGiong ? (video.soi_dong ? 0.4 : 0.3) : 0.5}"></audio>`;
   }
 
   fs.writeFileSync(path.join(thu, "compositions", "nen.html"), nenFile(tong, video));
-  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong, lich.find((x) => x.c.loai === "cta")?.bd, lich.filter((x) => x.c.loai === "that").map((x) => [x.bd, r3(x.bd + x.d)])));
+  fs.writeFileSync(path.join(thu, "compositions", "dau.html"), dauFile(tong, lich.find((x) => x.c.loai === "cta")?.bd, lich.filter((x) => x.c.loai === "that").map((x) => [x.bd, r3(x.bd + x.d)]), video.soi_dong ? lich.slice(1).map((x) => x.bd) : []));
   fs.writeFileSync(path.join(thu, "compositions", "phu-de.html"), canhPhuDe(lich));
   fs.writeFileSync(path.join(thu, "phu-de.srt"), canhPhuDe.srt);
   fs.writeFileSync(path.join(thu, "hyperframes.json"), JSON.stringify({

@@ -93,12 +93,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Khám & chụp CT", "Đặt lịch cho ba mẹ"],
         noi: [
-          "[cheerfully] Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ khám và tư vấn cho mẹ nha!",
+          "[cheerfully] Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ khám và tư vấn cho mẹ!",
         ],
         phu_de: [
-          "Gửi video này cho anh chị em, cuối tuần mình cùng *đưa mẹ đi khám* nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ khám và tư vấn cho mẹ nha!",
+          "Gửi video này cho anh chị em, cuối tuần mình cùng *đưa mẹ đi khám* nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ khám và tư vấn cho mẹ!",
         ],
       },
     ],
@@ -176,12 +176,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Chụp phim CT", "Tư vấn ghép xương"],
         noi: [
-          "[cheerfully] Bạn đã từng bị nói là xương mỏng chưa? Comment cho mình biết nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ xem phim CT và tư vấn cho bạn nha!",
+          "[cheerfully] Bạn đã từng bị nói là xương mỏng chưa? Comment cho mình biết nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ xem phim CT và tư vấn cho bạn!",
         ],
         phu_de: [
-          "Bạn đã từng bị nói là *xương mỏng* chưa? Comment cho mình biết nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *xem phim CT* và tư vấn cho bạn nha!",
+          "Bạn đã từng bị nói là *xương mỏng* chưa? Comment cho mình biết nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *xem phim CT* và tư vấn cho bạn!",
         ],
       },
     ],
@@ -252,12 +252,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Tái khám Implant", "Hướng dẫn vệ sinh"],
         noi: [
-          "[cheerfully] Bạn làm Implant được bao lâu rồi? Comment cho mình biết nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra và làm sạch quanh trụ cho bạn nha!",
+          "[cheerfully] Bạn làm Implant được bao lâu rồi? Comment cho mình biết nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra và làm sạch quanh trụ cho bạn!",
         ],
         phu_de: [
-          "Bạn làm Implant được *bao lâu rồi*? Comment cho mình biết nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *kiểm tra và làm sạch* quanh trụ cho bạn nha!",
+          "Bạn làm Implant được *bao lâu rồi*? Comment cho mình biết nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *kiểm tra và làm sạch* quanh trụ cho bạn!",
         ],
       },
     ],
@@ -333,12 +333,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Khám & tư vấn", "Xem trước nụ cười"],
         noi: [
-          "[mischievously] Bạn sợ nhất điều gì khi bọc sứ? Comment cho mình biết nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ xem răng và tư vấn cách làm hợp với bạn nha!",
+          "[mischievously] Bạn sợ nhất điều gì khi bọc sứ? Comment cho mình biết nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ xem răng và tư vấn cách làm hợp với bạn!",
         ],
         phu_de: [
-          "Bạn *sợ nhất điều gì* khi bọc sứ? Comment cho mình biết nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ xem răng và tư vấn *cách làm hợp với bạn* nha!",
+          "Bạn *sợ nhất điều gì* khi bọc sứ? Comment cho mình biết nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ xem răng và tư vấn *cách làm hợp với bạn*!",
         ],
       },
     ],
@@ -406,12 +406,12 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Scan răng", "Thử mẫu nụ cười"],
         noi: [
-          "[mischievously] Nếu được thiết kế lại nụ cười, bạn muốn sửa điều gì nhất? Comment nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch scan răng và xem trước nụ cười của bạn nha!",
+          "[mischievously] Nếu được thiết kế lại nụ cười, bạn muốn sửa điều gì nhất? Comment nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch scan răng và xem trước nụ cười của bạn!",
         ],
         phu_de: [
-          "Nếu được thiết kế lại nụ cười, bạn *muốn sửa điều gì nhất*? Comment nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch *scan răng* và xem trước nụ cười của bạn nha!",
+          "Nếu được thiết kế lại nụ cười, bạn *muốn sửa điều gì nhất*? Comment nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch *scan răng* và xem trước nụ cười của bạn!",
         ],
       },
     ],
@@ -479,12 +479,265 @@ export const VIDEO = [
         id: "cta", loai: "cta",
         chip: ["Tư vấn tẩy trắng", "So màu răng sứ"],
         noi: [
-          "[mischievously] Bạn đang định tẩy trắng hay làm sứ trước? Comment cho mình biết nha!",
-          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ tư vấn thứ tự làm đúng cho bạn nha!",
+          "[mischievously] Bạn đang định tẩy trắng hay làm sứ trước? Comment cho mình biết nhé!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ tư vấn thứ tự làm đúng cho bạn!",
         ],
         phu_de: [
-          "Bạn đang định *tẩy trắng* hay *làm sứ* trước? Comment cho mình biết nha!",
-          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ tư vấn *thứ tự làm đúng* cho bạn nha!",
+          "Bạn đang định *tẩy trắng* hay *làm sứ* trước? Comment cho mình biết nhé!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ tư vấn *thứ tự làm đúng* cho bạn!",
+        ],
+      },
+    ],
+  },
+  // ===================================================================== TỔNG QUÁT 1 — đau răng tự uống kháng sinh (ADA 2019)
+  {
+    ma: "g01",
+    ten: "Đau răng uống kháng sinh là xong?",
+    nhom: "Tổng quát · Chữa tủy",
+    nhac: "soi-dong", soi_dong: true,
+    canh: [
+      {
+        id: "hook", loai: "minh_hoa", hinh: "rang_nhan_dau",
+        tieu_de: ["Đau răng nhức buốt", "uống *kháng sinh* là xong?"],
+        noi: [
+          "[dramatic] Răng đau nhức cả đêm, ra tiệm mua vỉ kháng sinh uống cho đỡ?",
+          "[curious] Đỡ được mấy hôm... rồi đâu lại vào đấy!",
+        ],
+        phu_de: [
+          "Răng đau nhức cả đêm, ra tiệm mua vỉ *kháng sinh* uống cho đỡ?",
+          "Đỡ được mấy hôm… rồi *đâu lại vào đấy*!",
+        ],
+      },
+      {
+        id: "vi-sao", loai: "minh_hoa", hinh: "rang_tuy",
+        tieu_de: ["Ổ đau nằm *trong buồng tủy*"],
+        noi: [
+          "[enthusiastic] Cơn đau đó thường do tủy răng bị viêm, nằm gọn trong buồng tủy kín.",
+          "Kháng sinh uống vào gần như không tới được chỗ đó, nên không giải quyết tận gốc.",
+          "Hướng dẫn của Hiệp hội Nha khoa Hoa Kỳ cũng khuyên: đa số ca đau tủy không cần kháng sinh.",
+        ],
+        phu_de: [
+          "Cơn đau đó thường do *tủy răng bị viêm*, nằm gọn trong buồng tủy kín.",
+          "Kháng sinh uống vào *gần như không tới được* chỗ đó, nên không giải quyết tận gốc.",
+          "Hướng dẫn của *Hiệp hội Nha khoa Hoa Kỳ* cũng khuyên: đa số ca đau tủy *không cần kháng sinh*.",
+        ],
+      },
+      {
+        id: "tan-goc", loai: "o_lon",
+        tieu_de: ["Xử lý *tận gốc*"],
+        muc: [
+          { icon: "xquang", chu: "Khám, chụp phim", phu: "Tìm đúng chiếc răng gây đau" },
+          { icon: "tuy", chu: "Chữa tủy", phu: "Làm sạch ống tủy, giữ răng thật" },
+          { icon: "nho", chu: "Không giữ được", phu: "Lúc đó mới tính chuyện nhổ" },
+        ],
+        noi: [
+          "[cheerfully] Cách xử lý tận gốc là: khám và chụp phim, tìm đúng chiếc răng gây đau.",
+          "Nhiều trường hợp có thể chữa tủy, làm sạch ống tủy để giữ lại răng thật.",
+          "Chỉ khi răng không giữ được nữa, bác sĩ mới tính tới chuyện nhổ.",
+        ],
+        phu_de: [
+          "Cách xử lý tận gốc là: *khám và chụp phim*, tìm đúng chiếc răng gây đau.",
+          "Nhiều trường hợp có thể *chữa tủy*, làm sạch ống tủy để *giữ lại răng thật*.",
+          "Chỉ khi răng không giữ được nữa, bác sĩ mới tính tới chuyện *nhổ*.",
+        ],
+      },
+      {
+        id: "canh-bao", loai: "o_lon", tone: "son",
+        tieu_de: ["Đi khám *ngay trong ngày* nếu"],
+        muc: [
+          { icon: "sot", chu: "Sốt, mệt, sưng hạch" },
+          { icon: "sung", chu: "Sưng lan ra má, cổ" },
+          { icon: "tho", chu: "Khó há miệng, nuốt, thở" },
+        ],
+        noi: [
+          "[warmly] Nhưng có những dấu hiệu không được chờ.",
+          "Sốt, mệt, sưng hạch.",
+          "Sưng lan ra má, xuống cổ.",
+          "Khó há miệng, khó nuốt, khó thở. Gặp những dấu hiệu này, đi khám ngay trong ngày.",
+        ],
+        phu_de: [
+          "Nhưng có những dấu hiệu *không được chờ*.",
+          "*Sốt, mệt, sưng hạch*.",
+          "*Sưng lan* ra má, xuống cổ.",
+          "Khó há miệng, khó nuốt, khó thở. Gặp những dấu hiệu này, *đi khám ngay trong ngày*.",
+        ],
+      },
+      {
+        id: "cta", loai: "cta",
+        chip: ["Khám & chụp phim", "Chữa tủy giữ răng"],
+        noi: [
+          "[cheerfully] Bạn từng tự mua kháng sinh uống khi đau răng chưa? Comment kể mình nghe!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ tìm đúng nguyên nhân cơn đau cho bạn!",
+        ],
+        phu_de: [
+          "Bạn từng *tự mua kháng sinh* uống khi đau răng chưa? Comment kể mình nghe!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *tìm đúng nguyên nhân* cơn đau cho bạn!",
+        ],
+      },
+    ],
+  },
+
+  // ===================================================================== TỔNG QUÁT 2 — chữa tủy rồi sao vẫn vỡ? (Cochrane 2015, Aquilino 2002)
+  {
+    ma: "g02",
+    ten: "Răng chữa tủy rồi, sao vẫn vỡ?",
+    nhom: "Chữa tủy → Implant",
+    nhac: "soi-dong", soi_dong: true,
+    canh: [
+      {
+        id: "hook", loai: "minh_hoa", hinh: "rang_vo",
+        tieu_de: ["Răng đã *chữa tủy*", "sao vẫn vỡ?"],
+        noi: [
+          "[curious] Răng chữa tủy xong, hết đau rồi, tự nhiên một hôm cắn miếng cơm... rắc!",
+          "[dramatic] Vỡ mất một góc. Vì sao vậy?",
+        ],
+        phu_de: [
+          "Răng chữa tủy xong, hết đau rồi, tự nhiên một hôm cắn miếng cơm… *rắc*!",
+          "*Vỡ mất một góc*. Vì sao vậy?",
+        ],
+      },
+      {
+        id: "hieu-lam", loai: "lam_dung",
+        sai: "Răng chết tủy thì giòn",
+        dung: "Răng yếu vì đã mất nhiều mô",
+        noi: [
+          "[enthusiastic] Nhiều người nghĩ răng chết tủy thì giòn.",
+          "Thật ra, răng yếu đi chủ yếu vì đã mất nhiều mô: do sâu, do mở tủy, do miếng trám cũ.",
+        ],
+        phu_de: [
+          "Nhiều người nghĩ *răng chết tủy thì giòn*.",
+          "Thật ra, răng yếu đi chủ yếu vì *đã mất nhiều mô*: do sâu, do mở tủy, do miếng trám cũ.",
+        ],
+      },
+      {
+        id: "bao-ve", loai: "o_lon",
+        tieu_de: ["Có cần bọc? *Tùy răng*"],
+        muc: [
+          { icon: "rang_cua", chu: "Răng cửa còn gần nguyên", phu: "Thường chỉ cần trám kín" },
+          { icon: "rang_ham", chu: "Răng hàm mất nhiều mô", phu: "Nên có mão hoặc onlay ôm múi" },
+          { icon: "nghien", chu: "Hay nghiến, nhai mạnh", phu: "Càng nên che kín múi răng" },
+        ],
+        noi: [
+          "[cheerfully] Có cần bọc hay không, tùy từng răng.",
+          "Răng cửa còn gần nguyên vẹn, thường chỉ cần trám kín.",
+          "Răng hàm mất nhiều mô, nên có mão hoặc onlay ôm lấy các múi răng.",
+          "Còn nếu hay nghiến răng, nhai mạnh, càng nên che kín múi.",
+        ],
+        phu_de: [
+          "Có cần bọc hay không, *tùy từng răng*.",
+          "Răng cửa còn gần nguyên vẹn, thường chỉ cần *trám kín*.",
+          "Răng hàm mất nhiều mô, nên có *mão hoặc onlay* ôm lấy các múi răng.",
+          "Còn nếu hay *nghiến răng*, nhai mạnh, càng nên che kín múi.",
+        ],
+      },
+      {
+        id: "het-cach", loai: "minh_hoa", hinh: "nut_doc",
+        tieu_de: ["Khi vết nứt *xuống tới chân*"],
+        noi: [
+          "[dramatic] Để vỡ tới mức nứt dọc xuống chân răng, thì thường không giữ được nữa.",
+          "[warmly] Lúc đó phải nhổ, rồi tính chuyện trồng lại bằng Implant hoặc cách khác. Bảo vệ sớm vẫn nhẹ nhàng hơn nhiều.",
+        ],
+        phu_de: [
+          "Để vỡ tới mức *nứt dọc xuống chân răng*, thì thường không giữ được nữa.",
+          "Lúc đó phải nhổ, rồi tính chuyện *trồng lại bằng Implant* hoặc cách khác. *Bảo vệ sớm* vẫn nhẹ nhàng hơn nhiều.",
+        ],
+      },
+      {
+        id: "cta", loai: "cta",
+        chip: ["Kiểm tra răng chữa tủy", "Tư vấn bọc mão"],
+        noi: [
+          "[cheerfully] Bạn có chiếc răng nào chữa tủy mà chưa bọc không? Comment cho mình biết!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra răng đã chữa tủy của bạn!",
+        ],
+        phu_de: [
+          "Bạn có chiếc răng nào *chữa tủy mà chưa bọc* không? Comment cho mình biết!",
+          "*Inbox Nha khoa Asia*, đặt lịch để bác sĩ *kiểm tra răng đã chữa tủy* của bạn!",
+        ],
+      },
+    ],
+  },
+
+  // ===================================================================== TỔNG QUÁT 3 — vì sao phải nhổ răng (→ Implant)
+  {
+    ma: "g03",
+    ten: "Vì sao bác sĩ nói: răng này phải nhổ?",
+    nhom: "Bệnh lý → Implant",
+    nhac: "soi-dong", soi_dong: true,
+    canh: [
+      {
+        id: "hook", loai: "minh_hoa", hinh: "rang_lac",
+        tieu_de: ["“Răng này *phải nhổ*”", "vì sao vậy?"],
+        noi: [
+          "[curious] Đi khám, bác sĩ nói: răng này không giữ được nữa, phải nhổ thôi.",
+          "[dramatic] Thường là vì một trong ba lý do này!",
+        ],
+        phu_de: [
+          "Đi khám, bác sĩ nói: răng này *không giữ được nữa*, phải nhổ thôi.",
+          "Thường là vì *1 trong 3 lý do* này!",
+        ],
+      },
+      {
+        id: "ly-do", loai: "o_lon", tone: "son",
+        tieu_de: ["3 lý do *phải nhổ răng*"],
+        muc: [
+          { icon: "sau_vo", chu: "Sâu vỡ tới chân răng", phu: "Không còn đủ mô để phục hồi" },
+          { icon: "nut_chan", chu: "Nứt dọc chân răng", phu: "Hay gặp ở răng chữa tủy chưa bọc" },
+          { icon: "lung_lay", chu: "Viêm nha chu nặng", phu: "Xương tiêu nhiều, răng lung lay" },
+        ],
+        noi: [
+          "[enthusiastic] Một: sâu vỡ lớn tới tận chân răng, không còn đủ mô để phục hồi.",
+          "Hai: nứt dọc chân răng, hay gặp ở răng đã chữa tủy mà chưa được bảo vệ.",
+          "Ba: viêm nha chu giai đoạn nặng, xương quanh răng tiêu nhiều, răng lung lay.",
+        ],
+        phu_de: [
+          "1: *sâu vỡ lớn* tới tận chân răng, không còn đủ mô để phục hồi.",
+          "2: *nứt dọc chân răng*, hay gặp ở răng đã chữa tủy mà chưa được bảo vệ.",
+          "3: *viêm nha chu giai đoạn nặng*, xương quanh răng tiêu nhiều, răng lung lay.",
+        ],
+      },
+      {
+        id: "som", loai: "minh_hoa", hinh: "dong_thoi_gian",
+        tieu_de: ["Phát hiện sớm", "*còn giữ được răng*"],
+        noi: [
+          "[warmly] Cả ba đều âm thầm tiến triển.",
+          "Phát hiện sớm thì trám, chữa tủy, hay điều trị nha chu, vẫn còn giữ được răng thật.",
+        ],
+        phu_de: [
+          "Cả 3 đều *âm thầm tiến triển*.",
+          "Phát hiện sớm thì trám, chữa tủy, hay điều trị nha chu, *vẫn còn giữ được răng thật*.",
+        ],
+      },
+      {
+        id: "sau-nho", loai: "o_lon",
+        tieu_de: ["Đã nhổ rồi? *Đừng để trống*"],
+        muc: [
+          { icon: "implant", chu: "Trồng Implant", phu: "Thay luôn cả chân răng" },
+          { icon: "cau", chu: "Cầu răng sứ", phu: "Dựa vào 2 răng bên cạnh" },
+          { icon: "ham", chu: "Hàm tháo lắp", phu: "Tháo ra vệ sinh hằng ngày" },
+        ],
+        noi: [
+          "[cheerfully] Còn nếu đã phải nhổ, nên tính sớm chuyện làm lại răng.",
+          "Implant thay luôn cả chân răng.",
+          "Cầu răng sứ thì dựa vào hai răng bên cạnh.",
+          "Hoặc hàm tháo lắp. Chọn cách nào, bác sĩ sẽ xem xương và sức khỏe của bạn trước.",
+        ],
+        phu_de: [
+          "Còn nếu đã phải nhổ, nên *tính sớm* chuyện làm lại răng.",
+          "*Implant* thay luôn cả chân răng.",
+          "*Cầu răng sứ* thì dựa vào 2 răng bên cạnh.",
+          "Hoặc *hàm tháo lắp*. Chọn cách nào, bác sĩ sẽ xem xương và sức khỏe của bạn trước.",
+        ],
+      },
+      {
+        id: "cta", loai: "cta",
+        chip: ["Khám tổng quát", "Tư vấn trồng răng"],
+        noi: [
+          "[mischievously] Bạn từng phải nhổ răng vì lý do nào? Comment một, hai hay ba!",
+          "[excited] Inbox Nha khoa Asia, đặt lịch khám sớm để giữ lại răng thật của bạn!",
+        ],
+        phu_de: [
+          "Bạn từng phải nhổ răng vì lý do nào? Comment *1*, *2* hay *3*!",
+          "*Inbox Nha khoa Asia*, đặt lịch *khám sớm* để giữ lại răng thật của bạn!",
         ],
       },
     ],

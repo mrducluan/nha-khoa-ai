@@ -33,7 +33,7 @@ let loi = 0;
 const bao = (m) => { loi++; console.log("✗ " + m); };
 const chuoi = (c) => [
   ...(c.noi ?? []), ...(c.phu_de ?? []), ...(c.tieu_de ?? []), ...(c.dong ?? []), c.phu ?? "", c.loi ?? "",
-  ...(c.muc ?? []).flatMap((m) => [m.chu, m.phu ?? "", m.ra ?? ""]), c.chot?.chu ?? "", ...(c.chip ?? []), ...Object.values(c.khuyen_mai ?? {}),
+  ...(c.muc ?? []).flatMap((m) => [m.chu, m.phu ?? "", m.ra ?? ""]), c.chot?.chu ?? "", c.sai ?? "", c.dung ?? "", ...(c.chip ?? []), ...Object.values(c.khuyen_mai ?? {}),
 ];
 
 for (const v of VIDEO) {

@@ -1,4 +1,4 @@
-# 6 video ngắn Nha khoa Asia — 3 Implant · 3 Răng sứ
+# 9 video ngắn Nha khoa Asia — 3 Implant · 3 Răng sứ · 3 Tổng quát / Chữa tủy
 
 Soạn 2026-11-07 · Dọc 9:16, 1080×1920, 30 fps · 44–56 giây · Dựng bằng **HyperFrames** (HTML + GSAP → MP4), cùng bộ dựng
 với 6 video Tâm Đức Smile. Giọng **ElevenLabs v3: Hanh - NhaKhoa** (nữ, giọng Bắc; ổn định 0,5 · tốc độ 1,05 · có tag cảm xúc).
@@ -43,7 +43,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Nỗi lo | Sợ ê, sợ đau · Không biết bác sĩ đang làm gì · Sợ làm xong lại phải làm lại | `[warmly]` Người lớn tuổi đi làm răng, ai cũng có nỗi lo riêng. Sợ ê, sợ đau. Không biết bác sĩ đang làm gì trong miệng mình. Và sợ làm xong, lại phải làm lại. |
 | Hành trình | Chụp CT, lên kế hoạch → Đặt trụ → Chờ xương bám chặt trụ → Gắn mão sứ | `[enthusiastic]` Đầu tiên, chụp phim CT để đo xương và lên kế hoạch. Sau đó, bác sĩ đặt trụ vào xương hàm. Rồi chờ vài tháng, để xương bám chặt vào trụ. Cuối cùng mới gắn mão sứ lên trên. |
 | Phòng kính | Chữ lớn **Phòng kính trong suốt · người nhà nhìn thấy** trên ảnh thật vách kính | `[warmly]` Ở Nha khoa Asia, phòng phẫu thuật Implant có vách kính trong suốt. Người nhà đứng bên ngoài, thấy bác sĩ làm tới đâu. Còn mẹ ở bên trong, biết con đang ở ngay đó. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Khám & chụp CT · Đặt lịch cho ba mẹ | `[cheerfully]` Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nha! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ khám và tư vấn cho mẹ nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Khám & chụp CT · Đặt lịch cho ba mẹ | `[cheerfully]` Gửi video này cho anh chị em, cuối tuần mình cùng đưa mẹ đi khám nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ khám và tư vấn cho mẹ! |
 
 ## i02 — "Xương hàm mỏng là hết làm Implant?" (Implant · 56 giây)
 
@@ -53,7 +53,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Vì sao | Mất răng để lâu năm · Viêm nha chu kéo dài · Xoang hàm sà xuống thấp | `[warmly]` Xương mỏng thường có ba lý do. Mất răng để lâu, xương ở chỗ đó tiêu dần. Viêm nha chu kéo dài, làm tiêu xương quanh chân răng. Hoặc ở hàm trên, xoang hàm sà xuống, nên phần xương còn lại thấp đi. |
 | Nâng xoang | Hàm trên: xoang hàm, màng xoang được nâng lên, khối xương ghép phồng lên, trụ đi lên từ dưới · nhãn "Xương đủ chắc: đặt trụ cùng lúc" → "Quá mỏng: ghép trước, đặt trụ sau" | `[enthusiastic]` Xương thiếu thì bác sĩ có thể nâng màng xoang lên, rồi ghép thêm xương vào bên dưới. Xương còn tương đối cao, nhiều khi đặt trụ được cùng lúc. Xương quá mỏng, thì ghép trước, chờ vài tháng rồi mới đặt trụ. |
 | Phim CT | ☑ Đo chiều cao, độ dày xương · ☑ Xem xoang hàm có viêm không · ☑ Chọn cách hợp với bạn | `[warmly]` Làm cách nào, là do phim CT quyết định. Bác sĩ đo chiều cao và độ dày của xương. Xem xoang hàm có đang viêm không. Rồi mới chọn cách phù hợp cho riêng bạn. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Chụp phim CT · Tư vấn ghép xương | `[cheerfully]` Bạn đã từng bị nói là xương mỏng chưa? Comment cho mình biết nha! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ xem phim CT và tư vấn cho bạn nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Chụp phim CT · Tư vấn ghép xương | `[cheerfully]` Bạn đã từng bị nói là xương mỏng chưa? Comment cho mình biết nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ xem phim CT và tư vấn cho bạn! |
 
 ## i03 — "Răng Implant không sâu — vậy khỏi chăm?" (Implant · 55 giây)
 
@@ -63,7 +63,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Viêm quanh Implant | Mảng bám vàng quanh cổ trụ → nướu đỏ lên → xương quanh trụ lõm xuống → trụ lắc | `[dramatic]` Mảng bám vẫn bám quanh cổ trụ, y như răng thật. Để lâu, nướu quanh trụ có thể bị viêm, rồi xương giữ trụ tiêu dần. Đó là viêm quanh Implant, một lý do khiến trụ bị lung lay. |
 | 3 thói quen | ☑ Chỉ nha khoa, tăm nước mỗi tối · ☑ Tái khám, làm sạch định kỳ · ☑ Nghiến răng: hỏi về máng bảo vệ | `[cheerfully]` Ba thói quen nhỏ để giữ trụ thật lâu. Một: dùng chỉ nha khoa hoặc tăm nước quanh trụ mỗi tối. Hai: tái khám khoảng sáu tháng một lần, để bác sĩ làm sạch và kiểm tra. Ba: nếu hay nghiến răng ban đêm, hỏi bác sĩ về máng bảo vệ. |
 | Chốt | Chữ lớn **Implant bền hay không · một nửa nằm ở bạn** trên ảnh thật đội ngũ bác sĩ | `[warmly]` Implant bền hay không, một nửa nằm ở tay nghề bác sĩ, một nửa nằm ở cách mình chăm sóc mỗi ngày. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Tái khám Implant · Hướng dẫn vệ sinh | `[cheerfully]` Bạn làm Implant được bao lâu rồi? Comment cho mình biết nha! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra và làm sạch quanh trụ cho bạn nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Tái khám Implant · Hướng dẫn vệ sinh | `[cheerfully]` Bạn làm Implant được bao lâu rồi? Comment cho mình biết nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra và làm sạch quanh trụ cho bạn! |
 
 ## s01 — "Bọc sứ là phải mài răng thành cái cọc?" (Răng sứ · 53 giây)
 
@@ -73,7 +73,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Men răng | Răng thật (lớp men) vs Sau khi mài, nhãn **Không mọc lại** | `[enthusiastic]` Lớp men ở cổ răng chỉ dày chưa tới nửa milimét. Mài lấn quá lớp men này, răng dễ ê buốt, mà men đã mất thì không mọc lại. |
 | Mài bao nhiêu | Mặt dán sứ veneer → Mài rất ít · Mão toàn sứ → Mài vừa đủ · Răng lệch nhiều → Cân nhắc niềng trước | `[cheerfully]` Mài bao nhiêu là tùy cách làm. Mặt dán sứ veneer mỏng như kính áp tròng, nên mài rất ít. Mão toàn sứ bọc kín cả răng, nên cần mài nhiều hơn, nhưng vẫn vừa đủ. Còn răng lệch nhiều, có khi niềng trước một thời gian để đỡ phải mài. |
 | Mài có định mức | Thử mẫu lên răng trước → Mài xuyên qua lớp mẫu → Giữ men nhiều nhất có thể | `[enthusiastic]` Bác sĩ sẽ làm thử mẫu lên răng trước. Rồi mài xuyên qua lớp mẫu đó, với mũi khoan định độ sâu. `[warmly]` Nhờ vậy chỉ lấy đi phần thật sự cần, giữ lại men răng nhiều nhất có thể. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Khám & tư vấn · Xem trước nụ cười | `[mischievously]` Bạn sợ nhất điều gì khi bọc sứ? Comment cho mình biết nha! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ xem răng và tư vấn cách làm hợp với bạn nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Khám & tư vấn · Xem trước nụ cười | `[mischievously]` Bạn sợ nhất điều gì khi bọc sứ? Comment cho mình biết nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ xem răng và tư vấn cách làm hợp với bạn! |
 
 ## s02 — "Chưa mài răng nào, đã thấy nụ cười mới" (Răng sứ · 51 giây)
 
@@ -83,7 +83,7 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | 3 bước | Scan răng 3 chiều → Thiết kế nụ cười trên máy → Thử mẫu ngay trên răng | `[enthusiastic]` Bước một: scan răng bằng máy quét, có ngay mô hình ba chiều. Bước hai: bác sĩ thiết kế dáng răng, độ dài, màu sắc trên máy tính. Bước ba: làm mẫu bằng nhựa, gắn tạm lên răng để bạn soi gương. |
 | Thử | Chữ lớn **Nhìn · cười · nói thử — rồi mới quyết định** | `[warmly]` Bạn được nhìn, được cười, được nói thử với hàm răng mẫu. Chỗ nào chưa ưng thì góp ý để sửa, rồi mới quyết định làm. |
 | Lợi ích | ☑ Biết dáng răng hợp mặt chưa · ☑ Làm thước đo để mài vừa đủ · ☑ Bạn & bác sĩ thống nhất từ đầu | `[cheerfully]` Thử mẫu giúp bạn biết trước dáng răng có hợp gương mặt không. Mẫu đó còn là thước đo, giúp bác sĩ mài vừa đủ. Và quan trọng nhất, bạn với bác sĩ thống nhất kết quả mong muốn ngay từ đầu. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Scan răng · Thử mẫu nụ cười | `[mischievously]` Nếu được thiết kế lại nụ cười, bạn muốn sửa điều gì nhất? Comment nha! `[excited]` Inbox Nha khoa Asia, đặt lịch scan răng và xem trước nụ cười của bạn nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Scan răng · Thử mẫu nụ cười | `[mischievously]` Nếu được thiết kế lại nụ cười, bạn muốn sửa điều gì nhất? Comment nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch scan răng và xem trước nụ cười của bạn! |
 
 ## s03 — "Làm sứ xong mới tẩy trắng — và cái kết lệch màu" (Răng sứ · 44 giây)
 
@@ -93,7 +93,64 @@ rẻ nhất, cam kết kết quả · giá, ưu đãi, trả góp, miễn phí �
 | Vì sao | Chữ lớn **Răng sứ không đổi màu khi tẩy trắng** · "Thuốc tẩy chỉ tác động lên răng thật" | `[enthusiastic]` Vì thuốc tẩy trắng chỉ tác động lên răng thật. Răng sứ thì giữ nguyên màu đã chọn lúc làm, không trắng thêm được. |
 | Thứ tự đúng | Tẩy trắng răng thật trước → Chờ màu răng ổn định → So màu, làm răng sứ sau | `[cheerfully]` Nên thứ tự đúng là: tẩy trắng răng thật trước. Chờ một thời gian cho màu răng ổn định. Rồi mới so màu, và làm răng sứ cho khớp. |
 | So màu | Bảng so màu: "Quá trắng, lệch tông" → "Hài hòa với bạn ✓", nối với màu da và lòng trắng mắt | `[warmly]` Lúc so màu, đừng chọn màu trắng nhất bảng. Bác sĩ sẽ chọn tông hài hòa với răng thật, màu da và gương mặt của bạn. |
-| CTA | Logo · INBOX ĐẶT LỊCH · Tư vấn tẩy trắng · So màu răng sứ | `[mischievously]` Bạn đang định tẩy trắng hay làm sứ trước? Comment cho mình biết nha! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ tư vấn thứ tự làm đúng cho bạn nha! |
+| CTA | Logo · INBOX ĐẶT LỊCH · Tư vấn tẩy trắng · So màu răng sứ | `[mischievously]` Bạn đang định tẩy trắng hay làm sứ trước? Comment cho mình biết nhé! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ tư vấn thứ tự làm đúng cho bạn! |
+
+---
+
+## Đợt 2 (2026-11-07): Tổng quát · Chữa tủy · Bệnh lý dẫn tới trồng Implant
+
+**Khác đợt 1:**
+- **Nhạc sôi động:** bản `nhac/soi-dong.mp3`, nhịp 124 BPM, trống pop, synth sáng. Nhạc to hơn đợt 1 (0,4 so với 0,3).
+- **Hiệu ứng âm thanh dày hơn**, bật bằng `soi_dong: true` trong `kich-ban.mjs`:
+  - khung đầu có tiếng đập trầm;
+  - mỗi lần chuyển cảnh có tiếng "whoosh" mạnh;
+  - trước cảnh cuối có tiếng "riser" dồn lên, rồi một tiếng đập;
+  - các hiệu ứng trong hình to hơn khoảng 35%.
+- **Motion graphic mới** (theo góp ý ngày 2026-11-07), không dùng lại hình của đợt 1:
+  - nhân vật răng 3D bóng có biểu cảm (đau, lo, buồn, vui), chuyển động kiểu nảy, co giãn, run, lắc;
+  - thẻ lớn có biểu tượng thay cho danh sách gạch đầu dòng, với bộ 15 biểu tượng vẽ mới;
+  - thẻ "Hiểu lầm / Sự thật" lật 3D;
+  - thanh thời gian "sớm → muộn";
+  - chuyển cảnh bằng hai dải màu xanh ngọc và vàng quét chéo;
+  - chữ nhấn trong tiêu đề có nền vàng dạ quang;
+  - khung minh họa dạng kính, viền xanh ngọc phát sáng.
+- **Câu kết không lặp chữ "nha":** tên "Nha khoa Asia" chỉ xuất hiện 1 lần, bỏ "nha" ở cuối câu. Áp dụng cho cả 6 video đợt 1 (đã tạo lại giọng cảnh cuối và xuất lại).
+
+| # | Video | Góc kể | Tương tác xin |
+|---|---|---|---|
+| g01 | Đau răng uống kháng sinh là xong? | Phá thói quen tự mua thuốc; dấu hiệu phải đi khám ngay | Comment "từng tự mua kháng sinh chưa" |
+| g02 | Răng chữa tủy rồi, sao vẫn vỡ? | "Rắc!" + phá hiểu lầm "răng chết thì giòn" → nứt dọc phải nhổ, trồng Implant | Comment "có răng chữa tủy chưa bọc không" |
+| g03 | Vì sao bác sĩ nói: răng này phải nhổ? | 3 lý do mất răng → phát hiện sớm giữ răng → đã nhổ thì đừng để trống | Comment 1, 2 hay 3 |
+
+### g01 — "Đau răng uống kháng sinh là xong?" (Tổng quát · Chữa tủy · 59 giây · sôi động)
+
+| Cảnh | Hình | Lời đọc |
+|---|---|---|
+| Hook | Ảnh thật bác sĩ điều trị · **nhân vật răng 3D** mặt nhăn nhó, run lên vì đau, tia sét xoay quanh, giọt mồ hôi, vỉ thuốc rơi nảy xuống | `[dramatic]` Răng đau nhức cả đêm, ra tiệm mua vỉ kháng sinh uống cho đỡ? `[curious]` Đỡ được mấy hôm... rồi đâu lại vào đấy! |
+| Vì sao | Buồng tủy viêm trong "khiên" kín, viên thuốc bị bật ra | `[enthusiastic]` Cơn đau đó thường do tủy răng bị viêm, nằm gọn trong buồng tủy kín. Kháng sinh uống vào gần như không tới được chỗ đó, nên không giải quyết tận gốc. Hướng dẫn của Hiệp hội Nha khoa Hoa Kỳ cũng khuyên: đa số ca đau tủy không cần kháng sinh. |
+| Tận gốc | **Thẻ lớn có biểu tượng** (phim X-quang, răng có tủy, răng nhổ): thẻ hiện bằng màn quét, biểu tượng nảy xoay, thẻ đang đọc sáng, thẻ khác mờ | `[cheerfully]` Cách xử lý tận gốc là: khám và chụp phim, tìm đúng chiếc răng gây đau. Nhiều trường hợp có thể chữa tủy, làm sạch ống tủy để giữ lại răng thật. Chỉ khi răng không giữ được nữa, bác sĩ mới tính tới chuyện nhổ. |
+| Cảnh báo | Thẻ lớn tông đỏ: nhiệt kế · má sưng · phổi/họng (Sốt, mệt, sưng hạch · Sưng lan ra má, cổ · Khó há miệng, nuốt, thở) | `[warmly]` Nhưng có những dấu hiệu không được chờ. Sốt, mệt, sưng hạch. Sưng lan ra má, xuống cổ. Khó há miệng, khó nuốt, khó thở. Gặp những dấu hiệu này, đi khám ngay trong ngày. |
+| CTA | Logo · INBOX ĐẶT LỊCH · Khám & chụp phim · Chữa tủy giữ răng | `[cheerfully]` Bạn từng tự mua kháng sinh uống khi đau răng chưa? Comment kể mình nghe! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ tìm đúng nguyên nhân cơn đau cho bạn! |
+
+### g02 — "Răng chữa tủy rồi, sao vẫn vỡ?" (Chữa tủy → Implant · 54 giây · sôi động)
+
+| Cảnh | Hình | Lời đọc |
+|---|---|---|
+| Hook | Răng đã chữa tủy có miếng trám, vết nứt chạy qua, chữ **RẮC!**, múi răng văng ra | `[curious]` Răng chữa tủy xong, hết đau rồi, tự nhiên một hôm cắn miếng cơm... rắc! `[dramatic]` Vỡ mất một góc. Vì sao vậy? |
+| Hiểu lầm | **Thẻ "✕ HIỂU LẦM: Răng chết tủy thì giòn"** bị gạch đỏ, rồi **thẻ "✓ SỰ THẬT: Răng yếu vì đã mất nhiều mô"** lật xuống | `[enthusiastic]` Nhiều người nghĩ răng chết tủy thì giòn. Thật ra, răng yếu đi chủ yếu vì đã mất nhiều mô: do sâu, do mở tủy, do miếng trám cũ. |
+| Có cần bọc | Thẻ lớn có biểu tượng răng cửa / răng hàm / nghiến răng, kèm dòng giải thích | `[cheerfully]` Có cần bọc hay không, tùy từng răng. Răng cửa còn gần nguyên vẹn, thường chỉ cần trám kín. Răng hàm mất nhiều mô, nên có mão hoặc onlay ôm lấy các múi răng. Còn nếu hay nghiến răng, nhai mạnh, càng nên che kín múi. |
+| Hết cách | Vết nứt chạy dọc xuống chân răng → dấu X, răng bị nhổ → trụ Implant + mão sứ thay vào | `[dramatic]` Để vỡ tới mức nứt dọc xuống chân răng, thì thường không giữ được nữa. `[warmly]` Lúc đó phải nhổ, rồi tính chuyện trồng lại bằng Implant hoặc cách khác. Bảo vệ sớm vẫn nhẹ nhàng hơn nhiều. |
+| CTA | Logo · INBOX ĐẶT LỊCH · Kiểm tra răng chữa tủy · Tư vấn bọc mão | `[cheerfully]` Bạn có chiếc răng nào chữa tủy mà chưa bọc không? Comment cho mình biết! `[excited]` Inbox Nha khoa Asia, đặt lịch để bác sĩ kiểm tra răng đã chữa tủy của bạn! |
+
+### g03 — "Vì sao bác sĩ nói: răng này phải nhổ?" (Bệnh lý → Implant · 55 giây · sôi động)
+
+| Cảnh | Hình | Lời đọc |
+|---|---|---|
+| Hook | Ảnh thật bác sĩ điều trị · **nhân vật răng 3D** mắt tròn lo lắng, lắc lư trong nướu, bóng thoại **"Phải nhổ!"**, ba dấu hỏi nảy lên | `[curious]` Đi khám, bác sĩ nói: răng này không giữ được nữa, phải nhổ thôi. `[dramatic]` Thường là vì một trong ba lý do này! |
+| 3 lý do | Thẻ lớn tông đỏ: răng sâu vỡ · chân răng nứt · răng lung lay | `[enthusiastic]` Một: sâu vỡ lớn tới tận chân răng, không còn đủ mô để phục hồi. Hai: nứt dọc chân răng, hay gặp ở răng đã chữa tủy mà chưa được bảo vệ. Ba: viêm nha chu giai đoạn nặng, xương quanh răng tiêu nhiều, răng lung lay. |
+| Phát hiện sớm | **Thanh thời gian SỚM → MUỘN**: nhân vật răng trượt sang MUỘN và buồn đi, rồi bật về SỚM và cười, 3 biểu tượng trám / chữa tủy / nha chu hiện ra | `[warmly]` Cả ba đều âm thầm tiến triển. Phát hiện sớm thì trám, chữa tủy, hay điều trị nha chu, vẫn còn giữ được răng thật. |
+| Đừng để trống | Thẻ lớn có biểu tượng trụ Implant / cầu răng / hàm tháo lắp | `[cheerfully]` Còn nếu đã phải nhổ, nên tính sớm chuyện làm lại răng. Implant thay luôn cả chân răng. Cầu răng sứ thì dựa vào hai răng bên cạnh. Hoặc hàm tháo lắp. Chọn cách nào, bác sĩ sẽ xem xương và sức khỏe của bạn trước. |
+| CTA | Logo · INBOX ĐẶT LỊCH · Khám tổng quát · Tư vấn trồng răng | `[mischievously]` Bạn từng phải nhổ răng vì lý do nào? Comment một, hai hay ba! `[excited]` Inbox Nha khoa Asia, đặt lịch khám sớm để giữ lại răng thật của bạn! |
 
 ---
 

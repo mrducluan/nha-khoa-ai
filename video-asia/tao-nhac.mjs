@@ -12,6 +12,7 @@ if (!KHOA) { console.error("Thiếu ELEVENLABS_API_KEY"); process.exit(1); }
 
 export const NHAC = {
   sang: "Bright, warm, modern instrumental for a friendly dental clinic social video: soft plucked synth, light piano, gentle claps, positive and trustworthy, no vocals, steady 100 BPM, clean mix suitable under voiceover",
+  "soi-dong": "Energetic upbeat instrumental for a dental clinic TikTok video: punchy modern pop drums, bouncy bass, bright synth stabs, claps and short risers, confident and fun, no vocals, 124 BPM, leaves space in the mids for a voiceover",
   am: "Gentle emotional instrumental for a family story about caring for an elderly mother: soft felt piano, warm strings pad, hopeful not sad, slow 72 BPM, no vocals, sparse and clean under voiceover, brightening toward the end",
 };
 

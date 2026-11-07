@@ -1,4 +1,4 @@
-# Đối chiếu kiến thức chuyên môn trong 6 video Asia với engine Nha Khoa AI
+# Đối chiếu kiến thức chuyên môn trong 9 video Asia với engine Nha Khoa AI
 
 Khác bộ Tâm Đức (đối chiếu làm sau), bộ này **chọn chủ đề và viết lời từ dữ liệu engine ngay từ đầu**:
 `db/05_seed_core_dental_knowledge.sql`, `db/06_seed_advanced_implant_prostho_sinus.sql` (ITI, ADA, EAO, Springer).
@@ -39,6 +39,25 @@ Ký hiệu:
 | s03 · "Thuốc tẩy trắng chỉ tác động lên răng thật, răng sứ không đổi màu" | ⚪ | Kiến thức phục hình phổ thông. Engine chưa có |
 | s03 · "Tẩy trắng trước, chờ màu ổn định rồi mới so màu làm sứ" | 🟡 `db/05` (veneer ITI + ADA): chỉ định veneer cho *"răng đổi màu không đáp ứng với tẩy trắng"*, tức là tẩy trắng trước | Mốc thời gian chờ (thường khoảng 2 tuần) chưa có trong engine. Lời đọc dùng "một thời gian" |
 | s03 · "Chọn tông hài hòa với răng thật, màu da, gương mặt" | 🟡 `db/05` dòng 258–259: *"màu sắc trong bóng tự nhiên như răng thật"* | Phần chọn màu theo khuôn mặt chưa có trong engine |
+
+## Tổng quát · Chữa tủy (đợt 2)
+
+Nguồn: bản nháp `data/knowledge_drafts/ADA2019_khang_sinh_dau_rang_ap_xe.json` (đã có trên `main`). Các bản nháp Cochrane 2015, BDJ 2004, EFP 2023 nằm ở
+nhánh `claude/magical-lamport-1vbznb` (PR #3), đang chờ bác sĩ duyệt.
+
+| Video · câu | Đối chiếu engine | Ghi chú |
+|---|---|---|
+| g01 · "Đau do tủy viêm nằm trong buồng tủy kín; kháng sinh uống gần như không tới được, không giải quyết tận gốc" | ✅ ADA 2019 (bản nháp): *"nguồn gây đau nằm trong mô tuỷ nên kháng sinh toàn thân hầu như không tới được và không giải quyết nguyên nhân"* | Khớp |
+| g01 · "Hướng dẫn của Hiệp hội Nha khoa Hoa Kỳ: đa số ca đau tủy không cần kháng sinh" | ✅ ADA 2019: khuyến nghị (có điều kiện) KHÔNG dùng kháng sinh cho đa số tình huống, ưu tiên điều trị dứt điểm | Khuyến nghị có điều kiện, bằng chứng chất lượng rất thấp. Lời đọc dùng "đa số", không dùng "tất cả" |
+| g01 · "Khám, chụp phim → chữa tủy giữ răng → không giữ được mới nhổ" | ✅ ADA 2019 bước 1–2: chẩn đoán tủy, cuống; điều trị dứt điểm (lấy tủy, dẫn lưu, nhổ răng) | Khớp |
+| g01 · "Sốt, mệt, sưng hạch; sưng lan ra má, cổ; khó há miệng, khó nuốt, khó thở → khám ngay" | ✅ ADA 2019: biểu hiện toàn thân (sốt, mệt, sưng hạch, khít hàm, sưng lan); dấu hiệu nguy hiểm: khó thở, khó nuốt, sưng sàn miệng/cổ | Khớp |
+| g02 · "Răng chữa tủy yếu chủ yếu vì mất mô, không phải vì 'chết thì giòn'" | ✅ Cochrane 2015 (bản nháp PR #3): *"yếu đi chủ yếu do MẤT MÔ RĂNG… không phải do 'răng chết bị giòn'"* | Khớp |
+| g02 · "Răng cửa còn gần nguyên vẹn thường chỉ cần trám kín; răng hàm mất nhiều mô nên có mão/onlay; nghiến răng càng nên che múi" | ✅ Cochrane 2015 (bản nháp): mục chỉ định | Khớp. Cochrane kết luận bằng chứng RCT còn yếu, nên lời đọc dùng "thường", "nên", không dùng "bắt buộc" |
+| g02 · "Nứt dọc xuống chân răng thường không giữ được, phải nhổ" | ✅ Cochrane 2015 (bản nháp): *"nứt dọc chân răng — biến chứng thường khiến phải nhổ răng"* | Khớp |
+| g03 · "Sâu vỡ lớn tới chân răng, không còn đủ mô để phục hồi" | ✅ `db/06` dòng 113: *"sâu răng phá hủy không thể bảo tồn"* | Khớp |
+| g03 · "Viêm nha chu giai đoạn nặng, xương tiêu nhiều, răng lung lay" | ✅ `db/05` (EFP): viêm nha chu, tiêu xương; `db/06` dòng 113: *"viêm nha chu Stage IV"* | Khớp |
+| g03 · "Phát hiện sớm thì trám, chữa tủy, điều trị nha chu vẫn giữ được răng" | 🟡 `db/05` (EFP): SRP *"giữ lại răng thật lâu dài"*; ADA 2019: chữa tủy là điều trị bảo tồn | Ý chung, khớp |
+| g03 · "Đã nhổ thì nên tính sớm: Implant, cầu răng sứ, hàm tháo lắp; chọn theo xương và sức khỏe" | ✅ BDJ 2004 (bản nháp PR #3): *"Tư vấn phục hình sớm… (implant, cầu răng, hàm tháo lắp)"* | Bản nháp cũng ghi không phải khoảng mất răng nào cũng bắt buộc làm lại răng. Lời đọc dùng "nên tính sớm" |
 
 ## Đề xuất nạp thêm vào engine
 

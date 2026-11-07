@@ -31,6 +31,18 @@ export const ANH = {
     hook: ["as-bs-lam-4.jpg", "40% 50%"], "vi-sao": ["as-bs-lam-6.jpg", "45% 50%"], "thu-tu": ["as-tu-van-3.jpg", "40% 50%"],
     "so-mau": ["pexels-3845738.jpg", "42% 50%"], cta: ["as-sanh-3.jpg", "50% 50%"],
   },
+  g01: {
+    hook: ["as-bs-lam-5.jpg", "45% 50%"], "vi-sao": ["as-tu-van-1.jpg", "30% 50%"], "tan-goc": ["as-bs-lam-3.jpg", "45% 50%"],
+    "canh-bao": ["as-tu-van-3.jpg", "40% 50%"], cta: ["as-sanh-2.jpg", "50% 50%"],
+  },
+  g02: {
+    hook: ["as-bs-lam-1.jpg", "45% 50%"], "hieu-lam": ["as-tu-van-2.jpg", "30% 50%"], "bao-ve": ["as-bs-lam-4.jpg", "40% 50%"],
+    "het-cach": ["as-bs-lam-6.jpg", "45% 50%"], cta: ["as-sanh-3.jpg", "50% 50%"],
+  },
+  g03: {
+    hook: ["as-bs-lam-2.jpg", "40% 50%"], "ly-do": ["as-tu-van-2.jpg", "30% 50%"], som: ["as-doi-ngu.jpg", "50% 50%"],
+    "sau-nho": ["as-bs-lam-5.jpg", "45% 50%"], cta: ["as-sanh-2.jpg", "50% 50%"],
+  },
 };
 
 /** Độ che của lớp tối giữa khung theo kiểu cảnh (0 = ảnh rõ, 1 = tối hẳn). */

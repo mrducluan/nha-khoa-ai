@@ -871,3 +871,237 @@ ${hienNhan(`${p}-n2`, t1 + 1.5)}`,
     };
   },
 });
+
+// ================================================================ Nha khoa Asia — tổng quát / chữa tủy (g01–g03)
+const TUY = "M-38 50 Q0 30 38 50 L36 120 Q34 150 34 170 L30 270 Q26 282 22 270 L16 160 Q0 150 -16 160 L-22 270 Q-26 282 -30 270 L-34 170 Q-34 150 -36 120 Z";
+/** Răng hàm cắt dọc: men, ngà, buồng tủy + ống tủy. (x, y) = giữa mặt nhai. */
+function rangCat(p, id, x, y, s) {
+  return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})">
+  <path d="${ROOT}" fill="url(#${p}rt)" stroke="#BFA678" stroke-width="2"/>
+  <path d="${CROWN}" fill="url(#${p}en)" stroke="#B5C7D6" stroke-width="2" filter="url(#${p}rb)"/>
+  <path d="M-58 44 C-56 22 -30 10 -12 22 C0 14 12 14 22 22 C38 10 58 22 58 44 L56 116 C54 132 46 140 36 142 L-36 142 C-46 140 -54 132 -56 116 Z" fill="#F3E4C2" opacity="0.85"/>
+  <path id="${id}-tuy" d="${TUY}" fill="#E8616B"/>
+  <path d="M-52 40 C-50 20 -36 14 -24 22" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.95"/>
+</g></g>`;
+}
+const SET = (x, y, s, mau) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 -40 L-14 -4 L4 -4 L-8 40 L22 -12 L4 -12 L16 -40 Z" fill="${mau}"/>`;
+const VIEN = (id, x, y, g) => `<g id="${id}" opacity="0"><g transform="translate(${x} ${y}) rotate(${g})"><rect x="-34" y="-15" width="68" height="30" rx="15" fill="#FFFFFF"/><path d="M0 -15 L19 -15 A15 15 0 0 1 19 15 L0 15 Z" fill="${MAU.son}"/></g></g>`;
+
+Object.assign(HINH, {
+  // g01 — cơn đau tủy: buồng tủy viêm đỏ nhịp đập, viên kháng sinh bị chặn ngoài "buồng tủy kín"
+  rang_tuy(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const hook = c.kieu_tuy === "hook";
+    const t1 = T(hook ? 0 : 1, hook ? 0.55 : 0.1), t2 = T(hook ? 1 : 2, 0.2);
+    const vien = [[700, 120, -20], [760, 300, 15], [690, 470, -35]].map(([x, y, g], i) => VIEN(`${p}-v${i}`, x, y, g)).join("");
+    return {
+      svg: `
+${rangCat(p, `${p}-r`, 330, 80, 1.65)}
+<ellipse id="${p}-quang" cx="330" cy="260" rx="120" ry="160" fill="${MAU.son}" opacity="0" filter="url(#${p}mo)"/>
+<g id="${p}-set" opacity="0">${SET(180, 150, 1.2, MAU.vang)}${SET(480, 140, 1.4, MAU.vang)}${SET(500, 330, 1, MAU.vang)}</g>
+<path id="${p}-khien" d="M330 70 C230 70 210 140 222 230 C232 320 270 420 330 470 C390 420 428 320 438 230 C450 140 430 70 330 70 Z" fill="none" stroke="${MAU.troi}" stroke-width="6" stroke-dasharray="16 10" opacity="0"/>
+${vien}
+${nhan(`${p}-n0`, 330, 600, hook ? "Đau nhức cả đêm" : "Tủy viêm trong buồng tủy kín", MAU.son, { co: 30 })}
+${nhan(`${p}-n1`, 690, 600, hook ? "Mua thuốc uống?" : "Thuốc khó tới nơi", MAU.vang, { co: 30 })}`,
+      js: `
+tl.fromTo("#${p}-r", {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"expo.out"}, 0.05);
+tl.to("#${p}-r-tuy", {fill:"#FF3B4A", duration:0.35, yoyo:true, repeat:${Math.max(3, Math.floor(d / 0.7))}, ease:"sine.inOut"}, 0.4);
+tl.fromTo("#${p}-quang", {opacity:0}, {opacity:0.35, duration:0.35, yoyo:true, repeat:${Math.max(3, Math.floor(d / 0.7))}, ease:"sine.inOut"}, 0.4);
+tl.fromTo("#${p}-set", {opacity:0, scale:0.6, svgOrigin:"330 240"}, {opacity:1, scale:1, svgOrigin:"330 240", duration:0.3, ease:"back.out(2.4)"}, 0.5);
+tl.to("#${p}-set", {opacity:0.4, duration:0.2, yoyo:true, repeat:${Math.max(3, Math.floor(d / 0.5))}}, 0.9);
+${hienNhan(`${p}-n0`, T(0, 0.25))}
+${hook ? "" : `tl.fromTo("#${p}-khien", {opacity:0, scale:1.15, svgOrigin:"330 270"}, {opacity:1, scale:1, svgOrigin:"330 270", duration:0.45, ease:"expo.out"}, ${r3(t1 + 0.6)});`}
+tl.fromTo(["#${p}-v0","#${p}-v1","#${p}-v2"], {opacity:0, x:200}, {opacity:1, x:0, duration:0.5, stagger:0.15, ease:"power3.out"}, ${t1});
+${hook ? `tl.to(["#${p}-v0","#${p}-v1","#${p}-v2"], {y:-10, duration:0.4, yoyo:true, repeat:5, stagger:0.1, ease:"sine.inOut"}, ${r3(t1 + 0.8)});`
+  : `tl.to(["#${p}-v0","#${p}-v1","#${p}-v2"], {x:-150, duration:0.45, stagger:0.12, ease:"power2.in"}, ${r3(t1 + 1.2)});
+tl.to(["#${p}-v0","#${p}-v1","#${p}-v2"], {x:-40, rotation:40, svgOrigin:"700 300", opacity:0.35, duration:0.5, stagger:0.12, ease:"power2.out"}, ${r3(t1 + 1.65)});`}
+${hienNhan(`${p}-n1`, t2)}`,
+      sfx: [{ f: "impact-bass-1", t: 0.45, v: 0.45 }, { f: "whoosh-short", t: t1, v: 0.35 }, ...(hook ? [] : [{ f: "click-soft", t: t1 + 1.65, v: 0.5 }]), { f: "pop", t: t2, v: 0.4 }],
+    };
+  },
+
+  // g02 — răng đã chữa tủy, miếng trám lớn: vết nứt chạy qua múi, múi răng vỡ văng ra
+  rang_vo(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const tNut = T(0, 0.75), tVo = T(1, 0.05);
+    return {
+      svg: `
+${rangCat(p, `${p}-r`, 450, 90, 1.6)}
+<g transform="translate(450 90) scale(1.6)">
+  <path d="M-30 18 C-20 6 14 6 24 20 L22 70 L-28 70 Z" fill="#CFD8E0" stroke="#8E9BA7" stroke-width="2"/>
+  <g id="${p}-manh"><path d="M24 20 C40 -2 70 8 70 40 L68 96 L36 78 L22 70 Z" fill="url(#${p}en)" stroke="#B5C7D6" stroke-width="2"/></g>
+  <path id="${p}-nut" d="M24 20 L30 46 L22 70 L36 78 L68 96" fill="none" stroke="#3A0E18" stroke-width="4" stroke-linecap="round" stroke-dasharray="140" stroke-dashoffset="140"/>
+</g>
+<g id="${p}-rac" opacity="0"><text x="720" y="170" text-anchor="middle" font-family="BVP" font-weight="900" font-size="96" fill="${MAU.son}" transform="rotate(-10 720 170)">RẮC!</text></g>
+${nhan(`${p}-n0`, 300, 600, "Răng đã chữa tủy", MAU.mo, { co: 30 })}
+${nhan(`${p}-n1`, 640, 600, "Vỡ mất một múi", MAU.son, { co: 30 })}`,
+      js: `
+tl.fromTo("#${p}-r", {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"expo.out"}, 0.05);
+${hienNhan(`${p}-n0`, 0.4)}
+tl.to("#${p}-nut", {strokeDashoffset:0, duration:0.35, ease:"power2.in"}, ${tNut});
+tl.fromTo("#${p}-rac", {opacity:0, scale:2.2, svgOrigin:"720 150"}, {opacity:1, scale:1, svgOrigin:"720 150", duration:0.25, ease:"power4.in"}, ${r3(tNut + 0.3)});
+tl.to("#${p}-manh", {x:90, y:-70, rotation:38, svgOrigin:"50 50", opacity:0, duration:0.7, ease:"power2.out"}, ${tVo});
+tl.to("#${p}-r", {x:-6, duration:0.05, yoyo:true, repeat:5}, ${tVo});
+${hienNhan(`${p}-n1`, tVo + 0.4)}`,
+      sfx: [{ f: "impact-bass-1", t: tNut + 0.3, v: 0.6 }, { f: "whoosh-short", t: tVo, v: 0.4 }, { f: "pop", t: tVo + 0.4, v: 0.4 }],
+    };
+  },
+
+  // g02 — nứt dọc xuống chân răng → không giữ được → nhổ, trồng lại bằng Implant
+  nut_doc(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const tNut = T(0, 0.35), tNho = T(1, 0.15), tImp = T(1, 0.55);
+    const bone = "M40 300 L860 300 L860 610 Q860 640 830 640 L70 640 Q40 640 40 610 Z";
+    return {
+      svg: `
+<path d="${bone}" fill="url(#${p}bn)"/><path d="${bone}" fill="url(#${p}xp)"/>
+${rangHam(p, `${p}-a`, 160, 135, 0.95)}${rangHam(p, `${p}-b`, 740, 135, 0.95)}
+<g id="${p}-rang">${rangHam(p, `${p}-r`, 450, 135, 0.95)}
+<path id="${p}-nut" d="M452 150 L446 210 L456 270 L444 330 L452 420" fill="none" stroke="#3A0E18" stroke-width="6" stroke-linecap="round" stroke-dasharray="290" stroke-dashoffset="290"/></g>
+<g id="${p}-moi" opacity="0">${truImplant(p, `${p}-tru`, 450, 304, 1)}${khopNoi(p, `${p}-kn`, 450, 304, 0.95)}${maoSu(p, `${p}-mao`, 450, 135, 0.95)}</g>
+<path d="M40 268 L860 268 L860 300 L40 300 Z" fill="url(#${p}gm)" opacity="0.92"/>
+<g id="${p}-x" opacity="0"><path d="M380 160 L520 300 M520 160 L380 300" stroke="${MAU.son}" stroke-width="22" stroke-linecap="round"/></g>
+${nhan(`${p}-n0`, 450, 612, "Nứt dọc tới chân răng", MAU.son, { co: 30 })}
+${nhan(`${p}-n1`, 450, 60, "Nhổ → trồng lại bằng Implant", MAU.ngoc, { co: 30 })}`,
+      js: `
+tl.fromTo(["#${p}-a","#${p}-b","#${p}-rang"], {opacity:0}, {opacity:1, duration:0.45, stagger:0.06}, 0.05);
+tl.to("#${p}-nut", {strokeDashoffset:0, duration:0.9, ease:"power1.in"}, ${tNut});
+${hienNhan(`${p}-n0`, tNut + 0.7)}
+tl.fromTo("#${p}-x", {opacity:0, scale:1.8, svgOrigin:"450 230"}, {opacity:1, scale:1, svgOrigin:"450 230", duration:0.3, ease:"power4.in"}, ${tNho});
+tl.to(["#${p}-rang","#${p}-x"], {y:-360, opacity:0, duration:0.6, ease:"power3.in"}, ${r3(tNho + 0.6)});
+tl.to("#${p}-n0", {opacity:0, duration:0.25}, ${r3(tNho + 0.6)});
+tl.fromTo("#${p}-moi", {opacity:0, y:-260}, {opacity:1, y:0, duration:0.6, ease:"bounce.out"}, ${tImp});
+${hienNhan(`${p}-n1`, tImp + 0.5)}`,
+      sfx: [{ f: "riser", t: tNut, v: 0.3 }, { f: "impact-bass-1", t: tNho + 0.25, v: 0.5 }, { f: "whoosh-short", t: tNho + 0.6, v: 0.4 }, { f: "pop", t: tImp + 0.5, v: 0.45 }],
+    };
+  },
+});
+
+// ================================================================ Bộ biểu tượng (đợt 2) — khung 100 × 100, nét trắng trên nền tròn màu
+const NET = `fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"`;
+const RANG_IC = "M28 30 C28 18 40 14 50 20 C60 14 72 18 72 30 C72 44 68 52 66 66 C64 80 60 86 56 86 C52 86 52 70 50 70 C48 70 48 86 44 86 C40 86 36 80 34 66 C32 52 28 44 28 30 Z";
+export const ICON = {
+  xquang: `<rect x="18" y="22" width="64" height="56" rx="8" ${NET}/><path d="M38 36 C38 30 50 28 50 34 C50 28 62 30 62 36 C62 48 58 56 55 64 C54 68 52 62 50 58 C48 62 46 68 45 64 C42 56 38 48 38 36 Z" fill="#FFFFFF" opacity="0.9"/>`,
+  tuy: `<path d="${RANG_IC}" ${NET}/><path d="M44 34 Q50 30 56 34 L54 56 L52 76 M46 56 L48 76" stroke="#FF8A8A" stroke-width="6" fill="none" stroke-linecap="round"/>`,
+  nho: `<path d="${RANG_IC}" ${NET} transform="translate(0 6)"/><path d="M50 6 L50 20 M42 13 L50 5 L58 13" ${NET}/>`,
+  sot: `<rect x="42" y="12" width="16" height="52" rx="8" ${NET}/><circle cx="50" cy="74" r="13" fill="#FFFFFF"/><path d="M50 40 L50 70" stroke="#FF6B5B" stroke-width="7" stroke-linecap="round"/><path d="M66 24 L74 24 M66 36 L72 36" ${NET}/>`,
+  sung: `<path d="M30 28 C30 16 70 16 70 28 L74 52 C80 60 78 80 60 84 L40 84 C26 82 24 66 28 56 Z" ${NET}/><circle cx="42" cy="42" r="3" fill="#FFFFFF"/><circle cx="58" cy="42" r="3" fill="#FFFFFF"/><ellipse cx="68" cy="64" rx="12" ry="10" fill="#FF8A8A" opacity="0.9"/><path d="M42 66 Q48 62 54 66" ${NET}/>`,
+  tho: `<path d="M50 14 L50 44" ${NET}/><path d="M50 44 C40 44 22 52 22 72 C22 82 30 86 38 84 C46 82 48 72 48 60 M50 44 C60 44 78 52 78 72 C78 82 70 86 62 84 C54 82 52 72 52 60" ${NET}/><path d="M80 20 L90 14 M80 30 L92 30" stroke="#FF8A8A" stroke-width="6" stroke-linecap="round"/>`,
+  sau_vo: `<path d="M28 30 C28 18 40 14 50 20 L44 32 L54 40 L46 52 C46 48 36 46 34 60 C32 52 28 44 28 30 Z M54 22 C62 14 72 18 72 30 C72 44 68 52 66 66 C64 80 60 86 56 86 C52 86 52 70 50 70 C48 70 48 86 44 86 C40 86 36 80 34 66" ${NET}/><circle cx="60" cy="40" r="6" fill="#3A0E18" stroke="#FFFFFF" stroke-width="3"/>`,
+  nut_chan: `<path d="${RANG_IC}" ${NET}/><path d="M52 18 L46 34 L54 46 L46 60 L52 76" stroke="#FF8A8A" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+  lung_lay: `<g transform="rotate(-10 50 60)"><path d="${RANG_IC}" ${NET} transform="translate(0 -6)"/></g><path d="M14 80 Q50 66 86 80" ${NET}/><path d="M16 40 L22 46 M84 40 L78 46 M12 56 L20 58 M88 56 L80 58" ${NET}/>`,
+  implant: `<path d="M34 16 C34 8 66 8 66 16 L64 30 L36 30 Z" fill="#FFFFFF"/><path d="M44 30 L56 30 L56 40 L44 40 Z" ${NET}/><path d="M40 42 L60 42 L56 84 Q50 92 44 84 Z" ${NET}/><path d="M40 54 L60 58 M41 66 L59 70 M43 78 L57 82" ${NET}/>`,
+  cau: `<path d="M12 40 C12 30 30 30 30 40 L30 70 L12 70 Z M41 38 C41 30 59 30 59 38 L59 62 L41 62 Z M70 40 C70 30 88 30 88 40 L88 70 L70 70 Z" ${NET}/><path d="M30 46 L41 46 M59 46 L70 46" ${NET}/><path d="M14 78 L28 78 M72 78 L86 78" ${NET}/>`,
+  ham: `<path d="M14 64 C14 30 86 30 86 64 L76 64 C76 42 24 42 24 64 Z" ${NET}/><path d="M28 50 L28 42 M38 44 L38 36 M50 42 L50 34 M62 44 L62 36 M72 50 L72 42" ${NET}/><path d="M10 72 Q50 82 90 72" stroke="#FF8A8A" stroke-width="6" fill="none" stroke-linecap="round"/>`,
+  rang_cua: `<path d="M34 18 L66 18 C70 40 70 64 64 82 Q58 88 50 88 Q42 88 36 82 C30 64 30 40 34 18 Z" ${NET}/><path d="M42 40 L58 40" ${NET}/>`,
+  rang_ham: `<path d="${RANG_IC}" ${NET}/><path d="M36 34 Q50 42 64 34" ${NET}/>`,
+  nghien: `<path d="M18 36 L82 36 M18 64 L82 64" ${NET}/><path d="M24 36 L24 26 M38 36 L38 26 M52 36 L52 26 M66 36 L66 26 M76 36 L76 26 M24 64 L24 74 M38 64 L38 74 M52 64 L52 74 M66 64 L66 74 M76 64 L76 74" ${NET}/><path d="M30 50 L40 44 L50 56 L60 44 L70 56" stroke="#FFC24D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+};
+
+// ---------------------------------------------------------------- nhân vật răng 3D (đợt 2)
+const THAN_RANG = "M-120 -40 C-120 -128 -40 -150 0 -104 C40 -150 120 -128 120 -40 C120 30 104 70 92 140 C80 214 64 250 40 250 C14 250 18 160 0 160 C-18 160 -14 250 -40 250 C-64 250 -80 214 -92 140 C-104 70 -120 30 -120 -40 Z";
+/** Nhân vật răng bóng 3D có mặt. mat: "dau" (nhắm tịt, mếu) · "lo" (mắt tròn, miệng méo) · "buon" · "vui". (x, y) = tâm thân. */
+export function rangNhanVat(p, id, x, y, s, mat = "vui") {
+  const mt = {
+    dau: `<path d="M-62 -14 L-34 -2 L-62 10 M62 -14 L34 -2 L62 10" stroke="#3A2A2A" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-30 52 Q-15 38 0 50 Q15 38 30 52" stroke="#3A2A2A" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+    lo: `<circle cx="-46" cy="-4" r="16" fill="#FFFFFF" stroke="#3A2A2A" stroke-width="5"/><circle cx="46" cy="-4" r="16" fill="#FFFFFF" stroke="#3A2A2A" stroke-width="5"/><circle cx="-42" cy="0" r="7" fill="#3A2A2A"/><circle cx="42" cy="0" r="7" fill="#3A2A2A"/><path d="M-70 -34 L-30 -26 M70 -34 L30 -26" stroke="#3A2A2A" stroke-width="7" stroke-linecap="round"/><ellipse cx="0" cy="52" rx="16" ry="12" fill="#3A2A2A"/>`,
+    buon: `<circle cx="-44" cy="-2" r="9" fill="#3A2A2A"/><circle cx="44" cy="-2" r="9" fill="#3A2A2A"/><path d="M-66 -30 L-28 -20 M66 -30 L28 -20" stroke="#3A2A2A" stroke-width="7" stroke-linecap="round"/><path d="M-26 56 Q0 36 26 56" stroke="#3A2A2A" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+    vui: `<path d="M-60 0 Q-46 -18 -32 0 M32 0 Q46 -18 60 0" stroke="#3A2A2A" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M-30 34 Q0 70 30 34 Z" fill="#3A2A2A"/><path d="M-16 50 Q0 60 16 50" stroke="#F49AAA" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+  }[mat];
+  return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})">
+  <ellipse cx="0" cy="282" rx="110" ry="18" fill="#000" opacity="0.28" filter="url(#${p}mo)"/>
+  <g id="${id}-than"><path d="${THAN_RANG}" fill="url(#${p}en)" stroke="#CFE0EA" stroke-width="4"/>
+  <path d="M-92 -50 C-92 -98 -54 -116 -24 -96" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <path d="M96 -30 C100 20 92 70 84 110" stroke="#B8CCDA" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <ellipse cx="-70" cy="28" rx="18" ry="11" fill="#F49AAA" opacity="0.55"/><ellipse cx="70" cy="28" rx="18" ry="11" fill="#F49AAA" opacity="0.55"/>
+  ${mt}</g>
+</g></g>`;
+}
+
+Object.assign(HINH, {
+  // g01 hook — nhân vật răng đau nhức, tia sét quay quanh, vỉ thuốc rơi xuống
+  rang_nhan_dau(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const t1 = T(1, 0.05);
+    const vien = [[200, 60, -25], [700, 40, 20], [150, 300, 35], [760, 260, -15]].map(([x, y, g], i) => VIEN(`${p}-v${i}`, x, y, g)).join("");
+    return {
+      svg: `
+<circle cx="450" cy="300" r="240" fill="url(#${p}ngocSang)" opacity="0.5"/>
+<circle id="${p}-do" cx="450" cy="300" r="200" fill="${MAU.son}" opacity="0" filter="url(#${p}mo)"/>
+${rangNhanVat(p, `${p}-nv`, 450, 250, 1.0, "dau")}
+<g id="${p}-set">${SET(250, 170, 1.5, MAU.vang)}${SET(660, 150, 1.7, MAU.vang)}${SET(690, 380, 1.2, MAU.vang)}${SET(220, 400, 1.1, MAU.vang)}</g>
+<path id="${p}-mo-hoi" d="M600 60 C590 84 584 96 600 104 C616 96 610 84 600 60 Z" fill="${MAU.troi}" opacity="0"/>
+${vien}
+${nhan(`${p}-n0`, 450, 610, "Uống kháng sinh cho đỡ?", MAU.vang, { co: 32 })}`,
+      js: `
+tl.fromTo("#${p}-nv", {opacity:0, y:120, scaleY:0.7, svgOrigin:"450 530"}, {opacity:1, y:0, scaleY:1, svgOrigin:"450 530", duration:0.6, ease:"elastic.out(1, 0.5)"}, 0.05);
+tl.to("#${p}-nv-than", {x:-8, rotation:-3, svgOrigin:"0 250", duration:0.07, yoyo:true, repeat:${Math.max(6, Math.floor(d / 0.14))}, ease:"none"}, 0.7);
+tl.fromTo("#${p}-do", {opacity:0}, {opacity:0.4, duration:0.3, yoyo:true, repeat:${Math.max(3, Math.floor(d / 0.6))}, ease:"sine.inOut"}, 0.6);
+tl.fromTo("#${p}-set", {opacity:0, rotation:-20, svgOrigin:"450 280"}, {opacity:1, rotation:0, svgOrigin:"450 280", duration:0.4, ease:"back.out(2)"}, 0.5);
+tl.to("#${p}-set", {rotation:360, svgOrigin:"450 280", duration:${r3(d)}, ease:"none"}, 0.9);
+tl.fromTo("#${p}-mo-hoi", {opacity:0, y:-10}, {opacity:1, y:30, duration:0.9, repeat:${Math.max(1, Math.floor(d / 1.2))}, ease:"power1.in"}, 0.8);
+tl.fromTo(["#${p}-v0","#${p}-v1","#${p}-v2","#${p}-v3"], {opacity:0, y:-260}, {opacity:1, y:0, duration:0.7, stagger:0.12, ease:"bounce.out"}, ${T(0, 0.55)});
+${hienNhan(`${p}-n0`, T(0, 0.8))}
+tl.to("#${p}-nv-than", {scaleY:0.9, svgOrigin:"0 250", duration:0.18, yoyo:true, repeat:3}, ${t1});`,
+      sfx: [{ f: "impact-bass-1", t: 0.1, v: 0.5 }, { f: "whoosh-short", t: T(0, 0.55), v: 0.4 }, { f: "pop", t: T(0, 0.8), v: 0.45 }, { f: "key-press", t: t1, v: 0.4 }],
+    };
+  },
+
+  // g03 hook — nhân vật răng lung lay trong nướu, bóng thoại "Phải nhổ!"
+  rang_lac(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const tBong = T(0, 0.55), t1 = T(1, 0.1);
+    return {
+      svg: `
+<path d="M40 470 Q450 400 860 470 L860 640 L40 640 Z" fill="url(#${p}gm)"/>
+<path d="M40 500 Q450 440 860 500" stroke="#FDC0CA" stroke-width="6" fill="none" opacity="0.6"/>
+${rangNhanVat(p, `${p}-nv`, 450, 250, 0.95, "lo")}
+<path d="M40 520 Q450 470 860 520 L860 640 L40 640 Z" fill="url(#${p}gm)" opacity="0.96"/>
+<g id="${p}-rung">${[[250, 300], [650, 300], [270, 380], [630, 380]].map(([x, y], i) => `<path d="M${x} ${y} l${i % 2 ? 22 : -22} -10" stroke="${MAU.chu}" stroke-width="7" stroke-linecap="round" opacity="0.8"/>`).join("")}</g>
+<g id="${p}-bong" opacity="0"><path d="M520 30 L840 30 Q870 30 870 60 L870 130 Q870 160 840 160 L640 160 L600 200 L606 160 L550 160 Q520 160 520 130 L520 60 Q520 30 550 30 Z" fill="#FFFFFF"/>
+<text x="695" y="114" text-anchor="middle" font-family="BVP" font-weight="900" font-size="56" fill="${MAU.son}">Phải nhổ!</text></g>
+<g id="${p}-hoi" opacity="0">${[0, 1, 2].map((i) => `<text x="${130 + i * 70}" y="${150 - i * 30}" font-family="BVP" font-weight="900" font-size="${70 + i * 14}" fill="${MAU.vang}">?</text>`).join("")}</g>`,
+      js: `
+tl.fromTo("#${p}-nv", {opacity:0, y:-200}, {opacity:1, y:0, duration:0.7, ease:"bounce.out"}, 0.05);
+tl.to("#${p}-nv", {rotation:6, svgOrigin:"450 520", duration:0.16, yoyo:true, repeat:${Math.max(6, Math.floor(d / 0.32))}, ease:"sine.inOut"}, 0.8);
+tl.fromTo("#${p}-rung", {opacity:0}, {opacity:1, duration:0.16, yoyo:true, repeat:${Math.max(6, Math.floor(d / 0.32))}}, 0.8);
+tl.fromTo("#${p}-bong", {opacity:0, scale:0.3, svgOrigin:"600 200"}, {opacity:1, scale:1, svgOrigin:"600 200", duration:0.45, ease:"back.out(2.2)"}, ${tBong});
+tl.fromTo("#${p}-hoi", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"back.out(2)"}, ${t1});
+tl.to("#${p}-hoi", {y:-12, duration:0.45, yoyo:true, repeat:5, ease:"sine.inOut"}, ${r3(t1 + 0.4)});`,
+      sfx: [{ f: "whoosh-short", t: 0.05, v: 0.35 }, { f: "impact-bass-1", t: tBong, v: 0.5 }, { f: "pop", t: t1, v: 0.45 }],
+    };
+  },
+
+  // g03 — thanh thời gian: sớm (giữ răng) → muộn (phải nhổ); nhân vật răng đi dọc thanh, đổi nét mặt
+  dong_thoi_gian(c, { p, d, moc }) {
+    const T = moc_(moc, d);
+    const tDi = T(0, 0.15), tToi = T(0, 0.95), tVe = T(1, 0.05);
+    const ic = ["rang_ham", "tuy", "lung_lay"];
+    return {
+      svg: `
+<defs><linearGradient id="${p}-tg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${MAU.ngoc}"/><stop offset="0.55" stop-color="${MAU.vang}"/><stop offset="1" stop-color="${MAU.son}"/></linearGradient></defs>
+<rect x="80" y="430" width="740" height="28" rx="14" fill="${MAU.mat2}"/>
+<rect id="${p}-thanh" x="80" y="430" width="740" height="28" rx="14" fill="url(#${p}-tg)"/>
+<text x="110" y="510" font-family="BVP" font-weight="800" font-size="34" fill="${MAU.ngoc}">SỚM</text>
+<text x="790" y="510" text-anchor="end" font-family="BVP" font-weight="800" font-size="34" fill="${MAU.son}">MUỘN</text>
+<g id="${p}-a">${rangNhanVat(p, `${p}-nv1`, 0, 0, 0.62, "vui")}</g>
+<g id="${p}-b" opacity="0">${rangNhanVat(p, `${p}-nv2`, 0, 0, 0.62, "buon")}</g>
+${ic.map((k, i) => `<g class="${p}-ic" opacity="0"><circle cx="${150 + i * 120}" cy="580" r="46" fill="${MAU.ngoc}"/><g transform="translate(${150 + i * 120 - 30} 550) scale(0.6)">${ICON[k]}</g></g>`).join("")}
+${nhan(`${p}-n0`, 680, 580, "Giữ được răng thật", MAU.ngoc, { co: 30 })}`,
+      js: `
+tl.fromTo("#${p}-thanh", {scaleX:0, svgOrigin:"80 444"}, {scaleX:1, svgOrigin:"80 444", duration:0.8, ease:"power2.out"}, 0.1);
+tl.set(["#${p}-a","#${p}-b"], {x:190, y:250}, 0);
+tl.fromTo("#${p}-a", {opacity:0, scale:0.4, svgOrigin:"190 420"}, {opacity:1, scale:1, svgOrigin:"190 420", duration:0.5, ease:"back.out(2)"}, 0.3);
+tl.to(["#${p}-a","#${p}-b"], {x:700, duration:${r3(Math.max(0.8, tToi - tDi))}, ease:"power1.in"}, ${tDi});
+tl.to("#${p}-a", {opacity:0, duration:0.25}, ${r3(tToi - 0.5)});
+tl.to("#${p}-b", {opacity:1, duration:0.25}, ${r3(tToi - 0.5)});
+tl.to(["#${p}-a","#${p}-b"], {x:190, duration:0.6, ease:"back.out(1.6)"}, ${tVe});
+tl.to("#${p}-b", {opacity:0, duration:0.2}, ${tVe});
+tl.to("#${p}-a", {opacity:1, duration:0.2}, ${tVe});
+tl.to("#${p}-a", {y:232, duration:0.3, yoyo:true, repeat:5, ease:"sine.inOut"}, ${r3(tVe + 0.7)});
+tl.fromTo(".${p}-ic", {opacity:0, y:30}, {opacity:1, y:0, duration:0.35, stagger:0.15, ease:"back.out(2)"}, ${r3(tVe + 0.5)});
+${hienNhan(`${p}-n0`, T(1, 0.6))}`,
+      sfx: [{ f: "riser", t: tDi, v: 0.25 }, { f: "whoosh", t: tVe, v: 0.35 }, { f: "pop", t: tVe + 0.5, v: 0.4 }, { f: "sparkle", t: T(1, 0.6), v: 0.4 }],
+    };
+  },
+});
